@@ -1,0 +1,3 @@
+1.0 28-09-16
+-修改register的parameter，不再需要aboutME
+-更新发送email的parameter，不再需要username和password
