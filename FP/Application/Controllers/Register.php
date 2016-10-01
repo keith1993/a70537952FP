@@ -20,3 +20,26 @@ spl_autoload_register(function ($class) {
     }
 
 });
+
+$email = $_POST["email"];
+$firstName = $_POST["firstName"];
+$lastName = $_POST["lastName"];
+$password = $_POST["password"];
+$options = $_POST["options"];
+$DOB = $_POST["DOB"];
+$country = $_POST["country"];
+$occupation = $_POST["occupation"];
+$loginIP = $_SERVER["REMOTE_ADDR"]
+
+
+$a = new UserModel();
+$jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$loginIP,$occupation);
+
+ if($jj){
+        echo "Registered";
+    }else{
+        echo "Error!". mysql_error();
+    }
+
+/*$FirstName, $LastName, $Password, $DOB, $Gender, $Email,
+                             $Country, $LastLoginIP,$Occupation)*/
