@@ -157,5 +157,17 @@ class UserModel extends BaseModel
 
     }
 
+    public function isEmailExist($email)
+    {
+        $sql = "select * from user where Email=:email";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":email", $email);
 
+        $isSuccess = $result->execute();
+        if ($result->rowCount() >= 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

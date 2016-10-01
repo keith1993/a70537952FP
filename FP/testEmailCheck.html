@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#aa").keyup(function () {
+            var email = $("#aa").val();
+
+            $.post("Application/Controllers/CheckEmail.php",
+             {
+             Email:email
+             },
+             function(data,status){
+                 $('#txtHint').text(data);
+             });
+        });
+        });
+    </script>
+</head>
+<body>
+
+<p><b>Start typing a name in the input field below:</b></p>
+<form>
+    Email: <input type="text" id="aa">
+</form>
+<p>Suggestions: <span id="txtHint"></span></p>
+</body>
+</html>

@@ -1,3 +1,0 @@
-1.0 28-09-16
--update register's parameter£¬now do not need "aboutME" anymore.
--update send email's parameter£¬now do not need "username" and "password" anymore.
