@@ -36,7 +36,7 @@ $a = new UserModel();
 $jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$occupation);
 
  if($jj){
-        echo "Registered";
+      header('Location: ../Views/registerSuccess.html');
     }else{
         echo "Error!". mysql_error();
     }
