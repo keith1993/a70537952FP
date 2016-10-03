@@ -1,5 +1,11 @@
 			
-			
+			function emailFunction() {
+   				var x = document.getElementById("email");
+    			if (x.value == "") {
+				$("#errormsg_email").text("You can't leave this empty.");
+				}
+				
+			}
 			
 			function firstNameFunction() {
    				var x = document.getElementById("firstName");
@@ -72,6 +78,42 @@
 				else{
 					document.getElementById("errormsg_occupation").style.display = "none";
 				}
+			}
+			
+			
+			function submitFunction(){
+			
+			$('#registerForm').submit(function() {
+			var a = true;
+			
+			//FirstName
+			document.getElementById("firstName");
+    			if (document.getElementById("firstName").value == "") {
+				document.getElementById("errormsg_firstName").style.display = "block";
+				a=false;
+				}
+				else{
+					document.getElementById("errormsg_firstName").style.display = "none";
+				}
+				
+			//LastName
+			document.getElementById("lastName");
+				
+    			if (document.getElementById("lastName").value == "") {
+				document.getElementById("errormsg_lastName").style.display = "block";
+				a=false;
+				}
+				else{
+					document.getElementById("errormsg_lastName").style.display = "none";
+				}
+    if (a){
+    return true; // return false to cancel form action
+	}
+	else{
+		return false;
+	}
+});
+
 			}
 
 
