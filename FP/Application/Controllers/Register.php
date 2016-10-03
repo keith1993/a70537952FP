@@ -29,11 +29,11 @@ $options = $_POST["options"];
 $DOB = $_POST["DOB"];
 $country = $_POST["country"];
 $occupation = $_POST["occupation"];
-$loginIP = $_SERVER["REMOTE_ADDR"]
+
 
 
 $a = new UserModel();
-$jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$loginIP,$occupation);
+$jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$occupation);
 
  if($jj){
         echo "Registered";

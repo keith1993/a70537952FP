@@ -26,6 +26,9 @@ http://www.templatemo.com/tm-474-app-landing
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="../../Public/js/register.js"></script>
+       
+
  
     </head>
     <body>
@@ -37,16 +40,12 @@ http://www.templatemo.com/tm-474-app-landing
         </div>
 		
         <!--Body-->
-        <form action="../Controllers/Register.php" method="post">
+        <form id="registerForm" action="../Controllers/Register.php" method="post">
         
         <div class="md-form">
             <i class="fa fa-lock prefix"></i>
             <label for="form3">Email</label>
-            <a href="#" data-toggle="tooltip" title="Please enter valid email Address">
             <input type="email" name="email" id="email" class="form-control">
-            <span role="alert" class="errormsg" id="errormsg_email" style="display: none; font-size:15px; color:rgba(255,0,4,1.00);">
-            You entered an email that is already associated with another account.</span>
-            </a>
         </div>
         
         <div class="md-form">
@@ -98,7 +97,9 @@ http://www.templatemo.com/tm-474-app-landing
         <div class="md-form">
             <i class="fa fa-lock prefix"></i>
             <label for="form6">Date Of Birth</label>
-            <input type="text" name="DOB" id="datepicker" class="form-control" />
+            <input type="text" name="DOB" id="datepicker" class="form-control" onblur="DOBFunction()">
+            <span role="alert" class="errormsg" id="errormsg_DOB" style="display: none; font-size:15px; color:rgba(255,0,4,1.00);">
+            You can't leave this empty.</span>
         </div>
         
         <div class="md-form">
@@ -361,7 +362,9 @@ http://www.templatemo.com/tm-474-app-landing
         <div class="md-form">
             <i class="fa fa-envelope prefix"></i>
             <label for="form7">Occupation</label>
-            <input type="text" name="occupation" id="occupation" class="form-control" />
+            <input type="text" name="occupation" id="occupation" class="form-control" onblur="occupationFunction()"/>
+            <span role="alert" class="errormsg" id="errormsg_occupation" style="display: none; font-size:15px; color:rgba(255,0,4,1.00);">
+            You can't leave this empty.</span>
         </div>
     
         <div class="text-md-center">
@@ -370,68 +373,60 @@ http://www.templatemo.com/tm-474-app-landing
         
          <script>
   			$( function() {
-    			$( "#datepicker" ).datepicker();
+    			
+			 $( "#datepicker" ).datepicker({
+				dateFormat: "dd-mm-yy"
+				});
   			} );
  		</script>
         
-        <script>
-			$(document).ready(function(){
-    			$('[data-toggle="tooltip"]').tooltip();
-			});
-		</script>
         
         <script>
-			function firstNameFunction() {
-   				var x = document.getElementById("firstName");
-    			if (x.value == "") {
+        $('#registerForm').submit(function() {
+			var a = true;
+			
+			//FirstName
+			document.getElementById("firstName");
+    			if (document.getElementById("firstName").value == "") {
 				document.getElementById("errormsg_firstName").style.display = "block";
+				a=false;
 				}
 				else{
 					document.getElementById("errormsg_firstName").style.display = "none";
 				}
-			}
-			
-			function lastNameFunction() {
-   				var x = document.getElementById("lastName");
 				
-    			if (x.value == "") {
+			//LastName
+			document.getElementById("lastName");
+				
+    			if (document.getElementById("lastName").value == "") {
 				document.getElementById("errormsg_lastName").style.display = "block";
+				a=false;
 				}
 				else{
 					document.getElementById("errormsg_lastName").style.display = "none";
 				}
-			}
-			
-			function passwordFunction() {
-   				var x = document.getElementById("password");
-				var y = document.getElementById("confirmPassword");
+    if (a){
+    return true; // return false to cancel form action
+	}
+	else{
+		return false;
+	}
+});
+</script>
+        
+        <script>
+			$(document).ready(function(){
+    			$('[data-toggle="tooltip"]').tooltip();
 				
-    			if (x.value == "") {
-					document.getElementById("errormsg_password").style.display = "block";
-				}
-				else{
-					document.getElementById("errormsg_password").style.display = "none";
-				}
-			}
+				$("#datepicker").keydown(function() {
+  //code to not allow any changes to be made to input field
+  return false;});
+});
 			
-			function confirmPasswordFunction() {
-				var x = document.getElementById("confirmPassword");
-				var y = document.getElementById("password");
-
-				if (x.value == "") {
-					document.getElementById("errormsg_confirmPassword").style.display = "block";
-				}
-				else{
-					document.getElementById("errormsg_confirmPassword").style.display = "none";
-					document.getElementById("errormsg_confirmPasswordNotMatch").style.display = "none";
-				}
-				
-				if (x.value != y.value) {
-					document.getElementById("errormsg_confirmPasswordNotMatch").style.display = "block";
-					document.getElementById("errormsg_confirmPassword").style.display = "none";
-				}
-			}		
+			
 		</script>
+        
+        
         
     </div>
     </form>  
