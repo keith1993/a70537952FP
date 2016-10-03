@@ -38,8 +38,8 @@ class UserModel extends BaseModel
 
             $result = $result->fetch();
             $user = new UserObject($result);
-            self::updateLastLoginDate($user->id);
-            self::updateLastLoginIP($user->id,$loginIP);
+            self::updateLastLoginDate($result[0]);
+            self::updateLastLoginIP($result[0],$loginIP);
             return $user;
         } else {
             return false;

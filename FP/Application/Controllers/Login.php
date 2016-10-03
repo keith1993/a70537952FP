@@ -20,3 +20,16 @@ spl_autoload_register(function ($class) {
     }
 
 });
+
+$email = $_POST["email"];
+$password = $_POST["password"];
+$loginIP = $_SERVER["REMOTE_ADDR"];
+
+$a = new UserModel();
+$jj = $a->Login($email,$password,$loginIP);
+
+ if($jj instanceof UserObject){
+      header('Location: ../Views/registerSuccess.html');
+    }else{
+        echo "Error!". mysql_error();
+    }
