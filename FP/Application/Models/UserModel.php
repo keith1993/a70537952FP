@@ -50,9 +50,11 @@ class UserModel extends BaseModel
                              $Country,$Occupation)
     {
         $sql = "insert into user (Email,FirstName,LastName,Password,DOB,Gender,Country,Occupation,
-             RegisterDate,LastLoginDate,EmailVerified,LastChangePasswordDate,LastUpdateDate)
+             RegisterDate,LastLoginDate,EmailVerified,LastChangePasswordDate,LastUpdateDate,
+             Token,Token_expTime)
             values(:Email,:FirstName,:LastName,md5(:Password),:DOB,:Gender,:Country,:Occupation,
-            now(),now(),0,now(),now());";
+            now(),now(),0,now(),now(),
+            :Token,:Token_expTime);";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":Email", $Email);
         $result->bindValue(":FirstName", $FirstName);
@@ -62,6 +64,8 @@ class UserModel extends BaseModel
         $result->bindValue(":Gender", $Gender);
         $result->bindValue(":Country", $Country);
         $result->bindValue(":Occupation", $Occupation);
+        $result->bindValue(":Token", self::generateToken($Email,$Password));
+        $result->bindValue(":Token_expTime", self::generateTokenExpTime());
 
 
         $isSuccess = $result->execute();
@@ -169,5 +173,49 @@ class UserModel extends BaseModel
         } else {
             return false;
         }
+    }
+
+    public function Verify($UserID,$token)
+    {
+        $sql = "select * from user where ID=:UserID and EmailVerified=0 and Token=:token";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":UserID", $UserID);
+        $result->bindValue(":token", $token);
+        $isSuccess = $result->execute();
+        if ($result->rowCount() >= 1 and $isSuccess) {
+
+            $result = $result->fetch();
+            $user = new UserObject($result);
+            $isSuccess = self::setEmailVerified($user);
+
+            return $isSuccess;
+
+        } else {
+            return false;
+        }
+    }
+
+    private function generateToken($email,$password){
+        $token = md5($email.$password.time());
+        return $token;
+    }
+
+    private function generateTokenExpTime(){
+        date_default_timezone_set('Asia/Kuala_Lumpur');
+        return date("Y/m/d H:i:s",time()+60*60*24);;
+    }
+
+    private function setEmailVerified($user){
+        date_default_timezone_set('Asia/Kuala_Lumpur');
+        if (date("Y/m/d H:i:s")>date_format(new DateTime($user->Token_expTime),"Y/m/d")){
+            return false;
+        }else{
+            $sql = "update user set EmailVerified=1 where id=:UserID";
+            $result = self::$conn->prepare($sql);
+            $result->bindValue(":UserID", $user->ID);
+            $isSuccess =$result->execute();
+            return $isSuccess;
+        }
+
     }
 }
