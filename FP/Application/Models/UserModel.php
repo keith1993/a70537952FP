@@ -175,7 +175,7 @@ class UserModel extends BaseModel
         }
     }
 
-    public function Verify($UserID,$token)
+    public function VerifyEmail($UserID,$token)
     {
         $sql = "select * from user where ID=:UserID and EmailVerified=0 and Token=:token";
         $result = self::$conn->prepare($sql);
