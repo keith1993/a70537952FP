@@ -33,7 +33,7 @@ class UserModel extends BaseModel
         $result->bindValue(":email", $email);
         $result->execute();
         $result = $result->fetch();
-        if ($result->rowCount() == 1) {
+        if ($result >= 1) {
             $user = new UserObject($result);
             return $user;
         } else {
@@ -230,7 +230,7 @@ class UserModel extends BaseModel
     private function setEmailVerified($user)
     {
         date_default_timezone_set('Asia/Kuala_Lumpur');
-        if (date("Y/m/d H:i:s") > date_format(new DateTime($user->Token_expTime), "Y/m/d")) {
+        if (date("Y/m/d H:i:s") > date_format(new DateTime($user->TokenExpTime), "Y/m/d")) {
             return false;
         } else {
             $sql = "update user set EmailVerified=1 where id=:UserID";
@@ -241,4 +241,39 @@ class UserModel extends BaseModel
         }
 
     }
+
+    public function setVerificationCode($userEmail)
+    {
+
+            $sql = "update user set Verification_Code=:VerificationCode where Email=:userEmail";
+            $result = self::$conn->prepare($sql);
+
+            $VerificationCode = self::generateVerificationCode();
+            $result->bindValue(":VerificationCode",$VerificationCode );
+            $result->bindValue(":userEmail", $userEmail);
+            $isSuccess = $result->execute();
+            if ($isSuccess){
+                return $VerificationCode;
+
+            }else{
+
+                return false;
+            }
+
+
+    }
+
+    private function generateVerificationCode()
+    {
+
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $VerificationCode = '';
+        for ($i = 0; $i < 8; $i++) {
+            $VerificationCode .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $VerificationCode;
+
+    }
+
 }

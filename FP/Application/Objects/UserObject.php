@@ -29,7 +29,8 @@ class UserObject
     public $LastUpdateDate;
     public $UserImage;
     public $Token;
-    public $Token_expTime;
+    public $TokenExpTime;
+    public $VerificationCode;
 
 
 
@@ -52,7 +53,8 @@ class UserObject
         $this->LastUpdateDate = $result[15];
         $this->UserImage = $result[16];
         $this->Token = $result[17];
-        $this->Token_expTime = $result[18];
+        $this->TokenExpTime = $result[18];
+        $this->VerificationCode = $result[19];
 
 
     }

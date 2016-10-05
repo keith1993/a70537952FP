@@ -10,7 +10,7 @@ class BaseModel
 {
     protected static $serverName = "localhost";
     protected static $username = "root";
-    protected static $password = "password";
+    protected static $password = "";
     protected static $dbname = "Finance";
     protected static $conn;
 
@@ -32,7 +32,7 @@ class BaseModel
 
 
         try {
-            self::$conn = new PDO("mysql:host=" . self::$serverName . ";dbname=" . self::$dbname . "", self::$username, self::$password);
+            self::$conn = new PDO("mysql:host=" . self::$serverName . ";dbname=" . self::$dbname . ";charset=utf8", self::$username, self::$password);
             // set the PDO error mode to exception
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //echo "Connected successfully";
