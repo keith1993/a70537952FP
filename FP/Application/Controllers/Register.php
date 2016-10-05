@@ -41,8 +41,10 @@ $jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,
 	$token = $user->Token;
 $email= $user->Email;
 
-	$z = new EmailTo("Cornucopia","Email Verification",$email,$firstName.$lastName,"VerifyEmail.php?I=$id&T=$token");
+	$z = new EmailTo("Cornucopia","Email Verification",$email,$firstName.$lastName,
+        "http://localhost/FP/Application/Controllers/VerifyEmail.php?I=$id&T=$token");
 	$isSuccess = $z->send();
+
 		if($isSuccess){
 			header('Location: ../Views/registerSuccess.html');
 		}else{
