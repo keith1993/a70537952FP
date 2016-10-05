@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: Admin
@@ -19,15 +19,12 @@ spl_autoload_register(function ($class) {
     }
 
 });
-//$ID = $_GET["I"];
-//$Token = $_GET["T"];
-
-//$ID = 14;
-//$Token = "2b3b9969209e4e4518b442d1a5fdf595";
+$ID = $_GET["I"];
+$Token = $_GET["T"];
 
 
 $a = new UserModel();
-$result = $a->Verify($ID,$Token);
+$result = $a->VerifyEmail($ID,$Token);
 
 if($result ){
 

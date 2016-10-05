@@ -1,7 +1,7 @@
 			
 			function emailFunction() {
     			if (document.getElementById("email").value == "") {
-				$("#errormsg_email").text("You can't leave this empty.");
+				//$("#errormsg_email").text("You can't leave this empty.");
 				}	
 			}
 			

@@ -36,7 +36,19 @@ $a = new UserModel();
 $jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$occupation);
 
  if($jj){
-      header('Location: ../Views/registerSuccess.html');
+	$user = $a->getUserByEmail($email);
+	$id = $user->ID;
+	$token = $user->Token;
+$email= $user->Email;
+
+	$z = new EmailTo("Cornucopia","Email Verification",$email,$firstName.$lastName,"VerifyEmail.php?I=$id&T=$token");
+	$isSuccess = $z->send();
+		if($isSuccess){
+			header('Location: ../Views/registerSuccess.html');
+		}else{
+ 			echo "error";
+		}
+        
     }else{
         echo "Error!". mysql_error();
     }

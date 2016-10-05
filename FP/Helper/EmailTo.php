@@ -19,7 +19,7 @@ class EmailTo
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-       self::$mail->SMTPDebug =1;
+       self::$mail->SMTPDebug =2;
 //Ask for HTML-friendly debug output
         self::$mail->Debugoutput = 'html';
 //Set the hostname of the mail server

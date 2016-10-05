@@ -27,6 +27,17 @@ class UserModel extends BaseModel
         return $user;
     }
 
+
+public function getUserByEmail($email)
+    {
+        $sql = "select * from user where Email=:email";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":email", $email);
+        $result->execute();
+        $result = $result->fetch();
+        $user = new UserObject($result);
+        return $user;
+    }
     public function Login($email, $password,$loginIP)
     {
         $sql = "select * from user where Email=:email and Password=md5(:password)";
