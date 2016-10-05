@@ -1,113 +1,120 @@
 <!DOCTYPE html>
 <html lang="en" class="ie_11_scroll">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="hhhwidth=device-width, initial-scale=1">
-        <title>Registration</title>
-<!--
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="hhhwidth=device-width, initial-scale=1">
+    <title>Registration</title>
+    <!--
 
-App Landing Template
+    App Landing Template
 
-http://www.templatemo.com/tm-474-app-landing
+    http://www.templatemo.com/tm-474-app-landing
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="../../Public/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../Public/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../../Public/css/templatemo_style.css">
-        <link rel="stylesheet" href="../../Public/css/datepicker.css">
-        <link rel="stylesheet" type="text/css" href="../../Public/css/normalize.css">
-        
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="../../Public/images/favicon.png" />
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="../../Public/js/register.js"></script>
-       
+            <!-- CSS -->
+    <link rel="stylesheet" href="../../Public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../Public/css/templatemo_style.css">
+    <link rel="stylesheet" href="../../Public/css/datepicker.css">
+    <link rel="stylesheet" type="text/css" href="../../Public/css/normalize.css">
 
- 
-    </head>
-    <body>
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="../../Public/images/favicon.png"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../../Public/js/register.js"></script>
 
-    <section id="templatemo_home">
+
+</head>
+<body>
+
+<section id="templatemo_home">
     <div class="container">
-    <div class="form-header blue-gradient">
+        <div class="form-header blue-gradient">
             <h2><i class="fa fa-user"></i> Sign up for free.</h2>
         </div>
-		
+
         <!--Body-->
         <form id="registerForm" action="../Controllers/Register.php" method="post">
-        
-        <div class="md-form">
-            <i class="fa fa-lock prefix"></i>
-            <label for="form3">Email</label>
-            <input type="email" name="email" id="email" class="form-control" onBlur="emailFunction()">
-            <span role="alert" class="errormsg" id="errormsg_email" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <label for="form3">Email</label>
+                <input type="email" name="email" id="email" class="form-control" onBlur="emailFunction()">
+                <span role="alert" class="errormsg" id="errormsg_email"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
            </span>
 
-        </div>
-        
-        <div class="md-form">
-            <i class="fa fa-user prefix"></i>
-            <label for="form1">First Name</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" onblur="firstNameFunction()">
-            <span role="alert" class="errormsg" id="errormsg_firstName" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-user prefix"></i>
+                <label for="form1">First Name</label>
+                <input type="text" name="firstName" id="firstName" class="form-control" onblur="firstNameFunction()">
+                <span role="alert" class="errormsg" id="errormsg_firstName"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
-        </div>
-       
-        <div class="md-form-lastName">
-            <i class="fa fa-lock prefix"></i>
-            <label for="form2">Last Name</label>
-            <input type="lastname" name="lastName" id="lastName" class="form-control" onblur="lastNameFunction()">
-             <span role="alert" class="errormsg" id="errormsg_lastName" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+            </div>
+
+            <div class="md-form-lastName">
+                <i class="fa fa-lock prefix"></i>
+                <label for="form2">Last Name</label>
+                <input type="lastname" name="lastName" id="lastName" class="form-control" onblur="lastNameFunction()">
+                <span role="alert" class="errormsg" id="errormsg_lastName"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
-        </div>
-        
-        <div class="md-form">
-            <i class="fa fa-lock prefix"></i>
-            <label for="form4">Password</label>
-            <input type="password" name="password" id="password" class="form-control" onblur="passwordFunction()">
-            <span role="alert" class="errormsg" id="errormsg_password" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <label for="form4">Password</label>
+                <input type="password" name="password" id="password" class="form-control" onblur="passwordFunction()">
+                <span role="alert" class="errormsg" id="errormsg_password"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
-        </div>
-        
-        <div class="md-form">
-            <i class="fa fa-lock prefix"></i>
-            <label for="form4">Confirm Password</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" onblur="confirmPasswordFunction()"> 
-            <span role="alert" class="errormsg" id="errormsg_confirmPassword" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <label for="form4">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
+                       onblur="confirmPasswordFunction()">
+                <span role="alert" class="errormsg" id="errormsg_confirmPassword"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
-        </div>
-        
-        <div class="radio">
-        	<i class="fa fa-lock prefix"></i>
-        	<label for="form5">Gender</label>
-  				<label class="btn btn-primary">
-    				<input type="radio" name="options" id="option1" autocomplete="off" value="Male"> Male
-  				</label>
-  				<label class="btn btn-primary">
-    				<input type="radio" name="options" id="option2" autocomplete="off" value="Female"> Female
-  				</label>
-                <span role="alert" class="errormsg" id="errormsg_gender" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+            </div>
+
+            <div class="radio">
+                <i class="fa fa-lock prefix"></i>
+                <label for="form5">Gender</label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option1" autocomplete="off" value="Male"> Male
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2" autocomplete="off" value="Female"> Female
+                </label>
+                <span role="alert" class="errormsg" id="errormsg_gender"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
-		</div>
-        
-        <div class="md-form">
-            <i class="fa fa-lock prefix"></i>
-            <label for="form6">Date Of Birth</label>
-            <input type="text" name="DOB" id="datepicker" class="form-control" onblur="DOBFunction()">
-            <span role="alert" class="errormsg" id="errormsg_DOB" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <label for="form6">Date Of Birth</label>
+                <input type="text" name="DOB" id="datepicker" class="form-control" onblur="DOBFunction()">
+                <span role="alert" class="errormsg" id="errormsg_DOB"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
-        </div>
-        
-        <div class="md-form">
-            <i class="fa fa-envelope prefix"></i>
-            <label for="form7">Country</label>
-            <span style="color:rgba(0,0,0,1.00);"><select name="country" id="country">
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <label for="form7">Country</label>
+                <span style="color:rgba(0,0,0,1.00);"><select name="country" id="country">
 	<option value="AF" class="form-control">Afghanistan</option>
 	<option value="AX" class="form-control">Åland Islands</option>
 	<option value="AL" class="form-control">Albania</option>
@@ -359,58 +366,60 @@ http://www.templatemo.com/tm-474-app-landing
 	<option value="ZW" class="form-control">Zimbabwe</option>
 </select>
 </span>
-        </div>
-        
-        <div class="md-form">
-            <i class="fa fa-envelope prefix"></i>
-            <label for="form7">Occupation</label>
-            <input type="text" name="occupation" id="occupation" class="form-control" onblur="occupationFunction()"/>
-            <span role="alert" class="errormsg" id="errormsg_occupation" style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <label for="form7">Occupation</label>
+                <input type="text" name="occupation" id="occupation" class="form-control"
+                       onblur="occupationFunction()"/>
+                <span role="alert" class="errormsg" id="errormsg_occupation"
+                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
-        </div>
-    
-        <div class="text-md-center">
-           
-       	<button type="submit" class="btn btn-primary">Submit</button>
-        
-         <script>
-  			$( function() {
-    			
-			 $( "#datepicker" ).datepicker({
-				dateFormat: "dd-mm-yy"
-				});
-  			} );
- 		</script>
-        
+            </div>
 
-        
-        <script>
-	
-			$(document).ready(function(){
-    			$('[data-toggle="tooltip"]').tooltip();
-				submitFunction();
-				$("#datepicker").keydown(function() {return false;});
-				
-				$("#email").keyup(function(){
-					var email=$("#email").val();
-					
-					$.post("../../Application/Controllers/CheckEmail.php",
-					{
-						Email:email
-					},
-					function(data,status){
-						$("#errormsg_email").text(data);
-});
-});
-});
+            <div class="text-md-center">
 
-		</script>
-        
-        
-        
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <script>
+                    $(function () {
+
+                        $("#datepicker").datepicker({
+                            dateFormat: "dd-mm-yy"
+                        });
+                    });
+                </script>
+
+
+                <script>
+
+                    $(document).ready(function () {
+                        $('[data-toggle="tooltip"]').tooltip();
+                        submitFunction();
+                        $("#datepicker").keydown(function () {
+                            return false;
+                        });
+
+                        $("#email").keyup(function () {
+                            var email = $("#email").val();
+
+                            $.post("../../Application/Controllers/CheckEmail.php",
+                                    {
+                                        Email: email
+                                    },
+                                    function (data, status) {
+                                        $("#errormsg_email").text(data);
+                                    });
+                        });
+                    });
+
+                </script>
+
+
+            </div>
+        </form>
     </div>
-    </form>  
-    </div>
-    </section>
-	</body>
+</section>
+</body>
 </html>

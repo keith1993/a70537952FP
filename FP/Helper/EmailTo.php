@@ -19,7 +19,7 @@ class EmailTo
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-       self::$mail->SMTPDebug =2;
+       self::$mail->SMTPDebug =1;
 //Ask for HTML-friendly debug output
         self::$mail->Debugoutput = 'html';
 //Set the hostname of the mail server
@@ -51,6 +51,7 @@ class EmailTo
 //self::$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
        // self::$mail->AltBody = 'This is a plain-text message body';
+        self::$mail->isHTML(true);
         self::$mail->Body=$contentBody;
 //Attach an image file
 //self::$mail->addAttachment('images/phpmailer_mini.png');

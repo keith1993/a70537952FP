@@ -1,7 +1,6 @@
 <?php
 
 
-
 /**
  * Created by PhpStorm.
  * User: Admin
@@ -13,7 +12,6 @@ class UserModel extends BaseModel
     /**
      * @return string
      */
-
 
 
     public function getUserByID($id)
@@ -28,17 +26,22 @@ class UserModel extends BaseModel
     }
 
 
-public function getUserByEmail($email)
+    public function getUserByEmail($email)
     {
         $sql = "select * from user where Email=:email";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":email", $email);
         $result->execute();
         $result = $result->fetch();
-        $user = new UserObject($result);
-        return $user;
+        if ($result->rowCount() == 1) {
+            $user = new UserObject($result);
+            return $user;
+        } else {
+            return false;
+        }
     }
-    public function Login($email, $password,$loginIP)
+
+    public function Login($email, $password, $loginIP)
     {
         $sql = "select * from user where Email=:email and Password=md5(:password)";
         $result = self::$conn->prepare($sql);
@@ -50,7 +53,7 @@ public function getUserByEmail($email)
             $result = $result->fetch();
             $user = new UserObject($result);
             self::updateLastLoginDate($result[0]);
-            self::updateLastLoginIP($result[0],$loginIP);
+            self::updateLastLoginIP($result[0], $loginIP);
             return $user;
         } else {
             return false;
@@ -58,7 +61,7 @@ public function getUserByEmail($email)
     }
 
     public function Register($FirstName, $LastName, $Password, $DOB, $Gender, $Email,
-                             $Country,$Occupation)
+                             $Country, $Occupation)
     {
         $sql = "insert into user (Email,FirstName,LastName,Password,DOB,Gender,Country,Occupation,
              RegisterDate,LastLoginDate,EmailVerified,LastChangePasswordDate,LastUpdateDate,
@@ -71,11 +74,11 @@ public function getUserByEmail($email)
         $result->bindValue(":FirstName", $FirstName);
         $result->bindValue(":LastName", $LastName);
         $result->bindValue(":Password", $Password);
-        $result->bindValue(":DOB", date_format(new DateTime($DOB),"Y/m/d"));
+        $result->bindValue(":DOB", date_format(new DateTime($DOB), "Y/m/d"));
         $result->bindValue(":Gender", $Gender);
         $result->bindValue(":Country", $Country);
         $result->bindValue(":Occupation", $Occupation);
-        $result->bindValue(":Token", self::generateToken($Email,$Password));
+        $result->bindValue(":Token", self::generateToken($Email, $Password));
         $result->bindValue(":Token_expTime", self::generateTokenExpTime());
 
 
@@ -84,26 +87,26 @@ public function getUserByEmail($email)
     }
 
 
-    public function ResetPassword($UserID,$oldPassword,$newPassword)
+    public function ResetPassword($UserID, $oldPassword, $newPassword)
     {
         $sql = "update user set Password=md5(:newPassword) where id=:UserID and Password=md5(:oldPassword)";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":newPassword", $newPassword);
         $result->bindValue(":UserID", $UserID);
         $result->bindValue(":oldPassword", $oldPassword);
-        $isSuccess =$result->execute();
+        $isSuccess = $result->execute();
 
-        if ($isSuccess && $result->rowCount()>=1){
+        if ($isSuccess && $result->rowCount() >= 1) {
             $isSuccess = self::updateChangePasswordDate($UserID);
-        }else{
+        } else {
 
-            $isSuccess=false;
+            $isSuccess = false;
         }
         return $isSuccess;
     }
 
-    public function updateUserByUserID($UserID,$FirstName, $LastName,$DOB,$Gender,
-                             $Country,$Occupation,$AboutMe)
+    public function updateUserByUserID($UserID, $FirstName, $LastName, $DOB, $Gender,
+                                       $Country, $Occupation, $AboutMe)
     {
         $sql = "update user set FirstName=:FirstName, LastName=:LastName,DOB=:DOB
             ,Gender=:Gender,Country=:Country,Occupation=:Occupation,AboutMe=:AboutMe,LastUpdateDate=now() 
@@ -118,56 +121,62 @@ public function getUserByEmail($email)
         $result->bindValue(":Occupation", $Occupation);
         $result->bindValue(":AboutMe", $AboutMe);
         $isSuccess = $result->execute();
-        if ($isSuccess && $result->rowCount()>=1){
+        if ($isSuccess && $result->rowCount() >= 1) {
             $isSuccess = self::updateLastUpdateDate($UserID);
-        }else{
+        } else {
 
-            $isSuccess=false;
+            $isSuccess = false;
         }
         return $isSuccess;
     }
 
-    private function updateChangePasswordDate($UserID){
+    private function updateChangePasswordDate($UserID)
+    {
         $sql = "update user set LastChangePasswordDate=now() where id=:UserID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":UserID", $UserID);
-        $isSuccess =$result->execute();
+        $isSuccess = $result->execute();
         return $isSuccess;
     }
 
-    private function updateLastLoginDate($UserID){
+    private function updateLastLoginDate($UserID)
+    {
         $sql = "update user set LastLoginDate=now() where id=:UserID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":UserID", $UserID);
-        $isSuccess =$result->execute();
+        $isSuccess = $result->execute();
         return $isSuccess;
     }
-    private function updateLastLoginIP($UserID,$LoginIP){
+
+    private function updateLastLoginIP($UserID, $LoginIP)
+    {
         $sql = "update user set LastLoginIP=:LoginIP where id=:UserID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":UserID", $UserID);
         $result->bindValue(":LoginIP", $LoginIP);
-        $isSuccess =$result->execute();
+        $isSuccess = $result->execute();
         return $isSuccess;
     }
 
-    private function updateLastUpdateDate($UserID){
+    private function updateLastUpdateDate($UserID)
+    {
         $sql = "update user set LastUpdateDate=now() where id=:UserID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":UserID", $UserID);
-        $isSuccess =$result->execute();
+        $isSuccess = $result->execute();
         return $isSuccess;
     }
 
-    public function updateUserImage($UserID,$Files){
+    public function updateUserImage($UserID, $Files)
+    {
         $sql = "update user set User_Image=:UserImage where id=:UserID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":UserID", $UserID);
-        $fileName = round(microtime(true) * 1000)."R".rand(10000,99999);
-        $upload = new UploadImage($fileName,$Files);
-        $UserImage =$fileName.".".$upload->imageFileType;
+        $fileName = round(microtime(true) * 1000) . "R" . rand(10000, 99999);
+        $upload = new UploadImage($fileName, $Files);
+        $UserImage = $fileName . "." . $upload->imageFileType;
         $result->bindValue(":UserImage", $UserImage);
-        $isSuccess =$result->execute();
+        $isSuccess = $result->execute();
         return $isSuccess;
 
     }
@@ -186,7 +195,7 @@ public function getUserByEmail($email)
         }
     }
 
-    public function VerifyEmail($UserID,$token)
+    public function VerifyEmail($UserID, $token)
     {
         $sql = "select * from user where ID=:UserID and EmailVerified=0 and Token=:token";
         $result = self::$conn->prepare($sql);
@@ -206,25 +215,28 @@ public function getUserByEmail($email)
         }
     }
 
-    private function generateToken($email,$password){
-        $token = md5($email.$password.time());
+    private function generateToken($email, $password)
+    {
+        $token = md5($email . $password . time());
         return $token;
     }
 
-    private function generateTokenExpTime(){
+    private function generateTokenExpTime()
+    {
         date_default_timezone_set('Asia/Kuala_Lumpur');
-        return date("Y/m/d H:i:s",time()+60*60*24);;
+        return date("Y/m/d H:i:s", time() + 60 * 60 * 24);;
     }
 
-    private function setEmailVerified($user){
+    private function setEmailVerified($user)
+    {
         date_default_timezone_set('Asia/Kuala_Lumpur');
-        if (date("Y/m/d H:i:s")>date_format(new DateTime($user->Token_expTime),"Y/m/d")){
+        if (date("Y/m/d H:i:s") > date_format(new DateTime($user->Token_expTime), "Y/m/d")) {
             return false;
-        }else{
+        } else {
             $sql = "update user set EmailVerified=1 where id=:UserID";
             $result = self::$conn->prepare($sql);
             $result->bindValue(":UserID", $user->ID);
-            $isSuccess =$result->execute();
+            $isSuccess = $result->execute();
             return $isSuccess;
         }
 
