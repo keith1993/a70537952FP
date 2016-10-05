@@ -18,7 +18,7 @@ spl_autoload_register(function ($class) {
 });
 
 
-$a = new EmailTo("aaa","bbb","a70537952@gmail.com","zzz","AAAAAA");
+$a = new EmailTo("aaa","bbb","junx_lau@hotmail.com","zzz","AAAAAA");
 $a->send();
 //$user = $a->Register("aaa","bbb","123","20-10-2016","Male","1234@gmail.com","Singapore","22.22.22.22","Student");
 

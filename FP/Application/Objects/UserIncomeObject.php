@@ -10,6 +10,7 @@ class UserIncomeObject
 {
     public $IncomeID;
     public $UserID;
+    public $Income_Name;
     public $Income_Amount;
     public $Income_Description;
     public $Income_EnterDate;
@@ -17,9 +18,10 @@ class UserIncomeObject
     function __construct($result){
         $this->IncomeID =$result[0];
         $this->UserID =$result[1];
-        $this->Income_Amount =$result[2];
-        $this->Income_Description =$result[3];
-        $this->Income_EnterDate =date_format(new DateTime($result[4]),"d/m/Y");
+        $this->Income_Name =$result[2];
+        $this->Income_Amount =$result[3];
+        $this->Income_Description =$result[4];
+        $this->Income_EnterDate =date_format(new DateTime($result[5]),"d/m/Y");
     }
 
 }
