@@ -72,7 +72,7 @@
             <div class="md-form">
                 <i class="fa fa-lock prefix"></i>
                 <label for="form4">Password</label>
-                <input type="password" name="password" id="password" class="form-control" onblur="passwordFunction()">
+                <input  pattern=".{5,10}" type="password" name="password" id="password" class="form-control" onblur="passwordFunction()">
                 <span role="alert" class="errormsg" id="errormsg_password"
                       style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
             </span>
@@ -92,7 +92,7 @@
                 <i class="fa fa-lock prefix"></i>
                 <label for="form5">Gender</label>
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option1" autocomplete="off" value="Male"> Male
+                    <input type="radio" name="options" id="option1" autocomplete="off" value="Male" checked="checked"> Male
                 </label>
                 <label class="btn btn-primary">
                     <input type="radio" name="options" id="option2" autocomplete="off" value="Female"> Female
@@ -400,7 +400,8 @@
                         $("#datepicker").keydown(function () {
                             return false;
                         });
-
+						
+						
                         $("#email").keyup(function () {
                             var email = $("#email").val();
 
@@ -413,7 +414,6 @@
                                     });
                         });
                     });
-
                 </script>
 
 
