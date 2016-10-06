@@ -76,22 +76,23 @@ function testAPI() {
     //console.log('Welcome!  Fetching your information.... ');
     FB.api('/me',  {fields: 'name,email,first_name,last_name,gender'},function(response) {
 
-
-            var email=response.email + "@facebook.com"
+        var Id = response.id;
+            var email=response.email;
             var FirstName =response.first_name;
             var LastName =response.last_name;
             var Gender =response.gender;
 
                 $.post("Application/Controllers/FacebookLogin.php",
                 {
+                    Id:Id,
                     Email:email,
                     FirstName:FirstName,
                     LastName:LastName,
                     Gender:Gender,
                 },
                 function(data,status){
-                   console.log(data);
-                    //window.location.href = data;
+
+                    window.location.href = data;
                 });
 
 

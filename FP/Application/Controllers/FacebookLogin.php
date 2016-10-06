@@ -6,7 +6,7 @@
  * Time: 12:55 PM
  */
 
-
+header('Content-Type: text/html; charset=utf-8');
 spl_autoload_register(function ($class) {
 
 
@@ -22,31 +22,36 @@ spl_autoload_register(function ($class) {
 
 });
 
-
+$Id = $_POST["Id"];
 $email = $_POST["Email"];
 $firstName = $_POST["FirstName"];
 $lastName = $_POST["LastName"];
 $gender = $_POST["Gender"];
 
+$loginIP = $_SERVER["REMOTE_ADDR"];
+
+
 
 $a = new UserModel();
-$jj = $a->getUserByEmail($email);
+$jj = $a->Login($email,$Id,$loginIP);
 
 
 if ($jj instanceof UserObject) {
-    echo "facebook user exists";
+    //echo "facebook user exists";
+    echo "Application/Views/registerSuccess.html";
     //header('Location: ../Views/registerSuccess.html');
 } else {
 
-    $isRegister = $a->Register($firstName, $lastName, "", "", $gender, $email, "", "");
+    $isRegister = $a->Register($firstName, $lastName, $Id, null, $gender, $email, null,null);
 
     if ($isRegister) {
-
-            header('Location: ../Views/registerSuccess.html');
+        //echo "Register success!" ;
+        echo "Application/Views/registerSuccess.html" ;
+          // header('Location: ../Views/registerSuccess.html');
 
 
     } else {
         echo "Register Error!" ;
     }
-    // echo "Error!". mysql_error();
+
 }
