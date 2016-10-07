@@ -20,7 +20,7 @@ spl_autoload_register(function ($class) {
     }
 
 });
-
+session_start();
 $email = $_POST["email"];
 $password = $_POST["password"];
 $loginIP = $_SERVER["REMOTE_ADDR"];
@@ -30,6 +30,10 @@ $jj = $a->Login($email,$password,$loginIP);
 
  if($jj instanceof UserObject){
       header('Location: ../Views/registerSuccess.html');
+     $_SESSION["id"] = $jj->ID;
+     $_SESSION["email"] =$jj->Email;
+     $_SESSION["password"] = $password;
+
     }else{
         echo "Error!". mysql_error();
     }

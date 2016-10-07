@@ -21,7 +21,7 @@ spl_autoload_register(function ($class) {
     }
 
 });
-
+session_start();
 $Id = $_POST["Id"];
 $email = $_POST["Email"];
 $firstName = $_POST["FirstName"];
@@ -38,16 +38,19 @@ $jj = $a->Login($email,$Id,$loginIP);
 
 if ($jj instanceof UserObject) {
     //echo "facebook user exists";
-    echo "Application/Views/registerSuccess.html";
+    echo "#";
     //header('Location: ../Views/registerSuccess.html');
+    $_SESSION["id"] = $jj->ID;
+    $_SESSION["email"] = $jj->Email;
+   $_SESSION["password"] = $Id;
 } else {
 
     $isRegister = $a->Register($firstName, $lastName, $Id, null, $gender, $email, null,null);
 
     if ($isRegister) {
         //echo "Register success!" ;
-        echo "Application/Views/registerSuccess.html" ;
-          // header('Location: ../Views/registerSuccess.html');
+       // echo "Application/Views/registerSuccess.html" ;
+          header('Location: ../Views/registerSuccess.html');
 
 
     } else {
