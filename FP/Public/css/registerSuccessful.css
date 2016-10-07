@@ -258,7 +258,7 @@ nav.main-menu a:link, nav.main-menu a:hover, nav.main-menu a:focus, nav.main-men
 }
 #templatemo_home .templatemo_home_inner_wapper {
     width: 100%;
-    max-width: 500px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 #templatemo_home h1 {
@@ -276,7 +276,8 @@ nav.main-menu a:link, nav.main-menu a:hover, nav.main-menu a:focus, nav.main-men
 }
 
 #templatemo_home p {
-    margin: 50px 0 50px 0;
+    margin-bottom:0px;
+	margin-top:20px;
     font: normal normal 100 18px/40px 'Fira Sans', sans-serif;
 }
 #templatemo_home p a {
@@ -498,5 +499,16 @@ footer {
         height: 60px;
         width: 60px;
     }
+}
+
+#email{
+	width:300px;
+	margin-top:10px;
+}
+
+.btn-primary{
+	width:200px;
+	margin-top:30px;
+	
 }
 
