@@ -19,11 +19,11 @@ class EmailTo
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-       self::$mail->SMTPDebug =1;
+       self::$mail->SMTPDebug =0;
 //Ask for HTML-friendly debug output
         self::$mail->Debugoutput = 'html';
 //Set the hostname of the mail server
-        self::$mail->Host = 'smtp.gmail.com';
+        self::$mail->Host = gethostbyname('tls://smtp.gmail.com');//'smtp.gmail.com';
 // use
 // self::$mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
@@ -63,7 +63,7 @@ class EmailTo
 
     public function send(){
         if (!self::$mail->send()) {
-            echo "Mailer Error: " . self::$mail->ErrorInfo;
+            //echo "Mailer Error: " . self::$mail->ErrorInfo;
             return false;
         } else {
             return true;
