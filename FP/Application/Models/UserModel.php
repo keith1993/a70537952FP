@@ -87,17 +87,17 @@ class UserModel extends BaseModel
     }
 
 
-    public function ResetPassword($UserID, $oldPassword, $newPassword)
+    public function ResetPassword($email,$VerificationCode, $newPassword)
     {
-        $sql = "update user set Password=md5(:newPassword) where id=:UserID and Password=md5(:oldPassword)";
+        $sql = "update user set Password=md5(:newPassword) where Email=:email and Verification_Code=:VerificationCode";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":newPassword", $newPassword);
-        $result->bindValue(":UserID", $UserID);
-        $result->bindValue(":oldPassword", $oldPassword);
+        $result->bindValue(":email", $email);
+        $result->bindValue(":VerificationCode", $VerificationCode);
         $isSuccess = $result->execute();
 
-        if ($isSuccess && $result->rowCount() >= 1) {
-            $isSuccess = self::updateChangePasswordDate($UserID);
+        if ($isSuccess ) {
+            $isSuccess = self::updateChangePasswordDate($email);
         } else {
 
             $isSuccess = false;
@@ -130,11 +130,11 @@ class UserModel extends BaseModel
         return $isSuccess;
     }
 
-    private function updateChangePasswordDate($UserID)
+    private function updateChangePasswordDate($email)
     {
-        $sql = "update user set LastChangePasswordDate=now() where id=:UserID";
+        $sql = "update user set LastChangePasswordDate=now() where Email=:email";
         $result = self::$conn->prepare($sql);
-        $result->bindValue(":UserID", $UserID);
+        $result->bindValue(":email", $email);
         $isSuccess = $result->execute();
         return $isSuccess;
     }
@@ -261,6 +261,21 @@ class UserModel extends BaseModel
             }
 
 
+    }
+
+    public function checkVerificationCode($email, $recoveryCode)
+    {
+        $sql = "select * from user where Email=:Email and Verification_Code=:recoveryCode";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":Email", $email);
+        $result->bindValue(":recoveryCode", $recoveryCode);
+        $isSuccess = $result->execute();
+        if ($result->rowCount() >= 1 and $isSuccess) {
+            return true;
+
+        } else {
+            return false;
+        }
     }
 
     private function generateVerificationCode()

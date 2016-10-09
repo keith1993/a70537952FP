@@ -15,31 +15,56 @@ spl_autoload_register(function ($class) {
         require '../Models/' . $class . '.php';
     } else if (strpos($class, "Object")) {
         require '../Objects/' . $class . '.php';
-    }else{
-        require "../../Helper/".$class.".php";
+    } else {
+        require "../../Helper/" . $class . ".php";
     }
 
 });
+if (isset($_POST["recoveryCode"]) && isset($_POST["Email"])) {
+    $recoveryCode = $_POST["recoveryCode"];
+    $Email = $_POST["Email"];
+
+    checkRecoveryCode($Email, $recoveryCode);
+
+} else if (isset($_POST["Email"])) {
+    $Email = $_POST["Email"];
+    verifiedEmail($Email);
+}
 
 
-$a  = new UserModel();
+function verifiedEmail($Email)
+{
+    $a = new UserModel();
+    $user = $a->getUserByEmail($Email);
 
-$Email = $_POST["Email"];
+    if ($user instanceof UserObject) {
 
-$user = $a->getUserByEmail($Email);
+        $VerificationCode = $a->setVerificationCode($user->Email);
+        $Email = new EmailTo("FP", "Password Reset Verification", $user->Email, $user->FirstName, "$VerificationCode");
+        if ($Email->send()) {
 
-if($user instanceof UserObject) {
+            echo "EmailExist";
+        }
 
-    $VerificationCode = $a->setVerificationCode($user->Email);
-    $Email = new EmailTo("FP","Password Reset Verification",$user->Email,$user->FirstName,"$VerificationCode");
-    if($Email->send()){
+    } else {
 
-        echo "EmailExist";
+        echo "EmailNoExist";
+    }
+
+}
+
+function checkRecoveryCode($Email, $RecoveryCode)
+{
+
+    $a = new UserModel();
+    $isTrue = $a->checkVerificationCode($Email, $RecoveryCode);
+    if ($isTrue) {
+        echo "true";
+
+    } else {
+
+        echo "false";
     }
 
 
-
-}else{
-
-    echo "EmailNoExist";
 }
