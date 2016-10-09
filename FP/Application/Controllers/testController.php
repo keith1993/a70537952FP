@@ -18,9 +18,8 @@ spl_autoload_register(function ($class) {
 });
 
 
-$a = new UserModel();
-$code = $a->setVerificationCode("a70537952@gmail.com");
-echo $code ;
+$Email = new EmailTo("FP","aa","a70537952@gmail.com","a","a");
+$Email->send();
 
 //$user = $a->Register("aaa","bbb","123","20-10-2016","Male","1234@gmail.com","Singapore","22.22.22.22","Student");
 
