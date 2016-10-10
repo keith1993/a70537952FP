@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="Public/css/bootstrap1.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="Public/css/mdb.min.css" rel="stylesheet">
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="Public/js/jquery-2.2.3.min.js"></script>
+
+    <!-- Tooltips -->
+    <script type="text/javascript" src="Public/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="Public/js/mdb.min.js"></script>
+
+
+
+
+    <style>
+
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            min-height: 100%;
+            font-family: 'Lato', sans-serif;
+            font-size: 22px;
+            font-weight: 300;
+
+        }
+
+        .content {
+            background: url("http://mdbootstrap.com/images/regular/nature/img%20(68).jpg") no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 100% 100%;
+
+            min-height: 400px;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 50px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 0px;
+        }
+
+        .sidenav a {
+
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s
+        }
+
+        #profile {
+            transition: 0.5s
+
+        }
+
+        .sidenav a:hover, .offcanvas a:focus {
+            color: #f1f1f1;
+        }
+
+        .main {
+            transition: margin-left .5s;
+            padding-bottom: 5px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 0px;
+            }
+
+            .sidenav a {
+                font-size: 17px;
+            }
+
+        }
+
+        .side-nav.fixed {
+
+            transform: translateX(0%);
+        }
+
+        .double-nav .breadcrumb-dn {
+            display: block;
+        }
+
+    </style>
+
+
+    <script>
+        var isNavOpen = false;
+
+        function setNav() {
+            if (isNavOpen) {
+                document.getElementById("profile").style.marginRight = "0px";
+                document.getElementById("navControl").innerHTML = "&#9776";
+                document.getElementById("userLogo").style.display = "none"
+                document.getElementById("mySidenav").style.width = "50px";
+                document.getElementsByClassName("main")[0].style.marginLeft = "0px";
+                document.getElementsByClassName("main")[1].style.marginLeft = "50px";
+                isNavOpen = false;
+            } else {
+                document.getElementById("profile").style.marginRight = "250px";
+                document.getElementById("navControl").innerText = "Close";
+                document.getElementById("userLogo").style.display = "block"
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementsByClassName("main")[0].style.marginLeft = "250px";
+                document.getElementsByClassName("main")[1].style.marginLeft = "250px";
+                isNavOpen = true;
+            }
+
+        }
+
+
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1054831087967674',
+                cookie: true,  // enable cookies to allow the server to access
+                               // the session
+                xfbml: true,  // parse social plugins on this page
+                version: 'v2.7' // use graph api version 2.5
+            });
+
+            // Now that we've initialized the JavaScript SDK, we call
+            // FB.getLoginStatus().  This function gets the state of the
+            // person visiting this page and can return one of three states to
+            // the callback you provide.  They can be:
+            //
+            // 1. Logged into your app ('connected')
+            // 2. Logged into Facebook, but not your app ('not_authorized')
+            // 3. Not logged into Facebook and can't tell if they are logged into
+            //    your app or not.
+            //
+            // These three cases are handled in the callback function.
+
+
+
+        };
+
+        // Load the SDK asynchronously
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+    </script>
+
+</head>
+
+<body class="fixed-sn dark-skin">
+
+<!--Double Navigation-->
+<header>
+
+    <!-- Sidebar navigation -->
+    <ul id="mySidenav" class="side-nav fixed sidenav" style="z-index: 1000;">
+
+        <span id="navControl" class="collapsible-header waves-effect"
+              style="font-size:30px;cursor:pointer;text-align: center;display: inline-block;width:100%;margin-top: 10px;"
+              onclick="setNav()">&#9776; </span>
+        <!-- Logo -->
+        <li id="userLogo" style="display: none;">
+            <div class="logo-wrapper waves-light sn-avatar-wrapper">
+                <a href="#">
+                    <img src="http://mdbootstrap.com/images/avatars/img%20(4)" class="img-circle">
+                </a>
+            </div>
+        </li>
+        <!--/. Logo -->
+
+        <!--Social
+        <li>
+            <ul class="social">
+                <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                <li><a class="icons-sm git-ic"><i class="fa fa-github"> </i></a></li>
+                <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
+                <li><a class="icons-sm yt-ic"><i class="fa fa-youtube"> </i></a></li>
+                <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+            </ul>
+        </li>-->
+        <!--/Social-->
+
+        <!-- Side navigation links -->
+        <li>
+            <ul class="collapsible collapsible-accordion">
+
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-code"></i>Skills</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-bank"></i>Foundations</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-money"></i>Business</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>
+            </ul>
+        </li>
+        <!--/. Side navigation links -->
+
+
+    </ul>
+
+    <!--/. Sidebar navigation -->
+
+    <!--Navbar-->
+    <nav class="navbar navbar-fixed-top scrolling-navbar double-nav main col-lg-12 col-md-12 col-sm-12"
+         style="padding-left: 100px">
+
+        <!-- SideNav slide-out button -->
+
+
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn">
+            <p>ABCDEFG</p>
+        </div>
+
+
+        <ul id="profile" class="nav navbar-nav pull-right  ">
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile</a>
+                <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1"
+                     data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+                    <a onclick="FB.logout();" class="dropdown-item" href="Application\Controllers\Logout.php">Logout</a>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+    <!--/.Navbar-->
+
+</header>
+
+<div class="content main" style="height:100vh">
+
+
+</div>
+
+
+<!--/Double Navigation-->
+
+
+</body>
+
+</html>

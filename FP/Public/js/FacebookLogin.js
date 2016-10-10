@@ -12,7 +12,7 @@ function statusChangeCallback(response) {
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
         // Logged into your app and Facebook.
-        testAPI();
+      testAPI();
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
         document.getElementById('status').innerHTML = 'Please log ' +
@@ -92,9 +92,17 @@ function testAPI() {
                 Gender: Gender,
             },
             function (data, status) {
-                if (data == "#") {
-                    location.reload();
+
+                if (data == "LoginSuccess") {
+
+                    window.location.reload(true);
+                } else if (data == "RegisterSuccess") {
+                    window.location.href = "Application/Views/registerSuccess.html";
+
                 }
+
+
+
                 //window.location.href = data;
             });
 

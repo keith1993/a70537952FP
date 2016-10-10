@@ -29,11 +29,11 @@ $a = new UserModel();
 $jj = $a->Login($email,$password,$loginIP);
 
  if($jj instanceof UserObject){
-      header('Location: ../Views/registerSuccess.html');
+
      $_SESSION["id"] = $jj->ID;
      $_SESSION["email"] =$jj->Email;
      $_SESSION["password"] = $password;
-
+     header('Location: ../../index.php');
     }else{
         echo "Error!". mysql_error();
     }

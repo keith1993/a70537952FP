@@ -38,11 +38,12 @@ $jj = $a->Login($email,$Id,$loginIP);
 
 if ($jj instanceof UserObject) {
     //echo "facebook user exists";
-    echo "#";
+
     //header('Location: ../Views/registerSuccess.html');
     $_SESSION["id"] = $jj->ID;
     $_SESSION["email"] = $jj->Email;
    $_SESSION["password"] = $Id;
+    echo "LoginSuccess";
 } else {
 
     $isRegister = $a->Register($firstName, $lastName, $Id, null, $gender, $email, null,null);
@@ -50,7 +51,8 @@ if ($jj instanceof UserObject) {
     if ($isRegister) {
         //echo "Register success!" ;
        // echo "Application/Views/registerSuccess.html" ;
-          header('Location: ../Views/registerSuccess.html');
+        echo "RegisterSuccess";
+
 
 
     } else {

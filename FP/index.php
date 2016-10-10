@@ -27,7 +27,7 @@ if(isset($_SESSION["id"])&&isset($_SESSION["email"])&&isset($_SESSION["password"
 
     if($jj instanceof UserObject){
 
-        header('Location: Application/Views/registerSuccess.html');
+        require 'Application/Views/overviewDemo.html';
 
 
     }else{
