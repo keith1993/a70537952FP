@@ -10,13 +10,14 @@
 
 class UserExpenseModel extends BaseModel
 {
-    public function addExpense($UserID,$Expense_Amount,$Expense_Category,$Expense_Description)
+    public function addExpense($UserID,$Expense_Name,$Expense_Amount,$Expense_Category,$Expense_Description)
     {
-        $sql = "insert into user_expense (User_ID,Expense_Amount,Expense_Category,
+        $sql = "insert into user_expense (User_ID,Expense_Name,Expense_Amount,Expense_Category,
             Expense_Description,Expense_EnterDate)
-            values(:User_ID,:Expense_Amount,:Expense_Category,:Expense_Description,now());";
+            values(:User_ID,:Expense_Name,:Expense_Amount,:Expense_Category,:Expense_Description,now());";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":User_ID", $UserID);
+        $result->bindValue(":Expense_Name", $Expense_Name);
         $result->bindValue(":Expense_Amount", $Expense_Amount);
         $result->bindValue(":Expense_Category", $Expense_Category);
         $result->bindValue(":Expense_Description",$Expense_Description);
@@ -48,6 +49,22 @@ class UserExpenseModel extends BaseModel
         $isSuccess = $result->execute();
         return $isSuccess;
     }
+
+    public function updateIncomeByIncomeID($ExpenseID,$Expense_Name,$Expense_Amount,$Expense_Category,$Expense_Description)
+    {
+        $sql = "update user_expense set Expense_Name=:Expense_Name,Expense_Amount=:Expense_Amount,Expense_Category=:Expense_Category,
+                Expense_Description=:Expense_Description where Expense_ID=:ExpenseID";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":ExpenseID", $ExpenseID);
+        $result->bindValue(":Expense_Name", $Expense_Name);
+        $result->bindValue(":Expense_Amount", $Expense_Amount);
+        $result->bindValue(":Expense_Category", $Expense_Category);
+        $result->bindValue(":Expense_Description",$Expense_Description);
+
+        $isSuccess = $result->execute();
+        return $isSuccess;
+    }
+
 
 
 }

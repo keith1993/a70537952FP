@@ -8,13 +8,14 @@
  */
 class UserIncomeModel extends  BaseModel
 {
-    public function addIncome($UserID,$Income_Amount,$Income_Description)
+    public function addIncome($UserID,$Income_Name,$Income_Amount,$Income_Description)
     {
-        $sql = "insert into user_income (User_ID,Income_Amount,
+        $sql = "insert into user_income (User_ID,Income_Name,Income_Amount,
             Income_Description,Income_EnterDate)
-            values(:User_ID,:Income_Amount,:Income_Description,now());";
+            values(:User_ID,:Income_Name,:Income_Amount,:Income_Description,now());";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":User_ID", $UserID);
+        $result->bindValue(":Income_Name", $Income_Name);
         $result->bindValue(":Income_Amount", $Income_Amount);
         $result->bindValue(":Income_Description",$Income_Description);
 
@@ -46,12 +47,13 @@ class UserIncomeModel extends  BaseModel
         return $isSuccess;
     }
 
-    public function updateIncomeByIncomeID($IncomeID,$Income_Amount,$Income_Description)
+    public function updateIncomeByIncomeID($IncomeID,$Income_Name,$Income_Amount,$Income_Description)
     {
-        $sql = "update user_income set Income_Amount=:Income_Amount,
+        $sql = "update user_income set Income_Name=:Income_Name,Income_Amount=:Income_Amount,
                 Income_Description=:Income_Description where Income_ID=:IncomeID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":IncomeID", $IncomeID);
+        $result->bindValue(":Income_Name", $Income_Name);
         $result->bindValue(":Income_Amount", $Income_Amount);
         $result->bindValue(":Income_Description",$Income_Description);
 
