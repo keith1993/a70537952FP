@@ -1,0 +1,108 @@
+html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+
+}
+
+.content {
+    background: url("http://mdbootstrap.com/images/regular/nature/img%20(68).jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+
+    min-height: 400px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.sidenav {
+    height: 100%;
+    width: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+}
+
+.sidenav a {
+
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+#profile {
+    transition: 0.5s
+
+}
+
+.sidenav a:hover, .offcanvas a:focus {
+    color: #f1f1f1;
+}
+
+.main {
+    transition: margin-left .5s;
+    padding-bottom: 5px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 0px;
+    }
+
+    .sidenav a {
+        font-size: 17px;
+    }
+
+}
+
+.side-nav.fixed {
+
+    transform: translateX(0%);
+}
+
+.double-nav .breadcrumb-dn {
+    display: block;
+}
+
+.wrapper{
+    z-index: 10000;
+    position: absolute;
+    display:none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 153, 36, 0.5);
+
+    pointer-events: none;
+
+}
+
+#wrapperClose{
+position:relative;
+    margin-right: 20px;
+    margin-top: 0px;
+    float: right;
+    font-size: 50px;
+    font-family: "Microsoft YaHei UI Light";
+    color: #000000;
+
+z-index: 3;
+}
+
