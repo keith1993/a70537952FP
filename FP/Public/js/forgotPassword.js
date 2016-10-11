@@ -15,7 +15,7 @@ function sendClick(){
 
         var email = $("#email").val();
 
-        $.post("../../Application/Controllers/ForgotPassword.php",
+        $.post("../../Application/Controllers/AJAXForgotPassword.php",
             {
 
                 Email: email
@@ -42,7 +42,7 @@ function confirm(){
 
         var recoveryCode = $("#recoveryCode").val();
         var email = $("#email").val();
-        $.post("../../Application/Controllers/ForgotPassword.php",
+        $.post("../../Application/Controllers/AJAXForgotPassword.php",
             {
                 Email: email,
                 recoveryCode: recoveryCode

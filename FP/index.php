@@ -22,6 +22,7 @@ spl_autoload_register(function ($class) {
 });
 session_start();
 if(isset($_SESSION["id"])&&isset($_SESSION["email"])&&isset($_SESSION["password"])){
+
     $a = new UserModel();
     $jj = $a->Login($_SESSION["email"],$_SESSION["password"],$_SERVER["REMOTE_ADDR"]);
 

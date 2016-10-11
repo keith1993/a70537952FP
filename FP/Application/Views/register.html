@@ -405,7 +405,7 @@
                         $("#email").keyup(function () {
                             var email = $("#email").val();
 
-                            $.post("../../Application/Controllers/CheckEmail.php",
+                            $.post("../../Application/Controllers/AJAXCheckEmail.php",
                                     {
                                         Email: email
                                     },

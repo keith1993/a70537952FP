@@ -55,9 +55,9 @@ window.fbAsyncInit = function () {
     //
     // These three cases are handled in the callback function.
 
-    FB.getLoginStatus(function (response) {
+   /* FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
-    });
+    });*/
 
 };
 
@@ -83,7 +83,7 @@ function testAPI() {
         var LastName = response.last_name;
         var Gender = response.gender;
 
-        $.post("Application/Controllers/FacebookLogin.php",
+        $.post("Application/Controllers/AJAXFacebookLogin.php",
             {
                 Id: Id,
                 Email: email,
