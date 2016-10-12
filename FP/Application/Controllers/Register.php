@@ -26,7 +26,7 @@ $firstName = $_POST["firstName"];
 $lastName = $_POST["lastName"];
 $password = $_POST["password"];
 $options = $_POST["options"];
-$DOB = $_POST["DOB"];
+$DOB = $_POST["DOBDay"]."/".$_POST["DOBMonth"]."/".$_POST["DOBYear"];
 $country = $_POST["country"];
 $occupation = $_POST["occupation"];
 
