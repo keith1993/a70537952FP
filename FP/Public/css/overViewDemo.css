@@ -74,11 +74,14 @@ body {
 
 .main {
     transition: margin-left .5s;
-    padding-bottom: 0px;
+
     transition: 0.5s;
 
 
+
 }
+
+
 
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -105,7 +108,7 @@ body {
     width:100%;
     position:absolute;
     background:rgba(255,255,255,0.5);
-    z-index:10;
+    z-index:20;
     top:0;
     left:0;
     height:100%;
@@ -124,4 +127,22 @@ body {
     vertical-align: middle;
     margin-top: -250px;
 
+}
+
+.wrapper{
+    margin-left: 50px;
+    margin-top: 63px;
+}
+
+.popoutInsert{
+
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.btnInsert{
+    color: #FFFFFF;
+    font-size: 30px;
+    display: inline-block;
+    width: 300px;
+border-color: #FFFFFF;
 }
