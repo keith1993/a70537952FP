@@ -72,7 +72,7 @@ body {
     color: #f1f1f1;
 }
 
-.main {
+.transition {
     transition: margin-left .5s;
 
     transition: 0.5s;
@@ -132,6 +132,7 @@ body {
 .wrapper{
     margin-left: 50px;
     margin-top: 63px;
+
 }
 
 .popoutInsert{
@@ -145,4 +146,47 @@ body {
     display: inline-block;
     width: 300px;
 border-color: #FFFFFF;
+}
+
+.IncomeContent,.expensesContent{
+    display: block;
+    position: relative;
+    min-height: 350px;
+    text-align: center;
+    width: inherit;
+padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+[type=checkbox]:checked, [type=checkbox]:not(:checked) {
+    position: absolute;
+    left: 40px;
+    visibility: visible;
+}
+
+.btn{
+
+   margin: 0px;
+    margin-top: 3px;
+}
+
+.title{
+
+    text-align: center;
+
+
+}
+
+hr{
+
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.incomeForm,.expenseForm{
+
+    text-align: center;
 }

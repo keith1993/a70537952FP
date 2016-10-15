@@ -11,8 +11,9 @@ function setNav() {
         document.getElementById("userLogo").style.display = "none"
 
         document.getElementById("mySidenav").style.width = "50px";
-        document.getElementsByClassName("main")[0].style.marginLeft = "0px";
-        document.getElementsByClassName("main")[1].style.marginLeft = "0px";
+        $(".main").each(function() {
+            this.style.marginLeft = "0px";
+        });
         document.getElementById("sideNavItem").style.display = "none"
         isNavOpen = false;
     } else {
@@ -20,8 +21,12 @@ function setNav() {
         document.getElementById("navControl").innerText = "Close";
         document.getElementById("userLogo").style.display = "block"
         document.getElementById("mySidenav").style.width = "250px";
+
+
+        $(".main").each(function() {
+            this.style.marginLeft = "200px";
+        });
         document.getElementsByClassName("main")[0].style.marginLeft = "250px";
-        document.getElementsByClassName("main")[1].style.marginLeft = "200px";
         document.getElementById("sideNavItem").style.display = "block"
         isNavOpen = true;
     }
@@ -54,7 +59,4 @@ function hideInsert(){
     $( "#InsertExpense" ).fadeOut(500);
     $( "#InsertIncome" ).fadeOut(500);
 }
-
-
-
 

@@ -11,6 +11,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="Helper/footable-standalone.latest/css/footable.standalone.css">
     <!-- Bootstrap core CSS -->
     <link href="Public/css/bootstrap1.min.css" rel="stylesheet">
 
@@ -32,7 +33,30 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="Public/js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="Public/js/jquery.min.js"></script>
+
+
+    <script src="Helper/footable-standalone.latest/js/footable.min.js"></script>
     <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
+    <script>
+
+        jQuery(function ($) {
+
+
+            $('.table').footable({
+                "columns": $.get('columns.json'),
+                "rows": $.get('rows.json')
+            });
+        });
+
+        jQuery(function ($) {
+            $('.table').footable();
+        });
+
+
+    </script>
+
 
 </head>
 
@@ -122,19 +146,151 @@
 
 </header>
 <div class="wrapper">
-    <div class="content main">
-        <input type="button" class="form-control button-collapse btnInsert"onclick="showInsertIncome()" value="Insert Income">
-        <input type="button" class="form-control button-collapse btnInsert"onclick="showInsertExpense()" value="Insert Expense">
+    <div class="content transition main">
+        <input type="button" class="form-control button-collapse btnInsert" onclick="showInsertIncome()"
+               value="Insert Income">
+        <input type="button" class="form-control button-collapse btnInsert" onclick="showInsertExpense()"
+               value="Insert Expense">
 
     </div>
+
+    <div class="IncomeContent transition main">
+        <p class="title">Income Detail</p>
+        <?php
+
+       echo "<table class=\"table\" data-paging=\"true\"data-sorting=\"true\"data-filtering=\"true\">";
+        echo "
+        <thead>";
+
+        echo "
+        <th data-type=\"text\">Incone Name</th>
+        ";
+        echo "
+        <th data-type=\"number\">Incone Amount</th>
+        ";
+        echo "
+        <th data-type=\"text\">Incone Description</th>
+        ";
+        echo "
+        <th data-type=\"date\">Incone Enter Date</th>
+        ";
+
+
+        echo "
+        </thead>
+        ";
+
+        echo "
+        <tbody>";
+        foreach ($incomeList as $key => $value) {
+        echo "
+        <tr>";
+            echo "
+            <td>".$value->Income_Name."</td>
+            ";
+            echo "
+            <td>".$value->Income_Amount."</td>
+            ";
+            echo "
+            <td>".$value->Income_Description."</td>
+            ";
+            echo "
+            <td>".$value->Income_EnterDate."</td>
+            ";
+            echo "
+        </tr>
+        ";
+        }
+        echo "
+        </tbody>
+        ";
+        echo "</table>";
+
+        ?>
+        <hr/>
+    </div>
+
+
+
+    <!--****************************************-->
+
+
+
+    <div class="expensesContent transition main">
+        <p class="title">Expense Detail</p>
+        <?php
+
+       echo "<table class=\"table\" data-paging=\"true\"data-sorting=\"true\"data-filtering=\"true\">";
+        echo "
+        <thead>";
+
+        echo "
+        <th data-type=\"text\">Expense Name</th>
+        ";
+        echo "
+        <th data-type=\"number\">Expense Amount</th>
+        ";
+
+        echo "
+        <th data-type=\"text\">Expense Category</th>
+        ";
+
+        echo "
+        <th data-type=\"text\">Expense Description</th>
+        ";
+        echo "
+        <th data-type=\"date\">Expense Enter Date</th>
+        ";
+
+
+        echo "
+        </thead>
+        ";
+
+        echo "
+        <tbody>";
+        foreach ($expenseList as $key => $value) {
+        echo "
+        <tr>";
+            echo "
+            <td>".$value->Expense_Name."</td>
+            ";
+            echo "
+            <td>".$value->Expense_Amount."</td>
+            ";
+
+            echo "
+            <td>".$value->Expense_Category."</td>
+            ";
+            echo "
+            <td>".$value->Expense_Description."</td>
+            ";
+            echo "
+            <td>".$value->Expense_EnterDate."</td>
+            ";
+            echo "
+        </tr>
+        ";
+        }
+        echo "
+        </tbody>
+        ";
+        echo "</table>";
+
+        ?>
+        <hr>
+
+    </div>
+
+
 </div>
 
 <div id="popoutInsert" style="display: none;z-index: 50">
     <div class="mask"></div>
-    <div id="InsertIncome" class="popout"style="display: none;">
+    <div id="InsertIncome" class="popout" style="display: none;">
 
         <p style="text-align: center">Insert Income</p>
-        <form action="" method="post">
+        <form class="incomeForm"action="" method="post">
             Income Name:<input style="width: 200px;" type="text" name="IncomeName" value=""></br>
             Income Amount:<input style="width: 200px;" type="text" name="IncomeAmount" value=""></br>
             Income Description:<input style="width: 200px;" type="text" name="IncomeDescription" value=""></br>
@@ -144,14 +300,15 @@
                    type="button" onclick="" value="Submit">
         </form>
     </div>
-    <div id="InsertExpense" class="popout"style="display: none;">
+    <div id="InsertExpense" class="popout" style="display: none;">
 
         <p style="text-align: center">Insert Expense</p>
-        <form action="" method="post">
+        <form class="expenseForm" action="" method="post">
             Expense Name:<input style="width: 200px;" type="text" name="ExpenseName" value=""></br>
             Expense Amount:<input style="width: 200px;" type="text" name="ExpenseAmount" value=""></br>
             Expense Description:<input style="width: 200px;" type="text" name="ExpenseDescription" value=""></br>
-            Expense Category:<select name="ExpenseCategory" class="form-control" style="width: 200px;display: inline-block" >
+            Expense Category:<select name="ExpenseCategory" class="form-control"
+                                     style="width: 200px;display: inline-block">
             <option value="Transport">Transport</option>
             <option value="Food & beverage">Food & beverage</option>
             <option value="Entertainment">Entertainment</option>
@@ -159,7 +316,6 @@
             <option value="Fixed expenses">Fixed expenses</option>
             <option value="Others">Others</option>
         </select></br>
-
 
 
             <input class="form-control button-collapse" style="width: 200px; display: inline-block;font-size: 25px;"
