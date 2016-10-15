@@ -12,126 +12,165 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="../../Public/css/bootstrap1.min.css" rel="stylesheet">
+    <link href="Public/css/bootstrap1.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="../../Public/css/mdb.min.css" rel="stylesheet">
-    <link href="../../Public/css/overViewDemo.css" rel="stylesheet">
+    <link href="Public/css/mdb.min.css" rel="stylesheet">
+    <link href="Public/css/overViewDemo.css" rel="stylesheet">
 
 
     <!-- SCRIPTS -->
 
     <!-- JQuery -->
-    <script type="text/javascript" src="../../Public/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="Public/js/jquery-2.2.3.min.js"></script>
 
     <!-- Tooltips -->
-    <script type="text/javascript" src="../../Public/js/tether.min.js"></script>
+    <script type="text/javascript" src="Public/js/tether.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../../Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
 
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../../Public/js/mdb.min.js"></script>
-    <script type="text/javascript" src="../../Public/js/overviewDemo.js"></script>
+    <script type="text/javascript" src="Public/js/mdb.min.js"></script>
+    <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
 
 </head>
 
-<body class="fixed-sn dark-skin">
+<body class="fixed-sn dark-skin hideXScroll">
 
 
-<div class="">
-    
+<!--Double Navigation-->
+<header>
 
-
-    <!--Double Navigation-->
-    <header>
-
-        <!-- Sidebar navigation -->
-        <ul id="mySidenav" class="side-nav fixed sidenav" style="z-index: 2;">
+    <!-- Sidebar navigation -->
+    <ul id="mySidenav" class="side-nav fixed sidenav" style="z-index: 2;">
 
         <span id="navControl" class="collapsible-header waves-effect"
               style="font-size:30px;cursor:pointer;text-align: center;display: inline-block;width:100%;margin-top: 10px;"
               onclick="setNav()">&#9776; </span>
-            <!-- Logo -->
-            <li id="userLogo" style="display: none;">
-                <div class="logo-wrapper waves-light sn-avatar-wrapper">
-                    <a href="#">
-                        <img src="http://mdbootstrap.com/images/avatars/img%20(4)" class="img-circle">
-                    </a>
+        <!-- Logo -->
+        <li id="userLogo" style="display: none;">
+            <div class="logo-wrapper waves-light sn-avatar-wrapper">
+                <a href="#">
+                    <img src="http://mdbootstrap.com/images/avatars/img%20(4)" class="img-circle">
+                </a>
+            </div>
+        </li>
+        <!--/. Logo -->
+
+        <!--Social
+        <li>
+            <ul class="social">
+                <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                <li><a class="icons-sm git-ic"><i class="fa fa-github"> </i></a></li>
+                <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
+                <li><a class="icons-sm yt-ic"><i class="fa fa-youtube"> </i></a></li>
+                <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+            </ul>
+        </li>-->
+        <!--/Social-->
+
+        <!-- Side navigation links -->
+        <li id="sideNavItem" style="display: none">
+            <ul class="collapsible collapsible-accordion">
+
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-code"></i>Skills</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-bank"></i>Foundations</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-money"></i>Business</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>
+            </ul>
+        </li>
+        <!--/. Side navigation links -->
+
+
+    </ul>
+
+    <!--/. Sidebar navigation -->
+
+    <!--Navbar-->
+    <nav class="navbar navbar-fixed-top scrolling-navbar double-nav main col-lg-12 col-md-12 col-sm-12"
+         style="padding-left: 100px;z-index: 1;">
+
+        <!-- SideNav slide-out button -->
+
+
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn">
+            <p>ABCDEFG</p>
+        </div>
+
+
+        <ul id="profile" class="nav navbar-nav pull-right  ">
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile</a>
+                <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1"
+                     data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+                    <a onclick="FB.logout();" class="dropdown-item"
+                       href="Application\Controllers\Logout.php">Logout</a>
                 </div>
             </li>
-            <!--/. Logo -->
-
-            <!--Social
-            <li>
-                <ul class="social">
-                    <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                    <li><a class="icons-sm git-ic"><i class="fa fa-github"> </i></a></li>
-                    <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
-                    <li><a class="icons-sm yt-ic"><i class="fa fa-youtube"> </i></a></li>
-                    <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                </ul>
-            </li>-->
-            <!--/Social-->
-
-            <!-- Side navigation links -->
-            <li>
-                <ul class="collapsible collapsible-accordion">
-
-                    <li><a class="collapsible-header waves-effect"><i class="fa fa-code"></i>Skills</i></a></li>
-                    <li><a class="collapsible-header waves-effect"><i class="fa fa-bank"></i>Foundations</i></a></li>
-                    <li><a class="collapsible-header waves-effect"><i class="fa fa-money"></i>Business</i></a></li>
-                    <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
-                    <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
-                    <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>
-                </ul>
-            </li>
-            <!--/. Side navigation links -->
-
-
         </ul>
 
-        <!--/. Sidebar navigation -->
+    </nav>
+    <!--/.Navbar-->
 
-        <!--Navbar-->
-        <nav class="navbar navbar-fixed-top scrolling-navbar double-nav main col-lg-12 col-md-12 col-sm-12"
-             style="padding-left: 100px;z-index: 1;">
-
-            <!-- SideNav slide-out button -->
-
-
-            <!-- Breadcrumb-->
-            <div class="breadcrumb-dn">
-                <p>ABCDEFG</p>
-            </div>
-
-
-            <ul id="profile" class="nav navbar-nav pull-right  ">
-
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile</a>
-                    <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1"
-                         data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-
-                        <a onclick="FB.logout();" class="dropdown-item"
-                           href="Application\Controllers\Logout.php">Logout</a>
-                    </div>
-                </li>
-            </ul>
-
-        </nav>
-        <!--/.Navbar-->
-
-    </header>
-    <div class="content main" style="height:100vh">
-    
+</header>
+<div class="wrapper">
+    <div class="content main">
+        <input type="button" class="form-control button-collapse btnInsert"onclick="showInsertIncome()" value="Insert Income">
+        <input type="button" class="form-control button-collapse btnInsert"onclick="showInsertExpense()" value="Insert Expense">
 
     </div>
-
 </div>
 
+<div id="popoutInsert" style="display: none;z-index: 50">
+    <div class="mask"></div>
+    <div id="InsertIncome" class="popout"style="display: none;">
+
+        <p style="text-align: center">Insert Income</p>
+        <form action="" method="post">
+            Income Name:<input style="width: 200px;" type="text" name="IncomeName" value=""></br>
+            Income Amount:<input style="width: 200px;" type="text" name="IncomeAmount" value=""></br>
+            Income Description:<input style="width: 200px;" type="text" name="IncomeDescription" value=""></br>
+            <input class="form-control button-collapse" style="width: 200px; display: inline-block;font-size: 25px;"
+                   type="button" onclick="hideInsert()" value="Cancel">
+            <input class="form-control am-button" style="width: 200px;display: inline-block;font-size: 25px;"
+                   type="button" onclick="" value="Submit">
+        </form>
+    </div>
+    <div id="InsertExpense" class="popout"style="display: none;">
+
+        <p style="text-align: center">Insert Expense</p>
+        <form action="" method="post">
+            Expense Name:<input style="width: 200px;" type="text" name="ExpenseName" value=""></br>
+            Expense Amount:<input style="width: 200px;" type="text" name="ExpenseAmount" value=""></br>
+            Expense Description:<input style="width: 200px;" type="text" name="ExpenseDescription" value=""></br>
+            Expense Category:<select name="ExpenseCategory" class="form-control" style="width: 200px;display: inline-block" >
+            <option value="Transport">Transport</option>
+            <option value="Food & beverage">Food & beverage</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Debts">Debts</option>
+            <option value="Fixed expenses">Fixed expenses</option>
+            <option value="Others">Others</option>
+        </select></br>
+
+
+
+            <input class="form-control button-collapse" style="width: 200px; display: inline-block;font-size: 25px;"
+                   type="button" onclick="hideInsert()" value="Cancel">
+            <input class="form-control am-button" style="width: 200px;display: inline-block;font-size: 25px;"
+                   type="button" onclick="" value="Submit">
+        </form>
+    </div>
+</div>
+
+</div>
 </body>
 
 </html>
