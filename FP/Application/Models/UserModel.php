@@ -64,10 +64,10 @@ class UserModel extends BaseModel
                              $Country, $Occupation)
     {
         $sql = "insert into user (Email,FirstName,LastName,Password,DOB,Gender,Country,Occupation,
-             RegisterDate,LastLoginDate,EmailVerified,LastChangePasswordDate,LastUpdateDate,
+             RegisterDate,LastLoginDate,EmailVerified,LastChangePasswordDate,LastUpdateDate,User_Image,
              Token,Token_expTime)
             values(:Email,:FirstName,:LastName,md5(:Password),:DOB,:Gender,:Country,:Occupation,
-            now(),now(),0,now(),now(),
+            now(),now(),0,now(),now(),:User_Image,
             :Token,:Token_expTime);";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":Email", $Email);
@@ -78,6 +78,7 @@ class UserModel extends BaseModel
         $result->bindValue(":Gender", $Gender);
         $result->bindValue(":Country", $Country);
         $result->bindValue(":Occupation", $Occupation);
+        $result->bindValue(":User_Image", "Default/".$Gender.".jpg");
         $result->bindValue(":Token", self::generateToken($Email, $Password));
         $result->bindValue(":Token_expTime", self::generateTokenExpTime());
 

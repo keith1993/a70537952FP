@@ -29,7 +29,7 @@ $a = new UserIncomeModel();
 $jj = $a->addIncome($_SESSION["id"],$incomeName,$incomeAmount,$incomeDescription);
 
  if($jj){
- 	echo "Income Inserted";
+     header('Location: ../../index.php');
     }else{
         echo "Error!". mysql_error();
     }

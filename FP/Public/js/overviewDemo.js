@@ -11,7 +11,7 @@ function setNav() {
         document.getElementById("userLogo").style.display = "none"
 
         document.getElementById("mySidenav").style.width = "50px";
-        $(".main").each(function() {
+        $(".main").each(function () {
             this.style.marginLeft = "0px";
         });
         document.getElementById("sideNavItem").style.display = "none"
@@ -23,7 +23,7 @@ function setNav() {
         document.getElementById("mySidenav").style.width = "250px";
 
 
-        $(".main").each(function() {
+        $(".main").each(function () {
             this.style.marginLeft = "200px";
         });
         document.getElementsByClassName("main")[0].style.marginLeft = "250px";
@@ -33,30 +33,33 @@ function setNav() {
 
 }
 
-function showInsertIncome(){
-
-   document.getElementById("popoutInsert").style.display = "block"
-
-
-    $( "#InsertIncome" ).fadeIn(500);
-
-}
-
-function showInsertExpense(){
+function showInsertIncome() {
 
     document.getElementById("popoutInsert").style.display = "block"
 
-    $( "#InsertExpense" ).fadeIn(500);
+
+    $("#InsertIncome").fadeIn(500);
 
 }
 
-function hideInsert(){
+function showInsertExpense() {
+
+    document.getElementById("popoutInsert").style.display = "block"
+
+    $("#InsertExpense").fadeIn(500);
+
+}
+
+function hideInsert() {
 
     /*document.getElementById("popoutInsert").style.display = "none"
-    document.getElementById("InsertExpense").style.display = "none"
-    document.getElementById("InsertIncome").style.display = "none"*/
-    $( "#popoutInsert" ).fadeOut(500);
-    $( "#InsertExpense" ).fadeOut(500);
-    $( "#InsertIncome" ).fadeOut(500);
+     document.getElementById("InsertExpense").style.display = "none"
+     document.getElementById("InsertIncome").style.display = "none"*/
+    $("#popoutInsert").fadeOut(500);
+    $("#InsertExpense").fadeOut(500);
+    $("#InsertIncome").fadeOut(500);
+    $("#expensesFormID")[0].reset();
+    $("#incomeFormID")[0].reset();
+
 }
 

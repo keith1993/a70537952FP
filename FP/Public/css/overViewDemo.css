@@ -64,7 +64,7 @@ body {
 }
 
 #profile {
-    transition: 0.5s
+
 
 }
 
@@ -106,19 +106,20 @@ body {
 .mask{
     display:block;
     width:100%;
-    position:absolute;
+    position:fixed;
     background:rgba(255,255,255,0.5);
     z-index:20;
     top:0;
     left:0;
     height:100%;
 
+
 }
 
 .popout {
     display:block;
     background:#eee;
-    position:absolute;
+
     top:50%;
     left:0;
     width: 100%;
@@ -126,7 +127,7 @@ body {
     z-index:20;
     vertical-align: middle;
     margin-top: -250px;
-
+    position:fixed;
 }
 
 .wrapper{
@@ -138,6 +139,7 @@ body {
 .popoutInsert{
 
     transition: visibility 0s, opacity 0.5s linear;
+
 }
 
 .btnInsert{

@@ -84,7 +84,7 @@
         <li id="userLogo" style="display: none;">
             <div class="logo-wrapper waves-light sn-avatar-wrapper">
                 <a href="#">
-                    <img src="http://mdbootstrap.com/images/avatars/img%20(4)" class="img-circle">
+                    <img src="<?php echo "images/".$jj->UserImage;?>" class="img-circle">
                 </a>
             </div>
         </li>
@@ -99,7 +99,8 @@
                 <li><a class="icons-sm yt-ic"><i class="fa fa-youtube"> </i></a></li>
                 <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
             </ul>
-        </li>-->
+        </li>
+-->
         <!--/Social-->
 
         <!-- Side navigation links -->
@@ -294,14 +295,14 @@
 </div>
 
 <div id="popoutInsert" style="display: none;z-index: 50">
-    <div class="mask"></div>
+    <div class="mask" onclick="hideInsert()"></div>
     <div id="InsertIncome" class="popout" style="display: none;">
 
         <p style="text-align: center">Insert Income</p>
 
        
 
-        <form class="incomeForm" action="Application/Controllers/InsertIncome.php" method="post">
+        <form id="incomeFormID"class="incomeForm" action="Application/Controllers/InsertIncome.php" method="post">
             Income Name:<input style="width: 200px;" type="text" name="incomeName" value=""></br>
             Income Amount:<input style="width: 200px;" type="text" name="incomeAmount" value=""></br>
             Income Description:<input style="width: 200px;" type="text" name="incomeDescription" value=""></br>
@@ -317,7 +318,7 @@
 
         
         <p style="text-align: center">Insert Expenses</p>
-        <form class="expenseForm" action="Application/Controllers/InsertExpenses.php" method="post">
+        <form id="expensesFormID" class="expenseForm" action="Application/Controllers/InsertExpenses.php" method="post">
             Expense Name:<input style="width: 200px;" type="text" name="expenseName" value=""></br>
             Expense Amount:<input style="width: 200px;" type="text" name="expenseAmount" value=""></br>
             Expense Description:<input style="width: 200px;" type="text" name="expenseDescription" value=""></br>

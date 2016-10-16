@@ -30,7 +30,7 @@ $a = new UserExpenseModel();
 $jj = $a->addExpense($_SESSION["id"],$expenseName,$expenseAmount,$expenseCategory,$expenseDescription);
 
  if($jj){
- 	echo "Expenses Inserted";
+     header('Location: ../../index.php');
     }else{
         echo "Error!". mysql_error();
     }
