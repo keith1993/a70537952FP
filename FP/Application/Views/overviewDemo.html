@@ -13,25 +13,26 @@
 
     <link rel="stylesheet" href="Helper/footable-standalone.latest/css/footable.standalone.css">
     <!-- Bootstrap core CSS -->
-    <link href="Public/css/bootstrap1.min.css" rel="stylesheet">
+    <link href="../../Public/css/bootstrap1.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="Public/css/mdb.min.css" rel="stylesheet">
-    <link href="Public/css/overViewDemo.css" rel="stylesheet">
+    <link href="../../Public/css/mdb.min.css" rel="stylesheet">
+    <link href="../../Public/css/overViewDemo.css" rel="stylesheet">
 
 
     <!-- SCRIPTS -->
 
     <!-- JQuery -->
-    <script type="text/javascript" src="Public/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../../Public/js/jquery-2.2.3.min.js"></script>
 
     <!-- Tooltips -->
-    <script type="text/javascript" src="Public/js/tether.min.js"></script>
+    <script type="text/javascript" src="../../Public/js/tether.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Public/js/bootstrap.min.js"></script>
 
     <!-- MDB core JavaScript -->
+<<<<<<< HEAD
     <script type="text/javascript" src="Public/js/mdb.min.js"></script>
 
     <script type="text/javascript" src="Public/js/jquery.min.js"></script>
@@ -57,6 +58,10 @@
 
     </script>
 
+=======
+    <script type="text/javascript" src="../../Public/js/mdb.min.js"></script>
+    <script type="text/javascript" src="../../Public/js/overviewDemo.js"></script>
+>>>>>>> f101775a6436b5ccc25602050789ca0b67c562b0
 
 </head>
 
@@ -290,18 +295,26 @@
     <div id="InsertIncome" class="popout" style="display: none;">
 
         <p style="text-align: center">Insert Income</p>
+<<<<<<< HEAD
         <form class="incomeForm"action="" method="post">
             Income Name:<input style="width: 200px;" type="text" name="IncomeName" value=""></br>
             Income Amount:<input style="width: 200px;" type="text" name="IncomeAmount" value=""></br>
             Income Description:<input style="width: 200px;" type="text" name="IncomeDescription" value=""></br>
+=======
+        <form action="../Controllers/InsertIncome.php" method="post">
+            Income Name:<input style="width: 200px;" type="text" name="incomeName" value=""></br>
+            Income Amount:<input style="width: 200px;" type="text" name="incomeAmount" value=""></br>
+            Income Description:<input style="width: 200px;" type="text" name="incomeDescription" value=""></br>
+>>>>>>> f101775a6436b5ccc25602050789ca0b67c562b0
             <input class="form-control button-collapse" style="width: 200px; display: inline-block;font-size: 25px;"
                    type="button" onclick="hideInsert()" value="Cancel">
             <input class="form-control am-button" style="width: 200px;display: inline-block;font-size: 25px;"
-                   type="button" onclick="" value="Submit">
+                   type="submit" onclick="" value="Submit">
         </form>
     </div>
     <div id="InsertExpense" class="popout" style="display: none;">
 
+<<<<<<< HEAD
         <p style="text-align: center">Insert Expense</p>
         <form class="expenseForm" action="" method="post">
             Expense Name:<input style="width: 200px;" type="text" name="ExpenseName" value=""></br>
@@ -309,6 +322,14 @@
             Expense Description:<input style="width: 200px;" type="text" name="ExpenseDescription" value=""></br>
             Expense Category:<select name="ExpenseCategory" class="form-control"
                                      style="width: 200px;display: inline-block">
+=======
+        <p style="text-align: center">Insert Expenses</p>
+        <form action="../Controllers/InsertExpenses.php" method="post">
+            Expense Name:<input style="width: 200px;" type="text" name="expenseName" value=""></br>
+            Expense Amount:<input style="width: 200px;" type="text" name="expenseAmount" value=""></br>
+            Expense Description:<input style="width: 200px;" type="text" name="expenseDescription" value=""></br>
+            Expense Category:<select name="expenseCategory" class="form-control" style="width: 200px;display: inline-block" >
+>>>>>>> f101775a6436b5ccc25602050789ca0b67c562b0
             <option value="Transport">Transport</option>
             <option value="Food & beverage">Food & beverage</option>
             <option value="Entertainment">Entertainment</option>
@@ -321,7 +342,7 @@
             <input class="form-control button-collapse" style="width: 200px; display: inline-block;font-size: 25px;"
                    type="button" onclick="hideInsert()" value="Cancel">
             <input class="form-control am-button" style="width: 200px;display: inline-block;font-size: 25px;"
-                   type="button" onclick="" value="Submit">
+                   type="submit" onclick="" value="Submit">
         </form>
     </div>
 </div>
