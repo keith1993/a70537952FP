@@ -21,51 +21,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="218" column="47" selection-start-line="218" selection-start-column="47" selection-end-line="218" selection-end-column="47" />
+            <state relative-caret-position="589">
+              <caret line="328" column="48" selection-start-line="328" selection-start-column="48" selection-end-line="328" selection-end-column="48" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2188#2195#0" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#thead#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tbody#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#2;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#3;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#4;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#2;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#3;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#4;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="overViewDemo.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
+      <file leaf-file-name="AJAXCheckEmail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="155" column="19" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
+            <state relative-caret-position="532">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AJAXForgotPassword.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXForgotPassword.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1042">
+              <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertIncome.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/InsertIncome.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertExpenses.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/InsertExpenses.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,7 +140,6 @@
         <option value="$PROJECT_DIR$/Application/Controllers/ForgotPassword.php" />
         <option value="$PROJECT_DIR$/Public/js/ResetPassword.js" />
         <option value="$PROJECT_DIR$/Application/Views/forgotPassword.html" />
-        <option value="$PROJECT_DIR$/Public/js/forgotPassword.js" />
         <option value="$PROJECT_DIR$/Application/Views/resetPassword.html" />
         <option value="$PROJECT_DIR$/Application/Controllers/ResetPassword.php" />
         <option value="$PROJECT_DIR$/Application/Models/UserModel.php" />
@@ -149,9 +150,10 @@
         <option value="$PROJECT_DIR$/Application/Views/register.html" />
         <option value="$PROJECT_DIR$/Helper/footable-bootstrap.latest/css/footable.bootstrap.css" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
         <option value="$PROJECT_DIR$/Public/js/overviewDemo.js" />
         <option value="$PROJECT_DIR$/Public/css/overViewDemo.css" />
+        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
+        <option value="$PROJECT_DIR$/Public/js/forgotPassword.js" />
       </list>
     </option>
   </component>
@@ -193,7 +195,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,7 +316,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,11 +431,12 @@
       <workItem from="1476327768455" duration="5922000" />
       <workItem from="1476333834905" duration="57000" />
       <workItem from="1476503035266" duration="11640000" />
+      <workItem from="1476593184770" duration="591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131759000" />
+    <option name="totallyTimeSpent" value="132350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -497,14 +500,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="980" column="20" selection-start-line="980" selection-start-column="20" selection-end-line="980" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/UserObject.php" />
     <entry file="file://$PROJECT_DIR$/Controller/test" />
     <entry file="file://$PROJECT_DIR$/Models/UserModel.php" />
     <entry file="file://$PROJECT_DIR$/Objects/ExpenseObject.php" />
@@ -607,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/ResetPassword.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/forgotPassword.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
@@ -632,31 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="96" column="40" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
-          <folding>
-            <marker date="1475992972432" expanded="true" signature="225:256" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="545:582" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="977:1042" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="1726:2106" ph="insert into user... " />
-            <marker date="1475992972432" expanded="true" signature="2920:3004" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="2920:3005" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="2920:3021" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="3650:3851" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="4627:4685" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="4627:4690" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="4932:4984" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="5236:5289" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="5584:5637" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="5884:5938" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="6423:6460" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="6793:6865" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="7916:7964" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="8244:8309" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="8244:8318" ph="update user " />
-            <marker date="1475992972432" expanded="true" signature="8845:8877" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="8845:8905" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="8845:8906" ph="select * fro... user" />
-            <marker date="1475992972432" expanded="true" signature="8845:8918" ph="select * fro... user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,26 +645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXForgotPassword.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controllers/VerifyEmail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="26" column="25" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -737,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/forgotPassword.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="63" column="45" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -763,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="28" column="449" selection-start-line="28" selection-start-column="444" selection-end-line="28" selection-end-column="449" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="996">
           <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="18" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,12 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <marker date="1476115252213" expanded="true" signature="241:432" ph="insert into user_income... " />
-            <marker date="1476115252213" expanded="true" signature="867:927" ph="select * fro... user_income" />
-            <marker date="1476115252213" expanded="true" signature="1398:1447" ph="delete from " />
-            <marker date="1476115252213" expanded="true" signature="1747:1905" ph="update user_... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -800,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="75" column="50" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,14 +738,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="6" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+        <state relative-caret-position="2945">
+          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -830,49 +759,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="155" column="19" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
+        <state relative-caret-position="548">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/InsertIncome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/InsertExpenses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="218" column="47" selection-start-line="218" selection-start-column="47" selection-end-line="218" selection-end-column="47" />
+        <state relative-caret-position="589">
+          <caret line="328" column="48" selection-start-line="328" selection-start-column="48" selection-end-line="328" selection-end-column="48" />
           <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2188#2195#0" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#thead#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#tbody#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#3;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#4;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#3;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#4;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/ResetPassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/forgotPassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding>
+            <marker date="1476593649164" expanded="true" signature="1515:1528" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXForgotPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1042">
+          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -14,24 +14,39 @@ function sendClick(){
     $("#send").click(function () {
 
         var email = $("#email").val();
-
-        $.post("../../Application/Controllers/AJAXForgotPassword.php",
+        $.post("../../Application/Controllers/AJAXCheckEmail.php",
             {
 
                 Email: email
             },
             function (data, status) {
 
-                if (data == "EmailExist") {
+                if (data == "Email exist") {
 
                     $("#enterRecoveryCode").show();
                     $("#send").prop("disabled", true);
                     $("#email").prop("disabled", true);
-                } else if (data == "EmailNoExist") {
+
+                    $.post("../../Application/Controllers/AJAXForgotPassword.php",
+                        {
+
+                            Email: email
+                        },
+                        function (data, status) {
+
+
+                        });
+
+
+
+
+                } else if (data == "Email no exist") {
 
                     $("#EmailInvalid").show();
+
                 }
             });
+
     });
 
 }
@@ -62,8 +77,14 @@ function confirm(){
                 } else if (data == "false") {
 
                     $("#CodeInvalid").show();
+
+
+
+
                 }
             });
+
+
     });
 
 }
