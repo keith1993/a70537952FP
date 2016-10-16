@@ -190,3 +190,22 @@ hr{
 
     text-align: center;
 }
+
+.footable-sortable { 
+    text-align: center;
+}
+
+
+
+.footable.table th, .footable-details.table th {
+    text-align: center;
+}
+
+
+
+td.footable-sortable > span.fooicon, th.footable-sortable > span.fooicon {
+    position: relative;
+    right: -6px;
+
+}
+
