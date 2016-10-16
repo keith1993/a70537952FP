@@ -1,9 +1,0 @@
-
-1.1 10-01-16	BY LAI
--add check email address function in UserModel
--add CheckEmail.php in Controllers Folder
--add testEmailCheck.html for testing use
-
-1.0 28-09-16	BY LAI
--update register's parameter£¬now do not need "aboutME" anymore.
--update send email's parameter£¬now do not need "username" and "password" anymore.
