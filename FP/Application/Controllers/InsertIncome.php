@@ -20,13 +20,13 @@ spl_autoload_register(function ($class) {
     }
 
 });
-
+session_start();
 $incomeName = $_POST["incomeName"];
 $incomeAmount = $_POST["incomeAmount"];
 $incomeDescription = $_POST["incomeDescription"];
 
 $a = new UserIncomeModel();
-$jj = $a->addIncome("1",$incomeName,$incomeAmount,$incomeDescription);
+$jj = $a->addIncome($_SESSION["id"],$incomeName,$incomeAmount,$incomeDescription);
 
  if($jj){
  	echo "Income Inserted";

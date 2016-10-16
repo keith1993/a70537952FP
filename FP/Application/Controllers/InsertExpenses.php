@@ -20,14 +20,14 @@ spl_autoload_register(function ($class) {
     }
 
 });
-
+session_start();
 $expenseName = $_POST["expenseName"];
 $expenseAmount = $_POST["expenseAmount"];
 $expenseCategory = $_POST["expenseCategory"];
 $expenseDescription = $_POST["expenseDescription"];
 
 $a = new UserExpenseModel();
-$jj = $a->addExpense("1",$expenseName,$expenseAmount,$expenseCategory,$expenseDescription);
+$jj = $a->addExpense($_SESSION["id"],$expenseName,$expenseAmount,$expenseCategory,$expenseDescription);
 
  if($jj){
  	echo "Expenses Inserted";
