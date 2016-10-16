@@ -150,3 +150,30 @@ demo = {
     
 }
 
+function firstNameFunction() {
+    			if (document.getElementById("firstName").value == "") {
+				$("#errormsg_firstName").text("You can't leave this empty.");
+				}
+				else{
+					$("#errormsg_firstName").text("");
+				}	
+			}
+
+function lastNameFunction() {				
+    			if (document.getElementById("lastName").value == "") {
+				$("#errormsg_lastName").text("You can't leave this empty.");
+				}
+				else{
+					$("#errormsg_lastName").text("");
+				}
+			}
+			
+function occupationFunction() {
+				if (document.getElementById("occupation").value == "") {
+				$("#errormsg_occupation").text("You can't leave this empty.");
+				}
+				else{
+					$("#errormsg_occupation").text("");
+				}
+			}
+
