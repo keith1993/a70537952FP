@@ -84,7 +84,7 @@
         <li id="userLogo" style="display: none;">
             <div class="logo-wrapper waves-light sn-avatar-wrapper">
                 <a href="#">
-                    <img src="<?php echo "images/".$jj->UserImage;?>" class="img-circle">
+                    <img src="<?php echo "Public/images/".$jj->UserImage;?>" class="img-circle">
                 </a>
             </div>
         </li>
@@ -124,14 +124,14 @@
 
     <!--Navbar-->
     <nav class="navbar navbar-fixed-top scrolling-navbar double-nav main col-lg-12 col-md-12 col-sm-12"
-         style="padding-left: 100px;z-index: 1;">
+         style="padding-left: 100px;z-index: 1; transition: 0.5s;">
 
         <!-- SideNav slide-out button -->
 
 
         <!-- Breadcrumb-->
         <div class="breadcrumb-dn">
-            <p>ABCDEFG</p>
+            <p>Welcome,</p>
         </div>
 
 
@@ -140,7 +140,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile</a>
+                   aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?php echo $jj->FirstName;?></a>
                 <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1"
                      data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 

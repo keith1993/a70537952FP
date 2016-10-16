@@ -64,7 +64,7 @@ body {
 }
 
 #profile {
-
+transition: 0.5s;
 
 }
 
@@ -211,3 +211,8 @@ td.footable-sortable > span.fooicon, th.footable-sortable > span.fooicon {
 
 }
 
+.side-nav .sn-avatar-wrapper img {
+
+    max-width: 75px;
+
+}

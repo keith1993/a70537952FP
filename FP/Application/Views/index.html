@@ -9,13 +9,15 @@
 
     <!-- JS -->
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-
+    <script src="Public/js/jquery-2.2.3.min.js"></script>
+    <script src="Public/js/index.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="Public/css/login.css">
     <link rel="stylesheet" href="Public/css/bootstrap.min.css">
     <link rel="stylesheet" href="Public/css/font-awesome.min.css">
     <link rel="stylesheet" href="Public/css/templatemo_style.css">
+    <link rel="stylesheet" href="Public/css/index.css">
 
     <!-- Favicon and touch icons -->
     <link rel="shortcut icon" href="Public/images/favicon.png"/>
@@ -67,6 +69,7 @@
 
 
 
+
 </head>
 <body>
 
@@ -101,15 +104,15 @@
 
                                 <div class="action_btns">
 
-                                    <form action="Application/Controllers/Login.php" method="post">
+                                    <form id="loginForm" method="post">
                                         <label>Email &nbsp; &nbsp; &nbsp; &nbsp;</label>
-                                        <input type="text" name="email"/>
+                                        <input id="email" type="text" name="email"/>
                                         <br/>
 
                                         <label>Password</label>
-                                        <input type="password" name="password"/>
+                                        <input id="password" type="password" name="password"/>
                                         <br/>
-
+                                        <span id="notice" style="color: red; margin-left: 83px;font-size: 15px;display: none">Email or Password Incorrect</span>
                                         <div class="" id="forgetPassword">
                                             <h6><a href="Application/Views/forgotPassword.html">Forget password?</a></h6>
                                         </div>
@@ -131,7 +134,7 @@
                                             <div class="action_btns">
 
                                                 <div class="one_half last">
-                                                    <button type="submit" class="btn btn_red">Login</button>
+                                                    <button id="btnLogin"type="button" class="btn btn_red">Login</button>
                                                 </div>
                                             </div>
                                         </div>

@@ -32,8 +32,6 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         $expenseList = $expensesModel->getExpenseByUserID($jj->ID);
         $incomeList = $incomeModel->getIncomeByUserID($jj->ID);
 
-echo "images/".$jj->UserImage;
-
         require 'Application/Views/overviewDemo.html';
 
 

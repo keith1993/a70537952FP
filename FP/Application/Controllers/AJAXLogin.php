@@ -33,7 +33,8 @@ $jj = $a->Login($email,$password,$loginIP);
      $_SESSION["id"] = $jj->ID;
      $_SESSION["email"] =$jj->Email;
      $_SESSION["password"] = $password;
-     header('Location: ../../index.php');
+        echo "LoginSuccess";
     }else{
-        echo "Error!". mysql_error();
+     echo "LoginFailed";
+       // echo "Error!". mysql_error();
     }
