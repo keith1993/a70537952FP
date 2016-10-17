@@ -51,6 +51,8 @@ if ($jj instanceof UserObject) {
     if ($isRegister) {
         //echo "Register success!" ;
        // echo "Application/Views/registerSuccess.html" ;
+
+
         echo "RegisterSuccess";
 
 
