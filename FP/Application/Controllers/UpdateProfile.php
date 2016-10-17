@@ -20,3 +20,26 @@ spl_autoload_register(function ($class) {
     }
 
 });
+
+
+//$UserID = $_SESSION["id"];
+$FirstName = $_POST["firstName"];
+$LastName = $_POST["lastName"];
+$DOB = $_POST["dob"];
+$Gender = $_POST["gender"];
+$Country= $_POST["country"];
+$Occupation = $_POST["occupation"];
+$AboutMe = $_POST["aboutme"];
+
+//$UserID, $FirstName, $LastName, $DOB, $Gender,
+                                       //$Country, $Occupation, $AboutMe0
+
+$a = new UserModel();
+$jj = $a->updateUserByUserID("11",$FirstName,$LastName,$DOB,$Gender,$Country,$Occupation,$AboutMe);
+
+ if($jj){
+	
+			echo "profile updated";
+		}else{
+        echo "Error!". mysql_error();
+    }
