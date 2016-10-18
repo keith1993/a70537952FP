@@ -18,8 +18,10 @@ spl_autoload_register(function ($class) {
 });
 
 
-$Email = new EmailTo("FP","aa","a70537952@gmail.com","a","a");
-$Email->send();
+$a = new UserExpenseModel();
+$json = $a->getExpenseColumnJSON();
+echo $json;
+
 
 //$user = $a->Register("aaa","bbb","123","20-10-2016","Male","1234@gmail.com","Singapore","22.22.22.22","Student");
 

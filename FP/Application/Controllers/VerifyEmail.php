@@ -28,7 +28,7 @@ $result = $a->VerifyEmail($ID,$Token);
 
 if($result ){
 
-            echo "激活成功！";
+    header('Location: ../Views/emailVerified.html');
 
 }else{
     echo '您的激活有效期已过，请登录您的帐号重新发送激活邮件.';

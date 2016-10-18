@@ -27,7 +27,12 @@ $expenseCategory = $_POST["expenseCategory"];
 $expenseDescription = $_POST["expenseDescription"];
 
 $a = new UserExpenseModel();
-$jj = $a->addExpense($_SESSION["id"],$expenseName,$expenseAmount,$expenseCategory,$expenseDescription);
+for($count=0;$count<count($expenseName);$count++){
+    $amount = $expenseAmount[$count]==""?0:$expenseAmount[$count];
+    $jj = $a->addExpense($_SESSION["id"],$expenseName[$count],$amount,$expenseCategory[$count],$expenseDescription[$count]);
+
+}
+
 
  if($jj){
      header('Location: ../../index.php');
