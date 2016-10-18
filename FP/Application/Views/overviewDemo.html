@@ -345,7 +345,7 @@
                     <label for=" ExpenseDescription" class="control-label"> Expense Description:</label>
                     <input class="form-control" type="text" name="expenseDescription[]" value="">
                 </div>
-                <a style="color: red;margin-left: 10px;display: none" class="remove">X</a> </br>
+                <a style="color: red;margin-left: 10px;display: none" >X</a> </br>
 
                 <hr style="border-top: 1px solid rgba(0,0,0,0.3);width: 90%;margin-top: 0"/>
             </div>
@@ -353,7 +353,7 @@
             <input id="btnAddExpense"class="form-control button-collapse" style="width: 90%; display: inline-block;font-size: 25px;"
                    type="button" onclick="addExpense()" value="Add"><br/>
 
-            <input class="form-control button-collapse btnCancelSubmit" style="width: 200px;"
+            <input id="btnCancelInsert" class="form-control button-collapse btnCancelSubmit" style="width: 200px;"
                    type="button" onclick="hideInsert()" value="Cancel">
             <input class="form-control am-button btnCancelSubmit" style="width: 200px;"
                    type="submit" onclick="" value="Submit">

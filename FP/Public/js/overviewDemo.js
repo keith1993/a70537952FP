@@ -66,10 +66,13 @@ function hideInsert() {
     $("#expensesFormID")[0].reset();
     $("#incomeFormID")[0].reset();
 
+
+
+
 }
 
 function addExpense() {
-    var expense = "<div><div class=\"form-group\"><label for=\"ExpenseName\" class=\"control-label\">Expense Name:</label><input class=\"form-control\" type=\"text\" name=\"expenseName[]\" value=\"\"></div>"+
+    var expense = "<div class=\"extraExpense\"><div class=\"form-group\"><label for=\"ExpenseName\" class=\"control-label\">Expense Name:</label><input class=\"form-control\" type=\"text\" name=\"expenseName[]\" value=\"\"></div>"+
 "<div class=\"form-group\"> <label for=\"ExpenseAmount\" class=\"control-label\">Expense Amount:</label><input class=\"form-control\" type=\"text\" name=\"expenseAmount[]\" value=\"\"></div><div class=\"form-group\">"+
 "<label for=\" ExpenseCategory\" class=\"control-label\">Expense Category:</label><select class=\"form-control\" name=\"expenseCategory[]\"style=\"display: inline-block\"> " +
 "<option value=\"Transport\">Transport</option><option value=\"Food & beverage\">Food & beverage</option><option value=\"Entertainment\">Entertainment</option><option value=\"Debts\">Debts</option> " +
@@ -106,9 +109,16 @@ $(document).off().on('click', '.remove', function(event) {
 
     }
 
-
-
-
 });
 
+$(document).on('click', '.btnCancelSubmit', function() {
 
+    $(".extraExpense").remove();
+    expenseNum = 1;
+});
+
+$(document).on('click', '.mask', function() {
+
+    $(".extraExpense").remove();
+    expenseNum = 1;
+});
