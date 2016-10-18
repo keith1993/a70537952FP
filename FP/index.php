@@ -31,6 +31,8 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         $incomeModel = new UserIncomeModel();
         $expenseList = $expensesModel->getExpenseByUserID($jj->ID);
         $incomeList = $incomeModel->getIncomeByUserID($jj->ID);
+        $expenseColJson = $expensesModel->getExpenseColumnJSON();
+        $expenseJson = $expensesModel->getExpenseJSONbyUserID($jj->ID);
 
         require 'Application/Views/overviewDemo.html';
 

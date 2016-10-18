@@ -70,9 +70,9 @@ $link = "http://localhost/GithubFP/Application/Controllers/VerifyEmail.php?I=$id
     background-color: #fff;\">
 
         <!-- Home -->
-        <section id=\"templatemo_home\" style=\"background: #154558 url(http://dololo.eregardless.co.za/images/jumbo_background.jpg) fixed;
+        <section id=\"templatemo_home\" style=\"background: #154558 url(http://dololo.eregardless.co.za/images/jumbo_background.jpg) ;
     background-size: cover;
-    min-height: 100vh;
+    min-height: 70vh;
     padding-bottom: 130px;
     color: #fff;\">
             <div class=\"container\">

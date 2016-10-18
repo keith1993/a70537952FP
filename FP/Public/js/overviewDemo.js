@@ -2,6 +2,11 @@
  * Created by Admin on 11-10-16.
  */
 var isNavOpen = false;
+var expenseNum = 1;
+
+
+
+
 
 function setNav() {
     if (isNavOpen) {
@@ -61,5 +66,59 @@ function hideInsert() {
     $("#expensesFormID")[0].reset();
     $("#incomeFormID")[0].reset();
 
+
+
+
 }
 
+function addExpense() {
+    var expense = "<div class=\"extraExpense\"><div class=\"form-group\"><label for=\"ExpenseName\" class=\"control-label\">Expense Name:</label><input class=\"form-control\" type=\"text\" name=\"expenseName[]\" value=\"\"></div>"+
+"<div class=\"form-group\"> <label for=\"ExpenseAmount\" class=\"control-label\">Expense Amount:</label><input class=\"form-control\" type=\"text\" name=\"expenseAmount[]\" value=\"\"></div><div class=\"form-group\">"+
+"<label for=\" ExpenseCategory\" class=\"control-label\">Expense Category:</label><select class=\"form-control\" name=\"expenseCategory[]\"style=\"display: inline-block\"> " +
+"<option value=\"Transport\">Transport</option><option value=\"Food & beverage\">Food & beverage</option><option value=\"Entertainment\">Entertainment</option><option value=\"Debts\">Debts</option> " +
+"<option value=\"Fixed expenses\">Fixed expenses</option>"+
+"<option value=\"Others\">Others</option> </select>"+
+"</div><div class=\"form-group\"><label for=\" ExpenseDescription\" class=\"control-label\">Expense Description:</label> <input class=\"form-control\" type=\"text\" name=\"expenseDescription[]\" value=\"\">" +
+"</div> <a style=\"color: red;margin-left: 10px;\" class=\"remove\" >X</a> </br> <hr style=\"border-top: 1px solid rgba(0,0,0,0.3);width: 90%;margin-top: 0\"/>";
+
+
+    $("#expenseContainer").append(expense);
+    expenseNum++;
+
+    if(expenseNum>=5){
+
+        $("#btnAddExpense").hide();
+
+    }
+
+
+}
+
+
+$(document).off().on('click', '.remove', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    expenseNum--;
+
+    $(this).parent().remove();
+
+
+    if(expenseNum<5){
+
+        $("#btnAddExpense").show();
+
+    }
+
+});
+
+$(document).on('click', '.btnCancelSubmit', function() {
+
+    $(".extraExpense").remove();
+    expenseNum = 1;
+});
+
+$(document).on('click', '.mask', function() {
+
+    $(".extraExpense").remove();
+    expenseNum = 1;
+});
