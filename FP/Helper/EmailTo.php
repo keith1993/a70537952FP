@@ -9,7 +9,7 @@
 require "PHPMailer-master/PHPMailerAutoload.php";
 class EmailTo
 {
-    protected static $mail;
+    public static $mail;
     function __construct($senderName,$subject,$recipientEmail,$recipientName,$contentBody)
     {
         self::$mail = new PHPMailer();
@@ -51,8 +51,9 @@ class EmailTo
 //self::$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
        // self::$mail->AltBody = 'This is a plain-text message body';
-        self::$mail->isHTML(true);
+
         self::$mail->Body=$contentBody;
+        self::$mail->isHTML(true);
 //Attach an image file
 //self::$mail->addAttachment('images/phpmailer_mini.png');
 //send the message, check for errors

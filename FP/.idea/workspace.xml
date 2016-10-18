@@ -21,59 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
+      <file leaf-file-name="AJAXFacebookLogin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXFacebookLogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="126" column="65" selection-start-line="126" selection-start-column="65" selection-end-line="126" selection-end-column="65" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overViewDemo.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="652">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="overviewDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
+      <file leaf-file-name="FacebookLogin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/js/FacebookLogin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#40#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserObject.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Objects/UserObject.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="633">
+              <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -98,8 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Object/User.php" />
-        <option value="$PROJECT_DIR$/Object/ExpenseObject.php" />
         <option value="$PROJECT_DIR$/Controller/test" />
         <option value="$PROJECT_DIR$/Controller/testController" />
         <option value="$PROJECT_DIR$/Model/UserModel.php" />
@@ -118,7 +78,6 @@
         <option value="$PROJECT_DIR$/Application/Objects/UserExpenseObject.php" />
         <option value="$PROJECT_DIR$/Application/Objects/UserIncomeObject.php" />
         <option value="$PROJECT_DIR$/Application/Views/registerSuccess.html" />
-        <option value="$PROJECT_DIR$/Application/Controllers/Register.php" />
         <option value="$PROJECT_DIR$/Application/Objects/UserObject.php" />
         <option value="$PROJECT_DIR$/Application/Framework/BaseModel.php" />
         <option value="$PROJECT_DIR$/index.html" />
@@ -126,7 +85,6 @@
         <option value="$PROJECT_DIR$/Application/Controllers/FacebookLogin.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/Login.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/testController.php" />
-        <option value="$PROJECT_DIR$/Helper/EmailTo.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/ForgotPassword.php" />
         <option value="$PROJECT_DIR$/Public/js/ResetPassword.js" />
         <option value="$PROJECT_DIR$/Application/Views/forgotPassword.html" />
@@ -134,7 +92,6 @@
         <option value="$PROJECT_DIR$/Application/Controllers/ResetPassword.php" />
         <option value="$PROJECT_DIR$/Application/Models/UserIncomeModel.php" />
         <option value="$PROJECT_DIR$/Application/Models/UserExpenseModel.php" />
-        <option value="$PROJECT_DIR$/Public/js/FacebookLogin.js" />
         <option value="$PROJECT_DIR$/Application/Views/register.html" />
         <option value="$PROJECT_DIR$/Helper/footable-bootstrap.latest/css/footable.bootstrap.css" />
         <option value="$PROJECT_DIR$/Public/js/forgotPassword.js" />
@@ -149,6 +106,11 @@
         <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
         <option value="$PROJECT_DIR$/Public/js/overviewDemo.js" />
         <option value="$PROJECT_DIR$/Public/css/overViewDemo.css" />
+        <option value="$PROJECT_DIR$/Helper/EmailTo.php" />
+        <option value="$PROJECT_DIR$/Application/Views/emailVerificationEmail.html" />
+        <option value="$PROJECT_DIR$/Application/Controllers/Register.php" />
+        <option value="$PROJECT_DIR$/Public/js/FacebookLogin.js" />
+        <option value="$PROJECT_DIR$/Application/Controllers/AJAXFacebookLogin.php" />
       </list>
     </option>
   </component>
@@ -189,6 +151,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -255,6 +218,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FP" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Helper" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -346,7 +323,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,11 +438,12 @@
       <workItem from="1476333834905" duration="57000" />
       <workItem from="1476503035266" duration="11640000" />
       <workItem from="1476593184770" duration="7311000" />
+      <workItem from="1476685067011" duration="4782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139070000" />
+    <option name="totallyTimeSpent" value="143852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
@@ -530,8 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Models/UserExpenseModel.php" />
-    <entry file="file://$PROJECT_DIR$/Framework/BaseModel.php" />
     <entry file="file://$PROJECT_DIR$/Controllers/testController.php" />
     <entry file="file://$PROJECT_DIR$/Application/Framework/BaseController.php" />
     <entry file="file://$PROJECT_DIR$/aa.html" />
@@ -600,13 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Helper/EmailTo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/registerSuccess.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -633,14 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="817">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXFacebookLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="23" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,14 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Models/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="662">
@@ -802,15 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="158" column="0" selection-start-line="73" selection-start-column="12" selection-end-line="158" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/FacebookLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="106" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
           <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,9 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding>
-            <marker date="1476593649164" expanded="true" signature="1515:1528" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1963">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -870,31 +806,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/emailVerified.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/emailVerificationEmail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="40" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="7" />
           <folding>
-            <element signature="e#0#40#0" expanded="false" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#center#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#p#0;n#center#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/Register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Objects/UserObject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="1004">
+          <caret line="89" column="86" selection-start-line="89" selection-start-column="86" selection-end-line="89" selection-end-column="86" />
+          <folding>
+            <marker date="1476689195670" expanded="true" signature="1128:2912" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="1139:1385" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="1405:1565" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="1640:1826" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="1961:2091" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2395:2912" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2458:2545" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2657:2687" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2687:2904" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2703:2732" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2703:2755" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2703:2871" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2703:2891" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2703:2904" ph="..." />
+            <marker date="1476689195670" expanded="true" signature="2827:2851" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
+        <state relative-caret-position="73">
           <caret line="126" column="65" selection-start-line="126" selection-start-column="65" selection-end-line="126" selection-end-column="65" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -906,9 +869,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="19">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
@@ -916,10 +887,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
+    <entry file="file://$PROJECT_DIR$/Application/Objects/UserObject.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="19">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Helper/EmailTo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-193">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/FacebookLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXFacebookLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -97,6 +97,8 @@ function testAPI() {
 
                     window.location.reload(true);
                 } else if (data == "RegisterSuccess") {
+
+
                     window.location.href = "Application/Views/registerSuccess.html";
 
                 }
