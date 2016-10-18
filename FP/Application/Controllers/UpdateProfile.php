@@ -23,6 +23,7 @@ spl_autoload_register(function ($class) {
 
 
 //$UserID = $_SESSION["id"];
+session_start();
 $FirstName = $_POST["firstName"];
 $LastName = $_POST["lastName"];
 $DOB = $_POST["dob"];
@@ -35,7 +36,7 @@ $AboutMe = $_POST["aboutme"];
                                        //$Country, $Occupation, $AboutMe0
 
 $a = new UserModel();
-$jj = $a->updateUserByUserID("11",$FirstName,$LastName,$DOB,$Gender,$Country,$Occupation,$AboutMe);
+$jj = $a->updateUserByUserID( $_SESSION["id"],$FirstName,$LastName,$DOB,$Gender,$Country,$Occupation,$AboutMe);
 
  if($jj){
 	
