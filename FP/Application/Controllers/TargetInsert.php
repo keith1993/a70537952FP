@@ -20,17 +20,19 @@ spl_autoload_register(function ($class) {
     }
 
 });
-session_start();
 $Target_Name = $_POST["Target_Name"];
 $Target_Amount = $_POST["Target_Amount"];
 $Target_Days = $_POST["Target_Days"];
 
-$a = new UserModel();
-$jj = $a->Login($Target_Name,$Target_Amount,$Target_Days);
-
+$a = new UserTargetModel();
+$jj = $a->addTarget("007",$Target_Name,$Target_Amount,$Target_Days);
+/*
  if($jj instanceof UserTargetObject){
 
-     echo "Insert Target Success"
+     echo "Insert Target Success";
     }else{
         echo "Error!". mysql_error();
     }
+	*/
+	/*$UserID,$Target_Name,$Target_Amount,$Target_Days*/
+?>
