@@ -6,7 +6,7 @@
  * Date: 25-09-16
  * Time: 2:05 PM
  */
-class TargerUserModel extends  BaseModel
+class UserTargetModel extends  BaseModel
 {
     public function addTarget($UserID,$Target_Name,$Target_Amount,$Target_Days)
     {
@@ -23,7 +23,7 @@ class TargerUserModel extends  BaseModel
         return $isSuccess;
     }
 
-    public function getIncomeByUserID($UserID)
+    public function getTargetByUserID($UserID)
     {
         $sql = "select * from target where User_ID=:User_ID limit 0,100";
         $result = self::$conn->prepare($sql);
