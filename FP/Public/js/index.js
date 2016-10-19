@@ -10,7 +10,7 @@ $(document).ready(function () {
         var email = $("#email").val();
         var password = $("#password").val();
 
-
+        $("#notice").hide();
         $.post("Application/Controllers/AJAXLogin.php",
             {
                 email: email,
@@ -25,7 +25,13 @@ $(document).ready(function () {
                     window.location.reload(true);
                 } else if (data == "LoginFailed") {
 
+                    $("#notice").text("Email or Password Incorrect");
                     $("#notice").show();
+
+                }else if(data == "EmailNoVerify"){
+                    $("#notice").text("Email have not verify");
+                    $("#notice").show();
+
                 }
 
 

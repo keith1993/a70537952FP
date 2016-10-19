@@ -15,8 +15,8 @@ spl_autoload_register(function ($class) {
         require '../Models/' . $class . '.php';
     } else if (strpos($class, "Object")) {
         require '../Objects/' . $class . '.php';
-    }else{
-        require "../../Helper/".$class.".php";
+    } else {
+        require "../../Helper/" . $class . ".php";
     }
 
 });
@@ -26,15 +26,20 @@ $password = $_POST["password"];
 $loginIP = $_SERVER["REMOTE_ADDR"];
 
 $a = new UserModel();
-$jj = $a->Login($email,$password,$loginIP);
+$jj = $a->Login($email, $password, $loginIP);
 
- if($jj instanceof UserObject){
+if ($jj instanceof UserObject) {
+    if ($jj->EmailVerified == 1) {
 
-     $_SESSION["id"] = $jj->ID;
-     $_SESSION["email"] =$jj->Email;
-     $_SESSION["password"] = $password;
+        $_SESSION["id"] = $jj->ID;
+        $_SESSION["email"] = $jj->Email;
+        $_SESSION["password"] = $password;
         echo "LoginSuccess";
-    }else{
-     echo "LoginFailed";
-       // echo "Error!". mysql_error();
+    } else {
+        echo "EmailNoVerify";
     }
+
+} else {
+    echo "LoginFailed";
+    // echo "Error!". mysql_error();
+}

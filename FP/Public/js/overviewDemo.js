@@ -112,13 +112,13 @@ $(document).off().on('click', '.remove', function(event) {
 });
 
 $(document).on('click', '.btnCancelSubmit', function() {
-
+    $("#btnAddExpense").show();
     $(".extraExpense").remove();
     expenseNum = 1;
 });
 
 $(document).on('click', '.mask', function() {
-
+    $("#btnAddExpense").show();
     $(".extraExpense").remove();
     expenseNum = 1;
 });
