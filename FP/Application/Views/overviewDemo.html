@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="Helper/footable-standalone.latest/css/footable.standalone.css">
+
     <!-- Bootstrap core CSS -->
     <link href="Public/css/bootstrap1.min.css" rel="stylesheet">
 
@@ -40,6 +41,14 @@
 
     <script src="Helper/footable-standalone.latest/js/footable.min.js"></script>
     <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
+
+    <script type="text/javascript" src="Public/js/mdb.min.js"></script>
+    <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
+
+    <script type="text/javascript" src="Public/js/mdb.min.js"></script>
+    <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
+    <script type="text/javascript" src="Helper/Chart.js-master/src/chart.js"></script>
+
     <script>
 
         jQuery(function ($) {
@@ -54,13 +63,6 @@
 
 
     </script>
-
-
-    <script type="text/javascript" src="Public/js/mdb.min.js"></script>
-    <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
-
-    <script type="text/javascript" src="Public/js/mdb.min.js"></script>
-    <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
 
 
 </head>
@@ -154,8 +156,179 @@
 </header>
 <div class="wrapper">
     <div class="content transition main">
+        <div id="Chart">
+
+            <canvas id="myChart" width="700" height="600"></canvas>
+            <script>
+
+                //This will get the first returned node in the jQuery collection.
+
+                var data = {
+                    labels: [
+
+                           <?php     $count1 = 0;
+                foreach ($expenseGroup as $key=>$value){
+
+                    echo "\"".$key."\"";
+                    $count1++;
+                    if ($count1==count($expenseGroup)){
+                        break;
+                    }
+                    echo ",";
+                }
+                ?>
+
+                    ],
+                    datasets: [
+                        {
+                            fillColor: "rgba(220,220,220,0.5)",
+                            strokeColor: "rgba(220,220,220,1)",
+                            pointColor: "rgba(220,220,220,1)",
+                            pointStrokeColor: "#fff",
+                            data: [
+
+                                    <?php
+                                    $count = 0;
+                foreach ($expenseGroup as $key=>$value){
+
+                    echo $value;
+                    $count++;
+                    if ($count==count($expenseGroup)){
+                        break;
+                    }
+                    echo ",";
+                }
 
 
+                ?>
+
+                ]
+
+                        }/*,
+                        {
+                            fillColor: "rgba(151,187,205,0.5)",
+                            strokeColor: "rgba(151,187,205,1)",
+                            pointColor: "rgba(151,187,205,1)",
+                            pointStrokeColor: "#fff",
+                            data: [28, 48, 40, 19, 96, 27]
+                        }*/
+                    ]
+                }
+
+                var options = {
+
+                    //Boolean - If we show the scale above the chart data
+                    scaleOverlay: false,
+
+                    //Boolean - If we want to override with a hard coded scale
+                    scaleOverride: false,
+
+                    //** Required if scaleOverride is true **
+                    //Number - The number of steps in a hard coded scale
+                    scaleSteps: null,
+                    //Number - The value jump in the hard coded scale
+                    scaleStepWidth: null,
+                    //Number - The centre starting value
+                    scaleStartValue: null,
+
+                    //Boolean - Whether to show lines for each scale point
+                    scaleShowLine: true,
+
+                    //String - Colour of the scale line
+                    scaleLineColor: "rgba(255,255,255,.3)",
+
+                    //Number - Pixel width of the scale line
+                    scaleLineWidth: 1,
+
+                    //Boolean - Whether to show labels on the scale
+                    scaleShowLabels: false,
+
+                    //Interpolated JS string - can access value
+                    scaleLabel: "<%=value%>",
+
+                    //String - Scale label font declaration for the scale label
+                    scaleFontFamily: "'Arial'",
+
+                    //Number - Scale label font size in pixels
+                    scaleFontSize: 15,
+
+                    //String - Scale label font weight style
+                    scaleFontStyle: "normal",
+
+                    //String - Scale label font colour
+                    scaleFontColor: "#fff",
+
+                    //Boolean - Show a backdrop to the scale label
+                    scaleShowLabelBackdrop: true,
+
+                    //String - The colour of the label backdrop
+                    scaleBackdropColor: "rgba(255,255,255,0.7)",
+
+                    //Number - The backdrop padding above & below the label in pixels
+                    scaleBackdropPaddingY: 2,
+
+                    //Number - The backdrop padding to the side of the label in pixels
+                    scaleBackdropPaddingX: 2,
+
+                    //Boolean - Whether we show the angle lines out of the radar
+                    angleShowLineOut: true,
+
+                    //String - Colour of the angle line
+                    angleLineColor: "rgba(255,255,255,.1)",
+
+                    //Number - Pixel width of the angle line
+                    angleLineWidth: 1,
+
+                    //String - Point label font declaration
+                    pointLabelFontFamily: "'Arial'",
+
+                    //String - Point label font weight
+                    pointLabelFontStyle: "normal",
+
+                    //Number - Point label font size in pixels
+                    pointLabelFontSize: 12,
+
+                    //String - Point label font colour
+                    pointLabelFontColor: "#fff",
+
+                    //Boolean - Whether to show a dot for each point
+                    pointDot: true,
+
+                    //Number - Radius of each point dot in pixels
+                    pointDotRadius: 3,
+
+                    //Number - Pixel width of point dot stroke
+                    pointDotStrokeWidth: 1,
+
+                    //Boolean - Whether to show a stroke for datasets
+                    datasetStroke: true,
+
+                    //Number - Pixel width of dataset stroke
+                    datasetStrokeWidth: 2,
+
+                    //Boolean - Whether to fill the dataset with a colour
+                    datasetFill: true,
+
+                    //Boolean - Whether to animate the chart
+                    animation: true,
+
+                    //Number - Number of animation steps
+                    animationSteps: 60,
+
+                    //String - Animation easing effect
+                    animationEasing: "easeOutQuart",
+
+                    //Function - Fires when the animation is complete
+                    onAnimationComplete: null
+
+                }
+
+                var ctx = $("#myChart").get(0).getContext("2d");
+                new Chart(ctx).Radar(data, options);
+
+
+            </script>
+        </div>
     </div>
 
     <div class="IncomeContent transition main">
@@ -225,7 +398,7 @@
         <p class="title">Expense Detail</p>
         <?php
 
-       echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-filtering=\"true\"data-paging-size=\"10\">
+       echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-filtering=\"true\"data-paging-size=\"10\" >
         ";
         echo "
         <thead>";
@@ -317,45 +490,46 @@
         <form id="expensesFormID" class="form-inline expenseForm " action="Application/Controllers/InsertExpenses.php"
               method="post">
             <div id="expenseContainer">
-             <div>
-                <div class="form-group">
-                    <label for="ExpenseName" class="control-label">Expense Name:</label>
-                    <input class="form-control" type="text" name="expenseName[]" value="">
-                </div>
-                <div class="form-group">
-                    <label for="ExpenseAmount" class="control-label">Expense Amount:</label>
-                    <input class="form-control" type="text" name="expenseAmount[]" value="">
-                </div>
-                <div class="form-group">
-                    <label for=" ExpenseCategory" class="control-label"> Expense Category:</label>
+                <div>
+                    <div class="form-group">
+                        <label for="ExpenseName" class="control-label">Expense Name:</label>
+                        <input class="form-control" type="text" name="expenseName[]" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="ExpenseAmount" class="control-label">Expense Amount:</label>
+                        <input class="form-control" type="text" name="expenseAmount[]" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for=" ExpenseCategory" class="control-label"> Expense Category:</label>
 
-                    <select class="form-control" name="expenseCategory[]"
-                                             style="display: inline-block">
+                        <select class="form-control" name="expenseCategory[]"
+                                style="display: inline-block">
 
-                    <option value="Transport">Transport</option>
-                    <option value="Food & beverage">Food & beverage</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Debts">Debts</option>
-                    <option value="Fixed expenses">Fixed expenses</option>
-                    <option value="Others">Others</option>
-                </select>
+                            <option value="Transport">Transport</option>
+                            <option value="Food & beverage">Food & beverage</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Debts">Debts</option>
+                            <option value="Fixed expenses">Fixed expenses</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+
+                        <label for=" ExpenseDescription" class="control-label"> Expense Description:</label>
+                        <input class="form-control" type="text" name="expenseDescription[]" value="">
+                    </div>
+                    <a style="color: red;margin-left: 10px;display: none">X</a> </br>
+
+                    <hr style="border-top: 1px solid rgba(0,0,0,0.3);width: 90%;margin-top: 0"/>
                 </div>
-                <div class="form-group">
-
-                    <label for=" ExpenseDescription" class="control-label"> Expense Description:</label>
-                    <input class="form-control" type="text" name="expenseDescription[]" value="">
-                </div>
-                <a style="color: red;margin-left: 10px;display: none" >X</a> </br>
-
-                <hr style="border-top: 1px solid rgba(0,0,0,0.3);width: 90%;margin-top: 0"/>
             </div>
-            </div>
-            <input id="btnAddExpense"class="form-control button-collapse" style="width: 90%; display: inline-block;font-size: 25px;"
+            <input id="btnAddExpense" class="form-control button-collapse"
+                   style="width: 90%; display: inline-block;font-size: 25px;"
                    type="button" onclick="addExpense()" value="Add"><br/>
 
-            <input id="btnCancelInsert" class="form-control button-collapse btnCancelSubmit" style="width: 200px;"
+            <input id="btnCancelInsert" class="form-control button-collapse btnCancel" style="width: 200px;"
                    type="button" onclick="hideInsert()" value="Cancel">
-            <input class="form-control am-button btnCancelSubmit" style="width: 200px;"
+            <input class="form-control am-button btnSubmit" style="width: 200px;"
                    type="submit" onclick="" value="Submit">
         </form>
     </div>

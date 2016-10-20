@@ -36,7 +36,7 @@ body {
     position: relative;
 
     height: 100vh;
-
+    overflow: hidden;
 }
 
 .sidenav {
@@ -242,7 +242,7 @@ label{
     font-size: 22px;
 
 }
-.btnCancelSubmit{
+.btnCancel,.btnSubmit{
 margin-top: 60px;
     width: 200px;
     display: inline-block;
@@ -251,4 +251,10 @@ margin-top: 60px;
 
 .footable .form-inline .input-group>.form-control {
     width: auto;
+}
+
+#Chart{
+
+    display: inline-block;
+
 }

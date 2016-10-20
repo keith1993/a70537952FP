@@ -111,7 +111,7 @@ $(document).off().on('click', '.remove', function(event) {
 
 });
 
-$(document).on('click', '.btnCancelSubmit', function() {
+$(document).on('click', '.btnCancel', function() {
     $("#btnAddExpense").show();
     $(".extraExpense").remove();
     expenseNum = 1;

@@ -84,6 +84,7 @@ class UserModel extends BaseModel
 
 
         $isSuccess = $result->execute();
+
         return $isSuccess;
     }
 
