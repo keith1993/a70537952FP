@@ -232,15 +232,15 @@ class UserModel extends BaseModel
     private function setEmailVerified($user)
     {
         date_default_timezone_set('Asia/Kuala_Lumpur');
-        if (date("Y/m/d H:i:s") > date_format(new DateTime($user->TokenExpTime), "Y/m/d")) {
-            return false;
-        } else {
+        //if (date("Y/m/d H:i:s") > date_format(new DateTime($user->TokenExpTime), "Y/m/d")) {
+          //  return false;
+       // } else {
             $sql = "update user set EmailVerified=1 where id=:UserID";
             $result = self::$conn->prepare($sql);
             $result->bindValue(":UserID", $user->ID);
             $isSuccess = $result->execute();
             return $isSuccess;
-        }
+       // }
 
     }
 

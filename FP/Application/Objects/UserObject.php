@@ -40,7 +40,7 @@ class UserObject
         $this->FirstName =$result[2];
         $this->LastName =$result[3];
         $this->Password =$result[4];
-        $this->DOB =date_format(new DateTime($result[5]),"d/m/Y");
+        $this->DOB =date_format(new DateTime($result[5]),"d-m-Y");
         $this->Gender =$result[6];
         $this->Country = $result[7];
         $this->Occupation = $result[8];
