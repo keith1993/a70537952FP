@@ -487,19 +487,19 @@
 
 
         <p class="popoutTitle" style="text-align: center">Insert Expenses</p>
-        <form id="expensesFormID" class="form-inline expenseForm " action="Application/Controllers/InsertExpenses.php"
+        <form id="expensesFormID" class="form-inline expenseForm " role="form" action="Application/Controllers/InsertExpenses.php"
               method="post">
             <div id="expenseContainer">
                 <div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for="ExpenseName" class="control-label">Expense Name:</label>
                         <input class="form-control" type="text" name="expenseName[]" value="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for="ExpenseAmount" class="control-label">Expense Amount:</label>
                         <input class="form-control" type="text" name="expenseAmount[]" value="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for=" ExpenseCategory" class="control-label"> Expense Category:</label>
 
                         <select class="form-control" name="expenseCategory[]"
@@ -513,7 +513,7 @@
                             <option value="Others">Others</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3  col-md-3 col-lg-3">
 
                         <label for=" ExpenseDescription" class="control-label"> Expense Description:</label>
                         <input class="form-control" type="text" name="expenseDescription[]" value="">
