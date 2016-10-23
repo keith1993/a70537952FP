@@ -278,8 +278,21 @@
                                         $("#errormsg_email").text(data);
                                     });
                         });
+
+ 			$("#email").focusout(function () {
+                            var email = $("#email").val();
+
+                            $.post("../../Application/Controllers/AJAXCheckEmail.php",
+                                    {
+                                        Email: email
+                                    },
+                                    function (data, status) {
+                                        $("#errormsg_email").text(data);
+                                    });
+                        });
                     });
                 </script>
+
             </div>
         </form>
     </div>

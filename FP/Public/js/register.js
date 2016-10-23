@@ -128,7 +128,7 @@
 				}
 				
     			if (a){
-    			return true; 
+    			return true;
 				}
 				else{
 					// Return false to cancel form action
@@ -136,7 +136,9 @@
 				}
 			});
 
-			}
+}
+
+			
 
 
 	
