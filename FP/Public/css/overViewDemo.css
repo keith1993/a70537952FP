@@ -258,3 +258,6 @@ margin-top: 60px;
     display: inline-block;
 
 }
+.form-inline .form-group {
+     margin-right: 0rem;
+}

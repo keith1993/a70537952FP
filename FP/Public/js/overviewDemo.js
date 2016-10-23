@@ -72,14 +72,14 @@ function hideInsert() {
 }
 
 function addExpense() {
-    var expense = "<div class=\"extraExpense\"><div class=\"form-group\"><label for=\"ExpenseName\" class=\"control-label\">Expense Name:</label><input class=\"form-control\" type=\"text\" name=\"expenseName[]\" value=\"\"></div>"+
-"<div class=\"form-group\"> <label for=\"ExpenseAmount\" class=\"control-label\">Expense Amount:</label><input class=\"form-control\" type=\"text\" name=\"expenseAmount[]\" value=\"\"></div><div class=\"form-group\">"+
+    var expense = "<div class=\"extraExpense\"><div class=\"form-group col-sm-3  col-md-3 col-lg-3\"><label for=\"ExpenseName\" class=\"control-label\">Expense Name:</label><input class=\"form-control\" type=\"text\" name=\"expenseName[]\" value=\"\"></div>"+
+"<div class=\"form-group col-sm-3  col-md-3 col-lg-3\"> <label for=\"ExpenseAmount\" class=\"control-label\">Expense Amount:</label><input class=\"form-control\" type=\"text\" name=\"expenseAmount[]\" value=\"\"></div><div class=\"form-group  col-sm-2  col-md-2 col-lg-2\">"+
 "<label for=\" ExpenseCategory\" class=\"control-label\">Expense Category:</label><select class=\"form-control\" name=\"expenseCategory[]\"style=\"display: inline-block\"> " +
 "<option value=\"Transport\">Transport</option><option value=\"Food & beverage\">Food & beverage</option><option value=\"Entertainment\">Entertainment</option><option value=\"Debts\">Debts</option> " +
 "<option value=\"Fixed expenses\">Fixed expenses</option>"+
 "<option value=\"Others\">Others</option> </select>"+
-"</div><div class=\"form-group\"><label for=\" ExpenseDescription\" class=\"control-label\">Expense Description:</label> <input class=\"form-control\" type=\"text\" name=\"expenseDescription[]\" value=\"\">" +
-"</div> <a style=\"color: red;margin-left: 10px;\" class=\"remove\" >X</a> </br> <hr style=\"border-top: 1px solid rgba(0,0,0,0.3);width: 90%;margin-top: 0\"/>";
+"</div><div class=\"form-group  col-sm-3  col-md-3 col-lg-3\"><label for=\" ExpenseDescription\" class=\"control-label\">Expense Description:</label> <input class=\"form-control\" type=\"text\" name=\"expenseDescription[]\" value=\"\">" +
+"</div> <a style=\"color: red;\" class=\"remove  col-sm-1  col-md-1 col-lg-1\" >X</a> </br> <hr style=\"border-top: 1px solid rgba(0,0,0,0.3);width: 90%;margin-top: 0\"/>";
 
 
     $("#expenseContainer").append(expense);
