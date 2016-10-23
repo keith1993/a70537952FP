@@ -30,7 +30,10 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
 
 
         $date = $jj->DOB==""?date("Y-m-d"):date_format(new DateTime($jj->DOB), "Y-m-d");
-     require '..//Views/user.html';
+        $aa = new CountriesModel();
+        $countryArray =$aa->getCountriesInArray();
+
+        require '..//Views/user.html';
 
 
 
