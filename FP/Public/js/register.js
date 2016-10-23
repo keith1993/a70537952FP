@@ -50,15 +50,6 @@
 				}
 			}
 			
-			function DOBFunction() {
-				if (document.getElementById("datepicker").value == "") {
-				$("#errormsg_DOB").text("Please select your date of birth.");
-				}
-				else{
-					$("#errormsg_DOB").text("");
-				}
-			}
-			
 			function occupationFunction() {
 				if (document.getElementById("occupation").value == "") {
 				$("#errormsg_occupation").text("You can't leave this empty.");
@@ -82,7 +73,6 @@
 				else{
 					$("#errormsg_email").text("");
 				}
-				
 			
 			//FirstName
     			if (document.getElementById("firstName").value == "") {
@@ -127,16 +117,7 @@
 				else{
 					$("#errormsg_confirmPassword").text("");
 				}
-				
-			//DOB
-				if (document.getElementById("datepicker").value == "") {
-				$("#errormsg_DOB").text("Please select your date of birth.");
-				a=false;
-				}
-				else{
-					$("#errormsg_DOB").text("");
-				}
-				
+
 			//Occupation
 				if (document.getElementById("occupation").value == "") {
 				$("#errormsg_occupation").text("You can't leave this empty.");
