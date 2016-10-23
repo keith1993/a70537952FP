@@ -68,8 +68,6 @@
 				}
 			}
 			
-			
-			
 			//Submit function
 			function submitFunction(){
 			
@@ -79,6 +77,7 @@
 			//Email
 				if (document.getElementById("email").value == "") {
 				$("#errormsg_email").text("You can't leave this empty.");
+				a=false;
 				}
 				else{
 					$("#errormsg_email").text("");
@@ -141,6 +140,7 @@
 			//Occupation
 				if (document.getElementById("occupation").value == "") {
 				$("#errormsg_occupation").text("You can't leave this empty.");
+				a=false;
 				}
 				else{
 					$("#errormsg_occupation").text("");
