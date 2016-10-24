@@ -67,7 +67,7 @@
 
 </head>
 
-<body class="fixed-sn dark-skin hideXScroll">
+<body class="fixed-sn red-skin hideXScroll">
 
 
 <!--Double Navigation-->
@@ -164,9 +164,9 @@
                 //This will get the first returned node in the jQuery collection.
 
                 var data = {
-                    labels: [
+                    labels: ["Debts","Entertainment","Fixed expenses","Food & beverage","Others","Transport"
 
-                           <?php     $count1 = 0;
+                         /*  <?php     $count1 = 0;
                 foreach ($expenseGroup as $key=>$value){
 
                     echo "\"".$key."\"";
@@ -176,7 +176,7 @@
                     }
                     echo ",";
                 }
-                ?>
+                ?>*/
 
                     ],
                     datasets: [
@@ -188,7 +188,17 @@
                             data: [
 
                                     <?php
-                                    $count = 0;
+
+                echo array_key_exists('Debts', $expenseGroup)?$expenseGroup["Debts"].",":"0,";
+                echo array_key_exists('Entertainment', $expenseGroup)?$expenseGroup["Entertainment"].",":"0,";
+                echo array_key_exists('Fixed expenses', $expenseGroup)?$expenseGroup["Fixed expenses"].",":"0,";
+                echo array_key_exists('Food & beverage', $expenseGroup)?$expenseGroup["Food & beverage"].",":"0,";
+                echo array_key_exists('Others', $expenseGroup)?$expenseGroup["Others"].",":"0,";
+                echo array_key_exists('Transport', $expenseGroup)?$expenseGroup["Transport"].",":"0,";
+
+
+
+                                   /* $count = 0;
                 foreach ($expenseGroup as $key=>$value){
 
                     echo $value;
@@ -197,7 +207,7 @@
                         break;
                     }
                     echo ",";
-                }
+                }*/
 
 
                 ?>

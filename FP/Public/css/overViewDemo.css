@@ -261,3 +261,11 @@ margin-top: 60px;
 .form-inline .form-group {
      margin-right: 0rem;
 }
+
+.red-skin .navbar {
+    background-color: #a90000;
+}
+.red-gradient, .red-skin .side-nav {
+    background: linear-gradient(135deg, #000 0, #7d0000 100%);
+
+}

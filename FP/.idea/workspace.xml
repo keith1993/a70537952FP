@@ -21,11 +21,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserExpenseModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Models/UserExpenseModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
+              <folding>
+                <marker date="1476942740071" expanded="true" signature="269:503" ph="insert into user_expense... " />
+                <marker date="1476942740071" expanded="true" signature="1014:1075" ph="select * fro... user_expense" />
+                <marker date="1476942740071" expanded="true" signature="1556:1608" ph="delete from " />
+                <marker date="1476942740071" expanded="true" signature="1936:2138" ph="update user_... " />
+                <marker date="1476942740071" expanded="true" signature="2674:2853" ph="SELECT Expen... user_expense" />
+                <marker date="1476942740071" expanded="true" signature="2674:2883" ph="SELECT Expen... user_expense" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="489" column="105" selection-start-line="489" selection-start-column="105" selection-end-line="489" selection-end-column="105" />
+            <state relative-caret-position="602">
+              <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -58,8 +85,30 @@
       <file leaf-file-name="overViewDemo.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2429">
-              <caret line="262" column="1" selection-start-line="262" selection-start-column="1" selection-end-line="262" selection-end-column="1" />
+            <state relative-caret-position="852">
+              <caret line="270" column="1" selection-start-line="270" selection-start-column="1" selection-end-line="270" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterPage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/RegisterPage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <marker date="1477294813927" expanded="true" signature="635:658" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AJAXCheckEmail.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Controller/testController.php" />
         <option value="$PROJECT_DIR$/Model/UserExpenseModel.php" />
         <option value="$PROJECT_DIR$/Application/Framework/BaseController.php" />
         <option value="$PROJECT_DIR$/Application/Objects/IncomeObject.php" />
@@ -112,7 +160,6 @@
         <option value="$PROJECT_DIR$/Helper/EmailTo.php" />
         <option value="$PROJECT_DIR$/Application/Views/emailVerificationEmail.html" />
         <option value="$PROJECT_DIR$/Application/Controllers/VerifyEmail.php" />
-        <option value="$PROJECT_DIR$/Application/Controllers/Register.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/testController.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/InsertExpenses.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXLogin.php" />
@@ -122,19 +169,21 @@
         <option value="$PROJECT_DIR$/Public/js/FacebookLogin.js" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXFacebookLogin.php" />
         <option value="$PROJECT_DIR$/Application/Models/UserExpenseModel.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Application/Models/UserModel.php" />
         <option value="$PROJECT_DIR$/Application/Objects/UserObject.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/UpdateProfile.php" />
         <option value="$PROJECT_DIR$/Application/Views/index.html" />
         <option value="$PROJECT_DIR$/Application/Models/CountriesModel.php" />
-        <option value="$PROJECT_DIR$/Application/Controllers/RegisterPage.php" />
         <option value="$PROJECT_DIR$/Application/Views/register.html" />
         <option value="$PROJECT_DIR$/Application/Controllers/UserProfile.php" />
-        <option value="$PROJECT_DIR$/Application/Views/user.html" />
-        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
-        <option value="$PROJECT_DIR$/Public/css/overViewDemo.css" />
         <option value="$PROJECT_DIR$/Public/js/overviewDemo.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
+        <option value="$PROJECT_DIR$/Application/Views/user.html" />
+        <option value="$PROJECT_DIR$/Public/css/overViewDemo.css" />
+        <option value="$PROJECT_DIR$/Application/Controllers/Register.php" />
+        <option value="$PROJECT_DIR$/Application/Controllers/RegisterPage.php" />
+        <option value="$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php" />
       </list>
     </option>
   </component>
@@ -176,6 +225,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,7 +401,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,11 +523,12 @@
       <workItem from="1476931875955" duration="10430000" />
       <workItem from="1477045784385" duration="4054000" />
       <workItem from="1477104372281" duration="3832000" />
+      <workItem from="1477292219962" duration="2744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181823000" />
+    <option name="totallyTimeSpent" value="184567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -649,14 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controllers/InsertIncome.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -738,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXLogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -808,49 +843,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1476777160888" expanded="true" signature="1128:2906" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="1139:1385" ph="..." />
-            <marker date="1476777160888" expanded="false" signature="1405:1565" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="1567:2898" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="1640:1820" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="1822:2885" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="1860:2865" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="1921:2749" ph="..." />
-            <marker date="1476777160888" expanded="false" signature="1955:2085" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="2136:2726" ph="..." />
-            <marker date="1476777160888" expanded="false" signature="2207:2390" ph="..." />
-            <marker date="1476777160888" expanded="false" signature="2452:2539" ph="..." />
-            <marker date="1476777160888" expanded="false" signature="2651:2681" ph="..." />
-            <marker date="1476777160888" expanded="true" signature="2821:2845" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="189" column="10" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Models/UserExpenseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="41" column="5" selection-start-line="28" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <marker date="1476942740071" expanded="true" signature="269:503" ph="insert into user_expense... " />
-            <marker date="1476942740071" expanded="true" signature="1014:1075" ph="select * fro... user_expense" />
-            <marker date="1476942740071" expanded="true" signature="1556:1608" ph="delete from " />
-            <marker date="1476942740071" expanded="true" signature="1936:2138" ph="update user_... " />
-            <marker date="1476942740071" expanded="true" signature="2674:2853" ph="SELECT Expen... user_expense" />
-            <marker date="1476942740071" expanded="true" signature="2674:2883" ph="SELECT Expen... user_expense" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -858,9 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="240" column="67" selection-start-line="239" selection-start-column="4" selection-end-line="240" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#7;n#form#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -915,14 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/RegisterPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controllers/UserProfile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -935,30 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="776">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="250" column="94" selection-start-line="250" selection-start-column="94" selection-end-line="250" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2429">
-          <caret line="262" column="1" selection-start-line="262" selection-start-column="1" selection-end-line="262" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -976,10 +937,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="489" column="105" selection-start-line="489" selection-start-column="105" selection-end-line="489" selection-end-column="105" />
+        <state relative-caret-position="602">
+          <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -990,6 +967,78 @@
             <element signature="n#div#2;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Models/UserExpenseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
+          <folding>
+            <marker date="1476942740071" expanded="true" signature="269:503" ph="insert into user_expense... " />
+            <marker date="1476942740071" expanded="true" signature="1014:1075" ph="select * fro... user_expense" />
+            <marker date="1476942740071" expanded="true" signature="1556:1608" ph="delete from " />
+            <marker date="1476942740071" expanded="true" signature="1936:2138" ph="update user_... " />
+            <marker date="1476942740071" expanded="true" signature="2674:2853" ph="SELECT Expen... user_expense" />
+            <marker date="1476942740071" expanded="true" signature="2674:2883" ph="SELECT Expen... user_expense" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <marker date="1477294680114" expanded="true" signature="1214:2992" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="1225:1471" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="1491:1651" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="1653:2984" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="1726:1906" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="1908:2971" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="1946:2951" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="2007:2835" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="2041:2171" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="2222:2812" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="2293:2476" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="2538:2625" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="2737:2767" ph="..." />
+            <marker date="1477294680114" expanded="true" signature="2907:2931" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="852">
+          <caret line="270" column="1" selection-start-line="270" selection-start-column="1" selection-end-line="270" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/RegisterPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <marker date="1477294813927" expanded="true" signature="635:658" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

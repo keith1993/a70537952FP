@@ -33,7 +33,13 @@ $occupation = $_POST["occupation"];
 
 
 $a = new UserModel();
-$jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$occupation);
+try{
+
+    $jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$occupation);
+}catch (Exception $e){
+    header("Location: RegisterPage.php?a=error");
+}
+
 
  if($jj){
 	$user = $a->getUserByEmail($email);

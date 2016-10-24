@@ -26,11 +26,10 @@ $Email = $_POST["Email"];
 $isExist = $a->isEmailExist($Email);
 
 if($isExist) {
-    echo "Email exist";
+    echo "Email already exists";
 
 }else{
 
-    echo "Email no exist";
+    echo "Email available to register";
 }
 
-?>
