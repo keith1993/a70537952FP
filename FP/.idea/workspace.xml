@@ -34,8 +34,8 @@
       <file leaf-file-name="overviewDemo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="847">
+              <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
                 <marker date="1477295126672" expanded="true" signature="2579:2600" ph="..." />
@@ -523,12 +523,12 @@
       <workItem from="1476931875955" duration="10430000" />
       <workItem from="1477045784385" duration="4054000" />
       <workItem from="1477104372281" duration="3832000" />
-      <workItem from="1477292219962" duration="3038000" />
+      <workItem from="1477292219962" duration="3100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184861000" />
+    <option name="totallyTimeSpent" value="184923000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1031,8 +1031,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="847">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
             <marker date="1477295126672" expanded="true" signature="2579:2600" ph="..." />
