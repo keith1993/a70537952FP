@@ -85,7 +85,7 @@ function addExpense() {
     $("#expenseContainer").append(expense);
     expenseNum++;
 
-    if(expenseNum>=5){
+    if(expenseNum>=3){
 
         $("#btnAddExpense").hide();
 
@@ -103,7 +103,7 @@ $(document).off().on('click', '.remove', function(event) {
     $(this).parent().remove();
 
 
-    if(expenseNum<5){
+    if(expenseNum<3){
 
         $("#btnAddExpense").show();
 

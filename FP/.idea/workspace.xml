@@ -31,6 +31,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="overviewDemo.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#40#0" expanded="false" />
+                <marker date="1477295126672" expanded="true" signature="2579:2600" ph="..." />
+                <marker date="1477295126672" expanded="true" signature="3182:3193" ph="..." />
+                <marker date="1477295126672" expanded="true" signature="3267:3329" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserExpenseModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Models/UserExpenseModel.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,8 +66,8 @@
       <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
+            <state relative-caret-position="776">
+              <caret line="550" column="7" selection-start-line="550" selection-start-column="7" selection-end-line="550" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -62,21 +77,6 @@
                 <element signature="n#div#1;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overviewDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1577">
-              <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#40#0" expanded="false" />
-                <marker date="1477108143033" expanded="true" signature="2579:2600" ph="..." />
-                <marker date="1477108143033" expanded="true" signature="3182:3193" ph="..." />
-                <marker date="1477108143033" expanded="true" signature="3267:3329" ph="..." />
               </folding>
             </state>
           </provider>
@@ -104,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AJAXCheckEmail.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AJAXCheckEmail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="665">
@@ -176,7 +176,6 @@
         <option value="$PROJECT_DIR$/Application/Models/CountriesModel.php" />
         <option value="$PROJECT_DIR$/Application/Views/register.html" />
         <option value="$PROJECT_DIR$/Application/Controllers/UserProfile.php" />
-        <option value="$PROJECT_DIR$/Public/js/overviewDemo.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
         <option value="$PROJECT_DIR$/Application/Views/user.html" />
@@ -184,6 +183,7 @@
         <option value="$PROJECT_DIR$/Application/Controllers/Register.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/RegisterPage.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXCheckEmail.php" />
+        <option value="$PROJECT_DIR$/Public/js/overviewDemo.js" />
       </list>
     </option>
   </component>
@@ -523,12 +523,12 @@
       <workItem from="1476931875955" duration="10430000" />
       <workItem from="1477045784385" duration="4054000" />
       <workItem from="1477104372281" duration="3832000" />
-      <workItem from="1477292219962" duration="2744000" />
+      <workItem from="1477292219962" duration="3038000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184567000" />
+    <option name="totallyTimeSpent" value="184861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -924,19 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1577">
-          <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <marker date="1477108143033" expanded="true" signature="2579:2600" ph="..." />
-            <marker date="1477108143033" expanded="true" signature="3182:3193" ph="..." />
-            <marker date="1477108143033" expanded="true" signature="3267:3329" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -950,23 +937,6 @@
         <state relative-caret-position="532">
           <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,6 +1009,36 @@
         <state relative-caret-position="665">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="550" column="7" selection-start-line="550" selection-start-column="7" selection-end-line="550" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+            <marker date="1477295126672" expanded="true" signature="2579:2600" ph="..." />
+            <marker date="1477295126672" expanded="true" signature="3182:3193" ph="..." />
+            <marker date="1477295126672" expanded="true" signature="3267:3329" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
