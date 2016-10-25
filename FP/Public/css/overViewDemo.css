@@ -218,7 +218,8 @@ td.footable-sortable > span.fooicon, th.footable-sortable > span.fooicon {
 .side-nav .sn-avatar-wrapper img {
 
     max-width: 60px;
-
+    min-height: 70px;
+    min-width: 70px;
 }
 
 .side-nav .logo-wrapper a {
