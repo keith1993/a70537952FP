@@ -23,4 +23,16 @@ spl_autoload_register(function ($class) {
 $a = new CountriesModel();
 $countryArray =$a->getCountriesInArray();
 
+if(isset($_GET["a"])){
+
+    /*
+     * echo "
+            <script type=\"text/javascript\">
+
+            </script>
+        ";
+    */
+}
+
+
 require "../Views/register.html";

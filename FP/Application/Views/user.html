@@ -23,7 +23,7 @@
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
 	<link href="../../Public/css/demo.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="../../Public/css/userProfile.css">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -51,12 +51,15 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="../../Public/js/demo.js"></script>
-    
+    <script src="../../Public/js/userProfile.js"></script>
+
+
+
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="green" data-image="../../Public/images/sidebar-5.jpg">
+    <div class="sidebar" data-color="red" data-image="../../Public/images/sidebar-5.jpg">
 
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->    </div>
 
@@ -112,14 +115,14 @@
                                     <b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="user.html">Profile Setting</a></li>
+                                <li><a href="UserProfile.php">Profile Setting</a></li>
                                 <li><a href="resetPassword.html">Password Setting</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="Logout.php">
                                 Log out
                             </a>
                         </li>
@@ -238,15 +241,21 @@
                             <div class="image">
                                 <img src="../../Public/images/macau1.jpg" alt="..."/>
                             </div>
+
                             <div class="content">
                                 <div class="author">
-                                     <a href="#">
-                                    <img class="avatar border-gray" src="<?php echo "../../Public/images/".$jj->UserImage;?>" alt="..."/>
 
+                                    <img class="avatar border-gray" src="<?php echo "../../Public/uploads/".$jj->UserImage;?>" alt="..."/>
+                                    <a href="#">
+                                        <div>
+                                             <span style="font-size: 12px" onclick="showUpload()">Change Profile Picture</span>
+                                         </div>
+                                    </a>
+                                    <br />
                                       <h4 class="title"><?php echo $jj->FirstName." ".$jj->LastName;?><br />
                                          <small><br/></small>
                                       </h4>
-                                    </a>
+
                                 </div>
                                 <p class="description text-center"> <?php echo $jj->AboutMe;?>
                                 </p>
@@ -263,7 +272,7 @@
                 </div>
             </div>
         </div>
-
+<!--
 
         <footer class="footer">
             <div class="container-fluid">
@@ -298,8 +307,44 @@
         </footer>
 
     </div>
-</div>
+</div>-->
+<div id="upload" style="display: none;z-index: 50">
+    <div class="mask" onclick="hideInsert()"></div>
 
+    <div id="InsertExpense" class="popout" style="">
+
+
+        <p class="popoutTitle" style="text-align: center">Upload Profile Image</p>
+        <form id="expensesFormID" class="form-inline expenseForm" action="../Controllers/UpdateUserImage.php"
+              method="post" enctype="multipart/form-data">
+
+
+
+                    <div class="form-group col-sm-12  col-md-12 col-lg-12">
+
+                        <label for="Image" class="control-label">Image:</label>
+                        <input type="file" name="fileUpload" id="file1" onchange="preview_image();">
+                        <br>
+                        <div id="image-preview-div" style="display: block">
+                            <label for="exampleInputFile">Selected image:</label>
+                            <br>
+                            <div id="image_preview"></div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+            <input id="btnCancelInsert" class="form-control button-collapse btnCancel" style="width: 200px;"
+                   type="button" onclick="hideInsert()" value="Cancel">
+            <input class="form-control am-button btnSubmit" id="upload-button" style="width: 200px;"
+                   type="submit" onclick="" name="submit" value="Upload" disabled>
+
+        </form>
+    </div>
+</div>
 
 </body>
 </html>

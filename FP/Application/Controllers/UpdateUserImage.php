@@ -20,15 +20,17 @@ spl_autoload_register(function ($class) {
     }
 
 });
+session_start();
 
-$demo = $_POST["demo"];
+$ImageFile = $_FILES["fileUpload"];
 
 
 $a = new UserModel();
-$jj = $a->updateUserImage();
+
+$jj = $a->updateUserImage($_SESSION["id"],$ImageFile);
 
  if($jj){
-	echo "Image Updated";
+    header("Location: UserProfile.php");
     }else{
         echo "Error!". mysql_error();
     }

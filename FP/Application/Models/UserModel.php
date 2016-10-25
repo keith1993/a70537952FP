@@ -177,6 +177,7 @@ class UserModel extends BaseModel
         $fileName = round(microtime(true) * 1000) . "R" . rand(10000, 99999);
         $upload = new UploadImage($fileName, $Files);
         $UserImage = $fileName . "." . $upload->imageFileType;
+
         $result->bindValue(":UserImage", $UserImage);
         $isSuccess = $result->execute();
         return $isSuccess;
