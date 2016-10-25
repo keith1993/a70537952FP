@@ -9,8 +9,13 @@
 			}
 			
 			function firstNameFunction() {
+				var a = document.getElementById("firstName").match(\w);
+				
     			if (document.getElementById("firstName").value == "") {
 				$("#errormsg_firstName").text("You can't leave this empty.");
+				}
+				else if (a){
+				$("#errormsg_firstName").text("Blah.");	
 				}
 				else{
 					$("#errormsg_firstName").text("");
@@ -137,11 +142,3 @@
 			});
 
 }
-
-			
-
-
-	
-			
-			
-				
