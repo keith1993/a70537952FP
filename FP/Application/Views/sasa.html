@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../../Public/images/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Profile Setting | CORNUCOPIA</title>
+	<title>Password Setting | CORNUCOPIA</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -73,7 +73,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Profile Setting</a>
+                    <a class="navbar-brand">Password Setting</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <!--<ul class="nav navbar-nav navbar-left">
@@ -115,8 +115,8 @@
                                     <b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="UserProfile.php">Profile Setting</a></li>
-                                <li><a href="changepassword.html">Password Setting</a></li>
+                                <li><a href="User.php">Profile Setting</a></li>
+                                <li><a href="resetPassword.html">Password Setting</a></li>
                                 <li class="divider"></li>
 
                               </ul>
@@ -138,128 +138,26 @@
                     <div class="col-md-8">
                         <div class="card">	
                             <div class="header">
-                                <h4 class="title">Edit Profile</h4>
+                                <h4 class="title">Change Your Password</h4><br><br>
+								<br>
                             </div>
-                            <div class="content">
-                                <form action="UpdateProfile.php" method="post">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" name="email" class="form-control" placeholder="<?php echo $jj->Email;?>" disabled>
-                                            </div>
-                                        </div>
-                                    </div>
+                           <div class="templatemo_home_inner_wapper">
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" value="<?php echo $jj->FirstName;?>" onblur="firstNameFunction()">
-                                                <span role="alert" class="errormsg" id="errormsg_firstName"
-                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
-            </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" value="<?php echo $jj->LastName;?>" onblur="lastNameFunction()">
-                                                <span role="alert" class="errormsg" id="errormsg_lastName"
-                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
-            </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                  
+                <form id="resetPassword"action="#" method="post">
+<div style="display: none">
+                    
+</div>
+<center><p>Old Password</p><input type="password" name="newPassword" id="newPassword" class="form-control" value="" ></center>
+                <center><p>New Password</p><input type="password" name="newPassword" id="newPassword" class="form-control" value="" ></center>
+                <center><p>Confirm New Password</p><input type="password" name="confirmNewPassword" id="confirmNewPassword" value="" class="form-control">
 
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Country</label>
-                                                <!--<input type="text" id="country" name="country" class="form-control" placeholder="Country" value="MALAYSIA">-->
-                                                <span role="alert" class="errormsg" id="errormsg_country"
-                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
-					  <select name="country" class="form-control">
 
-						  <?php foreach ($countryArray as $k => $v)
-{echo "<option value=\"$v\" class=\"form-control\"";
-			   echo $jj->Country==$v?"selected=\"selected\"":"";
-						echo ">$v</option>";
-						  }?>
-</select>
-            </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Occupation</label>
-                                                <input type="text" id="occupation" name="occupation" class="form-control" value="<?php echo $jj->Occupation;?>" font-color="black">
-                                                <span role="alert" class="errormsg" id="errormsg_occupation"
-                      style="display: block; font-size:15px; color:rgba(255,0,4,1.00);">
-            </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                        <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Date of Birth</label disabled>
-                                                <input type="date" value="<?php echo $date;?>" name="dob" class="form-control" >
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Gender</label>
-												<select name="gender" class="form-control">
+                        <center><span id="error" style="color:Red;font-size:17px;font-family: 'Microsoft YaHei UI Light';display:none ">Password is not same</span></center>
 
-												<option value="Male" <?php echo $jj->Gender=="Male"?' selected="selected"': '';?>>Male</option>
-												<option value="Female" <?php echo $jj->Gender=="Female"?' selected="selected"': '';?>>Female</option>
 
-												</select>
-                                            </div>
-                                        </div>
-                                    </div>
+                <button type="submit" class="btn btn-primary">OK</button></center>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>About Me</label>
-                                                <textarea rows="5" name="aboutme" class="form-control" ><?php echo $jj->AboutMe;?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
-                                    <div class="clearfix"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-user">
-                            <div class="image">
-                                <img src="../../Public/images/macau1.jpg" alt="..."/>
-                            </div>
-
-                            <div class="content">
-                                <div class="author">
-
-                                    <img class="avatar border-gray" src="<?php echo "../../Public/uploads/".$jj->UserImage;?>" alt="..."/>
-                                    <a href="#">
-                                        <div>
-                                             <span style="font-size: 12px" onclick="showUpload()">Change Profile Picture</span>
-                                         </div>
-                                    </a>
-                                    <br />
-                                      <h4 class="title"><?php echo $jj->FirstName." ".$jj->LastName;?><br />
-                                         <small><br/></small>
-                                      </h4>
-
-                                </div>
-                                <p class="description text-center"> <?php echo $jj->AboutMe;?>
-                                </p>
-                            </div>
+                </form>
                             <hr>
                             <!--<div class="text-center">
                                 <button href="https://www.facebook.com/mykeat" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
