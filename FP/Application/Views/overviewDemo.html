@@ -67,7 +67,7 @@
 
 </head>
 
-<body class="fixed-sn red-skin hideXScroll">
+<body class="fixed-sn hideXScroll">
 
 
 <!--Double Navigation-->
@@ -362,7 +362,13 @@
         echo "
         <th data-type=\"date\">Income Enter Date</th>
         ";
+        echo "
+        <th data-type=\"html\">Edit</th>
+        ";
 
+        echo "
+        <th data-type=\"html\">Delete</th>
+        ";
 
         echo "
         </thead>
@@ -385,6 +391,15 @@
             echo "
             <td>".$value->Income_EnterDate."</td>
             ";
+
+            echo "
+            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-pencil\"></i> </a></td>
+            ";
+
+            echo "
+            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-trash-o\"></i> </a></td>
+            ";
+
             echo "
         </tr>
         ";
@@ -430,7 +445,13 @@
         echo "
         <th data-type=\"date\">Expense Enter Date</th>
         ";
+        echo "
+        <th data-type=\"html\">Edit</th>
+        ";
 
+        echo "
+        <th data-type=\"html\">Delete</th>
+        ";
 
         echo "
         </thead>
@@ -457,9 +478,21 @@
             echo "
             <td>".$value->Expense_EnterDate."</td>
             ";
+
+
+            echo "
+            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-pencil\"></i> </a></td>
+            ";
+
+            echo "
+            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-trash-o\"></i> </a></td>
+            ";
+
             echo "
         </tr>
         ";
+
+
         }
         echo "
         </tbody>

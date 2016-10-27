@@ -99,13 +99,32 @@ class UserModel extends BaseModel
         $isSuccess = $result->execute();
 
         if ($isSuccess ) {
-            $isSuccess = self::updateChangePasswordDate($email);
+            $isSuccess = self::updateChangePasswordDateByEmail($email);
         } else {
 
             $isSuccess = false;
         }
         return $isSuccess;
     }
+
+    public function ChangePassword($UserId, $oldPassword,$newPassword)
+    {
+        $sql = "update user set Password=md5(:newPassword) where ID=:UserID and Password=md5(:oldPassword)";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":newPassword", $newPassword);
+        $result->bindValue(":UserID", $UserId);
+        $result->bindValue(":oldPassword", $oldPassword);
+        $isSuccess = $result->execute();
+
+        if ( $isSuccess && $result->rowCount()==1) {
+            $isSuccess = self::updateChangePasswordDateByID($UserId);
+        } else {
+
+            $isSuccess = false;
+        }
+        return $result->rowCount();
+    }
+
 
     public function updateUserByUserID($UserID, $FirstName, $LastName, $DOB, $Gender,
                                        $Country, $Occupation, $AboutMe)
@@ -132,7 +151,7 @@ class UserModel extends BaseModel
         return $isSuccess;
     }
 
-    private function updateChangePasswordDate($email)
+    private function updateChangePasswordDateByEmail($email)
     {
         $sql = "update user set LastChangePasswordDate=now() where Email=:email";
         $result = self::$conn->prepare($sql);
@@ -141,9 +160,18 @@ class UserModel extends BaseModel
         return $isSuccess;
     }
 
+    private function updateChangePasswordDateByID($ID)
+    {
+        $sql = "update user set LastChangePasswordDate=now() where ID=:ID";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":ID", $ID);
+        $isSuccess = $result->execute();
+        return $isSuccess;
+    }
+
     private function updateLastLoginDate($UserID)
     {
-        $sql = "update user set LastLoginDate=now() where id=:UserID";
+        $sql = "update user set LastLoginDate=now() where ID=:UserID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":UserID", $UserID);
         $isSuccess = $result->execute();

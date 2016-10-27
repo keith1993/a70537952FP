@@ -30,7 +30,7 @@ $a = new UserModel();
 $jj = $a->updateUserImage($_SESSION["id"],$ImageFile);
 
  if($jj){
-    header("Location: UserProfile.php");
+    header("Location: UserProfile.php?a=updateProfileSuccess");
     }else{
         echo "Error!". mysql_error();
     }

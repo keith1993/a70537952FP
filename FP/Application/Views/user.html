@@ -116,7 +116,13 @@
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a href="UserProfile.php">Profile Setting</a></li>
-                                <li><a href="changepassword.html">Password Setting</a></li>
+                                  <?php
+
+                                  if (!strpos($jj->Email, '@facebook.com')) {
+                                         echo "<li><a href=\"ChangePasswordPage.php\">Password Setting</a></li>";
+                                    }
+
+                                  ?>
                                 <li class="divider"></li>
 
                               </ul>
@@ -130,6 +136,23 @@
                 </div>
             </div>
         </nav>
+        <?php
+            if(isset($_GET["a"])){
+                if($_GET["a"]=="updatePasswordSuccess"){
+                    echo "<div id=\"noticeBox\" class=\"alert alert-info\">";
+                    echo"<strong>Success!</strong> Update Password Success.";
+                    echo"</div>";
+                }else if($_GET["a"]=="updatePasswordFailed"){
+                    echo "<div id=\"noticeBox\" class=\"alert alert-danger\">";
+                    echo"<strong>Failed!</strong> Update Password Failed.";
+                    echo"</div>";
+                }else if($_GET["a"]=="updateProfileSuccess"){
+                    echo "<div id=\"noticeBox\" class=\"alert alert-info\">";
+                    echo"<strong>Success!</strong> Update Profile Success.";
+                    echo"</div>";
+                }
+            }
+        ?>
 
 
         <div class="content">
