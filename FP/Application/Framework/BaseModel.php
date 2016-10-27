@@ -11,7 +11,7 @@ class BaseModel
     protected static $serverName = "localhost";
     protected static $username = "root";
     protected static $password = "";
-    protected static $dbname = "final project";
+    protected static $dbname = "finance";
     protected static $conn;
 
     function __construct()
@@ -45,3 +45,4 @@ class BaseModel
 
 
 }
+?>
