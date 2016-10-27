@@ -20,7 +20,7 @@ spl_autoload_register(function ($class) {
     }
 
 });
-/*
+
 //define variables and set to empty values
 $TargetNameErr = $TargerAmountErr = $TargetDaysErr = "";
 $Target_Name = $Target_Amount = $Target_Days = "";
@@ -57,8 +57,8 @@ if (empty($_POST["Target_Days"])) {
 $a = new UserTargetModel();
 $jj = $a->addTarget("007",$Target_Name,$Target_Amount,$Target_Days);
 
-*/
 
+/*
 $Target_Name = $_POST["Target_Name"];
 $Target_Amount = $_POST["Target_Amount"];
 $Target_Days = $_POST["Target_Days"];
@@ -74,7 +74,7 @@ $jj = $a->addTarget("007",$Target_Name,$Target_Amount,$Target_Days);
     }
 
 	//$UserID,$Target_Name,$Target_Amount,$Target_Days
-
+*/
 //display the input
   echo "Your have inserted ";
   echo $Target_Name;
