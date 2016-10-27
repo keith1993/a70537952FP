@@ -39,8 +39,8 @@ $a = new UserModel();
 $jj = $a->updateUserByUserID( $_SESSION["id"],$FirstName,$LastName,$DOB,$Gender,$Country,$Occupation,$AboutMe);
 
  if($jj){
-	
-			echo "profile updated";
+
+     header("Location:UserProfile.php?a=updateProfileSuccess");
 		}else{
         echo "Error!". mysql_error();
     }

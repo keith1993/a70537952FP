@@ -31,9 +31,10 @@ $gender = $_POST["Gender"];
 $loginIP = $_SERVER["REMOTE_ADDR"];
 
 
+$facebookEmail = $Id."@facebook.com";
 
 $a = new UserModel();
-$jj = $a->Login($email,$Id,$loginIP);
+$jj = $a->Login($facebookEmail,$Id,$loginIP);
 
 
 if ($jj instanceof UserObject) {
@@ -43,10 +44,11 @@ if ($jj instanceof UserObject) {
     $_SESSION["id"] = $jj->ID;
     $_SESSION["email"] = $jj->Email;
    $_SESSION["password"] = $Id;
+
     echo "LoginSuccess";
 } else {
 
-    $isRegister = $a->Register($firstName, $lastName, $Id, null, $gender, $email, null,null);
+    $isRegister = $a->Register($firstName, $lastName, $Id, null, $gender, $facebookEmail, null,null);
 
     if ($isRegister) {
         //echo "Register success!" ;

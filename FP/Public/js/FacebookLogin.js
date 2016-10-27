@@ -101,6 +101,9 @@ function testAPI() {
 
                     window.location.href = "Application/Views/registerSuccess.html";
 
+                }else if(data == "Register Error!"){
+
+                    alert("Register unsuccessful");
                 }
 
 

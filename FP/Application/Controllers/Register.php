@@ -33,7 +33,13 @@ $occupation = $_POST["occupation"];
 
 
 $a = new UserModel();
-$jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$occupation);
+try{
+
+    $jj = $a->Register($firstName,$lastName,$password,$DOB,$options,$email,$country,$occupation);
+}catch (Exception $e){
+    header("Location: RegisterPage.php?a=error");
+}
+
 
  if($jj){
 	$user = $a->getUserByEmail($email);
@@ -113,7 +119,8 @@ padding-top: 220px;padding-bottom: 30px;\">Email Verification</h4>
 		}
         
     }else{
-        echo "Error!". mysql_error();
+
+        header("Location: RegisterPage.php?a=error");
     }
 
 /*$FirstName, $LastName, $Password, $DOB, $Gender, $Email,

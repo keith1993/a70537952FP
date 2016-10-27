@@ -10,7 +10,7 @@
 
 class UserExpenseModel extends BaseModel
 {
-    public function addExpense($UserID,$Expense_Name,$Expense_Amount,$Expense_Category,$Expense_Description)
+    public function addExpense($UserID, $Expense_Name, $Expense_Amount, $Expense_Category, $Expense_Description)
     {
         $sql = "insert into user_expense (User_ID,Expense_Name,Expense_Amount,Expense_Category,
             Expense_Description,Expense_EnterDate)
@@ -20,7 +20,7 @@ class UserExpenseModel extends BaseModel
         $result->bindValue(":Expense_Name", $Expense_Name);
         $result->bindValue(":Expense_Amount", $Expense_Amount);
         $result->bindValue(":Expense_Category", $Expense_Category);
-        $result->bindValue(":Expense_Description",$Expense_Description);
+        $result->bindValue(":Expense_Description", $Expense_Description);
 
         $isSuccess = $result->execute();
         return $isSuccess;
@@ -33,8 +33,8 @@ class UserExpenseModel extends BaseModel
         $result->bindValue(":User_ID", $UserID);
         $result->execute();
         $result = $result->fetchAll();
-        $expenseList =  new SplObjectStorage();
-        foreach ($result as $key =>$value){
+        $expenseList = new SplObjectStorage();
+        foreach ($result as $key => $value) {
             $expense = new UserExpenseObject($value);
             $expenseList->attach($expense);
         }
@@ -50,7 +50,7 @@ class UserExpenseModel extends BaseModel
         return $isSuccess;
     }
 
-    public function updateIncomeByIncomeID($ExpenseID,$Expense_Name,$Expense_Amount,$Expense_Category,$Expense_Description)
+    public function updateIncomeByIncomeID($ExpenseID, $Expense_Name, $Expense_Amount, $Expense_Category, $Expense_Description)
     {
         $sql = "update user_expense set Expense_Name=:Expense_Name,Expense_Amount=:Expense_Amount,Expense_Category=:Expense_Category,
                 Expense_Description=:Expense_Description where Expense_ID=:ExpenseID";
@@ -59,75 +59,31 @@ class UserExpenseModel extends BaseModel
         $result->bindValue(":Expense_Name", $Expense_Name);
         $result->bindValue(":Expense_Amount", $Expense_Amount);
         $result->bindValue(":Expense_Category", $Expense_Category);
-        $result->bindValue(":Expense_Description",$Expense_Description);
+        $result->bindValue(":Expense_Description", $Expense_Description);
 
         $isSuccess = $result->execute();
         return $isSuccess;
     }
 
-    public function getExpenseJSONbyUserID($UserID)
+
+    public function getExpenseGroupByUserIDAndMonth($UserID,$Month)
     {
-        $sql = "select * from user_expense where User_ID=:User_ID";
+        $sql = "SELECT Expense_Category,SUM(Expense_Amount) as Expense_Amount FROM `user_expense` 
+              where User_ID=:User_ID and MONTH(Expense_EnterDate)=:mon GROUP by Expense_Category ORDER BY Expense_Category ASC";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":User_ID", $UserID);
+        $result->bindValue(":mon", $Month);
         $result->execute();
         $result = $result->fetchAll();
 
-        $data = array();
-        foreach ($result as $key =>$value){
-            $expense = new UserExpenseObject($value);
-            array_push($data,(object)array(
-                'Expense Name' => $expense->Expense_Name,
-                'Expense Amount' => $expense->Expense_Amount,
-                'Expense Category' => $expense->Expense_Category,
-                'Expense Description' =>$expense->Expense_Description,
-                'Expense Enter Date' => $expense->Expense_EnterDate,
-            )) ;
+        $expenseGroup = array();
+        foreach ($result as $key => $value) {
+
+            $expenseGroup[$value['Expense_Category']]=$value['Expense_Amount'];
         }
-        $json = json_encode($data);
-        return $json;
+
+
+        return $expenseGroup;
     }
-
-    public function getExpenseColumnJSON()
-    {
-
-
-        $data = array(
-            (object)array(
-                'name' => 'ExpenseName',
-                'title' => 'Expense Name',
-                'type' => 'text',
-
-            ),
-            (object)array(
-                'name' => 'ExpenseAmount',
-                'title' => 'Expense Amount',
-                'type' => 'number',
-
-            ),
-            (object)array(
-                'name' => 'ExpenseCategory',
-                'title' => 'Expense Category',
-                'type' => 'text',
-
-            ),
-            (object)array(
-                'name' => 'ExpenseDescription',
-                'title' => 'Expense Description',
-                'type' => 'text',
-
-            ),
-            (object)array(
-                'name' => 'ExpenseEnterDate',
-                'title' => 'Expense Enter Date',
-                'type' => 'date',
-                'formatString' => 'DD MMM YYYY',
-            ),
-        );
-
-        $json = json_encode($data);
-        return $json;
-    }
-
 
 }

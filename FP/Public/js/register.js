@@ -9,8 +9,13 @@
 			}
 			
 			function firstNameFunction() {
+				var a = document.getElementById("firstName").match(\w);
+				
     			if (document.getElementById("firstName").value == "") {
 				$("#errormsg_firstName").text("You can't leave this empty.");
+				}
+				else if (a){
+				$("#errormsg_firstName").text("Blah.");	
 				}
 				else{
 					$("#errormsg_firstName").text("");
@@ -50,15 +55,6 @@
 				}
 			}
 			
-			function DOBFunction() {
-				if (document.getElementById("datepicker").value == "") {
-				$("#errormsg_DOB").text("Please select your date of birth.");
-				}
-				else{
-					$("#errormsg_DOB").text("");
-				}
-			}
-			
 			function occupationFunction() {
 				if (document.getElementById("occupation").value == "") {
 				$("#errormsg_occupation").text("You can't leave this empty.");
@@ -67,8 +63,6 @@
 					$("#errormsg_occupation").text("");
 				}
 			}
-			
-			
 			
 			//Submit function
 			function submitFunction(){
@@ -79,11 +73,11 @@
 			//Email
 				if (document.getElementById("email").value == "") {
 				$("#errormsg_email").text("You can't leave this empty.");
+				a=false;
 				}
 				else{
 					$("#errormsg_email").text("");
 				}
-				
 			
 			//FirstName
     			if (document.getElementById("firstName").value == "") {
@@ -128,26 +122,18 @@
 				else{
 					$("#errormsg_confirmPassword").text("");
 				}
-				
-			//DOB
-				if (document.getElementById("datepicker").value == "") {
-				$("#errormsg_DOB").text("Please select your date of birth.");
-				a=false;
-				}
-				else{
-					$("#errormsg_DOB").text("");
-				}
-				
+
 			//Occupation
 				if (document.getElementById("occupation").value == "") {
 				$("#errormsg_occupation").text("You can't leave this empty.");
+				a=false;
 				}
 				else{
 					$("#errormsg_occupation").text("");
 				}
 				
     			if (a){
-    			return true; 
+    			return true;
 				}
 				else{
 					// Return false to cancel form action
@@ -155,10 +141,4 @@
 				}
 			});
 
-			}
-
-
-	
-			
-			
-				
+}

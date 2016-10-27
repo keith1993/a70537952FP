@@ -84,6 +84,7 @@ class UserModel extends BaseModel
 
 
         $isSuccess = $result->execute();
+
         return $isSuccess;
     }
 
@@ -98,13 +99,32 @@ class UserModel extends BaseModel
         $isSuccess = $result->execute();
 
         if ($isSuccess ) {
-            $isSuccess = self::updateChangePasswordDate($email);
+            $isSuccess = self::updateChangePasswordDateByEmail($email);
         } else {
 
             $isSuccess = false;
         }
         return $isSuccess;
     }
+
+    public function ChangePassword($UserId, $oldPassword,$newPassword)
+    {
+        $sql = "update user set Password=md5(:newPassword) where ID=:UserID and Password=md5(:oldPassword)";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":newPassword", $newPassword);
+        $result->bindValue(":UserID", $UserId);
+        $result->bindValue(":oldPassword", $oldPassword);
+        $isSuccess = $result->execute();
+
+        if ( $isSuccess && $result->rowCount()==1) {
+            $isSuccess = self::updateChangePasswordDateByID($UserId);
+        } else {
+
+            $isSuccess = false;
+        }
+        return $result->rowCount();
+    }
+
 
     public function updateUserByUserID($UserID, $FirstName, $LastName, $DOB, $Gender,
                                        $Country, $Occupation, $AboutMe)
@@ -131,7 +151,7 @@ class UserModel extends BaseModel
         return $isSuccess;
     }
 
-    private function updateChangePasswordDate($email)
+    private function updateChangePasswordDateByEmail($email)
     {
         $sql = "update user set LastChangePasswordDate=now() where Email=:email";
         $result = self::$conn->prepare($sql);
@@ -140,9 +160,18 @@ class UserModel extends BaseModel
         return $isSuccess;
     }
 
+    private function updateChangePasswordDateByID($ID)
+    {
+        $sql = "update user set LastChangePasswordDate=now() where ID=:ID";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":ID", $ID);
+        $isSuccess = $result->execute();
+        return $isSuccess;
+    }
+
     private function updateLastLoginDate($UserID)
     {
-        $sql = "update user set LastLoginDate=now() where id=:UserID";
+        $sql = "update user set LastLoginDate=now() where ID=:UserID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":UserID", $UserID);
         $isSuccess = $result->execute();
@@ -176,6 +205,7 @@ class UserModel extends BaseModel
         $fileName = round(microtime(true) * 1000) . "R" . rand(10000, 99999);
         $upload = new UploadImage($fileName, $Files);
         $UserImage = $fileName . "." . $upload->imageFileType;
+
         $result->bindValue(":UserImage", $UserImage);
         $isSuccess = $result->execute();
         return $isSuccess;
@@ -231,15 +261,15 @@ class UserModel extends BaseModel
     private function setEmailVerified($user)
     {
         date_default_timezone_set('Asia/Kuala_Lumpur');
-        if (date("Y/m/d H:i:s") > date_format(new DateTime($user->TokenExpTime), "Y/m/d")) {
-            return false;
-        } else {
+        //if (date("Y/m/d H:i:s") > date_format(new DateTime($user->TokenExpTime), "Y/m/d")) {
+          //  return false;
+       // } else {
             $sql = "update user set EmailVerified=1 where id=:UserID";
             $result = self::$conn->prepare($sql);
             $result->bindValue(":UserID", $user->ID);
             $isSuccess = $result->execute();
             return $isSuccess;
-        }
+       // }
 
     }
 

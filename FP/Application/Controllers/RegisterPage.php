@@ -2,10 +2,9 @@
 /**
  * Created by PhpStorm.
  * User: Admin
- * Date: 25-09-16
- * Time: 2:24 PM
+ * Date: 22-10-16
+ * Time: 10:48 AM
  */
-
 spl_autoload_register(function ($class) {
 
 
@@ -20,19 +19,20 @@ spl_autoload_register(function ($class) {
     }
 
 });
-session_start();
 
-$ImageFile = $_FILES["fileUpload"];
+$a = new CountriesModel();
+$countryArray =$a->getCountriesInArray();
+
+if(isset($_GET["a"])){
+
+    /*
+     * echo "
+            <script type=\"text/javascript\">
+
+            </script>
+        ";
+    */
+}
 
 
-$a = new UserModel();
-
-$jj = $a->updateUserImage($_SESSION["id"],$ImageFile);
-
- if($jj){
-    header("Location: UserProfile.php?a=updateProfileSuccess");
-    }else{
-        echo "Error!". mysql_error();
-    }
-
-/*$UserID, $Files*/
+require "../Views/register.html";

@@ -25,8 +25,8 @@ body {
 
 .content {
     width: inherit;
-    background: url("http://mdbootstrap.com/images/regular/nature/img%20(68).jpg") no-repeat ;
-
+    /*background: url("http://mdbootstrap.com/images/regular/nature/img%20(68).jpg") no-repeat ;*/
+    /*background: url("https://scontent-kul1-1.xx.fbcdn.net/t31.0-8/1799971_752925061451035_4578199307499207554_o.jpg") no-repeat ;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -36,7 +36,7 @@ body {
     position: relative;
 
     height: 100vh;
-
+    overflow: hidden;
 }
 
 .sidenav {
@@ -218,7 +218,8 @@ td.footable-sortable > span.fooicon, th.footable-sortable > span.fooicon {
 .side-nav .sn-avatar-wrapper img {
 
     max-width: 60px;
-
+    min-height: 70px;
+    min-width: 70px;
 }
 
 .side-nav .logo-wrapper a {
@@ -242,7 +243,7 @@ label{
     font-size: 22px;
 
 }
-.btnCancelSubmit{
+.btnCancel,.btnSubmit{
 margin-top: 60px;
     width: 200px;
     display: inline-block;
@@ -251,4 +252,27 @@ margin-top: 60px;
 
 .footable .form-inline .input-group>.form-control {
     width: auto;
+}
+
+#Chart{
+
+    display: inline-block;
+
+}
+.form-inline .form-group {
+     margin-right: 0rem;
+}
+
+.red-skin .navbar {
+    background-color: #a90000;
+}
+.red-gradient, .red-skin .side-nav {
+    background: linear-gradient(135deg, #000 0, #7d0000 100%);
+
+}
+
+table.footable > thead > tr > td.footable-sortable, table.footable > thead > tr > th.footable-sortable, table.footable > tbody > tr > td.footable-sortable, table.footable > tbody > tr > th.footable-sortable, table.footable > tfoot > tr > td.footable-sortable, table.footable > tfoot > tr > th.footable-sortable {
+
+     padding-right: 0px;
+
 }
