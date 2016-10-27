@@ -1,12 +1,25 @@
 <html>
+<style>
+.error {color: #FF0000;}
+</style>
   <body>
+    <p><span class="error">* required field.</span></p>
 
+<!--../Controllers/TargetInsert.php-->
       <form action="../Controllers/TargetInsert.php" method="post">
-      Target Name: <input type="text" name="Target_Name"><br>
-      Target Amount: <input type="text" name="Target_Amount"><br>
-      Target Days: <input type="text" name="Target_Days"><br>
+      Target Name: <input type="text" name="Target_Name">
+      <span class="error">* </span>
+      <br>
+      Target Amount: <input type="text" name="Target_Amount">
+      <span class="error">* </span>
+      <br>
+      Target Days: <input type="text" name="Target_Days">
+      <span class="error">* </span>
+      <br>
       <input type="submit">
       </form>
+
+
 
   </body>
 </html>

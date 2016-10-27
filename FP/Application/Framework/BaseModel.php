@@ -10,8 +10,8 @@ class BaseModel
 {
     protected static $serverName = "localhost";
     protected static $username = "root";
-    protected static $password = "Thomas0921@";
-    protected static $dbname = "Finance";
+    protected static $password = "";
+    protected static $dbname = "final project";
     protected static $conn;
 
     function __construct()
