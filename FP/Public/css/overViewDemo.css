@@ -25,8 +25,8 @@ body {
 
 .content {
     width: inherit;
-    background: url("http://mdbootstrap.com/images/regular/nature/img%20(68).jpg") no-repeat ;
-
+    /*background: url("http://mdbootstrap.com/images/regular/nature/img%20(68).jpg") no-repeat ;*/
+    /*background: url("https://scontent-kul1-1.xx.fbcdn.net/t31.0-8/1799971_752925061451035_4578199307499207554_o.jpg") no-repeat ;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -268,5 +268,11 @@ margin-top: 60px;
 }
 .red-gradient, .red-skin .side-nav {
     background: linear-gradient(135deg, #000 0, #7d0000 100%);
+
+}
+
+table.footable > thead > tr > td.footable-sortable, table.footable > thead > tr > th.footable-sortable, table.footable > tbody > tr > td.footable-sortable, table.footable > tbody > tr > th.footable-sortable, table.footable > tfoot > tr > td.footable-sortable, table.footable > tfoot > tr > th.footable-sortable {
+
+     padding-right: 0px;
 
 }

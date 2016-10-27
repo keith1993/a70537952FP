@@ -5,6 +5,13 @@ var isNavOpen = false;
 var expenseNum = 1;
 
 
+$(document).ready(function () {
+
+    $("body").addClass("red-skin");
+
+    $(".content").css("background-image", "url('http://mdbootstrap.com/images/regular/nature/img%20(68).jpg')");
+})
+
 
 
 

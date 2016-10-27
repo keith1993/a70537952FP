@@ -40,7 +40,7 @@ $jj = $a->updateUserByUserID( $_SESSION["id"],$FirstName,$LastName,$DOB,$Gender,
 
  if($jj){
 
-     header("Location:UserProfile.php");
+     header("Location:UserProfile.php?a=updateProfileSuccess");
 		}else{
         echo "Error!". mysql_error();
     }
