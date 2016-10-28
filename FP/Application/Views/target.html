@@ -1,12 +1,52 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../Public/css/target.css">
+
+</head>
   <body>
 
-      <form action="../Controllers/TargetInsert.php" method="post">
-      Target Name: <input type="text" name="Target_Name"><br>
-      Target Amount: <input type="text" name="Target_Amount"><br>
-      Target Days: <input type="text" name="Target_Days"><br>
-      <input type="submit">
-      </form>
+    <div id="popup1" class="popup-position">
+        <div id="popup-wrapper">
+          <div id="popup-container">
 
+            <p><span class="error">* required field.</span></p>
+
+        <!--../Controllers/TargetInsert.php-->
+              <form action="../Controllers/TargetInsert.php" method="post">
+              Target Name: <input type="text" name="Target_Name">
+              <span class="error">* </span>
+              <br>
+              Target Amount: <input type="text" name="Target_Amount">
+              <span class="error">* </span>
+              <br>
+              Target Days: <input type="text" name="Target_Days">
+              <span class="error">* </span>
+              <br>
+              <input type="submit">
+              </form>
+              <a href="javascript:void(0)"onclick="toggle_visibility('popup1');">Close</a>
+
+          </div><!--popup_container ends-->
+        </div><!--popup-wrapper ends-->
+    </div><!--popup1 ends-->
+
+<!--Progress bar-->
+    <div id="myProgress">
+      <div id="myBar">
+        <div id="percentage">10%</div>
+      </div>
+    </div>
+    <button onclick="move()">Click Me</button>
+
+<!--Progress bar ends-->
+      <p><a href="javascript:void(0)" onclick="toggle_visibility('popup1');">Add Target</a></p>
+
+
+
+
+
+<script src="../../Public/js/target.js"></script>
   </body>
 </html>
