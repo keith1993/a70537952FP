@@ -257,7 +257,10 @@ margin-top: 60px;
 #Chart{
 
     display: inline-block;
-
+   position: relative;
+    float: right;
+    margin-top: 45px;
+    margin-right: 45px;
 }
 .form-inline .form-group {
      margin-right: 0rem;
@@ -273,6 +276,15 @@ margin-top: 60px;
 
 table.footable > thead > tr > td.footable-sortable, table.footable > thead > tr > th.footable-sortable, table.footable > tbody > tr > td.footable-sortable, table.footable > tbody > tr > th.footable-sortable, table.footable > tfoot > tr > td.footable-sortable, table.footable > tfoot > tr > th.footable-sortable {
 
-     padding-right: 0px;
+    padding-right: 0px;
 
+}
+
+.tableIncome,.tableExpense{
+    width: 100%;
+
+}
+
+caption, th {
+     text-align: center;
 }
