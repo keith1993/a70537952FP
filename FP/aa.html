@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <body>
+<script src="Public/js/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="Helper/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
 
-<form action="Application/Controllers/testController.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
 
+<script>
+
+    jQuery(function ($) {
+        $('[data-toggle=confirmation-singleton]').confirmation({
+            rootSelector: '[data-toggle=confirmation-singleton]'
+
+        });
+    });
+</script>
+
+
+<button class="btn btn-default" data-toggle="confirmation-singleton" data-singleton="true" data-original-title="" title="">Confirmation 11</button>
 </body>
 </html>

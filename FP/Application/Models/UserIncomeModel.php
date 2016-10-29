@@ -10,14 +10,16 @@ class UserIncomeModel extends  BaseModel
 {
     public function addIncome($UserID,$Income_Name,$Income_Amount,$Income_Description)
     {
-        $sql = "insert into user_income (User_ID,Income_Name,Income_Amount,
+        $sql = "insert into user_income (User_ID,Income_Name,Income_Amount,Income_Category,
             Income_Description,Income_EnterDate)
-            values(:User_ID,:Income_Name,:Income_Amount,:Income_Description,now());";
+            values(:User_ID,:Income_Name,:Income_Amount,:Income_Category,:Income_Description,now());";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":User_ID", $UserID);
         $result->bindValue(":Income_Name", $Income_Name);
         $result->bindValue(":Income_Amount", $Income_Amount);
+        $result->bindValue(":Income_Category","Other");
         $result->bindValue(":Income_Description",$Income_Description);
+
 
         $isSuccess = $result->execute();
         return $isSuccess;
@@ -60,4 +62,26 @@ class UserIncomeModel extends  BaseModel
         $isSuccess = $result->execute();
         return $isSuccess;
     }
+
+    public function getIncomeGroupByUserIDAndMonth($UserID,$Month)
+    {
+        $sql = "SELECT Income_Category,SUM(Income_Amount) as Income_Amount FROM `user_income` 
+              where User_ID=:User_ID and MONTH(Income_EnterDate)=:mon GROUP by Income_Category ORDER BY Income_Category ASC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->bindValue(":mon", $Month);
+        $result->execute();
+        $result = $result->fetchAll();
+
+        $incomeGroup = array();
+        foreach ($result as $key => $value) {
+
+            $incomeGroup[$value['Income_Category']]=$value['Income_Amount'];
+        }
+
+
+        return $incomeGroup;
+    }
+
+
 }

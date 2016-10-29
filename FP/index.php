@@ -32,8 +32,13 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         $expenseList = $expensesModel->getExpenseByUserID($jj->ID);
         $incomeList = $incomeModel->getIncomeByUserID($jj->ID);
        $expenseGroup = $expensesModel->getExpenseGroupByUserIDAndMonth($jj->ID, date('m'));
+        $incomeGroup = $incomeModel->getIncomeGroupByUserIDAndMonth($jj->ID, date('m'));
+        $totalIncome = 0;
+        $totalExpense = 0;
 
 
+        foreach ($expenseGroup as $k =>$v){$totalExpense+=$v;}
+        foreach ($incomeGroup as $k =>$v){$totalIncome+=$v;}
 
 
 

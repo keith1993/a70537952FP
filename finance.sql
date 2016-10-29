@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
+-- version 4.5.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2016 at 03:48 PM
--- Server version: 5.7.12-log
--- PHP Version: 5.6.25
+-- Generation Time: Oct 29, 2016 at 11:00 AM
+-- Server version: 5.7.11
+-- PHP Version: 5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -319,6 +319,25 @@ INSERT INTO `expenses_category` (`ID`, `Name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `income_category`
+--
+
+CREATE TABLE `income_category` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `income_category`
+--
+
+INSERT INTO `income_category` (`ID`, `Name`) VALUES
+(1, 'Fixed Salary'),
+(2, 'Other');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -357,7 +376,10 @@ INSERT INTO `user` (`ID`, `Email`, `FirstName`, `LastName`, `Password`, `DOB`, `
 (11, '1234@gmail.com', 'aaa', 'bbb', '202cb962ac59075b964b07152d234b70', '2016-10-20', 'Male', 'Singapore', 'Student', NULL, '2016-09-27 15:15:44', '2016-09-27 15:15:44', '22.22.22.22', 0, '2016-09-27 15:15:44', '2016-09-27 15:15:44', NULL, NULL, NULL, NULL),
 (14, 'a@b', 'a', 'a', '0cc175b9c0f1b6a831c399e269772661', '2016-10-20', 'Male', 'AF', 'a', NULL, '2016-10-03 19:22:41', '2016-10-03 19:22:41', NULL, 1, '2016-10-03 19:22:41', '2016-10-03 19:22:41', NULL, '2b3b9969209e4e4518b442d1a5fdf595', '2016-10-04 19:22:41', NULL),
 (26, 'junx_lau@hotmail.com', 'Lau', 'Jun Xian', '0cc175b9c0f1b6a831c399e269772661', '2016-10-20', 'Male', 'BH', 'aaaa', NULL, '2016-10-05 11:49:53', '2016-10-05 11:49:53', NULL, 0, '2016-10-05 11:49:53', '2016-10-05 11:49:53', NULL, '8039623c5f620d3f7f3b41b0325eaf8c', '2016-10-06 11:49:53', NULL),
-(33, 'a70537952@gmail.com', '怡杰', '赖', 'f9081c919595a5e0f794c2a941e93f05', '2016-10-05', 'Male', NULL, NULL, NULL, '2016-10-05 15:36:09', '2016-10-05 15:41:00', '::1', 0, '2016-10-05 15:36:09', '2016-10-05 15:36:09', NULL, 'd4e6d184c61afd29c6175eb109d2ac71', '2016-10-06 15:36:09', 'jipbbrbX');
+(33, 'a70537952@gmail.com', '怡杰', '赖', 'f9081c919595a5e0f794c2a941e93f05', '2016-10-05', 'Male', NULL, NULL, NULL, '2016-10-05 15:36:09', '2016-10-05 15:41:00', '::1', 0, '2016-10-05 15:36:09', '2016-10-05 15:36:09', NULL, 'd4e6d184c61afd29c6175eb109d2ac71', '2016-10-06 15:36:09', 'jipbbrbX'),
+(35, 'a@c', 'a', 'a1', 'c4ca4238a0b923820dcc509a6f75849b', '2015-01-01', 'Female', 'Anguilla', 'a', '', '2016-10-22 11:10:54', '2016-10-29 13:36:30', '::1', 1, '2016-10-28 22:05:07', '2016-10-28 18:28:23', 'Default/Male.jpg', '1088c1ee4c896e6517e913813034ee4f', '2016-10-23 11:10:54', NULL),
+(36, '1240327852654803@facebook.com', '怡杰', '赖', 'f9081c919595a5e0f794c2a941e93f05', '2016-10-22', 'Male', 'Malaysia', '', 'bb', '2016-10-22 11:11:07', '2016-10-29 18:58:46', '::1', 0, '2016-10-27 15:28:50', '2016-10-27 16:45:19', '1477554877551R28031.jpg', 'aa62f9d8a8e32287ce035b1e28a909a5', '2016-10-23 11:11:07', NULL),
+(38, '', '', 'a', 'd41d8cd98f00b204e9800998ecf8427e', '2015-01-01', 'Male', 'Afghanistan', '', NULL, '2016-10-23 11:07:33', '2016-10-25 13:44:44', '::1', 0, '2016-10-23 11:07:33', '2016-10-23 11:07:33', 'Default/Male.jpg', 'a47a1b211e7389ea8d77e1069480ecf3', '2016-10-24 11:07:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -380,7 +402,10 @@ CREATE TABLE `user_expense` (
 --
 
 INSERT INTO `user_expense` (`Expense_ID`, `User_ID`, `Expense_Name`, `Expense_Amount`, `Expense_Category`, `Expense_Description`, `Expense_EnterDate`) VALUES
-(2, 1, '', '1000.00', 'Transport', 'FGFFFSFAS', '2016-09-24');
+(2, 1, '', '1000.00', 'Transport', 'FGFFFSFAS', '2016-09-24'),
+(5, 36, '33', '3000.00', 'Fixed expenses', '33', '2016-10-22'),
+(6, 36, '11', '1000.00', 'Transport', '', '2016-10-24'),
+(7, 36, '1', '2000.00', 'Entertainment', '', '2016-10-29');
 
 -- --------------------------------------------------------
 
@@ -392,7 +417,8 @@ CREATE TABLE `user_income` (
   `Income_ID` int(11) NOT NULL,
   `User_ID` int(11) NOT NULL,
   `Income_Name` varchar(100) NOT NULL,
-  `Income_Amount` int(11) NOT NULL,
+  `Income_Amount` decimal(65,2) NOT NULL,
+  `Income_Category` varchar(50) NOT NULL,
   `Income_Description` text NOT NULL,
   `Income_EnterDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -401,8 +427,10 @@ CREATE TABLE `user_income` (
 -- Dumping data for table `user_income`
 --
 
-INSERT INTO `user_income` (`Income_ID`, `User_ID`, `Income_Name`, `Income_Amount`, `Income_Description`, `Income_EnterDate`) VALUES
-(1, 7, '', 2222, 'haha1ha', '2016-09-25');
+INSERT INTO `user_income` (`Income_ID`, `User_ID`, `Income_Name`, `Income_Amount`, `Income_Category`, `Income_Description`, `Income_EnterDate`) VALUES
+(1, 7, '', '2222.00', 'Other', 'haha1ha', '2016-09-25'),
+(3, 36, '1', '11000.00', 'Other', '', '2016-10-29'),
+(4, 36, '1', '2000.00', 'Fixed Salary', '', '2016-10-29');
 
 --
 -- Indexes for dumped tables
@@ -427,6 +455,13 @@ ALTER TABLE `expenses_category`
   ADD KEY `Name_3` (`Name`);
 
 --
+-- Indexes for table `income_category`
+--
+ALTER TABLE `income_category`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `Name` (`Name`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -448,7 +483,8 @@ ALTER TABLE `user_expense`
 --
 ALTER TABLE `user_income`
   ADD PRIMARY KEY (`Income_ID`),
-  ADD KEY `User_ID` (`User_ID`);
+  ADD KEY `User_ID` (`User_ID`),
+  ADD KEY `Income_Category` (`Income_Category`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -460,20 +496,25 @@ ALTER TABLE `user_income`
 ALTER TABLE `expenses_category`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT for table `income_category`
+--
+ALTER TABLE `income_category`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `user_expense`
 --
 ALTER TABLE `user_expense`
-  MODIFY `Expense_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Expense_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user_income`
 --
 ALTER TABLE `user_income`
-  MODIFY `Income_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Income_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
@@ -489,6 +530,7 @@ ALTER TABLE `user_expense`
 -- Constraints for table `user_income`
 --
 ALTER TABLE `user_income`
+  ADD CONSTRAINT `UserIncome_Category` FOREIGN KEY (`Income_Category`) REFERENCES `income_category` (`Name`) ON UPDATE CASCADE,
   ADD CONSTRAINT `UserIncome_UserID` FOREIGN KEY (`User_ID`) REFERENCES `user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
