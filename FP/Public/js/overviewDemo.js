@@ -133,6 +133,8 @@ $(document).ready(function () {
     }
 
 
+
+
 })
 
 function setChartBlackStyle(){
@@ -439,3 +441,67 @@ $(document).on('click', '.mask', function() {
     $(".extraExpense").remove();
     expenseNum = 1;
 });
+
+
+function deleteExpense(expenseID){
+
+
+    $.post("Application/Controllers/AJAXDeleteExpense.php",
+        {
+            expenseID: expenseID,
+
+        },
+        function (data, status) {
+
+            if (data == "deleteExpenseSuccess") {
+
+                window.location.reload(true);
+            } else if (data == "deleteExpenseFailed") {
+
+
+                window.location.reload(true);
+
+            }
+
+        }
+
+)};
+
+
+function deleteIncome(incomeID){
+
+
+    $.post("Application/Controllers/AJAXDeleteIncome.php",
+        {
+            incomeID: incomeID,
+
+        },
+        function (data, status) {
+
+            if (data == "deleteIncomeSuccess") {
+
+                window.location.reload(true);
+            } else if (data == "deleteIncomeFailed") {
+
+
+                window.location.reload(true);
+
+            }
+
+        }
+
+    )};
+
+
+function showLogout() {
+if($( "#logout" ).hasClass( "open" )){
+
+    $("#logout").removeClass("open");
+
+}else{
+
+    $("#logout").addClass("open");
+}
+
+}
+

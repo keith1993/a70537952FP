@@ -10,49 +10,62 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="Helper/footable-standalone.latest/css/footable.standalone.css">
-
     <!-- Bootstrap core CSS -->
     <link href="Public/css/bootstrap1.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Public/css/MDB PRO 4.2.0.css">
     <!-- Material Design Bootstrap-->
     <link href="Public/css/mdb.min.css" rel="stylesheet">
-
-
-
     <link href="Public/css/overViewDemo.css" rel="stylesheet">
 
-    <!-- SCRIPTS -->
 
+
+    <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="Public/js/jquery-2.2.3.min.js"></script>
+
+    <script src="Public/js/jquery-3.1.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Helper/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
 
     <!-- Tooltips -->
     <script type="text/javascript" src="Public/js/tether.min.js"></script>
-
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Public/js/jquery.min.js"></script>
+
     <!-- MDB core JavaScript -->
-
     <script type="text/javascript" src="Public/js/mdb.min.js"></script>
-
-
     <script src="Helper/footable-standalone.latest/js/footable.min.js"></script>
     <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
-
-
-
     <script type="text/javascript" src="Helper/Chart.js-master/src/chart.js"></script>
     <script src="Helper/js-cookie-1.5.1/src/js.cookie.js"></script>
 
+
     <script>
+
         jQuery(function ($) {
             $('.tableExpense').footable();
         });
         jQuery(function ($) {
             $('.tableIncome').footable();
+        });
+        jQuery(function ($) {
+            $('[delete=expense]').confirmation({
+                rootSelector: '[data-toggle=confirmation-singleton]',
+            popout:true,
+                title:"Are you sure delete?",
+                onConfirm:function() {deleteExpense($(this).attr("expenseID"))}//function(){alert($(this).attr("expenseID"));}
+            });
+
+        });
+
+        jQuery(function ($) {
+            $('[delete=income]').confirmation({
+                rootSelector: '[data-toggle=confirmation-singleton]',
+                popout:true,
+                title:"Are you sure delete?",
+                onConfirm:function() {deleteIncome($(this).attr("incomeID"))}//function(){alert($(this).attr("incomeID"));}
+            });
+
         });
     </script>
 
@@ -132,10 +145,10 @@
         </div>
 
 
-        <ul id="profile" class="nav navbar-nav pull-right  ">
+        <ul onclick="showLogout()"id="profile" class="nav navbar-nav pull-right  ">
 
 
-            <li class="nav-item dropdown">
+            <li id="logout"class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?php echo $jj->
                     FirstName;?></a>
@@ -347,7 +360,7 @@
             ";
 
             echo "
-            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-trash-o\"></i> </a></td>
+            <td><a  class=\"btn btn-default btn-sm\" href=\"#\" incomeID=\"$value->IncomeID\" delete=\"income\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
             ";
 
             echo "
@@ -435,7 +448,7 @@
             ";
 
             echo "
-            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-trash-o\"></i> </a></td>
+            <td><a  class=\"btn btn-default btn-sm\" href=\"#\" expenseID=\"$value->ExpenseID\" delete=\"expense\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
             ";
 
             echo "
@@ -454,6 +467,7 @@
         <input type="button" class="form-control button-collapse btnInsert" onclick="showInsertExpense()"
                value="Insert Expense">
     </div>
+
 
 
 </div>
