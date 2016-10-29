@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="overviewDemo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="665">
+              <caret line="157" column="47" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -35,6 +35,15 @@
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#3;n#ul#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#4;n#ul#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#5;n#ul#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,28 +63,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="overviewDemo.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="overviewDemo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="324" column="38" selection-start-line="324" selection-start-column="37" selection-end-line="324" selection-end-column="38" />
+            <state relative-caret-position="513">
+              <caret line="195" column="176" selection-start-line="195" selection-start-column="176" selection-end-line="195" selection-end-column="176" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
-                <element signature="e#5989#9128#0" expanded="false" />
-                <marker date="1477663446393" expanded="true" signature="11842:11863" ph="..." />
-                <marker date="1477663446393" expanded="true" signature="12445:12456" ph="..." />
-                <marker date="1477663446393" expanded="true" signature="12530:12592" ph="..." />
+                <element signature="e#566#3416#0" expanded="false" />
+                <element signature="e#6298#9437#0" expanded="false" />
+                <marker date="1477726650005" expanded="true" signature="12296:12317" ph="..." />
+                <marker date="1477726650005" expanded="true" signature="12899:12910" ph="..." />
+                <marker date="1477726650005" expanded="true" signature="12984:13046" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -83,8 +83,8 @@
       <file leaf-file-name="overViewDemo.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4864">
-              <caret line="256" column="6" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="6" />
+            <state relative-caret-position="506">
+              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -110,7 +110,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Application/Objects/UserExpenseObject.php" />
-        <option value="$PROJECT_DIR$/Application/Objects/UserIncomeObject.php" />
         <option value="$PROJECT_DIR$/Application/Views/registerSuccess.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index1.php" />
@@ -121,7 +120,6 @@
         <option value="$PROJECT_DIR$/Application/Views/forgotPassword.html" />
         <option value="$PROJECT_DIR$/Application/Views/resetPassword.html" />
         <option value="$PROJECT_DIR$/Application/Controllers/ResetPassword.php" />
-        <option value="$PROJECT_DIR$/Application/Models/UserIncomeModel.php" />
         <option value="$PROJECT_DIR$/Helper/footable-bootstrap.latest/css/footable.bootstrap.css" />
         <option value="$PROJECT_DIR$/Public/js/forgotPassword.js" />
         <option value="$PROJECT_DIR$/Application/Controllers/InsertIncome.php" />
@@ -155,11 +153,13 @@
         <option value="$PROJECT_DIR$/Application/Controllers/UserProfile.php" />
         <option value="$PROJECT_DIR$/Application/Views/user.html" />
         <option value="$PROJECT_DIR$/Application/Controllers/UpdateUserImage.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Public/css/MDB PRO 4.2.0.css" />
+        <option value="$PROJECT_DIR$/Application/Objects/UserIncomeObject.php" />
+        <option value="$PROJECT_DIR$/Application/Models/UserIncomeModel.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
         <option value="$PROJECT_DIR$/Public/css/overViewDemo.css" />
         <option value="$PROJECT_DIR$/Public/js/overviewDemo.js" />
-        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
       </list>
     </option>
   </component>
@@ -200,6 +200,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,29 +276,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
+              <option name="myItemId" value="Helper" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FP" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Objects" />
+              <option name="myItemId" value="Chart.js-master" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,28 +295,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FP" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Framework" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,8 +318,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -485,11 +445,12 @@
       <workItem from="1477547822965" duration="7247000" />
       <workItem from="1477644422385" duration="17187000" />
       <workItem from="1477663762371" duration="653000" />
+      <workItem from="1477710402231" duration="13489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220579000" />
+    <option name="totallyTimeSpent" value="234068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1047" extended-state="0" />
@@ -548,7 +509,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -564,14 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="996">
           <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Objects/UserIncomeObject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,21 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Models/UserExpenseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
-          <folding>
-            <marker date="1476942740071" expanded="true" signature="269:503" ph="insert into user_expense... " />
-            <marker date="1476942740071" expanded="true" signature="1014:1075" ph="select * fro... user_expense" />
-            <marker date="1476942740071" expanded="true" signature="1556:1608" ph="delete from " />
-            <marker date="1476942740071" expanded="true" signature="1936:2138" ph="update user_... " />
-            <marker date="1476942740071" expanded="true" signature="2674:2853" ph="SELECT Expen... user_expense" />
-            <marker date="1476942740071" expanded="true" signature="2674:2883" ph="SELECT Expen... user_expense" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controllers/RegisterPage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -866,6 +804,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdatePassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdateUserImage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdateProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="42" column="60" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/MDB PRO 4.2.0.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="852">
+          <caret line="52" column="11670" selection-start-line="52" selection-start-column="11670" selection-end-line="52" selection-end-column="11670" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/Logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="230" column="90" selection-start-line="230" selection-start-column="85" selection-end-line="230" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/UserProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="31" column="88" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Objects/UserIncomeObject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Models/UserExpenseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
+          <folding>
+            <marker date="1476942740071" expanded="true" signature="269:503" ph="insert into user_expense... " />
+            <marker date="1476942740071" expanded="true" signature="1014:1075" ph="select * fro... user_expense" />
+            <marker date="1476942740071" expanded="true" signature="1556:1608" ph="delete from " />
+            <marker date="1476942740071" expanded="true" signature="1936:2138" ph="update user_... " />
+            <marker date="1476942740071" expanded="true" signature="2674:2853" ph="SELECT Expen... user_expense" />
+            <marker date="1476942740071" expanded="true" signature="2674:2883" ph="SELECT Expen... user_expense" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Models/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -901,109 +919,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdatePassword.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdateUserImage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdateProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="42" column="60" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/UserProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Models/UserIncomeModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="425">
+          <caret line="68" column="125" selection-start-line="67" selection-start-column="14" selection-end-line="68" selection-end-column="125" />
           <folding>
-            <marker date="1476115252213" expanded="true" signature="241:432" ph="insert into user_income... " />
-            <marker date="1476115252213" expanded="true" signature="867:927" ph="select * fro... user_income" />
-            <marker date="1476115252213" expanded="true" signature="1398:1447" ph="delete from " />
-            <marker date="1476115252213" expanded="true" signature="1747:1905" ph="update user_... " />
+            <marker date="1477718660180" expanded="true" signature="241:465" ph="insert into user_income... " />
+            <marker date="1477718660180" expanded="true" signature="957:1017" ph="select * fro... user_income" />
+            <marker date="1477718660180" expanded="true" signature="1488:1537" ph="delete from " />
+            <marker date="1477718660180" expanded="true" signature="1837:1995" ph="update user_... " />
+            <marker date="1477718660180" expanded="true" signature="2452:2654" ph="SELECT Incom... user_income" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/MDB PRO 4.2.0.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="52" column="11670" selection-start-line="52" selection-start-column="11670" selection-end-line="52" selection-end-column="11670" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4864">
-          <caret line="256" column="6" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="6" />
+        <state relative-caret-position="506">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+        <state relative-caret-position="330">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/Logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="324" column="38" selection-start-line="324" selection-start-column="37" selection-end-line="324" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <element signature="e#5989#9128#0" expanded="false" />
-            <marker date="1477663446393" expanded="true" signature="11842:11863" ph="..." />
-            <marker date="1477663446393" expanded="true" signature="12445:12456" ph="..." />
-            <marker date="1477663446393" expanded="true" signature="12530:12592" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="665">
+          <caret line="157" column="47" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#span#0;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1013,6 +962,15 @@
             <element signature="n#style#0;n#i#0;n#a#0;n#li#3;n#ul#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#li#4;n#ul#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#li#5;n#ul#0;n#li#1;n#ul#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1027,6 +985,21 @@
             <element signature="n#style#0;n#input#0;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#2;n#form#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="195" column="176" selection-start-line="195" selection-start-column="176" selection-end-line="195" selection-end-column="176" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+            <element signature="e#566#3416#0" expanded="false" />
+            <element signature="e#6298#9437#0" expanded="false" />
+            <marker date="1477726650005" expanded="true" signature="12296:12317" ph="..." />
+            <marker date="1477726650005" expanded="true" signature="12899:12910" ph="..." />
+            <marker date="1477726650005" expanded="true" signature="12984:13046" ph="..." />
           </folding>
         </state>
       </provider>

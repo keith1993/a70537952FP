@@ -73,6 +73,7 @@ transition: 0.5s;
 }
 
 .transition {
+    margin-left: 0;
     transition: margin-left .5s;
 
     transition: 0.5s;
@@ -287,4 +288,56 @@ table.footable > thead > tr > td.footable-sortable, table.footable > thead > tr 
 
 caption, th {
      text-align: center;
+}
+
+.overviewWhite{
+    color: #fff;
+    font-family: "Microsoft YaHei UI Light";
+
+
+}
+
+.overviewBlack{
+    color: #000;
+    font-family: "Microsoft YaHei UI Light";
+
+
+}
+
+
+.floatRight{
+
+    float: right;
+}
+
+.floatLeft{
+
+    float: left;
+}
+.inline{
+
+
+    display: inline-block;
+text-align: right;
+
+}
+
+.overviewGroup{
+    margin:20px;
+
+}
+.savings{
+    font-size:50px ;
+
+}
+#Chart{
+
+
+    transition: 0.5s;
+
+}
+
+ul{
+    left: 0
+
 }

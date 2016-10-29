@@ -145,6 +145,7 @@ function setChartBlackStyle(){
      strokeColor= "rgba(30,30,30,1)";
      pointColor= "rgba(30,30,30,1)";
      pointStrokeColor= "#000";
+    $("#overview").addClass("overviewBlack")
 }
 
 function setChartWhiteStyle(){
@@ -157,12 +158,15 @@ function setChartWhiteStyle(){
      strokeColor= "rgba(220,220,220,1)";
      pointColor= "rgba(220,220,220,1)";
      pointStrokeColor= "#fff";
-
+    $("#overview").addClass("overviewWhite")
 }
 
 function  changeStyle(colour) {
     $("body").removeClass($("body").attr('class').split(' ').pop());
-    $("body").addClass(colour + "-skin");
+    $("body").addClass(colour + "-skin")
+    $("#overview").removeClass("overviewBlack");
+    $("#overview").removeClass("overviewWhite");
+
     Cookies.set('style', colour);
 
     switch (colour){
@@ -171,16 +175,16 @@ function  changeStyle(colour) {
             setChartWhiteStyle();
             break;
         case "purple":
-            $(".content").css("background-image", "url('http://mdbootstrap.com/images/regular/nature/img%20(68).jpg')");
+            $(".content").css("background-image", "url('https://s-media-cache-ak0.pinimg.com/originals/23/1c/52/231c5206fba3f704613c27614d867c16.jpg')");
             setChartWhiteStyle();
             break;
         case "green":
-            $(".content").css("background-image", "url('http://mdbootstrap.com/images/regular/nature/img%20(68).jpg')");
+            $(".content").css("background-image", "url('http://kabegami.org/wp-content/uploads/2012/10/H9l6Or.jpg')");
             setChartWhiteStyle();
             break;
         case "mdb":
-            $(".content").css("background-image", "url('http://www.art-spire.com/wp-content/gallery/decembre_2009/07-12-09_Tuomas-Korpi/piirtaja_05.jpg')");
-            setChartBlackStyle();
+            $(".content").css("background-image", "url('https://avvesione.files.wordpress.com/2012/02/rinne_no_lagrange-06-sunrise-clouds-space-stars-wallpaper-beautiful-scenery.jpg')");
+            setChartWhiteStyle();
 
             break;
         case "graphite":
@@ -189,7 +193,7 @@ function  changeStyle(colour) {
 
             break;
         case "pink":
-            $(".content").css("background-image", "url('http://mdbootstrap.com/images/regular/nature/img%20(68).jpg')");
+            $(".content").css("background-image", "url('http://www.walldevil.com/wallpapers/a79/background-scenery-pictures-beautiful-beach-image-wallpatrol-sunset-paradise.jpg')");
             setChartWhiteStyle();
             break;
     }
@@ -322,19 +326,20 @@ function setNav() {
         document.getElementById("profile").style.marginRight = "0px";
 
         document.getElementById("navControl").innerHTML = "&#9776";
-        document.getElementById("userLogo").style.display = "none"
+        document.getElementById("userLogo").style.display = "none";
 
         document.getElementById("mySidenav").style.width = "50px";
         $(".main").each(function () {
             this.style.marginLeft = "0px";
         });
-        document.getElementById("sideNavItem").style.display = "none"
-        document.getElementById("colorStyle").style.display = "none"
+        document.getElementById("sideNavItem").style.display = "none";
+        document.getElementById("colorStyle").style.display = "none";
+        document.getElementById("Chart").style.marginRight = "45px";
         isNavOpen = false;
     } else {
         document.getElementById("profile").style.marginRight = "250px";
         document.getElementById("navControl").innerText = "Close";
-        document.getElementById("userLogo").style.display = "block"
+        document.getElementById("userLogo").style.display = "block";
         document.getElementById("mySidenav").style.width = "250px";
 
 
@@ -342,8 +347,9 @@ function setNav() {
             this.style.marginLeft = "200px";
         });
         document.getElementsByClassName("main")[0].style.marginLeft = "250px";
-        document.getElementById("sideNavItem").style.display = "block"
-        document.getElementById("colorStyle").style.display = "block"
+        document.getElementById("sideNavItem").style.display = "block";
+        document.getElementById("colorStyle").style.display = "block";
+        document.getElementById("Chart").style.marginRight = "105px";
         isNavOpen = true;
     }
 
