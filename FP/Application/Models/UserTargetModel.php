@@ -52,7 +52,7 @@ class UserTargetModel extends  BaseModel
         $sql = "update target set Target_Name=:Target_Name,Target_Amount=:Target_Amount,
                 Target_Days=:Target_Days where Target_ID=:Target_ID";
         $result = self::$conn->prepare($sql);
-        $result->bindValue(":Target_ID", $TargetID);
+        $result->bindValue(":Target_ID", $Target_ID);
         $result->bindValue(":Target_Name", $Target_Name);
         $result->bindValue(":Target_Amount", $Target_Amount);
         $result->bindValue(":Target_Days",$Target_Days);

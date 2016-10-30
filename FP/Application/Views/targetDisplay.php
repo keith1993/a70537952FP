@@ -64,7 +64,7 @@ if ($result->num_rows > 0) {
 
                <h3 id="displayText">Enter the Target ID below to DELETE a record</h3>
                <!--../Controllers/TargetInsert.php-->
-               <form action= "../Controllers/TargetDelete.php" method="post" >
+               <form action= "../Controllers/TargetDelete.php" method="post" style="display:none;" id="deleteForm">
                <table width="400" border="0" cellspacing="1" cellpadding="2">
                <tr>
                <td width="100">Target ID</td>
@@ -77,41 +77,48 @@ if ($result->num_rows > 0) {
                <tr>
                <td width="100"> </td>
                </tr>
-
-                              <div >
-                                <form action="../Controllers/TargetUpdate.php" method="post" >
-                                  <table id="updateForm" style="display: none" >
-                                  <tr>
-                                    <td>
-                                      Target Name:
-                                    </td>
-                                    <td>
-                                      <input type="text" name="Target_Name">
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      Target Amount:
-                                    </td>
-                                    <td>
-                                      <input type="text" name="Target_Amount">
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      Target Days:
-                                    </td>
-                                    <td>
-                                      <input type="text" name="Target_Days">
-                                    </td>
-                                  </tr>
-                                  </table>
-                                  <input name="delete" type="submit" id="delete" value="Delete" style="display:none;">
-                                  <input name="update" type="submit" id="update" value="Update" style="display:none;">
-                                </form>
-                              </div>
                </table>
+              <input name="delete" type="submit" id="delete" value="Delete" style="display:none;">
                </form>
+
+                                             <div >
+                                               <form action="../Controllers/TargetUpdate.php" method="post" >
+                                                 <table id="updateForm" style="display: none" >
+                                                   <tr>
+                                                     <td width="100">Target ID</td>
+                                                     <td>
+                                                       <input name="Target_ID" type="number" id="Target_ID">
+                                                     </td>
+                                                   </tr>
+                                                 <tr>
+                                                   <td>
+                                                     Target Name:
+                                                   </td>
+                                                   <td>
+                                                     <input type="text" name="Target_Name">
+                                                   </td>
+                                                 </tr>
+                                                 <tr>
+                                                   <td>
+                                                     Target Amount:
+                                                   </td>
+                                                   <td>
+                                                     <input type="text" name="Target_Amount">
+                                                   </td>
+                                                 </tr>
+                                                 <tr>
+                                                   <td>
+                                                     Target Days:
+                                                   </td>
+                                                   <td>
+                                                     <input type="text" name="Target_Days">
+                                                   </td>
+                                                 </tr>
+                                                 </table>
+
+                                                 <input name="update" type="submit" id="update" value="Update" style="display:none;" >
+                                               </form>
+                                             </div>
 
            </div><!--popup_container ends-->
          </div><!--popup-wrapper ends-->

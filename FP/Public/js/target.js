@@ -29,8 +29,9 @@ function move() {
       	var ele = document.getElementById("updateForm");
       	var text = document.getElementById("displayText");
       	if(ele.style.display == "block") {
-          		ele.style.display = "none";
+              document.getElementById("updateForm").style.display = "none";
               text.innerHTML = "Enter the Target ID below to DELETE a record";
+              document.getElementById("deleteForm").style.display = "block";
               document.getElementById("delete").style.display = "block";
               document.getElementById("update").style.display = "none";
               document.getElementById("delete").disabled = false;
@@ -38,8 +39,9 @@ function move() {
 
         	}
       	else {
-      		ele.style.display = "block";
+          document.getElementById("updateForm").style.display = "block";
           text.innerHTML = "Enter the Target ID and Details below to UPDATE a record";
+          document.getElementById("deleteForm").style.display = "none";
           document.getElementById("delete").style.display = "none";
           document.getElementById("update").style.display = "block";
           document.getElementById("delete").disabled = true;

@@ -20,17 +20,21 @@ spl_autoload_register(function ($class) {
     }
 
 });
-$Target_ID = $_POST["Target_ID"];
+if (isset($_POST['delete'])) {
 
-$a = new UserTargetModel();
-$jj = $a->deleteTargetByTargetID($Target_ID);
+  $Target_ID = $_POST["Target_ID"];
 
- if($jj instanceof UserTargetObject){
+  $a = new UserTargetModel();
+  $jj = $a->deleteTargetByTargetID($Target_ID);
 
-     echo "Delete Target Success";
-    }else{
-      echo "Delete Target Success";
-      //  echo "Error!". mysql_error();
-    }
+   if($jj instanceof UserTargetObject){
 
-	//$UserID,$Target_Name,$Target_Amount,$Target_Days
+        echo "Delete Target Success";
+      }else{
+        echo "Delete Target Success";
+        //  echo "Error!". mysql_error();
+      }
+
+    //$UserID,$Target_Name,$Target_Amount,$Target_Days
+
+   }

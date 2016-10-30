@@ -20,20 +20,25 @@ spl_autoload_register(function ($class) {
     }
 
 });
-$Target_ID = $_POST["Target_ID"];
-$Target_Name = $_POST["Target_Name"];
-$Target_Amount = $_POST["Target_Amount"];
-$Target_Days = $_POST["Target_Days"];
 
-$a = new UserTargetModel();
-$jj = $a->updateTargetByTargetID($Target_ID,$Target_Name,$Target_Amount,$Target_Days);
+if (isset($_POST['update'])) {
 
- if($jj instanceof UserTargetObject){
+  $Target_ID = $_POST["Target_ID"];
+  $Target_Name = $_POST["Target_Name"];
+  $Target_Amount = $_POST["Target_Amount"];
+  $Target_Days = $_POST["Target_Days"];
 
-     echo "Update Target Success";
-    }else{
-        echo "Update Target Success";
-        //echo "Error!". mysql_error();
+  $a = new UserTargetModel();
+  $jj = $a->updateTargetByTargetID($Target_ID,$Target_Name,$Target_Amount,$Target_Days);
+
+   if($jj instanceof UserTargetObject){
+
+       echo "Update Target Success";
+      }else{
+          echo "Update Target Success";
+          //echo "Error!". mysql_error();
+      }
+
+    //$UserID,$Target_Name,$Target_Amount,$Target_Days
+
     }
-
-	//$UserID,$Target_Name,$Target_Amount,$Target_Days
