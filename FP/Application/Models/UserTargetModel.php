@@ -40,19 +40,19 @@ class UserTargetModel extends  BaseModel
 
     public function deleteTargetByTargetID($TargetID)
     {
-        $sql = "delete from TargetID where TargetID=:TargetID";
+        $sql = "delete from target where Target_ID=:Target_ID";
         $result = self::$conn->prepare($sql);
-        $result->bindValue(":TargetID", $TargetID);
+        $result->bindValue(":Target_ID", $TargetID);
         $isSuccess = $result->execute();
         return $isSuccess;
     }
 
-    public function updateTargetByTargetID($UserID,$Target_Name,$Target_Amount,$Target_Days)
+    public function updateTargetByTargetID($Target_ID,$Target_Name,$Target_Amount,$Target_Days)
     {
-        $sql = "update user_income set Target_Name=:Target_Name,Target_Amount=:Target_Amount,
-                Target_Days=:Target_Days where Target_ID=:TargetID";
+        $sql = "update target set Target_Name=:Target_Name,Target_Amount=:Target_Amount,
+                Target_Days=:Target_Days where Target_ID=:Target_ID";
         $result = self::$conn->prepare($sql);
-        $result->bindValue(":TargetID", $TargetID);
+        $result->bindValue(":Target_ID", $TargetID);
         $result->bindValue(":Target_Name", $Target_Name);
         $result->bindValue(":Target_Amount", $Target_Amount);
         $result->bindValue(":Target_Days",$Target_Days);

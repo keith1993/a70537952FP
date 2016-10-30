@@ -50,51 +50,21 @@ if ($result->num_rows > 0) {
    </head>
    <body>
 
-     <?php
-     if(isset($_POST['delete']))
-     {
-       $servername = "localhost";
-       $username = "root";
-       $password = "";
-       $dbname = "Finance";
-
-       // Create connection
-       $conn = new mysqli($servername, $username, $password, $dbname);
-       // Check connection
-       if ($conn->connect_error) {
-           die("Connection failed: " . $conn->connect_error);
-       }
-
-     $Target_ID = $_POST['Target_ID'];
-
-     $sql = "DELETE FROM target WHERE Target_ID = $Target_ID" ;
-
-     $retval = mysqli_query($conn, $sql);
-     if(! $retval )
-     {
-       die('Could not delete data: ' . mysql_error());
-     }
-     ?>
-     <script type="text/javascript">
-          alert "Deleted data successfully";
-     </script>
-     <?
-     mysqli_close($conn);
-     }
-     else
-     {
-     ?>
-
-     <?php
-     }
-     ?>
      <a href="javascript:void(0)"onclick="toggle_visibility('popup1');">Search and Delete</a>
+
      <div id="popup1" class="popup-position">
          <div id="popup-wrapper">
            <div id="popup-container">
-               <h3>Enter the Target ID below to delete a record</h3>
+             <a href="javascript:void(0)"onclick="toggle_visibility('popup1');"style="float: right; text-decoration: none; color: red;">X</a>
+             <div id="myRadioGroup">
+               <input onclick="javascript:toggle();" type="radio"  name="deleteEdit" checked="checked" value="delete"  />Delete
+               <input onclick="javascript:toggle();" type="radio"  name="deleteEdit" value="edit" />Update
+             </div>
+
+
+               <h3 id="displayText">Enter the Target ID below to DELETE a record</h3>
                <!--../Controllers/TargetInsert.php-->
-               <form method="post" action="<?php $_PHP_SELF ?>">
+               <form action= "../Controllers/TargetDelete.php" method="post" >
                <table width="400" border="0" cellspacing="1" cellpadding="2">
                <tr>
                <td width="100">Target ID</td>
@@ -106,18 +76,48 @@ if ($result->num_rows > 0) {
                </tr>
                <tr>
                <td width="100"> </td>
-               <td>
-               <input name="delete" type="submit" id="delete" value="Delete">
-               </td>
                </tr>
+
+                              <div >
+                                <form action="../Controllers/TargetUpdate.php" method="post" >
+                                  <table id="updateForm" style="display: none" >
+                                  <tr>
+                                    <td>
+                                      Target Name:
+                                    </td>
+                                    <td>
+                                      <input type="text" name="Target_Name">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Target Amount:
+                                    </td>
+                                    <td>
+                                      <input type="text" name="Target_Amount">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Target Days:
+                                    </td>
+                                    <td>
+                                      <input type="text" name="Target_Days">
+                                    </td>
+                                  </tr>
+                                  </table>
+                                  <input name="delete" type="submit" id="delete" value="Delete" style="display:none;">
+                                  <input name="update" type="submit" id="update" value="Update" style="display:none;">
+                                </form>
+                              </div>
                </table>
                </form>
-               <a href="javascript:void(0)"onclick="toggle_visibility('popup1');">Close</a>
 
            </div><!--popup_container ends-->
          </div><!--popup-wrapper ends-->
      </div><!--popup1 ends-->
 
+     <script src="../../Public/js/jquery.min.js"></script>
      <script src="../../Public/js/target.js"></script>
    </body>
  </html>

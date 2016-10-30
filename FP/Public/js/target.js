@@ -24,3 +24,25 @@ function move() {
  }
 
 //progress bar ends
+
+       function toggle() {
+      	var ele = document.getElementById("updateForm");
+      	var text = document.getElementById("displayText");
+      	if(ele.style.display == "block") {
+          		ele.style.display = "none";
+              text.innerHTML = "Enter the Target ID below to DELETE a record";
+              document.getElementById("delete").style.display = "block";
+              document.getElementById("update").style.display = "none";
+              document.getElementById("delete").disabled = false;
+              document.getElementById("update").disabled = true;
+
+        	}
+      	else {
+      		ele.style.display = "block";
+          text.innerHTML = "Enter the Target ID and Details below to UPDATE a record";
+          document.getElementById("delete").style.display = "none";
+          document.getElementById("update").style.display = "block";
+          document.getElementById("delete").disabled = true;
+          document.getElementById("update").disabled = false;
+      	}
+      }
