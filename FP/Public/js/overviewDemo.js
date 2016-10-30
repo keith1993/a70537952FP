@@ -108,7 +108,7 @@ var options = {
     datasetFill: true,
 
     //Boolean - Whether to animate the chart
-    animation: true,
+    animation: false,
 
     //Number - Number of animation steps
     animationSteps: 60,
@@ -117,7 +117,9 @@ var options = {
     animationEasing: "easeOutQuart",
 
     //Function - Fires when the animation is complete
-    onAnimationComplete: null
+    onAnimationComplete: null,
+
+    responsive: true
 
 };
 
@@ -307,7 +309,11 @@ function  changeStyle(colour) {
         animationEasing: "easeOutQuart",
 
         //Function - Fires when the animation is complete
-        onAnimationComplete: null
+        onAnimationComplete: null,
+
+        responsive: true
+
+
 
     };
     chart.destroy();

@@ -32,10 +32,10 @@ body {
     -o-background-size: cover;
     background-size: 100% 100%;
 
-    min-height: 400px;
+    min-height: 850px;
     position: relative;
 
-    height: 100vh;
+    height: auto;
     overflow: hidden;
 }
 
@@ -259,9 +259,8 @@ margin-top: 60px;
 
     display: inline-block;
    position: relative;
-    float: right;
-    margin-top: 45px;
-    margin-right: 45px;
+    padding-left: 85px;
+    padding-top: 45px;
 }
 .form-inline .form-group {
      margin-right: 0rem;
@@ -323,11 +322,11 @@ text-align: right;
 }
 
 .overviewGroup{
-    margin:20px;
+    margin:0px;
 
 }
 .savings{
-    font-size:50px ;
+    font-size:45px ;
 
 }
 #Chart{
@@ -340,4 +339,13 @@ text-align: right;
 ul{
     left: 0
 
+}
+
+.incomeOverview,.expenseOverview{
+
+    font-size: 21px;
+}
+.swiper-container {
+    width: auto;
+    height: auto;
 }
