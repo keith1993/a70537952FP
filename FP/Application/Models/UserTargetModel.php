@@ -60,4 +60,5 @@ class UserTargetModel extends  BaseModel
         $isSuccess = $result->execute();
         return $isSuccess;
     }
+
 }
