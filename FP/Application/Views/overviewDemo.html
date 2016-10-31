@@ -42,38 +42,7 @@
     <script src="Helper/js-cookie-1.5.1/src/js.cookie.js"></script>
     <script src="Helper/Swiper-master/dist/js/swiper.min.js"></script>
     <script src="Helper/Swiper-master/dist/js/swiper.jquery.min.js"></script>
-
-    <script>
-
-        jQuery(function ($) {
-            $('.tableExpense').footable();
-        });
-        jQuery(function ($) {
-            $('.tableIncome').footable();
-        });
-        jQuery(function ($) {
-            $('[delete=expense]').confirmation({
-                rootSelector: '[data-toggle=confirmation-singleton]',
-            popout:true,
-                title:"Are you sure delete?",
-                onConfirm:function() {deleteExpense($(this).attr("expenseID"))}//function(){alert($(this).attr("expenseID"));}
-            });
-
-        });
-
-        jQuery(function ($) {
-            $('[delete=income]').confirmation({
-                rootSelector: '[data-toggle=confirmation-singleton]',
-                popout:true,
-                title:"Are you sure delete?",
-                onConfirm:function() {deleteIncome($(this).attr("incomeID"))}//function(){alert($(this).attr("incomeID"));}
-            });
-
-        });
-
-    </script>
-
-
+    <script src="Public/js/moment.js"></script>
 
 
 </head>
@@ -174,10 +143,11 @@
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
+
             <div class="swiper-slide">
                 <div class="container-fluid content transition main">
                     <div class="row">
-                        <div id="overview" class="col-md-11 col-lg-6 overviewWhite">
+                        <div id="CurrentOverview" class="col-md-11 col-lg-6 overviewWhite">
                             <span class="" style="font-size:85px;display: inline-block"><?php echo date('F') ?></span>
 
                             <div class="container-fluid" style="margin-left: 20px;margin-top: 10px;">
@@ -221,9 +191,9 @@
                             </div>
                         </div>
 
-                        <div id="Chart" class="col-md-8 col-md-offset-2 col-lg-4">
+                        <div id="CurrentChart" class="col-md-8 col-md-offset-2 col-lg-4">
 
-                            <canvas id="myChart" width="700" height="600"></canvas>
+
                             <script>
 
                                 //This will get the first returned node in the jQuery collection.
@@ -273,15 +243,22 @@
 
 
 
-                                var ctx = $("#myChart").get(0).getContext("2d");
 
-                                chart = new Chart(ctx).Radar(data, options);
+
+                                $('#CurrentChart').empty();
+                                $('#CurrentChart').append('<canvas class="myChart"  width="700" height="600"></canvas>');
+                                chart = new Chart($(".myChart").get(0).getContext("2d")).Radar(data, options);
+
+
+
+
 
                             </script>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="swiper-slide">
                 <div class="container-fluid content transition main">
                     <div class="row">
@@ -381,15 +358,16 @@
 
 
 
-                                var ctx = $("#LastMonthmyChart").get(0).getContext("2d");
+                                var ctx2 = $("#LastMonthmyChart").get(0).getContext("2d");
 
-                                chart = new Chart(ctx).Radar(data, options);
+                                LastMonthmyChart = new Chart(ctx2).Radar(data, options);
 
                             </script>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="swiper-slide">
                 <div class="container-fluid content transition main">
                     <div class="row">
@@ -489,9 +467,9 @@
 
 
 
-                                var ctx = $("#LastLastMonthmyChart").get(0).getContext("2d");
+                                var ctx3 = $("#LastLastMonthmyChart").get(0).getContext("2d");
 
-                                chart = new Chart(ctx).Radar(data, options);
+                                LastLastMonthmyChart = new Chart(ctx3).Radar(data, options);
 
                             </script>
                         </div>
@@ -528,7 +506,7 @@
         <th data-type=\"text\">Income Description</th>
         ";
         echo "
-        <th data-type=\"date\">Income Enter Date</th>
+        <th data-type=\"date\" data-format-string=\"DD/MM/YYYY\">Income Enter Date</th>
         ";
         echo "
         <th data-type=\"html\">Edit</th>
@@ -611,7 +589,7 @@
         <th data-type=\"text\">Expense Description</th>
         ";
         echo "
-        <th data-type=\"date\">Expense Enter Date</th>
+        <th data-type=\"date\"  data-format-string=\"DD/MM/YYYY\">Expense Enter Date</th>
         ";
         echo "
         <th data-type=\"html\">Edit</th>
@@ -750,11 +728,10 @@
 </div>
 <script>
     var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
+
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         slidesPerView: 1,
-        paginationClickable: true,
         spaceBetween: 30,
         loop: true
     });

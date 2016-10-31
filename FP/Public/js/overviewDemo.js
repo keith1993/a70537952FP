@@ -13,6 +13,8 @@ var pointColor= "rgba(220,220,220,1)";
 var pointStrokeColor= "#fff";
 var data;
 var chart;
+var LastMonthmyChart;
+var LastLastMonthmyChart;
 var options = {
 
     //Boolean - If we show the scale above the chart data
@@ -123,19 +125,34 @@ var options = {
 
 };
 
-$(document).ready(function () {
 
+jQuery(function ($) {
+    $('.tableExpense').footable();
+    $('.tableIncome').footable();
+    /************************************/
+    $('[delete=expense]').confirmation({
+        rootSelector: '[data-toggle=confirmation-singleton]',
+        popout:true,
+        title:"Are you sure delete?",
+        onConfirm:function() {deleteExpense($(this).attr("expenseID"))}//function(){alert($(this).attr("expenseID"));}
+    });
+
+    $('[delete=income]').confirmation({
+        rootSelector: '[data-toggle=confirmation-singleton]',
+        popout:true,
+        title:"Are you sure delete?",
+        onConfirm:function() {deleteIncome($(this).attr("incomeID"))}//function(){alert($(this).attr("incomeID"));}
+
+    });
+    /*********************************/
     if (Cookies.get('style')==null){
-
         changeStyle("red");
-
     }else{
         changeStyle(Cookies.get('style'));
-
     }
-
-
-
+    alert("111");
+    alert($(".myChart").length);
+    //chart = new Chart($(".myChart").get(0).getContext("2d")).Radar(data, options);
 
 })
 
@@ -316,9 +333,10 @@ function  changeStyle(colour) {
 
 
     };
-    chart.destroy();
+    //chart.destroy();
 
-    chart =  new Chart(ctx).Radar(data,options1);
+    var ctx = $("#myChart").get(0).getContext("2d");
+    //chart =  new Chart(ctx).Radar(data,options1);
 
 
 

@@ -4,10 +4,9 @@
 $(document).ready(function () {
 
 
-    $('#changePassword').submit(function () {
-        var newPassword = $('#newPassword').val();
-        var confirmNewPassword = $('#confirmNewPassword').val();
-
+    $("#changePassword").submit(function () {
+        var newPassword = $("#newPassword").val();
+        var confirmNewPassword = $("#confirmNewPassword").val();
 
         if (newPassword == confirmNewPassword) {
 

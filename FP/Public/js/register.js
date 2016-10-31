@@ -9,17 +9,20 @@
 			}
 			
 			function firstNameFunction() {
-				<!--var check = document.getElementById("firstName").match("\w");-->
-				
+				var check = document.getElementById("firstName").value;
+
+
+
+
     			if (document.getElementById("firstName").value == "") {
 				$("#errormsg_firstName").text("You can't leave this empty.");
+				}else if (new RegExp(/\W/).test(check)){
+					$("#errormsg_firstName").text("Invalid first Name.");
+
 				}
-				<!--else if (check){-->
-				<!--$("#errormsg_firstName").text("Blah.");	-->
-				<!--}-->
 				else{
 					$("#errormsg_firstName").text("");
-				}	
+				}
 			}
 
 			function lastNameFunction() {				

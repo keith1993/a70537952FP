@@ -255,13 +255,7 @@ margin-top: 60px;
     width: auto;
 }
 
-#Chart{
 
-    display: inline-block;
-   position: relative;
-    padding-left: 85px;
-    padding-top: 45px;
-}
 .form-inline .form-group {
      margin-right: 0rem;
 }
@@ -329,13 +323,15 @@ text-align: right;
     font-size:45px ;
 
 }
-#Chart{
+#CurrentChart,#Chart{
 
-
+    display: inline-block;
+    position: relative;
+    padding-left: 85px;
+    padding-top: 45px;
     transition: 0.5s;
 
 }
-
 ul{
     left: 0
 
