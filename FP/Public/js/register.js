@@ -28,7 +28,7 @@
 				$("#errormsg_lastName").text("You can't leave this empty.");
 				}
 				else if (new RegExp(/\W/).test(checkL)){
-					$("#errormsg_lasstName").text("Please only enter alphabets or numbers for your last Name.");
+					$("#errormsg_lastName").text("Please only enter alphabets or numbers for your last Name.");
 				}
 				else{
 					$("#errormsg_lastName").text("");
