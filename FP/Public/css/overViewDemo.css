@@ -140,7 +140,7 @@ transition: 0.5s;
 
 }
 
-.popoutInsert{
+.popoutInsert,.popoutEdit{
 
     transition: visibility 0s, opacity 0.5s linear;
 
@@ -344,4 +344,42 @@ ul{
 .swiper-container {
     width: auto;
     height: auto;
+}
+
+a label{
+
+    font-size: .8rem;
+}
+
+.editPopout{
+    display:block;
+    background:#fff;
+
+    top:90px;
+
+    float: none;
+
+    height: auto;
+    min-height: 400px;
+    z-index:20;
+    vertical-align: middle;
+
+    position:fixed;
+    border: 1px solid rgba(0,0,0,0.3);
+
+    width: 40%;
+    position: fixed;
+    left: 50%;
+    margin-left: -20%;
+
+}
+
+.editPopout label{
+
+    text-align: center;
+}
+
+.editPopout input {
+    margin: 0;
+    padding: 0;
 }

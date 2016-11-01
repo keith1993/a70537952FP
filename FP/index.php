@@ -58,9 +58,6 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         foreach ($LastLastMonthIncome as $k =>$v){$LastLastMonthTotalIncome+=$v;}
 
 
-
-
-
       require 'Application/Views/overviewDemo.html';
 
 

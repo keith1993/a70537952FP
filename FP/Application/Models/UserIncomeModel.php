@@ -40,6 +40,17 @@ class UserIncomeModel extends  BaseModel
         return $incomeList;
     }
 
+    public function getIncomeByIncomeID($IncomeID)
+    {
+        $sql = "select * from user_income where Income_ID=:IncomeID";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":IncomeID", $IncomeID);
+        $result->execute();
+        $result = $result->fetch();
+        $income = new UserIncomeObject($result);
+        return $income;
+    }
+
     public function deleteIncomeByIncomeID($IncomeID)
     {
         $sql = "delete from user_income where Income_ID=:IncomeID";
@@ -49,15 +60,16 @@ class UserIncomeModel extends  BaseModel
         return $isSuccess;
     }
 
-    public function updateIncomeByIncomeID($IncomeID,$Income_Name,$Income_Amount,$Income_Description)
+    public function updateIncomeByIncomeID($IncomeID,$Income_Name,$Income_Amount,$Income_Description,$Income_EnterDate)
     {
         $sql = "update user_income set Income_Name=:Income_Name,Income_Amount=:Income_Amount,
-                Income_Description=:Income_Description where Income_ID=:IncomeID";
+                Income_Description=:Income_Description,Income_EnterDate=:Income_EnterDate where Income_ID=:IncomeID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":IncomeID", $IncomeID);
         $result->bindValue(":Income_Name", $Income_Name);
         $result->bindValue(":Income_Amount", $Income_Amount);
         $result->bindValue(":Income_Description",$Income_Description);
+        $result->bindValue(":Income_EnterDate",$Income_EnterDate);
 
         $isSuccess = $result->execute();
         return $isSuccess;

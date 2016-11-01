@@ -127,8 +127,9 @@ var options = {
 
 
 jQuery(function ($) {
-    $('.tableExpense').footable();
     $('.tableIncome').footable();
+
+    $('.tableExpense').footable();
     /************************************/
     $('[delete=expense]').confirmation({
         rootSelector: '[data-toggle=confirmation-singleton]',
@@ -410,6 +411,49 @@ function hideInsert() {
     $("#incomeFormID")[0].reset();
 
 
+}
+
+function showEditIncome(IncomeID) {
+
+    $.post("Application/Controllers/AJAXGetIncomeByID.php",
+        {
+            IncomeID: IncomeID,
+
+        },
+        function (data, status) {
+
+            if (data == "Income No Exists") {
+
+                window.location.reload(true);
+            } else {
+
+                var incomeObject = JSON.parse(data);
+                $("#IncomeID").val(incomeObject.IncomeID);
+                $("#IncomeName").val(incomeObject.Income_Name);
+                $("#IncomeAmount").val(incomeObject.Income_Amount);
+                $("#IncomeDescription").val(incomeObject.Income_Description);
+                var formattedDate = moment(new Date(incomeObject.Income_EnterDate)).format('YYYY-MM-DD');
+                $("#IncomeEnterDate").val(formattedDate);
+
+                document.getElementById("popoutEdit").style.display = "block"
+                $("#editIncome").fadeIn(500);
+            }
+
+        })
+
+
+
+
+}
+
+
+function hideEdit() {
+
+    /*document.getElementById("popoutInsert").style.display = "none"
+     document.getElementById("InsertExpense").style.display = "none"
+     document.getElementById("InsertIncome").style.display = "none"*/
+    $("#popoutEdit").fadeOut(500);
+    $("#editIncomeForm")[0].reset();
 
 
 }

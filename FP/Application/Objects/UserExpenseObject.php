@@ -17,7 +17,8 @@ class UserExpenseObject
         $this->Expense_Amount =$result[3];
         $this->Expense_Category =$result[4];
         $this->Expense_Description =$result[5];
-        $this->Expense_EnterDate =date_format(new DateTime($result[6]),"d/m/Y");
+        //$this->Expense_EnterDate =date_format(new DateTime($result[6]),"d/m/Y");
+        $this->Expense_EnterDate =date_format(new DateTime($result[6]),"Y/m/d");
     }
 
 
