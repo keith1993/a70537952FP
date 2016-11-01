@@ -27,9 +27,10 @@ if (isset($_POST['update'])) {
   $Target_Name = $_POST["Target_Name"];
   $Target_Amount = $_POST["Target_Amount"];
   $Target_Days = $_POST["Target_Days"];
+  $Target_AchieveDate = $_POST["Target_AchieveDate"];
 
   $a = new UserTargetModel();
-  $jj = $a->updateTargetByTargetID($Target_ID,$Target_Name,$Target_Amount,$Target_Days);
+  $jj = $a->updateTargetByTargetID($Target_ID,$Target_Name,$Target_Amount,$Target_Days,$Target_AchieveDate);
 
    if($jj instanceof UserTargetObject){
 

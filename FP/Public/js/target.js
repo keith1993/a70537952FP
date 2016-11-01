@@ -48,3 +48,14 @@ function move() {
           document.getElementById("update").disabled = false;
       	}
       }
+function dateDiff(){
+
+  var msMinute = 60*1000;
+  var msDay = 60*60*24*1000;
+  var a = new Date(date());
+  var b = new Date(document.getElementById("Target_AchieveDate"));
+
+  var answer = (b - a) / msDay;
+
+  document.getElementById("Target_Days").value = answer;
+}
