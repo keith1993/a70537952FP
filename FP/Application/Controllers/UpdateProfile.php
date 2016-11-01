@@ -19,7 +19,7 @@ spl_autoload_register(function ($class) {
         require "../../Helper/".$class.".php";
     }
 
-});
+});	
 
 
 //$UserID = $_SESSION["id"];
