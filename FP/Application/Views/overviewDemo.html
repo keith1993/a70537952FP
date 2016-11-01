@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
-
+    <link rel="stylesheet" href="Helper/Swiper-master/dist/css/swiper.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="Helper/footable-standalone.latest/css/footable.standalone.css">
+
     <!-- Bootstrap core CSS -->
     <link href="Public/css/bootstrap1.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Public/css/MDB PRO 4.2.0.css">
     <!-- Material Design Bootstrap-->
     <link href="Public/css/mdb.min.css" rel="stylesheet">
+
     <link href="Public/css/overViewDemo.css" rel="stylesheet">
 
 
@@ -38,37 +40,9 @@
     <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
     <script type="text/javascript" src="Helper/Chart.js-master/src/chart.js"></script>
     <script src="Helper/js-cookie-1.5.1/src/js.cookie.js"></script>
-
-
-    <script>
-
-        jQuery(function ($) {
-            $('.tableExpense').footable();
-        });
-        jQuery(function ($) {
-            $('.tableIncome').footable();
-        });
-        jQuery(function ($) {
-            $('[delete=expense]').confirmation({
-                rootSelector: '[data-toggle=confirmation-singleton]',
-            popout:true,
-                title:"Are you sure delete?",
-                onConfirm:function() {deleteExpense($(this).attr("expenseID"))}//function(){alert($(this).attr("expenseID"));}
-            });
-
-        });
-
-        jQuery(function ($) {
-            $('[delete=income]').confirmation({
-                rootSelector: '[data-toggle=confirmation-singleton]',
-                popout:true,
-                title:"Are you sure delete?",
-                onConfirm:function() {deleteIncome($(this).attr("incomeID"))}//function(){alert($(this).attr("incomeID"));}
-            });
-
-        });
-    </script>
-
+    <script src="Helper/Swiper-master/dist/js/swiper.min.js"></script>
+    <script src="Helper/Swiper-master/dist/js/swiper.jquery.min.js"></script>
+    <script src="Public/js/moment.js"></script>
 
 
 </head>
@@ -166,143 +140,352 @@
 
 </header>
 <div class="wrapper">
-    <div class="container-fluid content transition main">
-        <div class="row">
-            <div id="overview" class="col-lg-6 overviewWhite">
-                <span style="font-size:85px;display: inline-block"><?php echo date('F') ?></span>
 
-                <div class="container-fluid" style="margin-left: 20px;margin-top: 10px;">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="container-fluid content transition main">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <span style="font-size:48px;display: inline-block">Incomes</span>
-                            <br>
-                            <div class="overviewGroup">
-                            <span class="">Fixed Salary </span><span class="floatRight">RM <?php echo array_key_exists('Fixed Salary', $incomeGroup)?$incomeGroup["Fixed Salary"]:"0.00";?></span>
-                                <br>
-                            <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Other', $incomeGroup)?$incomeGroup["Other"]:"0.00";?></span>
-                                <hr style="border-top: 1px solid rgba(255,255,255,1);">
-                                <span  class="">Total Income </span><span class="floatRight">RM <?php echo number_format($totalIncome, 2, '.', '');?></span>
+                        <div id="CurrentOverview" class="col-md-11 col-lg-6 overviewWhite">
+                            <span class="" style="font-size:85px;display: inline-block"><?php echo date('F') ?></span>
+
+                            <div class="container-fluid" style="margin-left: 20px;margin-top: 10px;">
+                                <div class="row">
+                                    <div class="col-lg-5 incomeOverview">
+                                        <span style="font-size:48px;display: inline-block">Incomes</span>
+                                        <br>
+                                        <div class="overviewGroup">
+                                            <span class="">Fixed Salary </span><span class="floatRight">RM <?php echo array_key_exists('Fixed Salary', $CurrentMonthIncome)?$CurrentMonthIncome["Fixed Salary"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Other', $CurrentMonthIncome)?$CurrentMonthIncome["Other"]:"0.00";?></span>
+                                            <hr style="border-top: 1px solid rgba(255,255,255,1);">
+                                            <span  class="">Total Income </span><span class="floatRight">RM <?php echo number_format($CurrentMonthTotalIncome, 2, '.', '');?></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 expenseOverview">
+                                        <span style="font-size:48px;display: inline-block">Expenses</span>
+                                        <br>
+                                        <div class="overviewGroup">
+
+                                            <span class="">Fixed Expense </span><span class="floatRight">RM <?php echo array_key_exists('Fixed expenses', $CurrentMonthExpense)?$CurrentMonthExpense["Fixed expenses"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Debts </span><span class="floatRight">RM <?php echo array_key_exists('Debts', $CurrentMonthExpense)?$CurrentMonthExpense["Debts"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Entertainment </span><span class="floatRight">RM <?php echo array_key_exists('Entertainment', $CurrentMonthExpense)?$CurrentMonthExpense["Entertainment"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Food & Beverage </span><span class="floatRight">RM <?php echo array_key_exists('Food & beverage', $CurrentMonthExpense)?$CurrentMonthExpense["Food & beverage"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Transport </span><span class="floatRight">RM <?php echo array_key_exists('Transport', $CurrentMonthExpense)?$CurrentMonthExpense["Transport"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Others', $CurrentMonthExpense)?$CurrentMonthExpense["Others"]:"0.00";?></span>
+                                            <hr style="border-top: 1px solid rgba(255,255,255,1);">
+                                            <span  class="">Total Expense </span><span class="floatRight">RM <?php echo number_format($CurrentMonthTotalExpense, 2, '.', '');?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid" style="margin-left: 20px;margin-top: 30px;text-align: center;">
+                                <span  class="savings">Savings </span><span class="savings">RM <?php echo number_format($CurrentMonthTotalIncome-$CurrentMonthTotalExpense, 2, '.', '');?></span>
                             </div>
                         </div>
 
-                        <div class="col-lg-6">
-                            <span style="font-size:48px;display: inline-block">Expenses</span>
-                            <br>
-                            <div class="overviewGroup">
-                                <!--
-
-                    echo array_key_exists('Entertainment', $expenseGroup) ? $expenseGroup["Entertainment"].",":"0,";
-                    echo array_key_exists('Fixed expenses', $expenseGroup) ? $expenseGroup["Fixed expenses"].","
-                    :
-                    "0,";
-                    echo
-                    array_key_exists('Food & beverage', $expenseGroup) ? $expenseGroup["Food & beverage"].","
-                    :
-                    "0,";
-                    echo
-                    array_key_exists('Others', $expenseGroup) ? $expenseGroup["Others"].","
-                    :
-                    "0,";
-                    echo
-                    array_key_exists('Transport', $expenseGroup) ? $expenseGroup["Transport"].","
-                    :
-                    "0,";
+                        <div id="CurrentChart" class="col-md-8 col-md-offset-2 col-lg-4">
 
 
-                                -->
-                                <span class="">Fixed Expense </span><span class="floatRight">RM <?php echo array_key_exists('Fixed expenses', $expenseGroup)?$expenseGroup["Fixed expenses"]:"0.00";?></span>
-                                <br>
-                                <span  class="">Debts </span><span class="floatRight">RM <?php echo array_key_exists('Debts', $expenseGroup)?$expenseGroup["Debts"]:"0.00";?></span>
-                                <br>
-                                <span  class="">Entertainment </span><span class="floatRight">RM <?php echo array_key_exists('Entertainment', $expenseGroup)?$expenseGroup["Entertainment"]:"0.00";?></span>
-                                <br>
-                                <span  class="">Food & Beverage </span><span class="floatRight">RM <?php echo array_key_exists('Food & beverage', $expenseGroup)?$expenseGroup["Food & beverage"]:"0.00";?></span>
-                                <br>
-                                <span  class="">Transport </span><span class="floatRight">RM <?php echo array_key_exists('Transport', $expenseGroup)?$expenseGroup["Transport"]:"0.00";?></span>
-                                <br>
-                                <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Others', $expenseGroup)?$expenseGroup["Others"]:"0.00";?></span>
-                                <hr style="border-top: 1px solid rgba(255,255,255,1);">
-                                <span  class="">Total Expense </span><span class="floatRight">RM <?php echo number_format($totalExpense, 2, '.', '');?></span>
-                            </div>
+                            <script>
+
+                                //This will get the first returned node in the jQuery collection.
+
+                                data = {
+                                    labels: ["Debts", "Entertainment", "Fixed expenses", "Food & beverage", "Others", "Transport"
+
+
+                                    ],
+                                    datasets: [
+                                        {
+                                            fillColor: fillColor,
+                                            strokeColor: strokeColor,
+                                            pointColor: pointColor,
+                                            pointStrokeColor: pointStrokeColor,
+                                            data: [
+
+                                            <?php
+
+                                                    echo array_key_exists('Debts', $CurrentMonthExpense)?$CurrentMonthExpense["Debts"].",":"0,";
+                                echo array_key_exists('Entertainment', $CurrentMonthExpense) ? $CurrentMonthExpense["Entertainment"].",":"0,";
+                                echo array_key_exists('Fixed expenses', $CurrentMonthExpense) ? $CurrentMonthExpense["Fixed expenses"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Food & beverage', $CurrentMonthExpense) ? $CurrentMonthExpense["Food & beverage"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Others', $CurrentMonthExpense) ? $CurrentMonthExpense["Others"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Transport', $CurrentMonthExpense) ? $CurrentMonthExpense["Transport"].","
+                                :
+                                "0,";
+
+
+
+                                ?>
+
+                                ]
+
+                                }
+                                ]
+                                }
+
+
+
+
+
+                                $('#CurrentChart').empty();
+                                $('#CurrentChart').append('<canvas class="myChart"  width="700" height="600"></canvas>');
+                                chart = new Chart($(".myChart").get(0).getContext("2d")).Radar(data, options);
+
+
+
+
+
+                            </script>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid" style="margin-left: 20px;margin-top: 30px;text-align: center;">
-                    <span  class="savings">Savings </span><span class="savings">RM <?php echo number_format($totalIncome-$totalExpense, 2, '.', '');?></span>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="container-fluid content transition main">
+                    <div class="row">
+                        <div id="overview" class="col-md-11 col-lg-6 overviewWhite">
+                            <span class="" style="font-size:85px;display: inline-block"><?php echo date('F', mktime(0, 0, 0, date('m')-1 , 10));?></span>
+
+                            <div class="container-fluid" style="margin-left: 20px;margin-top: 10px;">
+                                <div class="row">
+                                    <div class="col-lg-5 incomeOverview">
+                                        <span style="font-size:48px;display: inline-block">Incomes</span>
+                                        <br>
+                                        <div class="overviewGroup">
+                                            <span class="">Fixed Salary </span><span class="floatRight">RM <?php echo array_key_exists('Fixed Salary', $LastMonthIncome)?$LastMonthIncome["Fixed Salary"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Other', $LastMonthIncome)?$LastMonthIncome["Other"]:"0.00";?></span>
+                                            <hr style="border-top: 1px solid rgba(255,255,255,1);">
+                                            <span  class="">Total Income </span><span class="floatRight">RM <?php echo number_format($LastMonthTotalIncome, 2, '.', '');?></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 expenseOverview">
+                                        <span style="font-size:48px;display: inline-block">Expenses</span>
+                                        <br>
+                                        <div class="overviewGroup">
+
+                                            <span class="">Fixed Expense </span><span class="floatRight">RM <?php echo array_key_exists('Fixed expenses', $LastMonthExpense)?$LastMonthExpense["Fixed expenses"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Debts </span><span class="floatRight">RM <?php echo array_key_exists('Debts', $LastMonthExpense)?$LastMonthExpense["Debts"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Entertainment </span><span class="floatRight">RM <?php echo array_key_exists('Entertainment', $LastMonthExpense)?$LastMonthExpense["Entertainment"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Food & Beverage </span><span class="floatRight">RM <?php echo array_key_exists('Food & beverage', $LastMonthExpense)?$LastMonthExpense["Food & beverage"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Transport </span><span class="floatRight">RM <?php echo array_key_exists('Transport', $LastMonthExpense)?$LastMonthExpense["Transport"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Others', $LastMonthExpense)?$LastMonthExpense["Others"]:"0.00";?></span>
+                                            <hr style="border-top: 1px solid rgba(255,255,255,1);">
+                                            <span  class="">Total Expense </span><span class="floatRight">RM <?php echo number_format($LastMonthTotalExpense, 2, '.', '');?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid" style="margin-left: 20px;margin-top: 30px;text-align: center;">
+                                <span  class="savings">Savings </span><span class="savings">RM <?php echo number_format($LastMonthTotalIncome-$LastMonthTotalExpense, 2, '.', '');?></span>
+                            </div>
+                        </div>
+
+                        <div id="Chart" class="col-md-8 col-md-offset-2 col-lg-4">
+
+                            <canvas id="LastMonthmyChart" width="700" height="600"></canvas>
+                            <script>
+
+                                //This will get the first returned node in the jQuery collection.
+
+                                data = {
+                                    labels: ["Debts", "Entertainment", "Fixed expenses", "Food & beverage", "Others", "Transport"
+
+
+                                    ],
+                                    datasets: [
+                                        {
+                                            fillColor: fillColor,
+                                            strokeColor: strokeColor,
+                                            pointColor: pointColor,
+                                            pointStrokeColor: pointStrokeColor,
+                                            data: [
+
+                                            <?php
+
+                                                    echo array_key_exists('Debts', $LastMonthExpense)?$LastMonthExpense["Debts"].",":"0,";
+                                echo array_key_exists('Entertainment', $LastMonthExpense) ? $LastMonthExpense["Entertainment"].",":"0,";
+                                echo array_key_exists('Fixed expenses', $LastMonthExpense) ? $LastMonthExpense["Fixed expenses"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Food & beverage', $LastMonthExpense) ? $LastMonthExpense["Food & beverage"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Others', $LastMonthExpense) ? $LastMonthExpense["Others"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Transport', $LastMonthExpense) ? $LastMonthExpense["Transport"].","
+                                :
+                                "0,";
+
+
+
+                                ?>
+
+                                ]
+
+                                }
+                                ]
+                                }
+
+
+
+                                var ctx2 = $("#LastMonthmyChart").get(0).getContext("2d");
+
+                                LastMonthmyChart = new Chart(ctx2).Radar(data, options);
+
+                            </script>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div id="Chart" class="col-lg-5">
+            <div class="swiper-slide">
+                <div class="container-fluid content transition main">
+                    <div class="row">
+                        <div id="overview" class="col-md-11 col-lg-6 overviewWhite">
+                            <span class="" style="font-size:85px;display: inline-block"><?php echo date('F', mktime(0, 0, 0, date('m')-2 , 10));?></span>
 
-                <canvas id="myChart" width="700" height="600"></canvas>
-                <script>
+                            <div class="container-fluid" style="margin-left: 20px;margin-top: 10px;">
+                                <div class="row">
+                                    <div class="col-lg-5 incomeOverview">
+                                        <span style="font-size:48px;display: inline-block">Incomes</span>
+                                        <br>
+                                        <div class="overviewGroup">
+                                            <span class="">Fixed Salary </span><span class="floatRight">RM <?php echo array_key_exists('Fixed Salary', $LastLastMonthIncome)?$LastLastMonthIncome["Fixed Salary"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Other', $LastLastMonthIncome)?$LastLastMonthIncome["Other"]:"0.00";?></span>
+                                            <hr style="border-top: 1px solid rgba(255,255,255,1);">
+                                            <span  class="">Total Income </span><span class="floatRight">RM <?php echo number_format($LastLastMonthTotalIncome, 2, '.', '');?></span>
+                                        </div>
+                                    </div>
 
-                    //This will get the first returned node in the jQuery collection.
+                                    <div class="col-lg-5 expenseOverview">
+                                        <span style="font-size:48px;display: inline-block">Expenses</span>
+                                        <br>
+                                        <div class="overviewGroup">
 
-                    data = {
-                        labels: ["Debts", "Entertainment", "Fixed expenses", "Food & beverage", "Others", "Transport"
+                                            <span class="">Fixed Expense </span><span class="floatRight">RM <?php echo array_key_exists('Fixed expenses', $LastLastMonthExpense)?$LastLastMonthExpense["Fixed expenses"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Debts </span><span class="floatRight">RM <?php echo array_key_exists('Debts', $LastLastMonthExpense)?$LastLastMonthExpense["Debts"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Entertainment </span><span class="floatRight">RM <?php echo array_key_exists('Entertainment', $LastLastMonthExpense)?$LastLastMonthExpense["Entertainment"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Food & Beverage </span><span class="floatRight">RM <?php echo array_key_exists('Food & beverage', $LastLastMonthExpense)?$LastLastMonthExpense["Food & beverage"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Transport </span><span class="floatRight">RM <?php echo array_key_exists('Transport', $LastLastMonthExpense)?$LastLastMonthExpense["Transport"]:"0.00";?></span>
+                                            <br>
+                                            <span  class="">Other </span><span class="floatRight">RM <?php echo array_key_exists('Others', $LastLastMonthExpense)?$LastLastMonthExpense["Others"]:"0.00";?></span>
+                                            <hr style="border-top: 1px solid rgba(255,255,255,1);">
+                                            <span  class="">Total Expense </span><span class="floatRight">RM <?php echo number_format($LastLastMonthTotalExpense, 2, '.', '');?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid" style="margin-left: 20px;margin-top: 30px;text-align: center;">
+                                <span  class="savings">Savings </span><span class="savings">RM <?php echo number_format($LastLastMonthTotalIncome-$LastLastMonthTotalExpense, 2, '.', '');?></span>
+                            </div>
+                        </div>
 
-                            /*  <?php     $count1 = 0;
-                             foreach ($expenseGroup as $key=>$value){
+                        <div id="Chart" class="col-md-8 col-md-offset-2 col-lg-4">
 
-                             echo "\"".$key."\"";
-                             $count1++;
-                             if ($count1==count($expenseGroup)){
-                             break;
-                             }
-                             echo ",";
-                             }
-                             ?>*/
+                            <canvas id="LastLastMonthmyChart" width="700" height="600"></canvas>
+                            <script>
 
-                        ],
-                        datasets: [
-                            {
-                                fillColor: fillColor,
-                                strokeColor: strokeColor,
-                                pointColor: pointColor,
-                                pointStrokeColor: pointStrokeColor,
-                                data: [
+                                //This will get the first returned node in the jQuery collection.
 
-                                <?php
-
-                                        echo array_key_exists('Debts', $expenseGroup)?$expenseGroup["Debts"].",":"0,";
-                    echo array_key_exists('Entertainment', $expenseGroup) ? $expenseGroup["Entertainment"].",":"0,";
-                    echo array_key_exists('Fixed expenses', $expenseGroup) ? $expenseGroup["Fixed expenses"].","
-                    :
-                    "0,";
-                    echo
-                    array_key_exists('Food & beverage', $expenseGroup) ? $expenseGroup["Food & beverage"].","
-                    :
-                    "0,";
-                    echo
-                    array_key_exists('Others', $expenseGroup) ? $expenseGroup["Others"].","
-                    :
-                    "0,";
-                    echo
-                    array_key_exists('Transport', $expenseGroup) ? $expenseGroup["Transport"].","
-                    :
-                    "0,";
-
-
-
-                    ?>
-
-                    ]
-
-                    }
-                    ]
-                    }
+                                data = {
+                                    labels: ["Debts", "Entertainment", "Fixed expenses", "Food & beverage", "Others", "Transport"
 
 
+                                    ],
+                                    datasets: [
+                                        {
+                                            fillColor: fillColor,
+                                            strokeColor: strokeColor,
+                                            pointColor: pointColor,
+                                            pointStrokeColor: pointStrokeColor,
+                                            data: [
 
-                    var ctx = $("#myChart").get(0).getContext("2d");
+                                            <?php
 
-                    chart = new Chart(ctx).Radar(data, options);
+                                                    echo array_key_exists('Debts', $LastLastMonthExpense)?$LastLastMonthExpense["Debts"].",":"0,";
+                                echo array_key_exists('Entertainment', $LastLastMonthExpense) ? $LastLastMonthExpense["Entertainment"].",":"0,";
+                                echo array_key_exists('Fixed expenses', $LastLastMonthExpense) ? $LastLastMonthExpense["Fixed expenses"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Food & beverage', $LastLastMonthExpense) ? $LastLastMonthExpense["Food & beverage"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Others', $LastLastMonthExpense) ? $LastLastMonthExpense["Others"].","
+                                :
+                                "0,";
+                                echo
+                                array_key_exists('Transport', $LastLastMonthExpense) ? $LastLastMonthExpense["Transport"].","
+                                :
+                                "0,";
 
-                </script>
+
+
+                                ?>
+
+                                ]
+
+                                }
+                                ]
+                                }
+
+
+
+                                var ctx3 = $("#LastLastMonthmyChart").get(0).getContext("2d");
+
+                                LastLastMonthmyChart = new Chart(ctx3).Radar(data, options);
+
+                            </script>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
     </div>
+
+
+
+
 
     <div class="IncomeContent transition main">
         <p class="title">Income Detail</p>
@@ -320,10 +503,10 @@
         <th data-type=\"number\">Income Amount</th>
         ";
         echo "
-        <th data-type=\"text\">Income Description</th>
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Income Description</th>
         ";
         echo "
-        <th data-type=\"date\">Income Enter Date</th>
+        <th data-type=\"date\" data-format-string=\"DD-MM-YYYY\" data-breakpoints=\"xs sm md\">Income Enter Date</th>
         ";
         echo "
         <th data-type=\"html\">Edit</th>
@@ -351,12 +534,13 @@
             echo "
             <td>".$value->Income_Description."</td>
             ";
+
             echo "
-            <td>".$value->Income_EnterDate."</td>
+            <td>". $value->Income_EnterDate ."</td>
             ";
 
             echo "
-            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-pencil\"></i> </a></td>
+            <td ><a class=\"btn btn-default btn-sm\" onclick=\"showEditIncome(".$value->IncomeID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
             ";
 
             echo "
@@ -399,14 +583,14 @@
         ";
 
         echo "
-        <th data-type=\"text\">Expense Category</th>
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Category</th>
         ";
 
         echo "
-        <th data-type=\"text\">Expense Description</th>
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Description</th>
         ";
         echo "
-        <th data-type=\"date\">Expense Enter Date</th>
+        <th data-type=\"date\"  data-format-string=\"DD/MM/YYYY\" data-breakpoints=\"xs sm md\">Expense Enter Date</th>
         ";
         echo "
         <th data-type=\"html\">Edit</th>
@@ -541,8 +725,84 @@
         </form>
     </div>
 </div>
-
 </div>
+
+
+<div id="popoutEdit" style="display: none;z-index: 50">
+
+    <div class="mask" onclick="hideEdit()"></div>
+    <div id="editIncome"class="container-fluid" style="display: none;">
+            <div class="row">
+                     <div class="col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3  editPopout" style="text-align: center;">
+            <form id="editIncomeForm" method="post" action="Application\Controllers\UpdateIncome.php" form-horizontal" role="form">
+                <div class="col-sm-12">
+                  <p class="popoutTitle" style="text-align: center">Edit Income</p>
+                </div>
+
+                <div style="display: none">
+                    <p>IncomeID</p><input type="text" name="IncomeID" id="IncomeID" class="form-control" value="" readonly >
+
+                </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Name</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="text" name="IncomeName" class="form-control" id="IncomeName" >
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="number" name="IncomeAmount" class="form-control" id="IncomeAmount">
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Description</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="text" name="IncomeDescription" class="form-control" id="IncomeDescription">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Enter Date" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Enter Date</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="date" name="IncomeEnterDate" class="form-control" id="IncomeEnterDate">
+                        </div>
+                    </div>
+
+
+
+                        <button type="reset" class="btn btn-default" onclick="hideEdit()" style="display: inline-block">Cancel</button>
+
+
+
+                        <button type="submit" class="btn btn-default">Save</button>
+
+
+
+            </form>
+
+        </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true
+    });
+</script>
+
+
 </body>
 
 </html>

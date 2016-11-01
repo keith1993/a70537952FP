@@ -13,6 +13,8 @@ var pointColor= "rgba(220,220,220,1)";
 var pointStrokeColor= "#fff";
 var data;
 var chart;
+var LastMonthmyChart;
+var LastLastMonthmyChart;
 var options = {
 
     //Boolean - If we show the scale above the chart data
@@ -108,7 +110,7 @@ var options = {
     datasetFill: true,
 
     //Boolean - Whether to animate the chart
-    animation: true,
+    animation: false,
 
     //Number - Number of animation steps
     animationSteps: 60,
@@ -117,23 +119,41 @@ var options = {
     animationEasing: "easeOutQuart",
 
     //Function - Fires when the animation is complete
-    onAnimationComplete: null
+    onAnimationComplete: null,
+
+    responsive: true
 
 };
 
-$(document).ready(function () {
 
+jQuery(function ($) {
+    $('.tableIncome').footable();
+
+    $('.tableExpense').footable();
+    /************************************/
+    $('[delete=expense]').confirmation({
+        rootSelector: '[data-toggle=confirmation-singleton]',
+        popout:true,
+        title:"Are you sure delete?",
+        onConfirm:function() {deleteExpense($(this).attr("expenseID"))}//function(){alert($(this).attr("expenseID"));}
+    });
+
+    $('[delete=income]').confirmation({
+        rootSelector: '[data-toggle=confirmation-singleton]',
+        popout:true,
+        title:"Are you sure delete?",
+        onConfirm:function() {deleteIncome($(this).attr("incomeID"))}//function(){alert($(this).attr("incomeID"));}
+
+    });
+    /*********************************/
     if (Cookies.get('style')==null){
-
         changeStyle("red");
-
     }else{
         changeStyle(Cookies.get('style'));
-
     }
-
-
-
+    alert("111");
+    alert($(".myChart").length);
+    //chart = new Chart($(".myChart").get(0).getContext("2d")).Radar(data, options);
 
 })
 
@@ -307,12 +327,17 @@ function  changeStyle(colour) {
         animationEasing: "easeOutQuart",
 
         //Function - Fires when the animation is complete
-        onAnimationComplete: null
+        onAnimationComplete: null,
+
+        responsive: true
+
+
 
     };
-    chart.destroy();
+    //chart.destroy();
 
-    chart =  new Chart(ctx).Radar(data,options1);
+    var ctx = $("#myChart").get(0).getContext("2d");
+    //chart =  new Chart(ctx).Radar(data,options1);
 
 
 
@@ -386,6 +411,49 @@ function hideInsert() {
     $("#incomeFormID")[0].reset();
 
 
+}
+
+function showEditIncome(IncomeID) {
+
+    $.post("Application/Controllers/AJAXGetIncomeByID.php",
+        {
+            IncomeID: IncomeID,
+
+        },
+        function (data, status) {
+
+            if (data == "Income No Exists") {
+
+                window.location.reload(true);
+            } else {
+
+                var incomeObject = JSON.parse(data);
+                $("#IncomeID").val(incomeObject.IncomeID);
+                $("#IncomeName").val(incomeObject.Income_Name);
+                $("#IncomeAmount").val(incomeObject.Income_Amount);
+                $("#IncomeDescription").val(incomeObject.Income_Description);
+                var formattedDate = moment(new Date(incomeObject.Income_EnterDate)).format('YYYY-MM-DD');
+                $("#IncomeEnterDate").val(formattedDate);
+
+                document.getElementById("popoutEdit").style.display = "block"
+                $("#editIncome").fadeIn(500);
+            }
+
+        })
+
+
+
+
+}
+
+
+function hideEdit() {
+
+    /*document.getElementById("popoutInsert").style.display = "none"
+     document.getElementById("InsertExpense").style.display = "none"
+     document.getElementById("InsertIncome").style.display = "none"*/
+    $("#popoutEdit").fadeOut(500);
+    $("#editIncomeForm")[0].reset();
 
 
 }

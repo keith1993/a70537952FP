@@ -23,7 +23,8 @@ class UserIncomeObject
         $this->Income_Amount =$result[3];
         $this->Income_Category =$result[4];
         $this->Income_Description =$result[5];
-        $this->Income_EnterDate =date_format(new DateTime($result[6]),"d/m/Y");
+        //$this->Income_EnterDate =date_format(new DateTime($result[6]),"d/m/Y");
+        $this->Income_EnterDate =date_format(new DateTime($result[6]),"Y/m/d");
     }
 
 }

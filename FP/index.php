@@ -31,16 +31,31 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         $incomeModel = new UserIncomeModel();
         $expenseList = $expensesModel->getExpenseByUserID($jj->ID);
         $incomeList = $incomeModel->getIncomeByUserID($jj->ID);
-       $expenseGroup = $expensesModel->getExpenseGroupByUserIDAndMonth($jj->ID, date('m'));
-        $incomeGroup = $incomeModel->getIncomeGroupByUserIDAndMonth($jj->ID, date('m'));
-        $totalIncome = 0;
-        $totalExpense = 0;
 
 
-        foreach ($expenseGroup as $k =>$v){$totalExpense+=$v;}
-        foreach ($incomeGroup as $k =>$v){$totalIncome+=$v;}
+        /*CURRENT MONTH*/
+        $CurrentMonthExpense = $expensesModel->getExpenseGroupByUserIDAndMonth($jj->ID, date('m'));
+        $CurrentMonthIncome = $incomeModel->getIncomeGroupByUserIDAndMonth($jj->ID, date('m'));
+        $CurrentMonthTotalIncome = 0;
+        $CurrentMonthTotalExpense = 0;
+        foreach ($CurrentMonthExpense as $k =>$v){$CurrentMonthTotalExpense+=$v;}
+        foreach ($CurrentMonthIncome as $k =>$v){$CurrentMonthTotalIncome+=$v;}
 
+        /*LAST MONTH*/
+        $LastMonthExpense = $expensesModel->getExpenseGroupByUserIDAndMonth($jj->ID, date('m')-1);
+        $LastMonthIncome = $incomeModel->getIncomeGroupByUserIDAndMonth($jj->ID, date('m')-1);
+        $LastMonthTotalIncome = 0;
+        $LastMonthTotalExpense = 0;
+        foreach ($LastMonthExpense as $k =>$v){$LastMonthTotalExpense+=$v;}
+        foreach ($LastMonthIncome as $k =>$v){$LastMonthTotalIncome+=$v;}
 
+        /*LAST LAST MONTH*/
+        $LastLastMonthExpense = $expensesModel->getExpenseGroupByUserIDAndMonth($jj->ID, date('m')-2);
+        $LastLastMonthIncome = $incomeModel->getIncomeGroupByUserIDAndMonth($jj->ID, date('m')-2);
+        $LastLastMonthTotalIncome = 0;
+        $LastLastMonthTotalExpense = 0;
+        foreach ($LastLastMonthExpense as $k =>$v){$LastLastMonthTotalExpense+=$v;}
+        foreach ($LastLastMonthIncome as $k =>$v){$LastLastMonthTotalIncome+=$v;}
 
 
       require 'Application/Views/overviewDemo.html';

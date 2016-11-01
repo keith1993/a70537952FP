@@ -32,10 +32,10 @@ body {
     -o-background-size: cover;
     background-size: 100% 100%;
 
-    min-height: 400px;
+    min-height: 850px;
     position: relative;
 
-    height: 100vh;
+    height: auto;
     overflow: hidden;
 }
 
@@ -140,7 +140,7 @@ transition: 0.5s;
 
 }
 
-.popoutInsert{
+.popoutInsert,.popoutEdit{
 
     transition: visibility 0s, opacity 0.5s linear;
 
@@ -255,14 +255,7 @@ margin-top: 60px;
     width: auto;
 }
 
-#Chart{
 
-    display: inline-block;
-   position: relative;
-    float: right;
-    margin-top: 45px;
-    margin-right: 45px;
-}
 .form-inline .form-group {
      margin-right: 0rem;
 }
@@ -323,21 +316,70 @@ text-align: right;
 }
 
 .overviewGroup{
-    margin:20px;
+    margin:0px;
 
 }
 .savings{
-    font-size:50px ;
+    font-size:45px ;
 
 }
-#Chart{
+#CurrentChart,#Chart{
 
-
+    display: inline-block;
+    position: relative;
+    padding-left: 85px;
+    padding-top: 45px;
     transition: 0.5s;
 
 }
-
 ul{
     left: 0
 
+}
+
+.incomeOverview,.expenseOverview{
+
+    font-size: 21px;
+}
+.swiper-container {
+    width: auto;
+    height: auto;
+}
+
+a label{
+
+    font-size: .8rem;
+}
+
+.editPopout{
+    display:block;
+    background:#fff;
+
+    top:90px;
+
+    float: none;
+
+    height: auto;
+    min-height: 400px;
+    z-index:20;
+    vertical-align: middle;
+
+    position:fixed;
+    border: 1px solid rgba(0,0,0,0.3);
+
+    width: 40%;
+    position: fixed;
+    left: 50%;
+    margin-left: -20%;
+
+}
+
+.editPopout label{
+
+    text-align: center;
+}
+
+.editPopout input {
+    margin: 0;
+    padding: 0;
 }
