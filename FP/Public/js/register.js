@@ -9,25 +9,26 @@
 			}
 			
 			function firstNameFunction() {
-				var check = document.getElementById("firstName").value;
-
-
-
-
+				var checkF = document.getElementById("firstName").value;
+				
     			if (document.getElementById("firstName").value == "") {
 				$("#errormsg_firstName").text("You can't leave this empty.");
-				}else if (new RegExp(/\W/).test(check)){
-					$("#errormsg_firstName").text("Invalid first Name.");
-
+				}else if (new RegExp(/\W/).test(checkF)){
+					$("#errormsg_firstName").text("Please only enter alphabets or numbers for your first Name.");
 				}
 				else{
 					$("#errormsg_firstName").text("");
 				}
 			}
 
-			function lastNameFunction() {				
+			function lastNameFunction() {
+				var checkL = document.getElementById("lastName").value;	
+				
     			if (document.getElementById("lastName").value == "") {
 				$("#errormsg_lastName").text("You can't leave this empty.");
+				}
+				else if (new RegExp(/\W/).test(checkL)){
+					$("#errormsg_lasstName").text("Please only enter alphabets or numbers for your last Name.");
 				}
 				else{
 					$("#errormsg_lastName").text("");
@@ -59,8 +60,13 @@
 			}
 			
 			function occupationFunction() {
+				var checkO = document.getElementById("occupation").value;
+				
 				if (document.getElementById("occupation").value == "") {
 				$("#errormsg_occupation").text("You can't leave this empty.");
+				}
+				else if (new RegExp(/\W/).test(checkO)){
+					$("#errormsg_occupation").text("Please only enter alphabets or numbers for your occupation.");
 				}
 				else{
 					$("#errormsg_occupation").text("");
@@ -83,18 +89,29 @@
 				}
 			
 			//FirstName
+			var checkF = document.getElementById("firstName").value;
+			
     			if (document.getElementById("firstName").value == "") {
 				$("#errormsg_firstName").text("You can't leave this empty.");
 				a=false;
+				}
+				else if (new RegExp(/\W/).test(checkF)){
+					$("#errormsg_firstName").text("Please only enter alphabets or numbers for your first Name.");
+					a=false;
 				}
 				else{
 					$("#errormsg_firstName").text("");
 				}	
 				
-			//LastName			
+			//LastName
+			var checkL = document.getElementById("lastName").value;
+						
     			if (document.getElementById("lastName").value == "") {
 				$("#errormsg_lastName").text("You can't leave this empty.");
 				a=false;
+				}
+				else if (new RegExp(/\W/).test(checkL)){
+					$("#errormsg_lastName").text("Please only enter alphabets or numbers for your last Name.");
 				}
 				else{
 					$("#errormsg_lastName").text("");
@@ -127,9 +144,15 @@
 				}
 
 			//Occupation
+			var checkO = document.getElementById("occupation").value;
+			
 				if (document.getElementById("occupation").value == "") {
 				$("#errormsg_occupation").text("You can't leave this empty.");
 				a=false;
+				}
+				else if (new RegExp(/\W/).test(checkO)){
+				a=false;
+					$("#errormsg_occupation").text("Please only enter alphabets or numbers for your occupation.");
 				}
 				else{
 					$("#errormsg_occupation").text("");

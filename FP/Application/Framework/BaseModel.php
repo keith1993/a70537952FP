@@ -10,7 +10,7 @@ class BaseModel
 {
     protected static $serverName = "localhost";
     protected static $username = "root";
-    protected static $password = "";
+    protected static $password = "password";
 
     protected static $dbname = "Finance";
 
