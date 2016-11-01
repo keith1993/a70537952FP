@@ -46,7 +46,7 @@ try{
 	$id = $user->ID;
 	$token = $user->Token;
 $email= $user->Email;
-$link = "http://localhost/GithubFP/Application/Controllers/VerifyEmail.php?I=$id&T=$token";
+$link = "http://localhost/FP/Application/Controllers/VerifyEmail.php?I=$id&T=$token";
 
      $message = "<!DOCTYPE html>
 <html>
