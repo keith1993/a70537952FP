@@ -28,7 +28,7 @@ class UserExpenseModel extends BaseModel
 
     public function getExpenseByUserID($UserID)
     {
-        $sql = "select * from user_expense where User_ID=:User_ID limit 0,100";
+        $sql = "select * from user_expense where User_ID=:User_ID order by Expense_EnterDate Desc";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":User_ID", $UserID);
         $result->execute();
@@ -41,6 +41,18 @@ class UserExpenseModel extends BaseModel
         return $expenseList;
     }
 
+    public function getExpenseByExpenseID($ExpenseID)
+    {
+        $sql = "select * from user_expense where Expense_ID=:ExpenseID";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":ExpenseID", $ExpenseID);
+        $result->execute();
+        $result = $result->fetch();
+        $Expense = new UserExpenseObject($result);
+        return $Expense;
+    }
+
+
     public function deleteExpenseByExpenseID($ExpenseID)
     {
         $sql = "delete from user_expense where Expense_ID=:ExpenseID";
@@ -50,20 +62,21 @@ class UserExpenseModel extends BaseModel
         return $isSuccess;
     }
 
-    public function updateIncomeByIncomeID($ExpenseID, $Expense_Name, $Expense_Amount, $Expense_Category, $Expense_Description)
+    public function updateExpenseByExpenseID($ExpenseID, $Expense_Name, $Expense_Amount, $Expense_Category, $Expense_Description,$ExpenseEnterDate)
     {
         $sql = "update user_expense set Expense_Name=:Expense_Name,Expense_Amount=:Expense_Amount,Expense_Category=:Expense_Category,
-                Expense_Description=:Expense_Description where Expense_ID=:ExpenseID";
+                Expense_Description=:Expense_Description,Expense_EnterDate=:ExpenseEnterDate where Expense_ID=:ExpenseID";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":ExpenseID", $ExpenseID);
         $result->bindValue(":Expense_Name", $Expense_Name);
         $result->bindValue(":Expense_Amount", $Expense_Amount);
         $result->bindValue(":Expense_Category", $Expense_Category);
         $result->bindValue(":Expense_Description", $Expense_Description);
-
+        $result->bindValue(":ExpenseEnterDate", $ExpenseEnterDate);
         $isSuccess = $result->execute();
         return $isSuccess;
     }
+
 
 
     public function getExpenseGroupByUserIDAndMonth($UserID,$Month)

@@ -27,7 +27,7 @@ class UserIncomeModel extends  BaseModel
 
     public function getIncomeByUserID($UserID)
     {
-        $sql = "select * from user_income where User_ID=:User_ID limit 0,100";
+        $sql = "select * from user_income where User_ID=:User_ID order by Income_EnterDate Desc";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":User_ID", $UserID);
         $result->execute();

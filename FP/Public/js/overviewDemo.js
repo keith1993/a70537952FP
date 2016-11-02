@@ -446,6 +446,40 @@ function showEditIncome(IncomeID) {
 
 }
 
+function showEditExpense(ExpenseID) {
+
+    $.post("Application/Controllers/AJAXGetExpenseByID.php",
+        {
+            ExpenseID: ExpenseID,
+
+        },
+        function (data, status) {
+
+            if (data == "ExpenseID No Exists") {
+
+                window.location.reload(true);
+            } else {
+
+                var ExpenseObject = JSON.parse(data);
+                $("#ExpenseID").val(ExpenseObject.ExpenseID);
+                $("#ExpenseName").val(ExpenseObject.Expense_Name);
+                $("#ExpenseAmount").val(ExpenseObject.Expense_Amount);
+                $("#ExpenseCategory").val(ExpenseObject.Expense_Category);
+                $("#ExpenseDescription").val(ExpenseObject.Expense_Description);
+                var formattedDate = moment(new Date(ExpenseObject.Expense_EnterDate)).format('YYYY-MM-DD');
+                $("#ExpenseEnterDate").val(formattedDate);
+
+                document.getElementById("popoutEdit").style.display = "block"
+                $("#editExpense").fadeIn(500);
+            }
+
+        })
+
+
+
+
+}
+
 
 function hideEdit() {
 
@@ -453,9 +487,10 @@ function hideEdit() {
      document.getElementById("InsertExpense").style.display = "none"
      document.getElementById("InsertIncome").style.display = "none"*/
     $("#popoutEdit").fadeOut(500);
+    $("#editIncome").fadeOut(500);
+    $("#editExpense").fadeOut(500);
     $("#editIncomeForm")[0].reset();
-
-
+    $("#editExpenseForm")[0].reset();
 }
 
 function addExpense() {
