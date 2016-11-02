@@ -1,46 +1,4 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "Finance";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-$sql = "SELECT Target_ID, Target_Name, Target_Amount, Target_Days FROM target";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    echo "<table border=1>
-    <tr>
-    <th>Target ID</th>
-    <th>Target Name</th>
-    <th>Target Amount</th>
-    <th>Target Days</th>
-    <th>Edit</th>
-    <th>Delete</th>
-    </tr>";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row["Target_ID"] . "</td>";
-        echo "<td><a href=\"" . $row["Target_Name"] . "\">" . $row["Target_Name"] . "</a></td>";
-        echo "<td>" . $row["Target_Amount"] . "</td>";
-        echo "<td>" . $row["Target_Days"] . "</td>";
-        echo "<td><a href=" . $row["Target_Name"] . ">Edit</a></td>";
-        echo "<td><input type=\"checkbox\" name=\"delete\" /></td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-} else {
-    echo "0 results";
-}
- ?>
  <!DOCTYPE html>
  <html>
    <head>
@@ -50,7 +8,7 @@ if ($result->num_rows > 0) {
    </head>
    <body>
 
-     <a href="javascript:void(0)"onclick="toggle_visibility('popup1');">Search and Delete</a>
+     <a href="javascript:void(0)"onclick="toggle_visibility('popup1');">Search</a>
 
      <div id="popup1" class="popup-position">
          <div id="popup-wrapper">
@@ -63,12 +21,13 @@ if ($result->num_rows > 0) {
 
 
                <h3 id="displayText">Enter the Target ID below to DELETE a record</h3>
+               <h3 id="txtHint"></h3>
                <!--../Controllers/TargetInsert.php-->
                <form action= "../Controllers/TargetDelete.php" method="post" style="display:none;" id="deleteForm">
                <table width="400" border="0" cellspacing="1" cellpadding="2">
                <tr>
                <td width="100">Target ID</td>
-               <td><input name="Target_ID" type="number" id="Target_ID"></td>
+               <td><input name="Target_ID" type="number" id="Target_ID" ></td>
                </tr>
                <tr>
                <td width="100"> </td>
@@ -108,6 +67,14 @@ if ($result->num_rows > 0) {
                                                  </tr>
                                                  <tr>
                                                    <td>
+                                                     Target Achieve Date:
+                                                   </td>
+                                                   <td>
+                                                     <input type="date" name="Target_AchieveDate">
+                                                   </td>
+                                                 </tr>
+                                                 <tr>
+                                                   <td>
                                                      Target Days:
                                                    </td>
                                                    <td>
@@ -123,6 +90,51 @@ if ($result->num_rows > 0) {
            </div><!--popup_container ends-->
          </div><!--popup-wrapper ends-->
      </div><!--popup1 ends-->
+     <?php
+     $servername = "localhost";
+     $username = "root";
+     $password = "";
+     $dbname = "Finance";
+
+     // Create connection
+     $conn = new mysqli($servername, $username, $password, $dbname);
+     // Check connection
+     if ($conn->connect_error) {
+         die("Connection failed: " . $conn->connect_error);
+     }
+
+
+     $sql = "SELECT Target_ID, Target_Name, Target_Amount, Target_Days, Target_AchieveDate FROM target";
+     $result = $conn->query($sql);
+
+     if ($result->num_rows > 0) {
+         echo "<table border=1>
+         <tr>
+         <th>Target ID</th>
+         <th>Target Name</th>
+         <th>Target Amount</th>
+         <th>Target Days</th>
+         <th>Target Achieve Date</th>
+         <th>Edit</th>
+         <th>Delete</th>
+         </tr>";
+         // output data of each row
+         while($row = $result->fetch_assoc()) {
+             echo "<tr>";
+             echo "<td>" . $row["Target_ID"] . "</td>";
+             echo "<td><a href=\"" . $row["Target_Name"] . "\">" . $row["Target_Name"] . "</a></td>";
+             echo "<td>" . $row["Target_Amount"] . "</td>";
+             echo "<td>" . $row["Target_Days"] . "</td>";
+             echo "<td>" . $row["Target_AchieveDate"] . "</td>";
+             echo "<td><a href=" . $row["Target_Name"] . ">Edit</a></td>";
+             echo "<td><input type=\"checkbox\" name=\"delete\" /></td>";
+             echo "</tr>";
+         }
+         echo "</table>";
+     } else {
+         echo "0 results";
+     }
+      ?>
 
      <script src="../../Public/js/jquery.min.js"></script>
      <script src="../../Public/js/target.js"></script>

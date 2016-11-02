@@ -23,7 +23,7 @@ spl_autoload_register(function ($class) {
 
 //define variables and set to empty values
 $TargetNameErr = $TargerAmountErr = $TargetDaysErr = "";
-$Target_Name = $Target_Amount = $Target_Days = "";
+$Target_Name = $Target_Amount = $Target_Days = $Target_AchieveDate = "";
 
 //if ($SERVER["REQUEST_METHOD"] == "POST") {
 if (empty($_POST["Target_Name"])){
@@ -40,12 +40,22 @@ if (empty($_POST["Target_Amount"])) {
     $Target_Amount = test_input($_POST["Target_Amount"]);
   }
 
-if (empty($_POST["Target_Days"])) {
-    $TargetDaysErr = "Target Days is required";
-    echo "Target Days is required";
-  } else {
-    $Target_Days = test_input($_POST["Target_Days"]);
-  }
+  if (empty($_POST["Target_AchieveDate"])) {
+      $TargetDaysErr = "Target Achieve Days is required";
+      echo "Target Achieve Days is required";
+    } else {
+
+      $now = time(); // or your date as well
+      $your_date = strtotime($_POST["Target_AchieveDate"]);
+      $datediff = $now - $your_date;
+      $answer = (($datediff / (60 * 60 * 24))*-1);
+
+      $Target_AchieveDate = test_input($_POST["Target_AchieveDate"]);
+      $Target_Days = test_input($answer);
+
+      //calculate perday
+      $TargetPerDay = $Target_Amount/$Target_Days;
+    }
 
     function test_input($data) {
       $data = trim($data);
@@ -55,7 +65,7 @@ if (empty($_POST["Target_Days"])) {
     }
 //}
 $a = new UserTargetModel();
-$jj = $a->addTarget("007",$Target_Name,$Target_Amount,$Target_Days);
+$jj = $a->addTarget("007",$Target_Name,$Target_Amount,$Target_Days,$Target_AchieveDate);
 
 
 /*
@@ -81,11 +91,13 @@ $jj = $a->addTarget("007",$Target_Name,$Target_Amount,$Target_Days);
   echo " ,<br> and planing to save RM ";
   echo $Target_Amount;
   echo " in ";
-  echo $Target_Days;
+  echo number_format($answer);
+  //echo $answer;
   echo " days.";
-  //calculation
+  echo "<br>";
+  echo " which is until the date of ";
+  echo $Target_AchieveDate;
   echo "<br> You will need to save RM ";
-  $TargetPerDay = $Target_Amount/$Target_Days;
   echo number_format($TargetPerDay,2);
   echo " per day";
 

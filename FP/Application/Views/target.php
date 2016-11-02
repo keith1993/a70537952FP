@@ -15,15 +15,42 @@
 
         <!--../Controllers/TargetInsert.php-->
               <form action="../Controllers/TargetInsert.php" method="post">
-              Target Name: <input type="text" name="Target_Name">
-              <span class="error">* </span>
-              <br>
-              Target Amount: <input type="text" name="Target_Amount">
-              <span class="error">* </span>
-              <br>
-              Target Days: <input type="text" name="Target_Days">
-              <span class="error">* </span>
-              <br>
+            <table>
+              <tr>
+                <td>
+                  Target Name:
+                </td>
+                <td>
+                  <input type="text" name="Target_Name">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Target Amount:
+                </td>
+                <td>
+                  <input type="text" name="Target_Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Target Achieve Date:
+                </td>
+                <td>
+                  <input type="date" name="Target_AchieveDate" id="Target_AchieveDate" onfocus="dateDiff()">
+                </td>
+              </tr>
+              <!-- no use for showing textbox
+              <tr>
+                <td>
+                  Target Days:
+                </td>
+                <td>
+                  <input type="text" name="Target_Days" id="Target_Days">
+                </td>
+              </tr>
+            -->
+            </table>
               <input type="submit">
               </form>
               <a href="javascript:void(0)"onclick="toggle_visibility('popup1');">Close</a>
