@@ -99,4 +99,75 @@ class UserExpenseModel extends BaseModel
         return $expenseGroup;
     }
 
+    public function getTodayExpenseGroupByUserID($UserID)
+    {
+        $sql = "SELECT Expense_Category,SUM(Expense_Amount) as Expense_Amount FROM `user_expense` where User_ID=:User_ID and Expense_EnterDate=CURDATE() GROUP by Expense_Category ORDER BY Expense_Category ASC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->execute();
+        $result = $result->fetchAll();
+
+        $expenseGroup = array();
+        foreach ($result as $key => $value) {
+
+            $expenseGroup[$value['Expense_Category']]=$value['Expense_Amount'];
+        }
+
+
+        return $expenseGroup;
+    }
+
+
+
+
+public function getTodayTotalExpenseRanking()
+{
+    $sql = "select @rank:=@rank+1 as rank,p.User_ID,p.Total_Expense_Amount from(select @rank := 0)r,(select User_ID,SUM(Expense_Amount) as Total_Expense_Amount FROM `user_expense`
+where Expense_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Expense_Amount desc limit 0,100)p";
+    $result = self::$conn->prepare($sql);
+
+    $result->execute();
+    $result = $result->fetchAll();
+
+    $TotalExpenseRanking = array();
+    foreach ($result as $key => $value) {
+        $object = new stdClass();
+        $object->rank = $value['rank'];
+        $object->User_ID = $value['User_ID'];
+        $object->Total_Expense_Amount = $value['Total_Expense_Amount'];
+        $TotalExpenseRanking[$value['User_ID']]=$object;
+    }
+
+
+    return $TotalExpenseRanking;
+}
+
+
+
+/*
+select * from(select @rank:=@rank+1 as rank,p.User_ID,p.Total_Expense_Amount from(select @rank := 0)r,(select User_ID,SUM(Expense_Amount)
+as Total_Expense_Amount FROM `user_expense` where Expense_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Expense_Amount desc limit 0,100)p)a where User_ID=35
+*/
+public function getTodayTotalExpenseRankingByUserID($UserID)
+{
+    $sql = "select * from(select @rank:=@rank+1 as rank,p.User_ID,p.Total_Expense_Amount from(select @rank := 0)r,(select User_ID,SUM(Expense_Amount)
+as Total_Expense_Amount FROM `user_expense` where Expense_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Expense_Amount desc limit 0,100)p)a where User_ID=:User_ID";
+    $result = self::$conn->prepare($sql);
+    $result->bindValue(":User_ID", $UserID);
+    $result->execute();
+    $result = $result->fetch();
+
+
+
+        $object = new stdClass();
+        $object->rank = $result['rank'];
+        $object->User_ID = $result['User_ID'];
+        $object->Total_Expense_Amount = $result['Total_Expense_Amount'];
+
+
+
+
+    return $object;
+
+}
 }

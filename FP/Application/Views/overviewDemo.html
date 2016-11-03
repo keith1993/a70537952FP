@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>Overview</title>
+
     <link rel="stylesheet" href="Helper/Swiper-master/dist/css/swiper.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -62,7 +63,7 @@
         <!-- Logo -->
         <li id="userLogo" style="display: none;">
             <div class="logo-wrapper waves-light sn-avatar-wrapper">
-                <a href="#">
+                <a href="Application/Controllers/UserProfile.php">
                     <img src="<?php echo " Public/uploads/".$jj->UserImage;?>" class="img-circle">
                 </a>
             </div>
@@ -89,16 +90,18 @@
         <!-- Side navigation links -->
         <li id="sideNavItem" style="display: none">
             <ul class="collapsible collapsible-accordion">
-
+                <li><a href="index.php" collapsible-header waves-effect"><i
+                        class="fa fa-home"></i>Home</i></a></li>
                 <li><a href="Application/Controllers/UserProfile.php" collapsible-header waves-effect"><i
-                        class="fa fa-code"></i>Profile</i></a></li>
-                <!--<li><a class="collapsible-header waves-effect"><i class="fa fa-bank"></i>Foundations</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-money"></i>Business</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
+                        class="fa fa-user"></i>Profile</i></a></li>
+                <li><a href="Application/Controllers/Ranking.php" class="collapsible-header waves-effect"><i class="fa fa-table"></i>Ranking</i></a></li>
+
+                <!-- <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
+                 <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
+                 <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
             </ul>
         </li>
+
         <!--/. Side navigation links -->
 
 
@@ -139,7 +142,7 @@
     <!--/.Navbar-->
 
 </header>
-<div class="wrapper">
+<div id="wrapper" class="wrapper">
 
     <div class="swiper-container">
         <div class="swiper-wrapper">

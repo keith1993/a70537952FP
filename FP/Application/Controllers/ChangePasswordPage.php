@@ -42,14 +42,14 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         echo "Error!" . mysql_error();
         session_unset();
         session_destroy();
-        require 'Application/Views/index.html';
+        header("Location: ../../index.php");
     }
 
 // echo "已登录";
 } else {
     session_unset();
     session_destroy();
-    require 'Application/Views/index.html';
+    header("Location: ../../index.php");
     // echo "未登录";
     //echo "请重新登录";
 }

@@ -2,9 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: Admin
- * Date: 21-10-16
- * Time: 6:49 PM
+ * Date: 03-11-16
+ * Time: 11:42 AM
  */
+
 spl_autoload_register(function ($class) {
 
 
@@ -19,7 +20,6 @@ spl_autoload_register(function ($class) {
     }
 
 });
-
 session_start();
 if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["password"])) {
 
@@ -28,12 +28,16 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
 
     if ($jj instanceof UserObject) {
 
+        $userModel = new UserModel();
+        $expenseModel= new UserExpenseModel();
+        $TotalExpenseRanking=$expenseModel->getTodayTotalExpenseRanking();
+        $UserTodayExpenseRankingObject = $expenseModel->getTodayTotalExpenseRankingByUserID($_SESSION["id"]);
 
-        $date = $jj->DOB==""?date("Y-m-d"):date_format(new DateTime($jj->DOB), "Y-m-d");
-        $aa = new CountriesModel();
-        $countryArray =$aa->getCountriesInArray();
 
-        require '..//Views/user.html';
+        $incomeModel= new UserIncomeModel();
+        $TotalIncomeRanking=$incomeModel->getTodayTotalIncomeRanking();
+        $UserTodayIncomeRankingObject = $incomeModel->getTodayTotalIncomeRankingByUserID($_SESSION["id"]);
+        require '../Views/Ranking.html';
 
 
 
