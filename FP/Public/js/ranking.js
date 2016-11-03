@@ -251,13 +251,13 @@ function setNav() {
 
 
 function showLogout() {
-    if($( "#logout" ).hasClass( "open" )){
+    if($("#Logout").hasClass("open")){
 
-        $("#logout").removeClass("open");
+        $("#Logout").removeClass("open");
 
     }else{
 
-        $("#logout").addClass("open");
+        $("#Logout").addClass("open");
     }
 
 }
