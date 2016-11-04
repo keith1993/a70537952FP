@@ -115,7 +115,7 @@ class UserIncomeModel extends  BaseModel
     }
 
 
-    public function getTodayTotalIncomeRanking()
+    public function getTodayIncomeRanking()
     {
         $sql = "select @rank:=@rank+1 as rank,p.User_ID,p.Total_Income_Amount from(select @rank := 0)r,(select User_ID,SUM(Income_Amount) as Total_Income_Amount FROM `user_income`
 where Income_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Income_Amount desc limit 0,100)p";
@@ -140,7 +140,7 @@ where Income_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Income_Amount d
     }
 
 
-    public function getTodayTotalIncomeRankingByUserID($UserID)
+    public function getUserTodayIncomeRanking($UserID)
     {
         $sql = "select * from(select @rank:=@rank+1 as rank,p.User_ID,p.Total_Income_Amount from(select @rank := 0)r,(select User_ID,SUM(Income_Amount)
 as Total_Income_Amount FROM `user_income` where Income_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Income_Amount desc limit 0,100)p)a where User_ID=:User_ID";

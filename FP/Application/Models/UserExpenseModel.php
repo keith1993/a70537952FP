@@ -120,7 +120,7 @@ class UserExpenseModel extends BaseModel
 
 
 
-public function getTodayTotalExpenseRanking()
+public function getTodayExpenseRanking()
 {
     $sql = "select @rank:=@rank+1 as rank,p.User_ID,p.Total_Expense_Amount from(select @rank := 0)r,(select User_ID,SUM(Expense_Amount) as Total_Expense_Amount FROM `user_expense`
 where Expense_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Expense_Amount desc limit 0,100)p";
@@ -144,11 +144,8 @@ where Expense_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Expense_Amount
 
 
 
-/*
-select * from(select @rank:=@rank+1 as rank,p.User_ID,p.Total_Expense_Amount from(select @rank := 0)r,(select User_ID,SUM(Expense_Amount)
-as Total_Expense_Amount FROM `user_expense` where Expense_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Expense_Amount desc limit 0,100)p)a where User_ID=35
-*/
-public function getTodayTotalExpenseRankingByUserID($UserID)
+
+public function getUserTodayExpenseRanking($UserID)
 {
     $sql = "select * from(select @rank:=@rank+1 as rank,p.User_ID,p.Total_Expense_Amount from(select @rank := 0)r,(select User_ID,SUM(Expense_Amount)
 as Total_Expense_Amount FROM `user_expense` where Expense_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Expense_Amount desc limit 0,100)p)a where User_ID=:User_ID";

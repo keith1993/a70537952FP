@@ -669,8 +669,8 @@
 
 
         <form id="incomeFormID" class="incomeForm" action="Application/Controllers/InsertIncome.php" method="post" role="form">
-            Income Name:<input style="width: 200px;" type="text" name="incomeName" value=""></br>
-            Income Amount:<input style="width: 200px;" type="decimals" name="incomeAmount" value=""></br>
+            Income Name:<input style="width: 200px;" type="text" name="incomeName" value="" required></br>
+            Income Amount:<input style="width: 200px;" type="number" name="incomeAmount" value="0.00"  pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number"step="0.01"required></br>
             Income Description:<input style="width: 200px;" type="text" name="incomeDescription" value=""></br></br>
 
 
@@ -690,18 +690,18 @@
                 <div>
                     <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for="ExpenseName" class="control-label">Expense Name:</label>
-                        <input class="form-control" type="text" name="expenseName[]" value="">
+                        <input class="form-control" type="text" name="expenseName[]" value="" required>
                     </div>
                     <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for="ExpenseAmount" class="control-label">Expense Amount:</label>
-                        <input class="form-control" type="decimals" name="expenseAmount[]" value="">
+                        <input class="form-control" type="number" name="expenseAmount[]" value="0.00" pattern="^[0-9]+(\.[0-9]{1,2})?$" title="Only Allow Number" step="0.01"required>
 
                     </div>
                     <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for=" ExpenseCategory" class="control-label"> Expense Category:</label>
 
                         <select class="form-control" name="expenseCategory[]"
-                                style="display: inline-block">
+                                style="display: inline-block" required>
 
                             <option value="Transport">Transport</option>
                             <option value="Food & beverage">Food & beverage</option>
@@ -754,13 +754,13 @@
             <div class="form-group col-xs-12 col-sm-12">
                 <label for="Income Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Name</label>
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <input type="text" name="IncomeName" class="form-control" id="IncomeName" >
+                    <input type="text" name="IncomeName" class="form-control" id="IncomeName" required>
                 </div>
             </div>
             <div class="form-group col-xs-12 col-sm-12">
                 <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <input type="decimals" name="IncomeAmount" class="form-control" id="IncomeAmount">
+                    <input type="number" name="IncomeAmount" class="form-control" id="IncomeAmount" value="0.00" pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
                 </div>
             </div>
             <div class="form-group col-xs-12 col-sm-12">
@@ -773,7 +773,7 @@
             <div class="form-group col-xs-12 col-sm-12">
                 <label for="Income Enter Date" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Enter Date</label>
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <input type="date" name="IncomeEnterDate" class="form-control" id="IncomeEnterDate">
+                    <input type="date" name="IncomeEnterDate" class="form-control" id="IncomeEnterDate" required>
                 </div>
             </div>
 
@@ -807,13 +807,13 @@
                 <div class="form-group col-xs-12 col-sm-12">
                     <label for="Expense Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Name</label>
                     <div class="col-xs-12 col-sm-12 col-md-6">
-                        <input type="text" name="ExpenseName" class="form-control" id="ExpenseName" >
+                        <input type="text" name="ExpenseName" class="form-control" id="ExpenseName" required>
                     </div>
                 </div>
                 <div class="form-group col-xs-12 col-sm-12">
                     <label for="Expense Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Amount</label>
                     <div class="col-xs-12 col-sm-12 col-md-6">
-                        <input type="decimals" name="ExpenseAmount" class="form-control" id="ExpenseAmount">
+                        <input type="number" name="ExpenseAmount" class="form-control" id="ExpenseAmount" value="0.00"   pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
                     </div>
                 </div>
 
@@ -821,7 +821,7 @@
                     <label for="Expense Category" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Category</label>
                     <div class="col-xs-12 col-sm-12 col-md-6">
                         <select id="ExpenseCategory"class="form-control" name="ExpenseCategory"
-                                style="display: inline-block">
+                                style="display: inline-block" required>
 
                             <option value="Transport">Transport</option>
                             <option value="Food & beverage">Food & beverage</option>
@@ -843,7 +843,7 @@
                 <div class="form-group col-xs-12 col-sm-12">
                     <label for="Expense Enter Date" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Enter Date</label>
                     <div class="col-xs-12 col-sm-12 col-md-6">
-                        <input type="date" name="ExpenseEnterDate" class="form-control" id="ExpenseEnterDate">
+                        <input type="date" name="ExpenseEnterDate" class="form-control" id="ExpenseEnterDate" required>
                     </div>
                 </div>
 

@@ -27,16 +27,17 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
     $jj = $a->Login($_SESSION["email"], $_SESSION["password"], $_SERVER["REMOTE_ADDR"]);
 
     if ($jj instanceof UserObject) {
-
-        $userModel = new UserModel();
+        /*********Expense***********/
         $expenseModel= new UserExpenseModel();
-        $TotalExpenseRanking=$expenseModel->getTodayTotalExpenseRanking();
-        $UserTodayExpenseRankingObject = $expenseModel->getTodayTotalExpenseRankingByUserID($_SESSION["id"]);
+        $TotalExpenseRanking=$expenseModel->getTodayExpenseRanking();
+        $UserTodayExpenseRankingObject = $expenseModel->getUserTodayExpenseRanking($_SESSION["id"]);
 
-
+        /*********Incomee***********/
         $incomeModel= new UserIncomeModel();
-        $TotalIncomeRanking=$incomeModel->getTodayTotalIncomeRanking();
-        $UserTodayIncomeRankingObject = $incomeModel->getTodayTotalIncomeRankingByUserID($_SESSION["id"]);
+        $TotalIncomeRanking=$incomeModel->getTodayIncomeRanking();
+        $UserTodayIncomeRankingObject = $incomeModel->getUserTodayIncomeRanking($_SESSION["id"]);
+
+
         require '../Views/Ranking.html';
 
 

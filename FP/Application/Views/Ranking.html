@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../Public/css/MDB PRO 4.2.0.css">
     <!-- Material Design Bootstrap-->
     <link href="../../Public/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Helper/Swiper-master/dist/css/swiper.min.css">
     <link rel="stylesheet" href="../../Public/css/overViewDemo.css">
 
     <link rel="stylesheet" href="../../Public/css/ranking.css">
@@ -35,7 +36,11 @@
     <script type="text/javascript" src="../../Helper/Chart.js-master/src/chart.js"></script>
     <script src="../../Helper/js-cookie-1.5.1/src/js.cookie.js"></script>
     <script src="../../Public/js/moment.js"></script>
+    <script src="../../Helper/Swiper-master/dist/js/swiper.js"></script>
+    <script src="../../Helper/Swiper-master/dist/js/swiper.jquery.min.js"></script>
     <script src="../../Public/js/ranking.js"></script>
+
+
 </head>
 <body class="fixed-sn hideXScroll red-skin">
 <header>
@@ -130,217 +135,511 @@
 </header>
 
 <div id="wrapper" class="wrapper transition">
-    <p class="UserRank">Today Expense Ranking: #<?php echo $UserTodayExpenseRankingObject->rank;?></p>
-    <div class="TodayExpenseRanking transition">
-        <p class="title">Today Expense Ranking</p>
-        <?php
+    <div id="expenseSwiper"class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <p class="UserRank">Today Expense Ranking: #<?php echo $UserTodayExpenseRankingObject->rank==""?"unrank":$UserTodayExpenseRankingObject->rank;?></p>
+                <div class="TodayExpenseRanking transition">
+                    <p class="title">Today Expense Ranking</p>
+                    <?php
 
            echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-paging-size=\"10\" >
-        ";
-        echo "
-        <thead>";
+                    ";
+                    echo "
+                    <thead>";
 
-        echo "
-        <th data-type=\"number\">Rank</th>
-        ";
+                    echo "
+                    <th data-type=\"number\">Rank</th>
+                    ";
 
-        echo "
-        <th data-type=\"text\">User Name</th>
-        ";
+                    echo "
+                    <th data-type=\"text\">User Name</th>
+                    ";
 
-        echo "
-        <th data-type=\"decimals\">Debts</th>
-        ";
-        echo "
-        <th data-type=\"decimals\">Entertainment</th>
-        ";
-        echo "
-        <th data-type=\"decimals\">Fixed expenses</th>
-        ";
-        echo "
-        <th data-type=\"decimals\">Food & beverage</th>
-        ";
-        echo "
-        <th data-type=\"decimals\">Others</th>
-        ";
-        echo "
-        <th data-type=\"decimals\">Transport</th>
-        ";
-
-
-        echo "
-        <th data-type=\"decimals\">Total Expense Amount</th>
-        ";
+                    echo "
+                    <th data-type=\"decimals\">Debts</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Entertainment</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Fixed expenses</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Food & beverage</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Others</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Transport</th>
+                    ";
 
 
-
-        echo "
-        </thead>
-        ";
-
-        echo "
-        <tbody>";
-
-        foreach ($TotalExpenseRanking as $key => $value) {
-        echo "
-        <tr>";
-            echo "
-            <td>".$value->rank."</td>
-            ";
+                    echo "
+                    <th data-type=\"decimals\">Total Expense Amount</th>
+                    ";
 
 
-            $user = $userModel->getUserByID($key);
-            echo "
-            <td>".$user->FirstName.$user->LastName."</td>
-            ";
 
-            $TodayExpenseGroup = $expenseModel->getTodayExpenseGroupByUserID($value->User_ID);
+                    echo "
+                    </thead>
+                    ";
 
-            echo "<td>";
-                echo array_key_exists("Debts", $TodayExpenseGroup)?$TodayExpenseGroup["Debts"]:"0.00";
-                echo "</td>";
+                    echo "
+                    <tbody>";
 
-            echo "<td>";
-                echo array_key_exists("Entertainment", $TodayExpenseGroup)?$TodayExpenseGroup["Entertainment"]:"0.00";
-                echo "</td>";
-
-            echo "<td>";
-                echo array_key_exists("Fixed expenses", $TodayExpenseGroup)?$TodayExpenseGroup["Fixed expenses"]:"0.00";
-                echo "</td>";
-
-            echo "<td>";
-                echo array_key_exists("Food & beverage", $TodayExpenseGroup)?$TodayExpenseGroup["Food & beverage"]:"0.00";
-                echo "</td>";
-
-            echo "<td>";
-                echo array_key_exists("Others", $TodayExpenseGroup)?$TodayExpenseGroup["Others"]:"0.00";
-                echo "</td>";
-
-            echo "<td>";
-                echo array_key_exists("Transport", $TodayExpenseGroup)?$TodayExpenseGroup["Transport"]:"0.00";
-                echo "</td>";
+                    foreach ($TotalExpenseRanking as $key => $value) {
+                    echo "
+                    <tr>";
+                        echo "
+                        <td>".$value->rank."</td>
+                        ";
 
 
+                        $user = $userModel->getUserByID($key);
+                        echo "
+                        <td>".$user->FirstName.$user->LastName."</td>
+                        ";
+
+                        $TodayExpenseGroup = $expenseModel->getTodayExpenseGroupByUserID($value->User_ID);
+
+                        echo "<td>";
+                            echo array_key_exists("Debts", $TodayExpenseGroup)?$TodayExpenseGroup["Debts"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Entertainment", $TodayExpenseGroup)?$TodayExpenseGroup["Entertainment"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Fixed expenses", $TodayExpenseGroup)?$TodayExpenseGroup["Fixed expenses"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Food & beverage", $TodayExpenseGroup)?$TodayExpenseGroup["Food & beverage"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Others", $TodayExpenseGroup)?$TodayExpenseGroup["Others"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Transport", $TodayExpenseGroup)?$TodayExpenseGroup["Transport"]:"0.00";
+                            echo "</td>";
 
 
 
 
 
 
-            echo "
-            <td>".$value->Total_Expense_Amount."</td>
-            ";
-
-            echo "
-        </tr>
-        ";
 
 
-        }
-        echo "
-        </tbody>
-        ";
-        echo "</table>";
+                        echo "
+                        <td>".$value->Total_Expense_Amount."</td>
+                        ";
 
-        ?>
-        <hr class="tableHR">
+                        echo "
+                    </tr>
+                    ";
+
+
+                    }
+                    echo "
+                    </tbody>
+                    ";
+                    echo "</table>";
+
+                    ?>
+                    <hr class="tableHR">
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <p class="UserRank">Today Expense Ranking: #<?php echo $UserTodayExpenseRankingObject->rank==""?"unrank":$UserTodayExpenseRankingObject->rank;?></p>
+                <div class="TodayExpenseRanking transition">
+                    <p class="title">Today Expense Ranking</p>
+                    <?php
+
+           echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-paging-size=\"10\" >
+                    ";
+                    echo "
+                    <thead>";
+
+                    echo "
+                    <th data-type=\"number\">Rank</th>
+                    ";
+
+                    echo "
+                    <th data-type=\"text\">User Name</th>
+                    ";
+
+                    echo "
+                    <th data-type=\"decimals\">Debts</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Entertainment</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Fixed expenses</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Food & beverage</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Others</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Transport</th>
+                    ";
+
+
+                    echo "
+                    <th data-type=\"decimals\">Total Expense Amount</th>
+                    ";
+
+
+
+                    echo "
+                    </thead>
+                    ";
+
+                    echo "
+                    <tbody>";
+
+                    foreach ($TotalExpenseRanking as $key => $value) {
+                    echo "
+                    <tr>";
+                        echo "
+                        <td>".$value->rank."</td>
+                        ";
+
+
+                        $user = $userModel->getUserByID($key);
+                        echo "
+                        <td>".$user->FirstName.$user->LastName."</td>
+                        ";
+
+                        $TodayExpenseGroup = $expenseModel->getTodayExpenseGroupByUserID($value->User_ID);
+
+                        echo "<td>";
+                            echo array_key_exists("Debts", $TodayExpenseGroup)?$TodayExpenseGroup["Debts"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Entertainment", $TodayExpenseGroup)?$TodayExpenseGroup["Entertainment"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Fixed expenses", $TodayExpenseGroup)?$TodayExpenseGroup["Fixed expenses"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Food & beverage", $TodayExpenseGroup)?$TodayExpenseGroup["Food & beverage"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Others", $TodayExpenseGroup)?$TodayExpenseGroup["Others"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Transport", $TodayExpenseGroup)?$TodayExpenseGroup["Transport"]:"0.00";
+                            echo "</td>";
+
+
+
+
+
+
+
+
+                        echo "
+                        <td>".$value->Total_Expense_Amount."</td>
+                        ";
+
+                        echo "
+                    </tr>
+                    ";
+
+
+                    }
+                    echo "
+                    </tbody>
+                    ";
+                    echo "</table>";
+
+                    ?>
+                    <hr class="tableHR">
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <p class="UserRank">Today Expense Ranking: #<?php echo $UserTodayExpenseRankingObject->rank==""?"unrank":$UserTodayExpenseRankingObject->rank;?></p>
+                <div class="TodayExpenseRanking transition">
+                    <p class="title">Today Expense Ranking</p>
+                    <?php
+
+           echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-paging-size=\"10\" >
+                    ";
+                    echo "
+                    <thead>";
+
+                    echo "
+                    <th data-type=\"number\">Rank</th>
+                    ";
+
+                    echo "
+                    <th data-type=\"text\">User Name</th>
+                    ";
+
+                    echo "
+                    <th data-type=\"decimals\">Debts</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Entertainment</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Fixed expenses</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Food & beverage</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Others</th>
+                    ";
+                    echo "
+                    <th data-type=\"decimals\">Transport</th>
+                    ";
+
+
+                    echo "
+                    <th data-type=\"decimals\">Total Expense Amount</th>
+                    ";
+
+
+
+                    echo "
+                    </thead>
+                    ";
+
+                    echo "
+                    <tbody>";
+
+                    foreach ($TotalExpenseRanking as $key => $value) {
+                    echo "
+                    <tr>";
+                        echo "
+                        <td>".$value->rank."</td>
+                        ";
+
+
+                        $user = $userModel->getUserByID($key);
+                        echo "
+                        <td>".$user->FirstName.$user->LastName."</td>
+                        ";
+
+                        $TodayExpenseGroup = $expenseModel->getTodayExpenseGroupByUserID($value->User_ID);
+
+                        echo "<td>";
+                            echo array_key_exists("Debts", $TodayExpenseGroup)?$TodayExpenseGroup["Debts"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Entertainment", $TodayExpenseGroup)?$TodayExpenseGroup["Entertainment"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Fixed expenses", $TodayExpenseGroup)?$TodayExpenseGroup["Fixed expenses"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Food & beverage", $TodayExpenseGroup)?$TodayExpenseGroup["Food & beverage"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Others", $TodayExpenseGroup)?$TodayExpenseGroup["Others"]:"0.00";
+                            echo "</td>";
+
+                        echo "<td>";
+                            echo array_key_exists("Transport", $TodayExpenseGroup)?$TodayExpenseGroup["Transport"]:"0.00";
+                            echo "</td>";
+
+
+
+
+
+
+
+
+                        echo "
+                        <td>".$value->Total_Expense_Amount."</td>
+                        ";
+
+                        echo "
+                    </tr>
+                    ";
+
+
+                    }
+                    echo "
+                    </tbody>
+                    ";
+                    echo "</table>";
+
+                    ?>
+                    <hr class="tableHR">
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev swiper-button-red"></div>
+        <div class="swiper-button-next swiper-button-red"></div>
 
 
     </div>
-    <p class="UserRank">Today Income Ranking: #<?php echo $UserTodayIncomeRankingObject->rank;?></p>
-    <div class="TodayIncomeRanking transition">
-        <p class="title">Today Income Ranking</p>
-        <?php
+
+    <div id="incomeSwiper"class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <p class="UserRank">Today Income Ranking: #<?php echo $UserTodayIncomeRankingObject->rank==""?"unrank":$UserTodayIncomeRankingObject->rank;?></p>
+                    <div class="TodayIncomeRanking transition">
+                        <p class="title">Today Income Ranking</p>
+                        <?php
 
            echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-paging-size=\"10\" >
-        ";
-        echo "
-        <thead>";
+                        ";
+                        echo "
+                        <thead>";
 
-        echo "
-        <th data-type=\"number\">Rank</th>
-        ";
+                        echo "
+                        <th data-type=\"number\">Rank</th>
+                        ";
 
-        echo "
-        <th data-type=\"text\">User Name</th>
-        ";
+                        echo "
+                        <th data-type=\"text\">User Name</th>
+                        ";
 
-        echo "
-        <th data-type=\"decimals\">Fixed Salary</th>
-        ";
-        echo "
-        <th data-type=\"decimals\">Other Income</th>
-        ";
-
-
-
-        echo "
-        <th data-type=\"decimals\">Total Income Amount</th>
-        ";
+                        echo "
+                        <th data-type=\"decimals\">Fixed Salary</th>
+                        ";
+                        echo "
+                        <th data-type=\"decimals\">Other Income</th>
+                        ";
 
 
 
-        echo "
-        </thead>
-        ";
-
-        echo "
-        <tbody>";
-        $rankNum = 1 ;
-        foreach ($TotalIncomeRanking as $key => $value) {
-        echo "
-        <tr>";
-            echo "
-            <td>".$value->rank."</td>
-            ";
-            $rankNum+=1;
-
-            $user = $userModel->getUserByID($value->User_ID);
-            echo "
-            <td>".$user->FirstName.$user->LastName."</td>
-            ";
-
-            $TodayIncomeGroup = $incomeModel->getTodayIncomeGroupByUserID($key);
+                        echo "
+                        <th data-type=\"decimals\">Total Income Amount</th>
+                        ";
 
 
 
-            echo "<td>";
-                echo array_key_exists("Fixed Salary", $TodayIncomeGroup)?$TodayIncomeGroup["Fixed Salary"]:"0.00";
-                echo "</td>";
+                        echo "
+                        </thead>
+                        ";
 
-            echo "<td>";
-                echo array_key_exists("Other", $TodayIncomeGroup)?$TodayIncomeGroup["Other"]:"0.00";
-                echo "</td>";
+                        echo "
+                        <tbody>";
+                        $rankNum = 1 ;
+                        foreach ($TotalIncomeRanking as $key => $value) {
+                        echo "
+                        <tr>";
+                            echo "
+                            <td>".$value->rank."</td>
+                            ";
+                            $rankNum+=1;
+
+                            $user = $userModel->getUserByID($value->User_ID);
+                            echo "
+                            <td>".$user->FirstName.$user->LastName."</td>
+                            ";
+
+                            $TodayIncomeGroup = $incomeModel->getTodayIncomeGroupByUserID($key);
 
 
+
+                            echo "<td>";
+                                echo array_key_exists("Fixed Salary", $TodayIncomeGroup)?$TodayIncomeGroup["Fixed Salary"]:"0.00";
+                                echo "</td>";
+
+                            echo "<td>";
+                                echo array_key_exists("Other", $TodayIncomeGroup)?$TodayIncomeGroup["Other"]:"0.00";
+                                echo "</td>";
 
 
 
 
 
 
-            echo "
-            <td>".$value->Total_Income_Amount."</td>
-            ";
-
-            echo "
-        </tr>
-        ";
 
 
-        }
-        echo "
-        </tbody>
-        ";
-        echo "</table>";
+                            echo "
+                            <td>".$value->Total_Income_Amount."</td>
+                            ";
 
-        ?>
-        <hr class="tableHR">
+                            echo "
+                        </tr>
+                        ";
+
+
+                        }
+                        echo "
+                        </tbody>
+                        ";
+                        echo "</table>";
+
+                        ?>
+                        <hr class="tableHR">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev swiper-button-red"></div>
+        <div class="swiper-button-next swiper-button-red"></div>
 
 
     </div>
+
 
 </div>
+<script type="application/javascript">
+    var mySwiper = new Swiper('.swiper-container', {
+
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        speed: 400,
+        spaceBetween: 50,
+        slidesPerView: 1,
+        loop: true
+    });
+</script>
 
 </body>
 </html>
