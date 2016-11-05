@@ -12,7 +12,7 @@ class UserTargetModel extends  BaseModel
     {
         $sql = "insert into target (User_ID,Target_Name,Target_Amount,
             Target_Days,Target_AchieveDate,Target_EnterDate)
-            values(:User_ID,:Target_Name,:Target_Amount,:Target_Days,:Target_AchieveDate,now());";
+            values(:User_ID,:Target_Name,:Target_Amount,:Target_Days,:Target_AchieveDate,now())";
         $result = self::$conn->prepare($sql);
         $result->bindValue(":User_ID", $UserID);
         $result->bindValue(":Target_Name", $Target_Name);

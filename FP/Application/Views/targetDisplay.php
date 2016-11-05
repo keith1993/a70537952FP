@@ -22,7 +22,7 @@
 
                <h3 id="displayText">Enter the Target ID below to DELETE a record</h3>
                <h3 id="txtHint"></h3>
-               <!--../Controllers/TargetInsert.php-->
+
                <form action= "../Controllers/TargetDelete.php" method="post" style="display:none;" id="deleteForm">
                <table width="400" border="0" cellspacing="1" cellpadding="2">
                <tr>
