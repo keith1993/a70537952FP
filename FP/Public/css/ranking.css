@@ -64,7 +64,7 @@ body {
 }
 
 #profile {
-transition: 0.5s;
+    transition: 0.5s;
 
 }
 
@@ -137,7 +137,7 @@ transition: 0.5s;
 .wrapper{
     margin-left: 50px;
     margin-top: 63px;
-
+color: #fff;
 }
 
 .popoutInsert,.popoutEdit{
@@ -151,20 +151,20 @@ transition: 0.5s;
     font-size: 25px;
     display: inline-block;
     width: 300px;
-border-color: #000000;
+    border-color: #000000;
     margin-top: 10px;
 }
 
-.IncomeContent,.expensesContent{
+.ExpenseRanking,.IncomeRanking{
     display: block;
     position: relative;
-    min-height: 350px;
+    min-height: 630px;
     text-align: center;
-    width: inherit;
-padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 30px;
-    padding-bottom: 100px;
+
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 0px;
+padding-bottom: 15px;
 }
 
 [type=checkbox]:checked, [type=checkbox]:not(:checked) {
@@ -175,14 +175,14 @@ padding-left: 150px;
 
 .btn{
 
-   margin: 0px;
+    margin: 0px;
     margin-top: 3px;
 }
 
 .title{
-font-size: 40px;
+    font-size: 40px;
     text-align: center;
-
+margin-bottom: 30px;
 
 }
 
@@ -190,7 +190,7 @@ font-size: 40px;
 
     height: 10px;
     border: 0;
-    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    box-shadow: 0 10px 10px -10px #ffffff inset;
 }
 
 .incomeForm,.expenseForm{
@@ -198,7 +198,7 @@ font-size: 40px;
     text-align: center;
 }
 
-.footable-sortable { 
+.footable-sortable {
     text-align: center;
 }
 
@@ -225,14 +225,14 @@ td.footable-sortable > span.fooicon, th.footable-sortable > span.fooicon {
 
 .side-nav .logo-wrapper a {
 
-     width: 0px;
+    width: 0px;
 
 }
 
 
-    .side-nav .logo-wrapper, .side-nav .logo-wrapper a {
-        height: 100px;
-    }
+.side-nav .logo-wrapper, .side-nav .logo-wrapper a {
+    height: 100px;
+}
 
 .popoutTitle{
     font-size: 35px;
@@ -245,7 +245,7 @@ label{
 
 }
 .btnCancel,.btnSubmit{
-margin-top: 60px;
+    margin-top: 60px;
     width: 200px;
     display: inline-block;
     font-size: 25px;
@@ -257,7 +257,7 @@ margin-top: 60px;
 
 
 .form-inline .form-group {
-     margin-right: 0rem;
+    margin-right: 0rem;
 }
 
 .red-skin .navbar {
@@ -280,7 +280,7 @@ table.footable > thead > tr > td.footable-sortable, table.footable > thead > tr 
 }
 
 caption, th {
-     text-align: center;
+    text-align: center;
 }
 
 .overviewWhite{
@@ -311,7 +311,7 @@ caption, th {
 
 
     display: inline-block;
-text-align: right;
+    text-align: right;
 
 }
 
@@ -386,4 +386,55 @@ a label{
 
 .btn, .btn-flat, .classic-tabs li a, footer.page-footer .title {
     text-transform: none;
+}
+
+.UserRank{
+    font-size: 30px;
+    margin-left: 60px;
+    padding-top: 15px;
+
+
+}
+
+address, dl, ol, p, ul {
+    margin-bottom: 0rem;
+}
+
+.swiper-button-prev.swiper-button-red,
+.swiper-container-rtl .swiper-button-next.swiper-button-red{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ff0000'%2F%3E%3C%2Fsvg%3E");
+}
+
+.swiper-button-next.swiper-button-red,
+.swiper-container-rtl .swiper-button-prev.swiper-button-red{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ff0000'%2F%3E%3C%2Fsvg%3E");
+}
+
+#expenseSwiper,#incomeSwiper,#wrapper{
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment:fixed;
+    background-size: 100% 100%;
+    background-position:center;
+}
+
+.swiper-pagination-bullet {
+
+    background: #fff;
+
+}
+
+.swiper-pagination-bullet-active {
+
+    background: #fff;
+}
+
+#wrapper .separateLine{
+    border: 1px solid rgba(255,255,255,0.6);
+    width: 90%;
+}
+
+table.footable, table.footable-details {
+    line-height: 1.5;
 }

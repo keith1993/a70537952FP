@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>Overview</title>
+
     <link rel="stylesheet" href="Helper/Swiper-master/dist/css/swiper.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -62,7 +63,7 @@
         <!-- Logo -->
         <li id="userLogo" style="display: none;">
             <div class="logo-wrapper waves-light sn-avatar-wrapper">
-                <a href="#">
+                <a href="Application/Controllers/UserProfile.php">
                     <img src="<?php echo " Public/uploads/".$jj->UserImage;?>" class="img-circle">
                 </a>
             </div>
@@ -89,16 +90,18 @@
         <!-- Side navigation links -->
         <li id="sideNavItem" style="display: none">
             <ul class="collapsible collapsible-accordion">
-
+                <li><a href="index.php" collapsible-header waves-effect"><i
+                        class="fa fa-home"></i>Home</i></a></li>
                 <li><a href="Application/Controllers/UserProfile.php" collapsible-header waves-effect"><i
-                        class="fa fa-code"></i>Profile</i></a></li>
-                <!--<li><a class="collapsible-header waves-effect"><i class="fa fa-bank"></i>Foundations</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-money"></i>Business</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
-                <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
+                        class="fa fa-user"></i>Profile</i></a></li>
+                <li><a href="Application/Controllers/Ranking.php" class="collapsible-header waves-effect"><i class="fa fa-table"></i>Ranking</i></a></li>
+
+                <!-- <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
+                 <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
+                 <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
             </ul>
         </li>
+
         <!--/. Side navigation links -->
 
 
@@ -139,7 +142,7 @@
     <!--/.Navbar-->
 
 </header>
-<div class="wrapper">
+<div id="wrapper" class="wrapper">
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -558,8 +561,9 @@
 
         ?>
         <hr class="tableHR"/>
-        <input type="button" class="form-control button-collapse btnInsert" onclick="showInsertIncome()"
+        <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertIncome()"
                value="Insert Income">
+
     </div>
 
 
@@ -628,7 +632,7 @@
 
 
             echo "
-            <td><a class=\"btn btn-default btn-sm\" href=\"#\"><i class=\"fa fa-pencil\"></i> </a></td>
+            <td><a class=\"btn btn-default btn-sm\" onclick=\"showEditExpense(".$value->ExpenseID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
             ";
 
             echo "
@@ -648,8 +652,9 @@
 
         ?>
         <hr class="tableHR">
-        <input type="button" class="form-control button-collapse btnInsert" onclick="showInsertExpense()"
+        <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertExpense()"
                value="Insert Expense">
+
     </div>
 
 
@@ -663,15 +668,16 @@
         <p class="popoutTitle" style="text-align: center">Insert Income</p>
 
 
-        <form id="incomeFormID" class="incomeForm" action="Application/Controllers/InsertIncome.php" method="post">
-            Income Name:<input style="width: 200px;" type="text" name="incomeName" value=""></br>
-            Income Amount:<input style="width: 200px;" type="text" name="incomeAmount" value=""></br>
-            Income Description:<input style="width: 200px;" type="text" name="incomeDescription" value=""></br>
+        <form id="incomeFormID" class="incomeForm" action="Application/Controllers/InsertIncome.php" method="post" role="form">
+            Income Name:<input style="width: 200px;" type="text" name="incomeName" value="" required></br>
+            Income Amount:<input style="width: 200px;" type="number" name="incomeAmount" value="0.00"  pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number"step="0.01"required></br>
+            Income Description:<input style="width: 200px;" type="text" name="incomeDescription" value=""></br></br>
 
-            <input class="form-control button-collapse btnCancelSubmit"
-                   type="button" onclick="hideInsert()" value="Cancel">
-            <input class="form-control am-button btnCancelSubmit"
-                   type="submit" onclick="" value="Submit">
+
+
+            <button type="reset" class="btn btn-default" onclick="hideInsert()" style="display: inline-block;margin-bottom: 20px;">Cancel</button>
+
+            <button type="submit" class="btn btn-default"style="margin-bottom: 20px;">Submit</button>
         </form>
     </div>
     <div id="InsertExpense" class="popout" style="display: none;">
@@ -684,17 +690,18 @@
                 <div>
                     <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for="ExpenseName" class="control-label">Expense Name:</label>
-                        <input class="form-control" type="text" name="expenseName[]" value="">
+                        <input class="form-control" type="text" name="expenseName[]" value="" required>
                     </div>
                     <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for="ExpenseAmount" class="control-label">Expense Amount:</label>
-                        <input class="form-control" type="text" name="expenseAmount[]" value="">
+                        <input class="form-control" type="number" name="expenseAmount[]" value="0.00" pattern="^[0-9]+(\.[0-9]{1,2})?$" title="Only Allow Number" step="0.01"required>
+
                     </div>
                     <div class="form-group col-sm-3  col-md-3 col-lg-3">
                         <label for=" ExpenseCategory" class="control-label"> Expense Category:</label>
 
                         <select class="form-control" name="expenseCategory[]"
-                                style="display: inline-block">
+                                style="display: inline-block" required>
 
                             <option value="Transport">Transport</option>
                             <option value="Food & beverage">Food & beverage</option>
@@ -714,14 +721,15 @@
                     <hr style="border-top: 1px solid rgba(0,0,0,0.3);width: 90%;margin-top: 0"/>
                 </div>
             </div>
-            <input id="btnAddExpense" class="form-control button-collapse"
+            <input id="btnAddExpense" class="form-control btn btn-default button-collapse"
                    style="width: 90%; display: inline-block;font-size: 25px;"
                    type="button" onclick="addExpense()" value="Add"><br/>
 
-            <input id="btnCancelInsert" class="form-control button-collapse btnCancel" style="width: 200px;"
-                   type="button" onclick="hideInsert()" value="Cancel">
-            <input class="form-control am-button btnSubmit" style="width: 200px;"
-                   type="submit" onclick="" value="Submit">
+
+
+            <button type="reset" class="btn btn-default" onclick="hideInsert()" style="display: inline-block;margin-bottom: 20px;">Cancel</button>
+
+            <button type="submit" class="btn btn-default"style="margin-bottom: 20px;">Submit</button>
         </form>
     </div>
 </div>
@@ -732,57 +740,127 @@
 
     <div class="mask" onclick="hideEdit()"></div>
     <div id="editIncome"class="container-fluid" style="display: none;">
-            <div class="row">
-                     <div class="col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3  editPopout" style="text-align: center;">
-            <form id="editIncomeForm" method="post" action="Application\Controllers\UpdateIncome.php" form-horizontal" role="form">
-                <div class="col-sm-12">
-                  <p class="popoutTitle" style="text-align: center">Edit Income</p>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3  editPopout" style="text-align: center;">
+            <form id="editIncomeForm" method="post" action="Application\Controllers\UpdateIncome.php" role="form">
+            <div class="col-sm-12">
+                <p class="popoutTitle" style="text-align: center">Edit Income</p>
+            </div>
+
+            <div style="display: none">
+                <p>IncomeID</p><input type="text" name="IncomeID" id="IncomeID" class="form-control" value="" readonly >
+
+            </div>
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Name</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="text" name="IncomeName" class="form-control" id="IncomeName" required>
                 </div>
-
-                <div style="display: none">
-                    <p>IncomeID</p><input type="text" name="IncomeID" id="IncomeID" class="form-control" value="" readonly >
-
+            </div>
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="number" name="IncomeAmount" class="form-control" id="IncomeAmount" value="0.00" pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
                 </div>
-                    <div class="form-group col-xs-12 col-sm-12">
-                        <label for="Income Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Name</label>
-                        <div class="col-xs-12 col-sm-12 col-md-6">
-                            <input type="text" name="IncomeName" class="form-control" id="IncomeName" >
-                        </div>
-                    </div>
-                    <div class="form-group col-xs-12 col-sm-12">
-                        <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
-                        <div class="col-xs-12 col-sm-12 col-md-6">
-                            <input type="number" name="IncomeAmount" class="form-control" id="IncomeAmount">
-                        </div>
-                    </div>
-                    <div class="form-group col-xs-12 col-sm-12">
-                        <label for="Income Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Description</label>
-                        <div class="col-xs-12 col-sm-12 col-md-6">
-                            <input type="text" name="IncomeDescription" class="form-control" id="IncomeDescription">
-                        </div>
-                    </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Description</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="text" name="IncomeDescription" class="form-control" id="IncomeDescription">
+                </div>
+            </div>
 
-                    <div class="form-group col-xs-12 col-sm-12">
-                        <label for="Income Enter Date" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Enter Date</label>
-                        <div class="col-xs-12 col-sm-12 col-md-6">
-                            <input type="date" name="IncomeEnterDate" class="form-control" id="IncomeEnterDate">
-                        </div>
-                    </div>
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Enter Date" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Enter Date</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="date" name="IncomeEnterDate" class="form-control" id="IncomeEnterDate" required>
+                </div>
+            </div>
 
 
 
-                        <button type="reset" class="btn btn-default" onclick="hideEdit()" style="display: inline-block">Cancel</button>
+            <button type="reset" class="btn btn-default" onclick="hideEdit()" style="display: inline-block ;margin-bottom: 20px;">Cancel</button>
 
 
 
-                        <button type="submit" class="btn btn-default">Save</button>
+            <button type="submit" class="btn btn-default" style="margin-bottom: 20px;">Save</button>
 
 
 
             </form>
 
         </div>
+    </div>
+</div>
+    <div id="editExpense"class="container-fluid" style="display: none;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3  editPopout" style="text-align: center;">
+                <form id="editExpenseForm" method="post" action="Application\Controllers\UpdateExpense.php" form-horizontal" role="form">
+                <div class="col-sm-12">
+                    <p class="popoutTitle" style="text-align: center">Edit Expense</p>
+                </div>
+
+                <div style="display: none">
+                    <p>ExpenseID</p><input type="text" name="ExpenseID" id="ExpenseID" class="form-control" value="" readonly >
+
+                </div>
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Name</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input type="text" name="ExpenseName" class="form-control" id="ExpenseName" required>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Amount</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input type="number" name="ExpenseAmount" class="form-control" id="ExpenseAmount" value="0.00"   pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Category" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Category</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <select id="ExpenseCategory"class="form-control" name="ExpenseCategory"
+                                style="display: inline-block" required>
+
+                            <option value="Transport">Transport</option>
+                            <option value="Food & beverage">Food & beverage</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Debts">Debts</option>
+                            <option value="Fixed expenses">Fixed expenses</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Description</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input type="text" name="ExpenseDescription" class="form-control" id="ExpenseDescription">
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Enter Date" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Enter Date</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input type="date" name="ExpenseEnterDate" class="form-control" id="ExpenseEnterDate" required>
+                    </div>
+                </div>
+
+
+
+                <button type="reset" class="btn btn-default" onclick="hideEdit()" style="display: inline-block;margin-bottom: 20px;">Cancel</button>
+
+
+
+                <button type="submit" class="btn btn-default"style="display: inline-block;margin-bottom: 20px;">Save</button>
+
+
+
+                </form>
+
             </div>
+        </div>
     </div>
 </div>
 

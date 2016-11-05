@@ -215,7 +215,7 @@ function  changeStyle(colour) {
 
             break;
         case "pink":
-            $(".content").css("background-image", "url('http://www.walldevil.com/wallpapers/a79/background-scenery-pictures-beautiful-beach-image-wallpatrol-sunset-paradise.jpg')");
+            $(".content").css("background-image", "url('Public/images/anime_landscape_person_12.jpg')");
             setChartWhiteStyle();
             break;
     }
@@ -446,6 +446,40 @@ function showEditIncome(IncomeID) {
 
 }
 
+function showEditExpense(ExpenseID) {
+
+    $.post("Application/Controllers/AJAXGetExpenseByID.php",
+        {
+            ExpenseID: ExpenseID,
+
+        },
+        function (data, status) {
+
+            if (data == "ExpenseID No Exists") {
+
+                window.location.reload(true);
+            } else {
+
+                var ExpenseObject = JSON.parse(data);
+                $("#ExpenseID").val(ExpenseObject.ExpenseID);
+                $("#ExpenseName").val(ExpenseObject.Expense_Name);
+                $("#ExpenseAmount").val(ExpenseObject.Expense_Amount);
+                $("#ExpenseCategory").val(ExpenseObject.Expense_Category);
+                $("#ExpenseDescription").val(ExpenseObject.Expense_Description);
+                var formattedDate = moment(new Date(ExpenseObject.Expense_EnterDate)).format('YYYY-MM-DD');
+                $("#ExpenseEnterDate").val(formattedDate);
+
+                document.getElementById("popoutEdit").style.display = "block"
+                $("#editExpense").fadeIn(500);
+            }
+
+        })
+
+
+
+
+}
+
 
 function hideEdit() {
 
@@ -453,15 +487,16 @@ function hideEdit() {
      document.getElementById("InsertExpense").style.display = "none"
      document.getElementById("InsertIncome").style.display = "none"*/
     $("#popoutEdit").fadeOut(500);
+    $("#editIncome").fadeOut(500);
+    $("#editExpense").fadeOut(500);
     $("#editIncomeForm")[0].reset();
-
-
+    $("#editExpenseForm")[0].reset();
 }
 
 function addExpense() {
-    var expense = "<div class=\"extraExpense\"><div class=\"form-group col-sm-3  col-md-3 col-lg-3\"><label for=\"ExpenseName\" class=\"control-label\">Expense Name:</label><input class=\"form-control\" type=\"text\" name=\"expenseName[]\" value=\"\"></div>"+
-"<div class=\"form-group col-sm-3  col-md-3 col-lg-3\"> <label for=\"ExpenseAmount\" class=\"control-label\">Expense Amount:</label><input class=\"form-control\" type=\"text\" name=\"expenseAmount[]\" value=\"\"></div><div class=\"form-group  col-sm-2  col-md-2 col-lg-2\">"+
-"<label for=\" ExpenseCategory\" class=\"control-label\">Expense Category:</label><select class=\"form-control\" name=\"expenseCategory[]\"style=\"display: inline-block\"> " +
+    var expense = "<div class=\"extraExpense\"><div class=\"form-group col-sm-3  col-md-3 col-lg-3\"><label for=\"ExpenseName\" class=\"control-label\">Expense Name:</label><input class=\"form-control\" type=\"text\" name=\"expenseName[]\" value=\"\" required></div>"+
+"<div class=\"form-group col-sm-3  col-md-3 col-lg-3\"> <label for=\"ExpenseAmount\" class=\"control-label\">Expense Amount:</label><input class=\"form-control\" type=\"number\" name=\"expenseAmount[]\" value=\"0.00\"  pattern=\"[0-9]+([\.,][0-9]+)?\" title=\"Only Allow Number\" step=\"0.01\"required></div><div class=\"form-group  col-sm-2  col-md-2 col-lg-2\">"+
+"<label for=\" ExpenseCategory\" class=\"control-label\">Expense Category:</label><select class=\"form-control\" name=\"expenseCategory[]\"style=\"display: inline-block\" required> " +
 "<option value=\"Transport\">Transport</option><option value=\"Food & beverage\">Food & beverage</option><option value=\"Entertainment\">Entertainment</option><option value=\"Debts\">Debts</option> " +
 "<option value=\"Fixed expenses\">Fixed expenses</option>"+
 "<option value=\"Others\">Others</option> </select>"+

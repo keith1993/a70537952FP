@@ -2,9 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Admin
- * Date: 21-10-16
- * Time: 6:49 PM
+ * Date: 27-10-16
+ * Time: 2:56 PM
  */
+
+
 spl_autoload_register(function ($class) {
 
 
@@ -19,8 +21,18 @@ spl_autoload_register(function ($class) {
     }
 
 });
-
 session_start();
+
+$ExpenseID = $_POST["ExpenseID"];
+$ExpenseName = $_POST["ExpenseName"];
+$ExpenseAmount = $_POST["ExpenseAmount"];
+$ExpenseCategory=$_POST["ExpenseCategory"];
+$ExpenseDescription = $_POST["ExpenseDescription"];
+$ExpenseEnterDate = $_POST["ExpenseEnterDate"];
+
+
+
+
 if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["password"])) {
 
     $a = new UserModel();
@@ -28,12 +40,11 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
 
     if ($jj instanceof UserObject) {
 
+        $ExpenseModel = new UserExpenseModel();
+        $ExpenseModel->updateExpenseByExpenseID($ExpenseID,$ExpenseName,$ExpenseAmount,$ExpenseCategory,$ExpenseDescription,$ExpenseEnterDate);
 
-        $date = $jj->DOB==""?date("Y-m-d"):date_format(new DateTime($jj->DOB), "Y-m-d");
-        $aa = new CountriesModel();
-        $countryArray =$aa->getCountriesInArray();
+        header("Location:../../index.php");
 
-        require '..//Views/user.html';
 
 
 
@@ -42,15 +53,14 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         echo "Error!" . mysql_error();
         session_unset();
         session_destroy();
-        header("Location: ../../index.php");
-
+        header("Location:../../index.php");
     }
 
 // echo "已登录";
 } else {
     session_unset();
     session_destroy();
-    header("Location: ../../index.php");
+    header("Location:../../index.php");
     // echo "未登录";
     //echo "请重新登录";
 }
