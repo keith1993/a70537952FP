@@ -137,7 +137,7 @@ body {
 .wrapper{
     margin-left: 50px;
     margin-top: 63px;
-
+color: #fff;
 }
 
 .popoutInsert,.popoutEdit{
@@ -155,16 +155,16 @@ body {
     margin-top: 10px;
 }
 
-.TodayExpenseRanking,.TodayIncomeRanking{
+.ExpenseRanking,.IncomeRanking{
     display: block;
     position: relative;
-    min-height: 600px;
+    min-height: 630px;
     text-align: center;
 
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 0px;
-    padding-bottom: 100px;
+padding-bottom: 15px;
 }
 
 [type=checkbox]:checked, [type=checkbox]:not(:checked) {
@@ -190,7 +190,7 @@ margin-bottom: 30px;
 
     height: 10px;
     border: 0;
-    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    box-shadow: 0 10px 10px -10px #ffffff inset;
 }
 
 .incomeForm,.expenseForm{
@@ -408,4 +408,33 @@ address, dl, ol, p, ul {
 .swiper-button-next.swiper-button-red,
 .swiper-container-rtl .swiper-button-prev.swiper-button-red{
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ff0000'%2F%3E%3C%2Fsvg%3E");
+}
+
+#expenseSwiper,#incomeSwiper,#wrapper{
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment:fixed;
+    background-size: 100% 100%;
+    background-position:center;
+}
+
+.swiper-pagination-bullet {
+
+    background: #fff;
+
+}
+
+.swiper-pagination-bullet-active {
+
+    background: #fff;
+}
+
+#wrapper .separateLine{
+    border: 1px solid rgba(255,255,255,0.6);
+    width: 90%;
+}
+
+table.footable, table.footable-details {
+    line-height: 1.5;
 }

@@ -23,20 +23,34 @@ spl_autoload_register(function ($class) {
 session_start();
 if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["password"])) {
 
-    $a = new UserModel();
-    $jj = $a->Login($_SESSION["email"], $_SESSION["password"], $_SERVER["REMOTE_ADDR"]);
+    $userModel = new UserModel();
+    $jj = $userModel->Login($_SESSION["email"], $_SESSION["password"], $_SERVER["REMOTE_ADDR"]);
 
     if ($jj instanceof UserObject) {
-        /*********Expense***********/
+        /*********EXPENSE***********/
         $expenseModel= new UserExpenseModel();
-        $TotalExpenseRanking=$expenseModel->getTodayExpenseRanking();
+        /********Today*************/
+        $TodayExpenseRanking=$expenseModel->getTodayExpenseRanking();
         $UserTodayExpenseRankingObject = $expenseModel->getUserTodayExpenseRanking($_SESSION["id"]);
+        /********Weekly*************/
+        $WeeklyExpenseRanking=$expenseModel->getWeeklyExpenseRanking();
+        $UserWeeklyExpenseRankingObject = $expenseModel->getUserWeeklyExpenseRanking($_SESSION["id"]);
+        /********Monthly*************/
+        $MonthlyExpenseRanking=$expenseModel->getMonthlyExpenseRanking();
+        $UserMonthlyExpenseRankingObject = $expenseModel->getUserMonthlyExpenseRanking($_SESSION["id"]);
 
-        /*********Incomee***********/
+
+        /*********INCOME***********/
         $incomeModel= new UserIncomeModel();
-        $TotalIncomeRanking=$incomeModel->getTodayIncomeRanking();
+        /********Today*************/
+        $TodayIncomeRanking=$incomeModel->getTodayIncomeRanking();
         $UserTodayIncomeRankingObject = $incomeModel->getUserTodayIncomeRanking($_SESSION["id"]);
-
+        /********Weekly*************/
+        $WeeklyIncomeRanking=$incomeModel->getWeeklyIncomeRanking();
+        $UserWeeklyIncomeRankingObject = $incomeModel->getUserWeeklyIncomeRanking($_SESSION["id"]);
+        /********Monthly*************/
+        $MonthlyIncomeRanking=$incomeModel->getMonthlyIncomeRanking();
+        $UserMonthlyIncomeRankingObject = $incomeModel->getUserMonthlyIncomeRanking($_SESSION["id"]);
 
         require '../Views/Ranking.html';
 

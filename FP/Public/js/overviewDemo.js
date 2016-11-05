@@ -215,7 +215,7 @@ function  changeStyle(colour) {
 
             break;
         case "pink":
-            $(".content").css("background-image", "url('http://www.walldevil.com/wallpapers/a79/background-scenery-pictures-beautiful-beach-image-wallpatrol-sunset-paradise.jpg')");
+            $(".content").css("background-image", "url('Public/images/anime_landscape_person_12.jpg')");
             setChartWhiteStyle();
             break;
     }

@@ -114,28 +114,58 @@ class UserIncomeModel extends  BaseModel
         return $IncomeGroup;
     }
 
+    public function getWeeklyIncomeGroupByUserID($UserID)
+    {
+        $sql = "SELECT Income_Category,SUM(Income_Amount) as Income_Amount FROM `user_income` where User_ID=:User_ID and WEEK(Income_EnterDate)=WEEK(CURDATE()) GROUP by Income_Category ORDER BY Income_Category ASC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->execute();
+        $result = $result->fetchAll();
 
+        $IncomeGroup = array();
+        foreach ($result as $key => $value) {
+
+            $IncomeGroup[$value['Income_Category']] = $value['Income_Amount'];
+        }
+
+
+        return $IncomeGroup;
+    }
+
+    public function getMonthlyIncomeGroupByUserID($UserID)
+    {
+        $sql = "SELECT Income_Category,SUM(Income_Amount) as Income_Amount FROM `user_income` where User_ID=:User_ID and MONTH(Income_EnterDate)=MONTH(CURDATE()) GROUP by Income_Category ORDER BY Income_Category ASC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->execute();
+        $result = $result->fetchAll();
+
+        $IncomeGroup = array();
+        foreach ($result as $key => $value) {
+
+            $IncomeGroup[$value['Income_Category']] = $value['Income_Amount'];
+        }
+
+
+        return $IncomeGroup;
+    }
+
+    /***********TodayIncomeRanking*****************/
     public function getTodayIncomeRanking()
     {
         $sql = "select @rank:=@rank+1 as rank,p.User_ID,p.Total_Income_Amount from(select @rank := 0)r,(select User_ID,SUM(Income_Amount) as Total_Income_Amount FROM `user_income`
 where Income_EnterDate=CURDATE() GROUP by User_ID ORDER by Total_Income_Amount desc limit 0,100)p";
-
         $result = self::$conn->prepare($sql);
-
         $result->execute();
         $result = $result->fetchAll();
-
         $TotalIncomeRanking = array();
         foreach ($result as $key => $value) {
-
             $object = new stdClass();
             $object->rank = $value['rank'];
             $object->User_ID = $value['User_ID'];
             $object->Total_Income_Amount = $value['Total_Income_Amount'];
             $TotalIncomeRanking[$value['User_ID']] = $object;
         }
-
-
         return $TotalIncomeRanking;
     }
 
@@ -148,19 +178,82 @@ as Total_Income_Amount FROM `user_income` where Income_EnterDate=CURDATE() GROUP
         $result->bindValue(":User_ID", $UserID);
         $result->execute();
         $result = $result->fetch();
-
-
-
             $object = new stdClass();
             $object->rank = $result['rank'];
             $object->User_ID = $result['User_ID'];
             $object->Total_Expense_Amount = $result['Total_Income_Amount'];
-
-
-
-
         return $object;
-
     }
 
+
+/***********WeeklyIncomeRanking*****************/
+public function getWeeklyIncomeRanking()
+{
+    $sql = "select @rank:=@rank+1 as rank,p.User_ID,p.Total_Income_Amount from(select @rank := 0)r,(select User_ID,SUM(Income_Amount) as Total_Income_Amount FROM `user_income`
+where WEEK(Income_EnterDate)=WEEK(CURDATE()) GROUP by User_ID ORDER by Total_Income_Amount desc limit 0,100)p";
+    $result = self::$conn->prepare($sql);
+    $result->execute();
+    $result = $result->fetchAll();
+    $TotalIncomeRanking = array();
+    foreach ($result as $key => $value) {
+        $object = new stdClass();
+        $object->rank = $value['rank'];
+        $object->User_ID = $value['User_ID'];
+        $object->Total_Income_Amount = $value['Total_Income_Amount'];
+        $TotalIncomeRanking[$value['User_ID']] = $object;
+    }
+    return $TotalIncomeRanking;
+}
+
+
+public function getUserWeeklyIncomeRanking($UserID)
+{
+    $sql = "select * from(select @rank:=@rank+1 as rank,p.User_ID,p.Total_Income_Amount from(select @rank := 0)r,(select User_ID,SUM(Income_Amount)
+as Total_Income_Amount FROM `user_income` where WEEK(Income_EnterDate)=WEEK(CURDATE()) GROUP by User_ID ORDER by Total_Income_Amount desc limit 0,100)p)a where User_ID=:User_ID";
+    $result = self::$conn->prepare($sql);
+    $result->bindValue(":User_ID", $UserID);
+    $result->execute();
+    $result = $result->fetch();
+    $object = new stdClass();
+    $object->rank = $result['rank'];
+    $object->User_ID = $result['User_ID'];
+    $object->Total_Expense_Amount = $result['Total_Income_Amount'];
+    return $object;
+}
+
+/***********MonthlyIncomeRanking*****************/
+
+public function getMonthlyIncomeRanking()
+{
+    $sql = "select @rank:=@rank+1 as rank,p.User_ID,p.Total_Income_Amount from(select @rank := 0)r,(select User_ID,SUM(Income_Amount) as Total_Income_Amount FROM `user_income`
+where MONTH(Income_EnterDate)=MONTH(CURDATE()) GROUP by User_ID ORDER by Total_Income_Amount desc limit 0,100)p";
+    $result = self::$conn->prepare($sql);
+    $result->execute();
+    $result = $result->fetchAll();
+    $TotalIncomeRanking = array();
+    foreach ($result as $key => $value) {
+        $object = new stdClass();
+        $object->rank = $value['rank'];
+        $object->User_ID = $value['User_ID'];
+        $object->Total_Income_Amount = $value['Total_Income_Amount'];
+        $TotalIncomeRanking[$value['User_ID']] = $object;
+    }
+    return $TotalIncomeRanking;
+}
+
+
+public function getUserMonthlyIncomeRanking($UserID)
+{
+    $sql = "select * from(select @rank:=@rank+1 as rank,p.User_ID,p.Total_Income_Amount from(select @rank := 0)r,(select User_ID,SUM(Income_Amount)
+as Total_Income_Amount FROM `user_income` where MONTH(Income_EnterDate)=MONTH(CURDATE()) GROUP by User_ID ORDER by Total_Income_Amount desc limit 0,100)p)a where User_ID=:User_ID";
+    $result = self::$conn->prepare($sql);
+    $result->bindValue(":User_ID", $UserID);
+    $result->execute();
+    $result = $result->fetch();
+    $object = new stdClass();
+    $object->rank = $result['rank'];
+    $object->User_ID = $result['User_ID'];
+    $object->Total_Expense_Amount = $result['Total_Income_Amount'];
+    return $object;
+}
 }

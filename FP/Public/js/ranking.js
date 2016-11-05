@@ -56,29 +56,35 @@ function  changeStyle(colour) {
 
     switch (colour){
         case "red":
-            $(".content").css("background-image", "url('https://newevolutiondesigns.com/images/freebies/anime-wallpaper-7.jpg')");
+           // $("#expenseSwiper").css("background-image", "url('https://newevolutiondesigns.com/images/freebies/anime-wallpaper-7.jpg')");
+            $("#wrapper").css("background-image", "url('http://digitalart.io/wp-content/uploads/2014/01/Umbrella-Girl-In-The-Rain-Wallpaper.jpg')");
             setChartWhiteStyle();
             break;
         case "purple":
-            $(".content").css("background-image", "url('https://s-media-cache-ak0.pinimg.com/originals/23/1c/52/231c5206fba3f704613c27614d867c16.jpg')");
+          //  $("#expenseSwiper").css("background-image", "url('https://s-media-cache-ak0.pinimg.com/originals/23/1c/52/231c5206fba3f704613c27614d867c16.jpg')");
+            $("#wrapper").css("background-image", "url('https://s-media-cache-ak0.pinimg.com/originals/23/1c/52/231c5206fba3f704613c27614d867c16.jpg')");
             setChartWhiteStyle();
             break;
         case "green":
-            $(".content").css("background-image", "url('http://kabegami.org/wp-content/uploads/2012/10/H9l6Or.jpg')");
+           // $("#expenseSwiper").css("background-image", "url('http://kabegami.org/wp-content/uploads/2012/10/H9l6Or.jpg')");
+            $("#wrapper").css("background-image", "url('http://kabegami.org/wp-content/uploads/2012/10/H9l6Or.jpg')");
             setChartWhiteStyle();
             break;
         case "mdb":
-            $(".content").css("background-image", "url('https://avvesione.files.wordpress.com/2012/02/rinne_no_lagrange-06-sunrise-clouds-space-stars-wallpaper-beautiful-scenery.jpg')");
+           // $("#expenseSwiper").css("background-image", "url('https://avvesione.files.wordpress.com/2012/02/rinne_no_lagrange-06-sunrise-clouds-space-stars-wallpaper-beautiful-scenery.jpg')");
+            $("#wrapper").css("background-image", "url('https://avvesione.files.wordpress.com/2012/02/rinne_no_lagrange-06-sunrise-clouds-space-stars-wallpaper-beautiful-scenery.jpg')");
             setChartWhiteStyle();
 
             break;
         case "graphite":
-            $(".content").css("background-image", "url('http://s1.1zoom.net/big0/809/Mountains_Lake_Scenery_443380.jpg')");
+            //$("#expenseSwiper").css("background-image", "url('http://s1.1zoom.net/big0/809/Mountains_Lake_Scenery_443380.jpg')");
+            $("#wrapper").css("background-image", "url('http://s1.1zoom.net/big0/809/Mountains_Lake_Scenery_443380.jpg')");
             setChartWhiteStyle();
 
             break;
         case "pink":
-            $(".content").css("background-image", "url('http://www.walldevil.com/wallpapers/a79/background-scenery-pictures-beautiful-beach-image-wallpatrol-sunset-paradise.jpg')");
+            //$("#expenseSwiper").css("background-image", "url('http://www.walldevil.com/wallpapers/a79/background-scenery-pictures-beautiful-beach-image-wallpatrol-sunset-paradise.jpg')");
+            $("#wrapper").css("background-image", "url('../../Public/images/anime_landscape_person_12.jpg')");
             setChartWhiteStyle();
             break;
     }
