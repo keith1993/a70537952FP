@@ -193,3 +193,15 @@ function deleteIncome(incomeID){
         }
 
     )};
+
+ function showLogout() {
+        if ($("#logout").hasClass("open")) {
+
+            $("#logout").removeClass("open");
+
+        } else {
+
+            $("#logout").addClass("open");
+        }
+
+    }
