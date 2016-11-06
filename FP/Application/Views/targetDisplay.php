@@ -90,6 +90,79 @@
            </div><!--popup_container ends-->
          </div><!--popup-wrapper ends-->
      </div><!--popup1 ends-->
+
+     <div id="popup2" class="popup-position">
+         <div id="popup-wrapper">
+           <div id="popup-container">
+             <a href="javascript:void(0)"onclick="toggle_visibility('popup2');"style="float: right; text-decoration: none; color: red;">X</a>
+             <div >
+               <form action="../Controllers/TargetUpdate.php" method="post" >
+                 <?php
+                 $servername = "localhost";
+                 $username = "root";
+                 $password = "";
+                 $dbname = "Finance";
+
+                 // Create connection
+                 $conn = new mysqli($servername, $username, $password, $dbname);
+                 // Check connection
+                 if ($conn->connect_error) {
+                     die("Connection failed: " . $conn->connect_error);
+                 }
+                 $Target_ID = ;
+
+                 $sql = "SELECT Target_ID, Target_Name, Target_Amount, Target_Days, Target_AchieveDate,Target_EnterDate FROM target WHERE Target_ID = $Target_ID";
+                 $result = $conn->query($sql);
+
+                 ?>
+                 <table id="updateForm" style="display: block" >
+                   <tr>
+                     <td width="100">Target ID</td>
+                     <td>
+                       <input name="Target_ID" type="number" id="Target_ID" value="<?php $Target_ID ?>">
+                     </td>
+                   </tr>
+                 <tr>
+                   <td>
+                     Target Name:
+                   </td>
+                   <td>
+                     <input type="text" name="Target_Name">
+                   </td>
+                 </tr>
+                 <tr>
+                   <td>
+                     Target Amount:
+                   </td>
+                   <td>
+                     <input type="text" name="Target_Amount">
+                   </td>
+                 </tr>
+                 <tr>
+                   <td>
+                     Target Achieve Date:
+                   </td>
+                   <td>
+                     <input type="date" name="Target_AchieveDate">
+                   </td>
+                 </tr>
+                 <tr>
+                   <td>
+                     Target Days:
+                   </td>
+                   <td>
+                     <input type="text" name="Target_Days">
+                   </td>
+                 </tr>
+                 </table>
+
+                 <input name="update" type="submit" id="update" value="Update" style="display:none;" >
+               </form>
+             </div>
+           </div><!--popup_container ends-->
+         </div><!--popup-wrapper ends-->
+     </div><!--popup1 ends-->
+
      <?php
      $servername = "localhost";
      $username = "root";
@@ -104,17 +177,19 @@
      }
 
 
-     $sql = "SELECT Target_ID, Target_Name, Target_Amount, Target_Days, Target_AchieveDate FROM target";
+     $sql = "SELECT Target_ID, Target_Name, Target_Amount, Target_Days, Target_AchieveDate,Target_EnterDate FROM target";
      $result = $conn->query($sql);
 
      if ($result->num_rows > 0) {
+         echo "<form action=\"../Controllers/TargetMultiDelete.php\" method=\"POST\">";
          echo "<table border=1>
          <tr>
          <th>Target ID</th>
          <th>Target Name</th>
          <th>Target Amount</th>
-         <th>Target Days</th>
+         <th>Target EnterDate</th>
          <th>Target Achieve Date</th>
+         <th>Target Days</th>
          <th>Edit</th>
          <th>Delete</th>
          </tr>";
@@ -124,13 +199,22 @@
              echo "<td>" . $row["Target_ID"] . "</td>";
              echo "<td><a href=\"" . $row["Target_Name"] . "\">" . $row["Target_Name"] . "</a></td>";
              echo "<td>" . $row["Target_Amount"] . "</td>";
-             echo "<td>" . $row["Target_Days"] . "</td>";
+             echo "<td>" . $row["Target_EnterDate"] . "</td>";
              echo "<td>" . $row["Target_AchieveDate"] . "</td>";
-             echo "<td><a href=" . $row["Target_Name"] . ">Edit</a></td>";
-             echo "<td><input type=\"checkbox\" name=\"delete\" /></td>";
+             echo "<td>" . $row["Target_Days"] . "</td>";
+             ?>
+             <td><a href="javascript:void(0)"onclick="toggle_visibility('popup2');">Edit  <?php echo $row["Target_ID"] ?></a></td>
+             <td>
+               <input type="checkbox" name="num[]" value="<?php echo $row["Target_ID"] ?>">
+             </td>
+             <?php
              echo "</tr>";
          }
          echo "</table>";
+         ?>
+        <input type="submit" name="submit1" value="DeleteSelected"/>
+         <?php
+        echo "</form>";
      } else {
          echo "0 results";
      }
