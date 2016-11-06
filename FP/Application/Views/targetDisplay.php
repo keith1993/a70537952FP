@@ -109,7 +109,7 @@
                  if ($conn->connect_error) {
                      die("Connection failed: " . $conn->connect_error);
                  }
-                 $Target_ID = ;
+                 $Target_ID =   ;
 
                  $sql = "SELECT Target_ID, Target_Name, Target_Amount, Target_Days, Target_AchieveDate,Target_EnterDate FROM target WHERE Target_ID = $Target_ID";
                  $result = $conn->query($sql);
@@ -203,7 +203,7 @@
              echo "<td>" . $row["Target_AchieveDate"] . "</td>";
              echo "<td>" . $row["Target_Days"] . "</td>";
              ?>
-             <td><a href="javascript:void(0)"onclick="toggle_visibility('popup2');">Edit  <?php echo $row["Target_ID"] ?></a></td>
+             <td><a href="javascript:void(0)"onclick="toggle_visibility('popup2');">Edit</a></td>
              <td>
                <input type="checkbox" name="num[]" value="<?php echo $row["Target_ID"] ?>">
              </td>
