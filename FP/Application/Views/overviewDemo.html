@@ -96,9 +96,9 @@
                         class="fa fa-user"></i>Profile</i></a></li>
                 <li><a href="Application/Controllers/Ranking.php" class="collapsible-header waves-effect"><i class="fa fa-table"></i>Ranking</i></a></li>
 
-                <!-- <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
-                 <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
-                 <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
+                <li><a href="Application/Controllers/ScheduleSetting.php" class="collapsible-header waves-effect"><i class="fa fa-gear"></i>Schedule Setting</i></a></li>
+                <!-- <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
+                <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
             </ul>
         </li>
 
@@ -669,9 +669,29 @@
 
 
         <form id="incomeFormID" class="incomeForm" action="Application/Controllers/InsertIncome.php" method="post" role="form">
-            Income Name:<input style="width: 200px;" type="text" name="incomeName" value="" required></br>
-            Income Amount:<input style="width: 200px;" type="number" name="incomeAmount" value="0.00"  pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number"step="0.01"required></br>
-            Income Description:<input style="width: 200px;" type="text" name="incomeDescription" value=""></br></br>
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Name</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="text" name="incomeName" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <input type="number" name="incomeAmount" value="0.00"  pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number"step="0.01"required></br>
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Description</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="text" name="incomeDescription" value=""></br></br>
+                </div>
+            </div>
+
+
+
 
 
 

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule Setting</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../Helper/footable-standalone.latest/css/footable.standalone.css">
+    <link href="../../Public/css/bootstrap1.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/MDB PRO 4.2.0.css">
+    <link href="../../Public/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/header.css">
+    <link rel="stylesheet" href="../../Public/css/scheduleSetting.css">
+
+
+    <script src="../../Public/js/jquery-3.1.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../Helper/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
+    <!-- Tooltips -->
+    <script type="text/javascript" src="../../Public/js/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../../Public/js/mdb.min.js"></script>
+    <script src="../../Helper/footable-standalone.latest/js/footable.min.js"></script>
+    <script src="../../Helper/js-cookie-1.5.1/src/js.cookie.js"></script>
+    <script src="../../Public/js/moment.js"></script>
+    <script src="../../Public/js/header.js"></script>
+    <script src="../../Public/js/scheduleSetting.js"></script>
+
+
+</head>
+<body class="fixed-sn hideXScroll">
+<header>
+
+    <!-- Sidebar navigation -->
+    <ul id="mySidenav" class="side-nav fixed sidenav" style="z-index: 11;">
+
+<span id="navControl" class="collapsible-header waves-effect"
+      style="font-size:30px;cursor:pointer;text-align: center;display: inline-block;width:100%;margin-top: 10px;"
+      onclick="setNav()">&#9776; </span>
+        <!-- Logo -->
+        <li id="userLogo" style="display: none;">
+            <div class="logo-wrapper waves-light sn-avatar-wrapper">
+                <a href="Application/Controllers/UserProfile.php">
+                    <img src="<?php echo " ../../Public/uploads/".$jj->UserImage;?>" class="img-circle">
+                </a>
+            </div>
+        </li>
+        <!--/. Logo -->
+
+        <!--Social-->
+        <!--RED,PURPLE,DARK,MDB,GRAPHITE,PINK-->
+        <li id="colorStyle" style="display: none">
+            <ul class="social">
+                <li><a class="icons-sm fb-ic" onclick="changeStyle('red')"><i class="fa fa-square" style="color: #900"> </i></a></li>
+                <li><a class="icons-sm git-ic" onclick="changeStyle('purple')"><i class="fa fa-square" style="color: #54057d"> </i></a></li>
+                <li><a class="icons-sm li-ic" onclick="changeStyle('green')"><i class="fa fa-square" style="color: #003830"> </i></a></li>
+                <li><a class="icons-sm yt-ic" onclick="changeStyle('mdb')"><i class="fa fa-square" style="color: #3f729b"> </i></a></li>
+                <li><a class="icons-sm gplus-ic" onclick="changeStyle('graphite')"><i class="fa fa-square" style="color: #37474f"> </i></a></li>
+                <li><a class="icons-sm li-ic" onclick="changeStyle('pink')"><i class="fa fa-square" style="color: #ab1550"> </i></a></li>
+
+            </ul>
+        </li>
+
+
+        <!--/Social-->
+
+        <!-- Side navigation links -->
+        <li id="sideNavItem" style="display: none">
+            <ul class="collapsible collapsible-accordion">
+                <li><a href="../../index.php" collapsible-header waves-effect"><i
+                        class="fa fa-home"></i>Home</i></a></li>
+                <li><a href="UserProfile.php" collapsible-header waves-effect"><i
+                        class="fa fa-user"></i>Profile</i></a></li>
+                <li><a href="Ranking.php" class="collapsible-header waves-effect"><i class="fa fa-table"></i>Ranking</i></a></li>
+                <li><a href="ScheduleSetting.php" class="collapsible-header waves-effect"><i class="fa fa-gear"></i>Schedule Setting</i></a></li>
+                <!-- <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
+                 <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
+                 <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
+            </ul>
+        </li>
+
+        <!--/. Side navigation links -->
+
+
+    </ul>
+
+    <!--/. Sidebar navigation -->
+
+    <!--Navbar-->
+    <nav class="navbar navbar-fixed-top scrolling-navbar double-nav main col-lg-12 col-md-12 col-sm-12"
+         style="padding-left: 100px;z-index: 10; transition: 0.5s;">
+
+        <!-- SideNav slide-out button -->
+
+
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn">
+            <p>Welcome,</p>
+        </div>
+
+
+        <ul onclick="showLogout()"id="profile" class="nav navbar-nav pull-right  ">
+
+
+            <li id="logout"class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?php echo $jj->
+                    FirstName;?></a>
+                <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1"
+                     data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+                    <a class="dropdown-item"
+                       href="Logout.php">Logout</a>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+    <!--/.Navbar-->
+
+</header>
+<div id="wrapper" class="wrapper transition">
+    <div class="IncomeContent transition main">
+        <p class="title">Fixed Income Detail</p>
+        <?php
+
+       echo "<table class=\"tableIncome\" data-paging=\"true\"data-sorting=\"true\"data-paging-size=\"10\">
+        ";
+        echo "
+        <thead>";
+
+        echo "
+        <th data-type=\"text\">Income Name</th>
+        ";
+        echo "
+        <th data-type=\"number\">Income Amount</th>
+        ";
+        echo "
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Income Description</th>
+        ";
+        echo "
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Income Pay Every</th>
+        ";
+        echo "
+        <th data-type=\"html\">Edit</th>
+        ";
+
+        echo "
+        <th data-type=\"html\">Delete</th>
+        ";
+
+        echo "
+        </thead>
+        ";
+
+        echo "
+        <tbody>";
+        foreach ($fixedIncomeList as $key => $value) {
+        echo "
+        <tr>";
+            echo "
+            <td>".$value->Income_Name."</td>
+            ";
+            echo "
+            <td>".$value->Income_Amount."</td>
+            ";
+            echo "
+            <td>".$value->Income_Description."</td>
+            ";
+            echo "
+            <td>".$value->Income_PayEvery."</td>
+            ";
+
+
+
+            echo "
+            <td ><a class=\"btn btn-default btn-sm\" onclick=\"showEditIncome(".$value->IncomeID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
+            ";
+
+            echo "
+            <td><a  class=\"btn btn-default btn-sm\" href=\"#\" incomeID=\"$value->IncomeID\" delete=\"income\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
+            ";
+
+            echo "
+        </tr>
+        ";
+        }
+        echo "
+        </tbody>
+        ";
+        echo "</table>";
+
+        ?>
+        <hr class="tableHR"/>
+        <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertIncome()"
+               value="Insert Fixed Income">
+
+    </div>
+
+
+    <!--****************************************-->
+
+
+    <div class="expensesContent transition main">
+        <p class="title">Fixed Expense Detail</p>
+        <?php
+
+       echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-paging-size=\"10\" >
+        ";
+        echo "
+        <thead>";
+
+        echo "
+        <th data-type=\"text\">Expense Name</th>
+        ";
+        echo "
+        <th data-type=\"number\">Expense Amount</th>
+        ";
+
+        echo "
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Category</th>
+        ";
+
+        echo "
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Description</th>
+        ";
+        echo "
+        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Pay Every</th>
+        ";
+
+
+        echo "
+        <th data-type=\"html\">Edit</th>
+        ";
+
+        echo "
+        <th data-type=\"html\">Delete</th>
+        ";
+
+        echo "
+        </thead>
+        ";
+
+        echo "
+        <tbody>";
+        foreach ($fixedExpenseList as $key => $value) {
+        echo "
+        <tr>";
+            echo "
+            <td>".$value->Expense_Name."</td>
+            ";
+            echo "
+            <td>".$value->Expense_Amount."</td>
+            ";
+
+            echo "
+            <td>".$value->Expense_Category."</td>
+            ";
+            echo "
+            <td>".$value->Expense_Description."</td>
+            ";
+            echo "
+            <td>".$value->Expense_PayEvery."</td>
+            ";
+
+
+            echo "
+            <td><a class=\"btn btn-default btn-sm\" onclick=\"showEditExpense(".$value->ExpenseID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
+            ";
+
+            echo "
+            <td><a  class=\"btn btn-default btn-sm\" href=\"#\" expenseID=\"$value->ExpenseID\" delete=\"expense\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
+            ";
+
+            echo "
+        </tr>
+        ";
+
+
+        }
+        echo "
+        </tbody>
+        ";
+        echo "</table>";
+
+        ?>
+        <hr class="tableHR">
+        <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertExpense()"
+               value="Insert Fixed Expense">
+
+    </div>
+</div>
+<div id="popoutInsert" style="display: none;z-index: 50">
+    <div class="mask" onclick="hideInsert()"></div>
+    <div id="InsertIncome" class="popout" style="display: none;">
+
+        <p class="popoutTitle" style="text-align: center">Insert Fixed Income</p>
+
+
+        <form id="incomeFormID" class="incomeForm" action="InsertFixedIncome.php" method="post" role="form">
+
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Name</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="text" name="incomeName" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <input type="number" name="incomeAmount" value="0.00"  pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number"step="0.01"required></br>
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Description</label>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <input type="text" name="incomeDescription" value=""></br></br>
+                </div>
+            </div>
+
+
+            <div class="form-group col-xs-12 col-sm-12">
+                <label for="Income Pay Every" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Pay Every</label>
+                <div class="col-xs-12 col-sm-12 col-md-1">
+                    <select  class="form-control" name="incomePayEvery"
+                            style="display: inline-block" required>
+                        <option value="Day">Day</option>
+                        <option value="Month">Month</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+
+            <button type="reset" class="btn btn-default" onclick="hideInsert()" style="display: inline-block;margin-bottom: 20px;">Cancel</button>
+
+            <button type="submit" class="btn btn-default"style="margin-bottom: 20px;">Submit</button>
+        </form>
+    </div>
+    <div id="InsertExpense" class="popout" style="display: none;">
+
+
+        <p class="popoutTitle" style="text-align: center">Insert Fixed Expenses</p>
+        <form id="expensesFormID" class="expenseForm " role="form" action="InsertFixedExpenses.php"
+              method="post">
+            <div id="expenseContainer">
+                <div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="ExpenseName" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Name:</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input class="form-control" type="text" name="expenseName" value="" required></div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="ExpenseAmount" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Amount:</label>
+                        <div class="col-xs-12 col-sm-12 col-md-2">
+                        <input class="form-control" type="number" name="expenseAmount" value="0.00" pattern="^[0-9]+(\.[0-9]{1,2})?$" title="Only Allow Number" step="0.01"required>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="ExpenseCategory" class="col-xs-12  col-sm-12 col-md-5 control-label"> Expense Category:</label>
+                        <div class="col-xs-12 col-sm-12 col-md-2">
+                        <select class="form-control" name="expenseCategory" required>
+
+                            <option value="Transport">Transport</option>
+                            <option value="Food & beverage">Food & beverage</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Debts">Debts</option>
+                            <option value="Fixed expenses">Fixed expenses</option>
+                            <option value="Others">Others</option>
+                        </select></div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+
+                        <label for="ExpenseDescription" class="col-xs-12  col-sm-12 col-md-5 control-label"> Expense Description:</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input class="form-control" type="text" name="expenseDescription" value=""></div>
+
+                    </div>
+
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Pay Every" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Pay Every</label>
+                        <div class="col-xs-12 col-sm-12 col-md-1">
+                            <select  class="form-control" name="expensePayEvery"
+                                     style="display: inline-block" required>
+                                <option value="Day">Day</option>
+                                <option value="Month">Month</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button type="reset" class="btn btn-default" onclick="hideInsert()" style="display: inline-block;margin-bottom: 20px;">Cancel</button>
+
+            <button type="submit" class="btn btn-default"style="margin-bottom: 20px;">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
+
+
+<div id="popoutEdit" style="display: none;z-index: 50">
+
+    <div class="mask" onclick="hideEdit()"></div>
+    <div id="editIncome"class="container-fluid" style="display: none;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3  editPopout" style="text-align: center;">
+                <form id="editIncomeForm" method="post" action="UpdateFixedIncome.php" role="form">
+                    <div class="col-sm-12">
+                        <p class="popoutTitle" style="text-align: center">Edit Income</p>
+                    </div>
+
+                    <div style="display: none">
+                        <p>IncomeID</p><input type="text" name="IncomeID" id="IncomeID" class="form-control" value="" readonly >
+
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Name</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="text" name="IncomeName" class="form-control" id="IncomeName" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="number" name="IncomeAmount" class="form-control" id="IncomeAmount" value="0.00" pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Description</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="text" name="IncomeDescription" class="form-control" id="IncomeDescription">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-12 col-sm-12">
+                        <label for="Income Pay Every" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Pay Every</label>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <select id="IncomePayEvery"class="form-control" name="IncomePayEvery"
+                                    style="display: inline-block" required>
+                                <option value="Day">Day</option>
+                                <option value="Month">Month</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+
+
+
+                    <button type="reset" class="btn btn-default" onclick="hideEdit()" style="display: inline-block ;margin-bottom: 20px;">Cancel</button>
+
+
+
+                    <button type="submit" class="btn btn-default" style="margin-bottom: 20px;">Save</button>
+
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id="editExpense"class="container-fluid" style="display: none;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3  editPopout" style="text-align: center;">
+                <form id="editExpenseForm" method="post" action="UpdateFixedExpense.php" form-horizontal" role="form">
+                <div class="col-sm-12">
+                    <p class="popoutTitle" style="text-align: center">Edit Expense</p>
+                </div>
+
+                <div style="display: none">
+                    <p>ExpenseID</p><input type="text" name="ExpenseID" id="ExpenseID" class="form-control" value="" readonly >
+
+                </div>
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Name" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Name</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input type="text" name="ExpenseName" class="form-control" id="ExpenseName" required>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Amount</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input type="number" name="ExpenseAmount" class="form-control" id="ExpenseAmount" value="0.00"   pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Category" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Category</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <select id="ExpenseCategory"class="form-control" name="ExpenseCategory"
+                                style="display: inline-block" required>
+
+                            <option value="Transport">Transport</option>
+                            <option value="Food & beverage">Food & beverage</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Debts">Debts</option>
+                            <option value="Fixed expenses">Fixed expenses</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Description" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Description</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <input type="text" name="ExpenseDescription" class="form-control" id="ExpenseDescription">
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-12">
+                    <label for="Expense Pay Every" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Pay Every</label>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <select id="ExpensePayEvery"class="form-control" name="ExpensePayEvery"
+                                style="display: inline-block" required>
+                            <option value="Day">Day</option>
+                            <option value="Month">Month</option>
+
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <button type="reset" class="btn btn-default" onclick="hideEdit()" style="display: inline-block;margin-bottom: 20px;">Cancel</button>
+
+
+
+                <button type="submit" class="btn btn-default"style="display: inline-block;margin-bottom: 20px;">Save</button>
+
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
