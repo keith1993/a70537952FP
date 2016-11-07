@@ -95,6 +95,26 @@ class UserExpenseModel extends BaseModel
         return $expenseGroup;
     }
 
+    public function getEveryDayTotalExpenseByUserID($UserID)
+    {
+        $sql = "SELECT Expense_EnterDate as Expense_Day,sum(Expense_Amount)as Total_Expense FROM `user_expense` where User_ID=:User_ID group by Expense_EnterDate ORDER BY `Expense_EnterDate` DESC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->execute();
+        $result = $result->fetchAll();
+
+        $ExpenseArray = new SplObjectStorage();
+        foreach ($result as $key => $value) {
+
+            $object = new stdClass();
+            $object->Expense_Day = $value['Expense_Day'];
+            $object->Total_Expense = $value['Total_Expense'];
+            $ExpenseArray->attach($object);
+        }
+
+        return $ExpenseArray;
+    }
+
     public function getTodayExpenseGroupByUserID($UserID)
     {
         $sql = "SELECT Expense_Category,SUM(Expense_Amount) as Expense_Amount FROM `user_expense` where User_ID=:User_ID and Expense_EnterDate=CURDATE() GROUP by Expense_Category ORDER BY Expense_Category ASC";
