@@ -127,6 +127,8 @@ var options = {
 
 
 jQuery(function ($) {
+
+
     $('.tableIncome').footable();
 
     $('.tableExpense').footable();
@@ -146,14 +148,12 @@ jQuery(function ($) {
 
     });
     /*********************************/
+
     if (Cookies.get('style')==null){
         changeStyle("red");
     }else{
         changeStyle(Cookies.get('style'));
     }
-    alert("111");
-    alert($(".myChart").length);
-    //chart = new Chart($(".myChart").get(0).getContext("2d")).Radar(data, options);
 
 })
 

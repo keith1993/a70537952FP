@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="Public/css/MDB PRO 4.2.0.css">
     <!-- Material Design Bootstrap-->
     <link href="Public/css/mdb.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="Helper/fullcalendar-3.0.1/fullcalendar.css">
     <link href="Public/css/overViewDemo.css" rel="stylesheet">
 
 
@@ -27,8 +27,9 @@
     <!-- JQuery -->
 
     <script src="Public/js/jquery-3.1.1.min.js"></script>
-
+    <script src="Helper/fullcalendar-3.0.1/lib/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script src="Helper/Bootstrap-Confirmation-master/bootstrap-confirmation.js"></script>
 
     <!-- Tooltips -->
@@ -41,12 +42,19 @@
     <script type="text/javascript" src="Public/js/overviewDemo.js"></script>
     <script type="text/javascript" src="Helper/Chart.js-master/src/chart.js"></script>
     <script src="Helper/js-cookie-1.5.1/src/js.cookie.js"></script>
+
     <script src="Helper/Swiper-master/dist/js/swiper.min.js"></script>
     <script src="Helper/Swiper-master/dist/js/swiper.jquery.min.js"></script>
     <script src="Public/js/moment.js"></script>
 
 
+    <script src="Helper/fullcalendar-3.0.1/lib/moment.min.js"></script>
+    <script src="Helper/fullcalendar-3.0.1/fullcalendar.js"></script>
+
+
+
 </head>
+
 
 <body class="fixed-sn hideXScroll">
 
@@ -488,174 +496,192 @@
 
 
 
-
-
-    <div class="IncomeContent transition main">
-        <p class="title">Income Detail</p>
-        <?php
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="IncomeContent transition main">
+                <p class="title">Income Detail</p>
+                <?php
 
        echo "<table class=\"tableIncome\" data-paging=\"true\"data-sorting=\"true\"data-filtering=\"true\"data-paging-size=\"10\">
-        ";
-        echo "
-        <thead>";
+                ";
+                echo "
+                <thead>";
 
-        echo "
-        <th data-type=\"text\">Income Name</th>
-        ";
-        echo "
-        <th data-type=\"number\">Income Amount</th>
-        ";
-        echo "
-        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Income Description</th>
-        ";
-        echo "
-        <th data-type=\"date\" data-format-string=\"DD-MM-YYYY\" data-breakpoints=\"xs sm md\">Income Enter Date</th>
-        ";
-        echo "
-        <th data-type=\"html\">Edit</th>
-        ";
+                echo "
+                <th data-type=\"text\">Income Name</th>
+                ";
+                echo "
+                <th data-type=\"number\" >Income Amount(RM)</th>
+                ";
+                echo "
+                <th data-type=\"text\" data-breakpoints=\"xs sm md\">Income Description</th>
+                ";
+                echo "
+                <th data-type=\"date\" data-format-string=\"DD-MM-YYYY\" data-breakpoints=\"xs sm md\">Income Enter Date</th>
+                ";
+                echo "
+                <th data-type=\"html\">Edit</th>
+                ";
 
-        echo "
-        <th data-type=\"html\">Delete</th>
-        ";
+                echo "
+                <th data-type=\"html\">Delete</th>
+                ";
 
-        echo "
-        </thead>
-        ";
+                echo "
+                </thead>
+                ";
 
-        echo "
-        <tbody>";
-        foreach ($incomeList as $key => $value) {
-        echo "
-        <tr>";
-            echo "
-            <td>".$value->Income_Name."</td>
-            ";
-            echo "
-            <td>".$value->Income_Amount."</td>
-            ";
-            echo "
-            <td>".$value->Income_Description."</td>
-            ";
+                echo "
+                <tbody>";
+                foreach ($incomeList as $key => $value) {
+                echo "
+                <tr>";
+                    echo "
+                    <td>".$value->Income_Name."</td>
+                    ";
+                    echo "
+                    <td>".$value->Income_Amount."</td>
+                    ";
+                    echo "
+                    <td>".$value->Income_Description."</td>
+                    ";
 
-            echo "
-            <td>". $value->Income_EnterDate ."</td>
-            ";
+                    echo "
+                    <td>". $value->Income_EnterDate ."</td>
+                    ";
 
-            echo "
-            <td ><a class=\"btn btn-default btn-sm\" onclick=\"showEditIncome(".$value->IncomeID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
-            ";
+                    echo "
+                    <td ><a class=\"btn btn-default btn-sm\" onclick=\"showEditIncome(".$value->IncomeID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
+                    ";
 
-            echo "
-            <td><a  class=\"btn btn-default btn-sm\" href=\"#\" incomeID=\"$value->IncomeID\" delete=\"income\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
-            ";
+                    echo "
+                    <td><a  class=\"btn btn-default btn-sm\" href=\"#\" incomeID=\"$value->IncomeID\" delete=\"income\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
+                    ";
 
-            echo "
-        </tr>
-        ";
-        }
-        echo "
-        </tbody>
-        ";
-        echo "</table>";
+                    echo "
+                </tr>
+                ";
+                }
+                echo "
+                </tbody>
+                ";
+                echo "</table>";
 
-        ?>
-        <hr class="tableHR"/>
-        <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertIncome()"
-               value="Insert Income">
+                ?>
+                <hr class="tableHR"/>
+                <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertIncome()"
+                       value="Insert Income">
 
+            </div></div>
+            <div class="swiper-slide">
+                <div class="IncomeContent transition main">
+                    <p class="title"></p>
+
+                    <div class='Calendar'></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-black"></div>
+        <div class="swiper-button-prev swiper-button-black"></div>
     </div>
+
+
 
 
     <!--****************************************-->
 
-
-    <div class="expensesContent transition main">
-        <p class="title">Expense Detail</p>
-        <?php
+     <div class="expensesContent transition main">
+                <p class="title">Expense Detail</p>
+                <?php
 
        echo "<table class=\"tableExpense\" data-paging=\"true\" data-sorting=\"true\" data-filtering=\"true\"data-paging-size=\"10\" >
-        ";
-        echo "
-        <thead>";
+                ";
+                echo "
+                <thead>";
 
-        echo "
-        <th data-type=\"text\">Expense Name</th>
-        ";
-        echo "
-        <th data-type=\"number\">Expense Amount</th>
-        ";
+                echo "
+                <th data-type=\"text\">Expense Name</th>
+                ";
+                echo "
+                <th data-type=\"number\">Expense Amount(RM)</th>
+                ";
 
-        echo "
-        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Category</th>
-        ";
+                echo "
+                <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Category</th>
+                ";
 
-        echo "
-        <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Description</th>
-        ";
-        echo "
-        <th data-type=\"date\"  data-format-string=\"DD/MM/YYYY\" data-breakpoints=\"xs sm md\">Expense Enter Date</th>
-        ";
-        echo "
-        <th data-type=\"html\">Edit</th>
-        ";
+                echo "
+                <th data-type=\"text\" data-breakpoints=\"xs sm md\">Expense Description</th>
+                ";
+                echo "
+                <th data-type=\"date\"  data-format-string=\"DD/MM/YYYY\" data-breakpoints=\"xs sm md\">Expense Enter Date</th>
+                ";
+                echo "
+                <th data-type=\"html\">Edit</th>
+                ";
 
-        echo "
-        <th data-type=\"html\">Delete</th>
-        ";
+                echo "
+                <th data-type=\"html\">Delete</th>
+                ";
 
-        echo "
-        </thead>
-        ";
+                echo "
+                </thead>
+                ";
 
-        echo "
-        <tbody>";
-        foreach ($expenseList as $key => $value) {
-        echo "
-        <tr>";
-            echo "
-            <td>".$value->Expense_Name."</td>
-            ";
-            echo "
-            <td>".$value->Expense_Amount."</td>
-            ";
+                echo "
+                <tbody>";
+                foreach ($expenseList as $key => $value) {
+                echo "
+                <tr>";
+                    echo "
+                    <td>".$value->Expense_Name."</td>
+                    ";
+                    echo "
+                    <td>".$value->Expense_Amount."</td>
+                    ";
 
-            echo "
-            <td>".$value->Expense_Category."</td>
-            ";
-            echo "
-            <td>".$value->Expense_Description."</td>
-            ";
-            echo "
-            <td>".$value->Expense_EnterDate."</td>
-            ";
-
-
-            echo "
-            <td><a class=\"btn btn-default btn-sm\" onclick=\"showEditExpense(".$value->ExpenseID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
-            ";
-
-            echo "
-            <td><a  class=\"btn btn-default btn-sm\" href=\"#\" expenseID=\"$value->ExpenseID\" delete=\"expense\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
-            ";
-
-            echo "
-        </tr>
-        ";
+                    echo "
+                    <td>".$value->Expense_Category."</td>
+                    ";
+                    echo "
+                    <td>".$value->Expense_Description."</td>
+                    ";
+                    echo "
+                    <td>".$value->Expense_EnterDate."</td>
+                    ";
 
 
-        }
-        echo "
-        </tbody>
-        ";
-        echo "</table>";
+                    echo "
+                    <td><a class=\"btn btn-default btn-sm\" onclick=\"showEditExpense(".$value->ExpenseID.");\"><i class=\"fa fa-pencil\"></i> </a></td>
+                    ";
 
-        ?>
-        <hr class="tableHR">
-        <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertExpense()"
-               value="Insert Expense">
+                    echo "
+                    <td><a  class=\"btn btn-default btn-sm\" href=\"#\" expenseID=\"$value->ExpenseID\" delete=\"expense\" data-toggle=\"confirmation-singleton\" data-singleton=\"true\" data-original-title=\"\" title=\"\"><i class=\"fa fa-trash-o\"></i> </a ></td>
+                    ";
 
-    </div>
+                    echo "
+                </tr>
+                ";
+
+
+                }
+                echo "
+                </tbody>
+                ";
+                echo "</table>";
+
+                ?>
+                <hr class="tableHR">
+                <input type="button" class="btn btn-default button-collapse btnInsert" onclick="showInsertExpense()"
+                       value="Insert Expense">
+
+            </div>
+
+
+
+
 
 
 
@@ -898,7 +924,50 @@
         spaceBetween: 30,
         loop: true
     });
+
+    $('.Calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month'
+        },
+        defaultDate: '<?php echo date("Y-m-d");?>',
+        navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        events: [
+<?php
+                $i = 0;
+        $calendarIncomeLength = count($calendarIncome);
+        foreach ($calendarIncome as $key=>$value){
+            echo "{";
+            echo "title:'Income:RM ".$value->Total_Income."',";
+            echo "start:'".$value->Income_Day."'";
+            echo "}";
+            if($i!=$calendarIncomeLength-1){ echo ",";}
+            $i++;
+         }
+
+
+    $ii = 0;
+    $calendarExpenseLength = count($calendarExpense);
+    if( $calendarIncomeLength>0 && $calendarExpenseLength>0){ echo ",";}
+    foreach ($calendarExpense as $key=>$value){
+
+
+        echo "{";
+        echo "title:'Expense:RM ".$value->Total_Expense."',";
+        echo "start:'".$value->Expense_Day."'";
+        echo "}";
+        if($ii!=$calendarExpenseLength-1){ echo ",";}
+        $ii++;
+    }
+    ?>
+
+        ]
+    });
 </script>
+
 
 
 </body>

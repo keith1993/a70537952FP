@@ -95,6 +95,26 @@ class UserIncomeModel extends  BaseModel
         return $incomeGroup;
     }
 
+    public function getEveryDayTotalIncomeByUserID($UserID)
+    {
+        $sql = "SELECT Income_EnterDate as Income_Day,sum(Income_Amount)as Total_Income FROM `user_income` where User_ID=:User_ID group by Income_EnterDate ORDER BY `Income_EnterDate` DESC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->execute();
+        $result = $result->fetchAll();
+
+        $IncomeArray = new SplObjectStorage();
+        foreach ($result as $key => $value) {
+
+            $object = new stdClass();
+            $object->Income_Day = $value['Income_Day'];
+            $object->Total_Income = $value['Total_Income'];
+            $IncomeArray->attach($object);
+        }
+
+        return $IncomeArray;
+    }
+
 
     public function getTodayIncomeGroupByUserID($UserID)
     {

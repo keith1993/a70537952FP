@@ -58,6 +58,10 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
         foreach ($LastLastMonthIncome as $k =>$v){$LastLastMonthTotalIncome+=$v;}
 
 
+        $calendarIncome = $incomeModel->getEveryDayTotalIncomeByUserID($jj->ID);
+        $calendarExpense = $expensesModel->getEveryDayTotalExpenseByUserID($jj->ID);
+
+
       require 'Application/Views/overviewDemo.html';
 
 
