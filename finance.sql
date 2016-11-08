@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016-11-06 08:28:24
+-- Generation Time: 2016-11-08 05:53:13
 -- 服务器版本： 5.7.11
 -- PHP Version: 5.6.19
 
@@ -440,6 +440,33 @@ INSERT INTO `paytime_category` (`id`, `paytime_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `target`
+--
+
+CREATE TABLE `target` (
+  `Target_ID` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL,
+  `Target_Name` varchar(100) NOT NULL,
+  `Target_Amount` int(11) NOT NULL,
+  `Target_Days` int(11) NOT NULL,
+  `Target_AchieveDate` date DEFAULT NULL,
+  `Target_EnterDate` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- 转存表中的数据 `target`
+--
+
+INSERT INTO `target` (`Target_ID`, `User_ID`, `Target_Name`, `Target_Amount`, `Target_Days`, `Target_AchieveDate`, `Target_EnterDate`) VALUES
+(26, 7, 'limit 10', 33, 3, '2016-11-09', '2016-11-06'),
+(25, 7, 'new CAR', 2000, 9, '2016-11-15', '2016-11-06'),
+(13, 7, 'SD card reader', 20, 16, '2016-11-16', '2016-11-01'),
+(22, 7, 'dd', 14, 4, '2016-11-09', '2016-11-05'),
+(24, 7, 'new iphone 7', 2000, 18, '2016-11-24', '2016-11-06');
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `user`
 --
 
@@ -472,7 +499,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Email`, `FirstName`, `LastName`, `Password`, `DOB`, `Gender`, `Country`, `Occupation`, `AboutMe`, `RegisterDate`, `LastLoginDate`, `LastLoginIP`, `EmailVerified`, `LastChangePasswordDate`, `LastUpdateDate`, `User_Image`, `Token`, `Token_expTime`, `Verification_Code`) VALUES
 (35, 'a@c', 'a', 'a1', '202cb962ac59075b964b07152d234b70', '2015-01-01', 'Female', 'Anguilla', 'a', '', '2016-10-22 11:10:54', '2016-10-31 17:57:49', '::1', 1, '2016-10-31 17:57:18', '2016-10-28 18:28:23', 'Default/Male.jpg', '1088c1ee4c896e6517e913813034ee4f', '2016-10-23 11:10:54', NULL),
-(36, '1240327852654803@facebook.com', '怡杰', '赖', 'f9081c919595a5e0f794c2a941e93f05', '2016-10-22', 'Male', 'Malaysia', '', 'bb', '2016-10-22 11:11:07', '2016-11-06 16:24:05', '::1', 0, '2016-10-27 15:28:50', '2016-11-01 16:32:14', '1477554877551R28031.jpg', 'aa62f9d8a8e32287ce035b1e28a909a5', '2016-10-23 11:11:07', NULL),
+(36, '1240327852654803@facebook.com', '怡杰', '赖', 'f9081c919595a5e0f794c2a941e93f05', '2016-10-22', 'Male', 'Malaysia', '', 'bb', '2016-10-22 11:11:07', '2016-11-07 14:13:15', '::1', 0, '2016-10-27 15:28:50', '2016-11-01 16:32:14', '1477554877551R28031.jpg', 'aa62f9d8a8e32287ce035b1e28a909a5', '2016-10-23 11:11:07', NULL),
 (40, 'SUSANMILLER64676@testing.com', 'SUSAN', 'MILLER', '202cb962ac59075b964b07152d234b70', '2016-11-05', 'Female', 'Malaysia', 'Student', NULL, '2016-11-05 14:00:06', '2016-11-05 14:00:06', NULL, 0, '2016-11-05 14:00:06', '2016-11-05 14:00:06', 'Default/Female.jpg', '20b17dd55ed7087eaf700df138054c79', '2016-11-06 14:00:06', NULL),
 (41, 'LISATAYLOR64469@testing.com', 'LISA', 'TAYLOR', '202cb962ac59075b964b07152d234b70', '2016-11-05', 'Female', 'Malaysia', 'Student', NULL, '2016-11-05 14:00:06', '2016-11-05 14:00:06', NULL, 0, '2016-11-05 14:00:06', '2016-11-05 14:00:06', 'Default/Female.jpg', 'f341cc4fd0152d52299c38fb3fd461b8', '2016-11-06 14:00:06', NULL),
 (42, 'LAURANELSON14065@testing.com', 'LAURA', 'NELSON', '202cb962ac59075b964b07152d234b70', '2016-11-05', 'Male', 'Malaysia', 'Student', NULL, '2016-11-05 14:00:06', '2016-11-05 14:00:06', NULL, 0, '2016-11-05 14:00:06', '2016-11-05 14:00:06', 'Default/Male.jpg', 'f0c15270a1aa009cbdffa3282ff83bef', '2016-11-06 14:00:06', NULL),
@@ -738,7 +765,8 @@ INSERT INTO `user_expense` (`Expense_ID`, `User_ID`, `Expense_Name`, `Expense_Am
 (934, 59, 'testExpense59', '6000.00', 'Entertainment', 'test', '2016-11-05'),
 (935, 59, 'testExpense59', '2000.00', 'Entertainment', 'test', '2016-11-05'),
 (936, 59, 'testExpense59', '10000.00', 'Entertainment', 'test', '2016-11-05'),
-(937, 36, '2', '10000.00', 'Transport', '', '2016-11-05');
+(937, 36, '2', '10000.00', 'Transport', '', '2016-11-05'),
+(938, 36, '1', '1000.00', 'Food & beverage', '', '2016-11-07');
 
 -- --------------------------------------------------------
 
@@ -920,7 +948,9 @@ INSERT INTO `user_income` (`Income_ID`, `User_ID`, `Income_Name`, `Income_Amount
 (911, 59, 'testIncome59', '9000.00', 'Other', '', '2016-11-05'),
 (912, 59, 'testIncome59', '7000.00', 'Other', '', '2016-11-05'),
 (913, 59, 'testIncome59', '5000.00', 'Other', '', '2016-11-05'),
-(914, 59, 'testIncome59', '7000.00', 'Other', '', '2016-11-05');
+(914, 59, 'testIncome59', '7000.00', 'Other', '', '2016-11-05'),
+(915, 36, '123', '1.00', 'Other', '', '2016-11-07'),
+(916, 36, '123', '0.01', 'Other', '1', '2016-11-07');
 
 --
 -- Indexes for dumped tables
@@ -957,6 +987,12 @@ ALTER TABLE `income_category`
 ALTER TABLE `paytime_category`
   ADD PRIMARY KEY (`id`),
   ADD KEY `paytime_name` (`paytime_name`);
+
+--
+-- Indexes for table `target`
+--
+ALTER TABLE `target`
+  ADD PRIMARY KEY (`Target_ID`);
 
 --
 -- Indexes for table `user`
@@ -1019,6 +1055,11 @@ ALTER TABLE `income_category`
 ALTER TABLE `paytime_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- 使用表AUTO_INCREMENT `target`
+--
+ALTER TABLE `target`
+  MODIFY `Target_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
 -- 使用表AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
@@ -1027,7 +1068,7 @@ ALTER TABLE `user`
 -- 使用表AUTO_INCREMENT `user_expense`
 --
 ALTER TABLE `user_expense`
-  MODIFY `Expense_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=961;
+  MODIFY `Expense_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=939;
 --
 -- 使用表AUTO_INCREMENT `user_fixed_expense`
 --
