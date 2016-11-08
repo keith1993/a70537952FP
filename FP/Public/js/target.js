@@ -42,3 +42,11 @@ function dateDiff(){
 
   document.getElementById("Target_Days").value = answer;
 }
+
+        $('.checkbox').click(function() {
+            if ($('.checkbox:checked').length > 0) {
+                $('#submit1').removeAttr('disabled');
+            } else {
+                $('#submit1').attr('disabled', 'disabled');
+            }
+        });
