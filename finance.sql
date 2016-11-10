@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016-11-08 05:53:13
+-- Generation Time: 2016-11-10 04:59:36
 -- 服务器版本： 5.7.11
 -- PHP Version: 5.6.19
 
@@ -24,6 +24,26 @@ DELIMITER $$
 --
 -- 存储过程
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `fixed_expense_15seconds` ()  NO SQL
+begin
+DECLARE U_ID int;  
+DECLARE s int default 0;
+DECLARE cursor_user CURSOR FOR select ID from user;  
+DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET s=-1; 
+
+OPEN cursor_user;
+fetch  cursor_user into U_ID;  
+while s <> -1 do  
+                           
+                            insert into user_expense (User_ID,Expense_Name,Expense_Amount,Expense_Category,Expense_Description,Expense_EnterDate)
+SELECT 
+User_ID,Expense_Name,Expense_Amount,Expense_Category,Expense_Description,now() from user_fixed_expense where User_ID=U_ID and Expense_PayEvery='15 seconds';
+                           fetch  cursor_user into U_ID;
+                      
+end while;  
+CLOSE cursor_user ;  
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `fixed_expense_day` ()  begin
 DECLARE U_ID int;  
 DECLARE s int default 0;
@@ -57,6 +77,25 @@ while s <> -1 do
                             insert into user_expense (User_ID,Expense_Name,Expense_Amount,Expense_Category,Expense_Description,Expense_EnterDate)
 SELECT 
 User_ID,Expense_Name,Expense_Amount,Expense_Category,Expense_Description,now() from user_fixed_expense where User_ID=U_ID and Expense_PayEvery='Month';
+                           fetch  cursor_user into U_ID;
+                      
+end while;  
+CLOSE cursor_user ;  
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `fixed_income_15seconds` ()  NO SQL
+begin
+DECLARE U_ID int;  
+DECLARE s int default 0;
+DECLARE cursor_user CURSOR FOR select ID from user;  
+DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET s=-1; 
+
+OPEN cursor_user;
+fetch  cursor_user into U_ID;  
+while s <> -1 do  
+                           
+                            insert into user_income (User_ID,	Income_Name,Income_Amount,Income_Category,Income_Description,	Income_EnterDate)SELECT 
+User_ID,Income_Name,Income_Amount,'Fixed Income',Income_Description,now() from user_fixed_income where User_ID=U_ID and Income_PayEvery='15 seconds';
                            fetch  cursor_user into U_ID;
                       
 end while;  
@@ -434,6 +473,7 @@ CREATE TABLE `paytime_category` (
 --
 
 INSERT INTO `paytime_category` (`id`, `paytime_name`) VALUES
+(3, '15 seconds'),
 (1, 'Day'),
 (2, 'Month');
 
@@ -498,8 +538,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Email`, `FirstName`, `LastName`, `Password`, `DOB`, `Gender`, `Country`, `Occupation`, `AboutMe`, `RegisterDate`, `LastLoginDate`, `LastLoginIP`, `EmailVerified`, `LastChangePasswordDate`, `LastUpdateDate`, `User_Image`, `Token`, `Token_expTime`, `Verification_Code`) VALUES
-(35, 'a@c', 'a', 'a1', '202cb962ac59075b964b07152d234b70', '2015-01-01', 'Female', 'Anguilla', 'a', '', '2016-10-22 11:10:54', '2016-10-31 17:57:49', '::1', 1, '2016-10-31 17:57:18', '2016-10-28 18:28:23', 'Default/Male.jpg', '1088c1ee4c896e6517e913813034ee4f', '2016-10-23 11:10:54', NULL),
-(36, '1240327852654803@facebook.com', '怡杰', '赖', 'f9081c919595a5e0f794c2a941e93f05', '2016-10-22', 'Male', 'Malaysia', '', 'bb', '2016-10-22 11:11:07', '2016-11-07 14:13:15', '::1', 0, '2016-10-27 15:28:50', '2016-11-01 16:32:14', '1477554877551R28031.jpg', 'aa62f9d8a8e32287ce035b1e28a909a5', '2016-10-23 11:11:07', NULL),
+(35, 'a@c', 'a', 'a1', '202cb962ac59075b964b07152d234b70', '2015-01-01', 'Female', 'Anguilla', 'a', '', '2016-10-22 11:10:54', '2016-11-09 11:38:23', '::1', 1, '2016-10-31 17:57:18', '2016-10-28 18:28:23', 'Default/Male.jpg', '1088c1ee4c896e6517e913813034ee4f', '2016-10-23 11:10:54', NULL),
+(36, '1240327852654803@facebook.com', '怡杰', '赖', 'f9081c919595a5e0f794c2a941e93f05', '2016-10-22', 'Male', 'Malaysia', '', 'bb', '2016-10-22 11:11:07', '2016-11-10 12:56:38', '::1', 0, '2016-10-27 15:28:50', '2016-11-01 16:32:14', '1477554877551R28031.jpg', 'aa62f9d8a8e32287ce035b1e28a909a5', '2016-10-23 11:11:07', NULL),
 (40, 'SUSANMILLER64676@testing.com', 'SUSAN', 'MILLER', '202cb962ac59075b964b07152d234b70', '2016-11-05', 'Female', 'Malaysia', 'Student', NULL, '2016-11-05 14:00:06', '2016-11-05 14:00:06', NULL, 0, '2016-11-05 14:00:06', '2016-11-05 14:00:06', 'Default/Female.jpg', '20b17dd55ed7087eaf700df138054c79', '2016-11-06 14:00:06', NULL),
 (41, 'LISATAYLOR64469@testing.com', 'LISA', 'TAYLOR', '202cb962ac59075b964b07152d234b70', '2016-11-05', 'Female', 'Malaysia', 'Student', NULL, '2016-11-05 14:00:06', '2016-11-05 14:00:06', NULL, 0, '2016-11-05 14:00:06', '2016-11-05 14:00:06', 'Default/Female.jpg', 'f341cc4fd0152d52299c38fb3fd461b8', '2016-11-06 14:00:06', NULL),
 (42, 'LAURANELSON14065@testing.com', 'LAURA', 'NELSON', '202cb962ac59075b964b07152d234b70', '2016-11-05', 'Male', 'Malaysia', 'Student', NULL, '2016-11-05 14:00:06', '2016-11-05 14:00:06', NULL, 0, '2016-11-05 14:00:06', '2016-11-05 14:00:06', 'Default/Male.jpg', 'f0c15270a1aa009cbdffa3282ff83bef', '2016-11-06 14:00:06', NULL),
@@ -766,7 +806,9 @@ INSERT INTO `user_expense` (`Expense_ID`, `User_ID`, `Expense_Name`, `Expense_Am
 (935, 59, 'testExpense59', '2000.00', 'Entertainment', 'test', '2016-11-05'),
 (936, 59, 'testExpense59', '10000.00', 'Entertainment', 'test', '2016-11-05'),
 (937, 36, '2', '10000.00', 'Transport', '', '2016-11-05'),
-(938, 36, '1', '1000.00', 'Food & beverage', '', '2016-11-07');
+(938, 36, '1', '1000.00', 'Food & beverage', '', '2016-11-07'),
+(939, 36, '555', '100.00', 'Fixed expenses', '', '2016-11-10'),
+(940, 36, '555', '100.00', 'Fixed expenses', '', '2016-11-10');
 
 -- --------------------------------------------------------
 
@@ -841,7 +883,7 @@ CREATE TABLE `user_income` (
 INSERT INTO `user_income` (`Income_ID`, `User_ID`, `Income_Name`, `Income_Amount`, `Income_Category`, `Income_Description`, `Income_EnterDate`) VALUES
 (4, 36, '1', '2000.00', 'Fixed Income', '', '2016-10-29'),
 (6, 36, '2', '2000.00', 'Other', '', '2016-10-29'),
-(7, 36, '253', '11000.00', 'Other', '1', '2016-10-30'),
+(7, 36, '253', '11000.00', 'Fixed Income', '1', '2016-10-30'),
 (8, 36, '2', '2200.00', 'Other', '', '2016-09-29'),
 (9, 36, '253', '8000.00', 'Fixed Income', '1', '2016-09-30'),
 (10, 36, '2', '3300.00', 'Other', '', '2016-08-29'),
@@ -950,7 +992,9 @@ INSERT INTO `user_income` (`Income_ID`, `User_ID`, `Income_Name`, `Income_Amount
 (913, 59, 'testIncome59', '5000.00', 'Other', '', '2016-11-05'),
 (914, 59, 'testIncome59', '7000.00', 'Other', '', '2016-11-05'),
 (915, 36, '123', '1.00', 'Other', '', '2016-11-07'),
-(916, 36, '123', '0.01', 'Other', '1', '2016-11-07');
+(916, 36, '123', '0.01', 'Other', '1', '2016-11-07'),
+(917, 36, '123', '1.00', 'Other', '', '2016-11-10'),
+(918, 36, '123', '2.00', 'Fixed Income', '', '2016-11-10');
 
 --
 -- Indexes for dumped tables
@@ -1053,7 +1097,7 @@ ALTER TABLE `income_category`
 -- 使用表AUTO_INCREMENT `paytime_category`
 --
 ALTER TABLE `paytime_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用表AUTO_INCREMENT `target`
 --
@@ -1068,12 +1112,12 @@ ALTER TABLE `user`
 -- 使用表AUTO_INCREMENT `user_expense`
 --
 ALTER TABLE `user_expense`
-  MODIFY `Expense_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=939;
+  MODIFY `Expense_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=941;
 --
 -- 使用表AUTO_INCREMENT `user_fixed_expense`
 --
 ALTER TABLE `user_fixed_expense`
-  MODIFY `Expense_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Expense_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- 使用表AUTO_INCREMENT `user_fixed_income`
 --
@@ -1083,7 +1127,7 @@ ALTER TABLE `user_fixed_income`
 -- 使用表AUTO_INCREMENT `user_income`
 --
 ALTER TABLE `user_income`
-  MODIFY `Income_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=917;
+  MODIFY `Income_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=919;
 --
 -- 限制导出的表
 --
@@ -1127,6 +1171,10 @@ CREATE DEFINER=`root`@`localhost` EVENT `event_fixedExpense_month` ON SCHEDULE E
 CREATE DEFINER=`root`@`localhost` EVENT `event_fixedIncome_month` ON SCHEDULE EVERY 1 MONTH STARTS '2016-11-06 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call fixed_income_month()$$
 
 CREATE DEFINER=`root`@`localhost` EVENT `event_fixedIncome_day` ON SCHEDULE EVERY 1 DAY STARTS '2016-11-06 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call fixed_income_day()$$
+
+CREATE DEFINER=`root`@`localhost` EVENT `event_fixedIncome_15seconds` ON SCHEDULE EVERY 15 SECOND STARTS '2016-11-10 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO CALL `fixed_income_15seconds`()$$
+
+CREATE DEFINER=`root`@`localhost` EVENT `event_fixedExpense_15seconds` ON SCHEDULE EVERY 15 SECOND STARTS '2016-11-10 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO CALL `fixed_expense_15seconds`()$$
 
 DELIMITER ;
 
