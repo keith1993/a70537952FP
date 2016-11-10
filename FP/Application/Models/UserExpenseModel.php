@@ -132,6 +132,24 @@ class UserExpenseModel extends BaseModel
         return $expenseGroup;
     }
 
+    public function getExpenseGroupByUserIDAndDate($UserID,$date)
+    {
+        $sql = "SELECT Expense_Category,SUM(Expense_Amount) as Expense_Amount FROM `user_expense` where User_ID=:User_ID and Expense_EnterDate=:date GROUP by Expense_Category ORDER BY Expense_Category ASC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->bindValue(":date", $date);
+        $result->execute();
+        $result = $result->fetchAll();
+
+        $expenseGroup = array();
+        foreach ($result as $key => $value) {
+
+            $expenseGroup[$value['Expense_Category']]=$value['Expense_Amount'];
+        }
+
+        return $expenseGroup;
+    }
+
     public function getWeeklyExpenseGroupByUserID($UserID)
     {
         $sql = "SELECT Expense_Category,SUM(Expense_Amount) as Expense_Amount FROM `user_expense` where User_ID=:User_ID and WEEK(Expense_EnterDate)=WEEK(CURDATE()) GROUP by Expense_Category ORDER BY Expense_Category ASC";
