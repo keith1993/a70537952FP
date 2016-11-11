@@ -134,6 +134,25 @@ class UserIncomeModel extends  BaseModel
         return $IncomeGroup;
     }
 
+    public function getIncomeGroupByUserIDAndDate($UserID,$date)
+    {
+        $sql = "SELECT Income_Category,SUM(Income_Amount) as Income_Amount FROM `user_income` where User_ID=:User_ID and Income_EnterDate=:date GROUP by Income_Category ORDER BY Income_Category ASC";
+        $result = self::$conn->prepare($sql);
+        $result->bindValue(":User_ID", $UserID);
+        $result->bindValue(":date", $date);
+        $result->execute();
+        $result = $result->fetchAll();
+
+        $IncomeGroup = array();
+        foreach ($result as $key => $value) {
+
+            $IncomeGroup[$value['Income_Category']] = $value['Income_Amount'];
+        }
+
+
+        return $IncomeGroup;
+    }
+
     public function getWeeklyIncomeGroupByUserID($UserID)
     {
         $sql = "SELECT Income_Category,SUM(Income_Amount) as Income_Amount FROM `user_income` where User_ID=:User_ID and WEEK(Income_EnterDate)=WEEK(CURDATE()) GROUP by Income_Category ORDER BY Income_Category ASC";
@@ -277,3 +296,4 @@ as Total_Income_Amount FROM `user_income` where MONTH(Income_EnterDate)=MONTH(CU
     return $object;
 }
 }
+
