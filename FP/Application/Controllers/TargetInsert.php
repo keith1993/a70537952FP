@@ -29,6 +29,8 @@ $Target_Name = $Target_Amount = $Target_Days = $Target_AchieveDate = "";
 if (empty($_POST["Target_Name"])){
     $TargetNameErr = "Target name is required";
     echo "Target name is required";
+    echo "<br>";
+    error_reporting(0);
   }else{
     $Target_Name = test_input($_POST["Target_Name"]);
   }
@@ -36,19 +38,33 @@ if (empty($_POST["Target_Name"])){
 if (empty($_POST["Target_Amount"])) {
     $TargetAmountErr = "Target Amount is required";
     echo "Target Amount is required";
-  } else {
+    echo "<br>";
+    error_reporting(0);
+  }elseif(!is_numeric($_POST["Target_Amount"])) {
+    echo "Data entered was not numeric";
+    echo "<br>";
+    $msg = '<span class="error"> Data entered was not numeric</span>';
+    error_reporting(0);
+  }
+     else {
     $Target_Amount = test_input($_POST["Target_Amount"]);
   }
 
   if (empty($_POST["Target_AchieveDate"])) {
       $TargetDaysErr = "Target Achieve Days is required";
       echo "Target Achieve Days is required";
+      echo "<br>";
+      error_reporting(0);
+    }elseif ($_POST["Target_AchieveDate"] < date("Y-m-d")) {
+      echo "Please insert a date exceed Today's Date";
+      echo "<br>";
+      error_reporting(0);
     } else {
 
       $now = time(); // or your date as well
       $your_date = strtotime($_POST["Target_AchieveDate"]);
-      $datediff = $now - $your_date;
-      $answer = (($datediff / (60 * 60 * 24))*-1);
+      $datediff = $your_date - $now;
+      $answer = ($datediff / (60 * 60 * 24));
 
       $Target_AchieveDate = test_input($_POST["Target_AchieveDate"]);
       $Target_Days = test_input($answer);
@@ -100,6 +116,9 @@ $jj = $a->addTarget("007",$Target_Name,$Target_Amount,$Target_Days);
   echo "<br> You will need to save RM ";
   echo number_format($TargetPerDay,2);
   echo " per day";
+  echo "<br>";
+  echo "<br>";
+  echo "<a href=\"../Views/target.php\">Back</a>";
 
 
 

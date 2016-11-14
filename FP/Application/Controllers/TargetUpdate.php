@@ -65,8 +65,8 @@ if (isset($_POST['update'])) {
 
    if($jj instanceof UserTargetObject){
 
-       echo "Update Target Success";
-      }else{
+        echo "Update Target Success";
+        }else{
           echo "Update Target Success";
           //echo "Error!". mysql_error();
       }
@@ -87,5 +87,8 @@ if (isset($_POST['update'])) {
     echo "<br> You will need to save RM ";
     echo number_format($TargetPerDay,2);
     echo " per day";
+    echo "<br>";
+    echo "<br>";
+    echo "<a href=\"../Views/targetDisplay.php\">Back</a>";
 
     }

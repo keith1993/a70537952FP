@@ -1,6 +1,51 @@
+<?php
+spl_autoload_register(function ($class) {
+
+
+    if (strpos($class, "Base") === 0) {
+        require '../Framework/' . $class . '.php';
+    } else if (strpos($class, "Model")) {
+        require '../Models/' . $class . '.php';
+    } else if (strpos($class, "Object")) {
+        require '../Objects/' . $class . '.php';
+    }else{
+        require "../../Helper/".$class.".php";
+    }
+
+});
+session_start();
+if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["password"])) {
+
+    $userModel = new UserModel();
+    $jj = $userModel->Login($_SESSION["email"], $_SESSION["password"], $_SERVER["REMOTE_ADDR"]);
+
+    if ($jj instanceof UserObject) {
+
+
+
+
+
+    } else {
+        echo "Error!" . mysql_error();
+        session_unset();
+        session_destroy();
+        header("Location: ../../index.php");
+
+    }
+
+// echo "已登录";
+} else {
+    session_unset();
+    session_destroy();
+    header("Location: ../../index.php");
+    // echo "未登录";
+    //echo "请重新登录";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
 
@@ -120,146 +165,165 @@
     <!--/.Navbar-->
 
 </header>
-<div id="wrapper" class="wrapper transition">
-  <div id="popup1" class="popup-position">
-      <div id="popup-wrapper">
-        <div id="popup-container">
+<div id="wrapper" class="wrapper transition" style="min-height:1000px;">
+<div>
+<div>
+<div id="popup1" class="popup-position">
+    <div id="popup-wrapper">
+      <div id="popup-container">
 
-          <p><span class="error">* required field.</span></p>
+    <!--../Controllers/TargetInsert.php-->
+    <form action="../Controllers/TargetInsert.php" method="post">
+  <table>
+    <tr>
+      <td style="color: black;">
+        Target Name:
+      </td>
+      <td>
+        <input type="text" name="Target_Name">
+      </td>
+    </tr>
+    <tr>
+      <td style="color: black;">
+        Target Amount:
+      </td>
+      <td>
+        <input type="text" name="Target_Amount">
+      </td>
+    </tr>
+    <tr>
+      <td style="color: black;">
+        Target Achieve Date:
+      </td>
+      <td>
+        <input type="date" name="Target_AchieveDate" id="Target_AchieveDate" onfocus="dateDiff()">
+      </td>
+    </tr>
+          <!-- no use for showing textbox
+          <tr>
+            <td>
+              Target Days:
+            </td>
+            <td>
+              <input type="text" name="Target_Days" id="Target_Days">
+            </td>
+          </tr>
+        -->
+        </table>
+          <input type="submit">
+          </form>
+          <a  href="javascript:void(0)"onclick="toggle_visibility('popup1');">Close</a>
 
-      <!--../Controllers/TargetInsert.php-->
-            <form action="../Controllers/TargetInsert.php" method="post">
-          <table>
-            <tr>
-              <td>
-                Target Name:
-              </td>
-              <td>
-                <input type="text" name="Target_Name">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Target Amount:
-              </td>
-              <td>
-                <input type="text" name="Target_Amount">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Target Achieve Date:
-              </td>
-              <td>
-                <input type="date" name="Target_AchieveDate" id="Target_AchieveDate" onfocus="dateDiff()">
-              </td>
-            </tr>
-            <!-- no use for showing textbox
-            <tr>
-              <td>
-                Target Days:
-              </td>
-              <td>
-                <input type="text" name="Target_Days" id="Target_Days">
-              </td>
-            </tr>
-          -->
-          </table>
-            <input type="submit">
-            </form>
-            <a href="javascript:void(0)"onclick="toggle_visibility('popup1');">Close</a>
-
-        </div><!--popup_container ends-->
-      </div><!--popup-wrapper ends-->
-  </div><!--popup1 ends-->
+      </div><!--popup_container ends-->
+    </div><!--popup-wrapper ends-->
+</div><!--popup1 ends-->
 
 
-  <!--Progress Bar new-->
-  <style type="text/css">
-    .container{
-      text-align: center;
-    }
-    .outter{
-      height:25px;
-      width:500px;
-      border:solid 1px #000;
-    }
-    .inner{
-      height:25px;
-      border-right:solid 1px #000;
-      background-color: lightblue;
+<!--Progress Bar new-->
+<style type="text/css">
+.container{
+  margin: 0 auto;
+  width: 65%;
+  text-align: center;
+}
+.outter{
+  height:25px;
+  width:100%;
+  border:solid 1px #000;
+}
+.inner{
+  height:25px;
+  border-right:solid 1px #000;
+  background-color: lightblue;
+}
+</style>
+<div class="container">
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Finance";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT Target_EnterDate, Target_Days, Target_Name FROM target ORDER BY Target_AchieveDate LIMIT 5";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+// output data of each row
+if (mysqli_num_rows($result) >= 5) {
+  ?>
+  <style>
+    #AddTargetLink{
+      Display:none;
     }
   </style>
-  <div class="container">
-
   <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "Finance";
-
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-  // Check connection
-  if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-  }
-
-  $sql = "SELECT Target_EnterDate, Target_Days, Target_Name FROM target";
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-  // output data of each row
+}
   while($row = mysqli_fetch_assoc($result)) {
-      echo $row["Target_Name"];
-      /*
+    echo $row["Target_Name"];
+    /*
+    echo "<br>";
+    echo "Target_EnterDate: " . $row["Target_EnterDate"];
+    echo "</br>";
+    echo " Target_Days: " . $row["Target_Days"]. "<br>";
+    echo "Today: ";
+    echo date("Y-m-d");
+    */
+    echo "<br>";
+    $Target_EnterDate = strtotime($row["Target_EnterDate"]);
+    $today = time();
+    $datediff = $today - $Target_EnterDate;
+    $answer = round(($datediff / (60 * 60 * 24)),0);
+    $Target_Days = $row["Target_Days"];
+    $percent = round(($answer/$Target_Days) * 100,1);
+    if ($percent >= 100) {
+      echo "<p style=\" display:inline;\">";
+      echo "Congratulation! ";
       echo "<br>";
-      echo "Target_EnterDate: " . $row["Target_EnterDate"];
-      echo "</br>";
-      echo " Target_Days: " . $row["Target_Days"]. "<br>";
-      echo "Today: ";
-      echo date("Y-m-d");
-      */
-      echo "<br>";
-      $Target_EnterDate = strtotime($row["Target_EnterDate"]);
-      $today = time();
-      $datediff = $today - $Target_EnterDate;
-      $answer = round(($datediff / (60 * 60 * 24)),1);
-      $Target_Days = $row["Target_Days"];
-      $percent = round(($answer/$Target_Days) * 100,1);
+      echo "Your ";
+      echo $Target_Days;
+      echo " Days Target has reached!";
+      echo "</p>";
+      echo "<div class=\"outter\">";
+      echo "<div class=\"inner\"  style=\"width:100%; background-color: green;\"";
+    } else {
       echo "$answer Days Left";
       echo "<br>";
-      if ($percent >= 100) {
-        echo "Your Target Date has reached";
-        echo "<div class=\"outter\">";
-        echo "<div class=\"inner\"  style=\"width:100; background-color: red;\"";
-      } else {
-        echo "Percentage: $percent%";
-        echo "<br>";
-        echo "<div class=\"outter\">";
-        //echo "<div class=\"inner\">" ;
-        echo "<div class=\"inner\"  style=\"width:";
-        echo $percent;
-        echo "%";
-        echo ";\">";
-      }
-
-      echo "</div>";
-      echo "</div>";
+      echo "Percentage: $percent%";
       echo "<br>";
+      echo "<div class=\"outter\">";
+      echo "<div class=\"inner\"  style=\"width:";
+      echo $percent;
+      echo "%";
+      echo ";\">";
+    }
 
-  }
-  } else {
-  echo "0 results";
-  }
+    echo "</div>";
+    echo "</div>";
 
-  mysqli_close($conn);
-  ?>
-  <!--Progress Bar new ends-->
+    echo "<br>";
 
-    <p><a href="javascript:void(0)" onclick="toggle_visibility('popup1');">Add Target</a></p>
 
-  </div>
+}
+} else {
+echo "0 results";
+}
+
+mysqli_close($conn);
+?>
+<!--Progress Bar new ends-->
+
+  <div id="AddTargetLink" style="border:10px;"><a href="javascript:void(0)" onclick="toggle_visibility('popup1');">Add Target</a></div>
+  <a href="TargetDisplay.php">See Details</a>
+</div>
+
 </div>
 
 </body>
