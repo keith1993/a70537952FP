@@ -21,7 +21,7 @@ function sendClick(){
             },
             function (data, status) {
 
-                if (data == "Email exist") {
+                if (data == "Email already exists") {
 
                     $("#enterRecoveryCode").show();
                     $("#send").prop("disabled", true);
@@ -40,7 +40,7 @@ function sendClick(){
 
 
 
-                } else if (data == "Email no exist") {
+                } else if (data == "Email available to register") {
 
                     $("#EmailInvalid").show();
 

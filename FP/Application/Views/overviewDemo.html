@@ -203,7 +203,7 @@
                         </div>
 
                         <div id="CurrentChart" class="col-md-8 col-md-offset-2 col-lg-4">
-
+                            <canvas class="myChart"  width="700" height="600"></canvas>
 
                             <script>
 
@@ -256,11 +256,9 @@
 
 
 
-                                $('#CurrentChart').empty();
-                                $('#CurrentChart').append('<canvas class="myChart"  width="700" height="600"></canvas>');
-                                chart = new Chart($(".myChart").get(0).getContext("2d")).Radar(data, options);
 
-
+                                new Chart($(".myChart").get(0).getContext("2d")).Radar(data, options);
+                                new Chart($(".myChart").get(1).getContext("2d")).Radar(data, options);
 
 
 
@@ -916,6 +914,7 @@
 
 
 <script>
+
     var swiper = new Swiper('.swiper-container', {
 
         nextButton: '.swiper-button-next',
