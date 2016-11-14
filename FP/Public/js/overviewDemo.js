@@ -132,6 +132,7 @@ jQuery(function ($) {
     $('.tableIncome').footable();
 
     $('.tableExpense').footable();
+
     /************************************/
     $('[delete=expense]').confirmation({
         rootSelector: '[data-toggle=confirmation-singleton]',
@@ -154,6 +155,7 @@ jQuery(function ($) {
     }else{
         changeStyle(Cookies.get('style'));
     }
+
 
 })
 
