@@ -45,8 +45,8 @@ function  changeStyle(colour) {
 
     switch (colour){
         case "red":
-            $(".wrapper").css("background-image", "url('https://newevolutiondesigns.com/images/freebies/anime-wallpaper-7.jpg')");
-
+            //$(".wrapper").css("background-image", "url('https://newevolutiondesigns.com/images/freebies/anime-wallpaper-7.jpg')");
+            $(".wrapper").css("background-image", "url('http://digitalart.io/wp-content/uploads/2014/01/Umbrella-Girl-In-The-Rain-Wallpaper.jpg')");
             break;
         case "purple":
             $(".wrapper").css("background-image", "url('https://s-media-cache-ak0.pinimg.com/originals/23/1c/52/231c5206fba3f704613c27614d867c16.jpg')");

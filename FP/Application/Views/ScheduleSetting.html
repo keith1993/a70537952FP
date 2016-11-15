@@ -74,6 +74,7 @@
                         class="fa fa-home"></i>Home</i></a></li>
                 <li><a href="UserProfile.php" collapsible-header waves-effect"><i
                         class="fa fa-user"></i>Profile</i></a></li>
+                <li><a href="../Views/target.php" class="collapsible-header waves-effect"><i class="fa fa-check-square-o"></i>Target</i></a></li>
                 <li><a href="Ranking.php" class="collapsible-header waves-effect"><i class="fa fa-table"></i>Ranking</i></a></li>
                 <li><a href="ScheduleSetting.php" class="collapsible-header waves-effect"><i class="fa fa-gear"></i>Schedule Setting</i></a></li>
                 <!-- <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
@@ -122,7 +123,7 @@
     <!--/.Navbar-->
 
 </header>
-<div id="wrapper" class="wrapper transition" style="height: 100vh;">
+<div id="wrapper" class="wrapper transition">
     <div class="IncomeContent transition">
         <p class="title">Fixed Income Detail</p>
         <?php
@@ -310,7 +311,7 @@
             <div class="form-group col-xs-12 col-sm-12">
                 <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
                 <div class="col-xs-12 col-sm-12 col-md-2">
-                    <input type="number" name="incomeAmount" value="0.00"  pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number"step="0.01"required></br>
+                    <input type="number" name="incomeAmount" value="0.00"  min="0.01" pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number"step="0.01"required></br>
                 </div>
             </div>
 
@@ -358,7 +359,7 @@
                     <div class="form-group col-xs-12 col-sm-12">
                         <label for="ExpenseAmount" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Amount:</label>
                         <div class="col-xs-12 col-sm-12 col-md-2">
-                        <input class="form-control" type="number" name="expenseAmount" value="0.00" pattern="^[0-9]+(\.[0-9]{1,2})?$" title="Only Allow Number" step="0.01"required>
+                        <input class="form-control" type="number" name="expenseAmount" value="0.00"  min="0.01"  pattern="^[0-9]+(\.[0-9]{1,2})?$" title="Only Allow Number" step="0.01"required>
                         </div>
                     </div>
                     <div class="form-group col-xs-12 col-sm-12">
@@ -432,7 +433,7 @@
                     <div class="form-group col-xs-12 col-sm-12">
                         <label for="Income Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Income Amount</label>
                         <div class="col-xs-12 col-sm-12 col-md-6">
-                            <input type="number" name="IncomeAmount" class="form-control" id="IncomeAmount" value="0.00" pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
+                            <input type="number" name="IncomeAmount" class="form-control" id="IncomeAmount"  min="0.01"  value="0.00" pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
                         </div>
                     </div>
                     <div class="form-group col-xs-12 col-sm-12">
@@ -492,7 +493,7 @@
                 <div class="form-group col-xs-12 col-sm-12">
                     <label for="Expense Amount" class="col-xs-12  col-sm-12 col-md-5 control-label">Expense Amount</label>
                     <div class="col-xs-12 col-sm-12 col-md-6">
-                        <input type="number" name="ExpenseAmount" class="form-control" id="ExpenseAmount" value="0.00"   pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
+                        <input type="number" name="ExpenseAmount" class="form-control" id="ExpenseAmount" value="0.00"  min="0.01"   pattern="[0-9]+([\.,][0-9]+)?" title="Only Allow Number" step="0.01" required>
                     </div>
                 </div>
 

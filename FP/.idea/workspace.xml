@@ -24,13 +24,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ScheduleSetting.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Views/ScheduleSetting.html">
+      <file leaf-file-name="overViewDemo.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+            <state relative-caret-position="753">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Register.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/Register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="899">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1478054705147" expanded="true" signature="1208:2986" ph="..." />
+                <marker date="1478054705147" expanded="true" signature="1219:1465" ph="..." />
+                <marker date="1478054705147" expanded="false" signature="1485:1645" ph="..." />
+                <marker date="1478054705147" expanded="true" signature="1647:2978" ph="..." />
+                <marker date="1478054705147" expanded="false" signature="1720:1900" ph="..." />
+                <marker date="1478054705147" expanded="true" signature="1902:2965" ph="..." />
+                <marker date="1478054705147" expanded="true" signature="1940:2945" ph="..." />
+                <marker date="1478054705147" expanded="true" signature="2001:2829" ph="..." />
+                <marker date="1478054705147" expanded="false" signature="2035:2165" ph="..." />
+                <marker date="1478054705147" expanded="true" signature="2216:2806" ph="..." />
+                <marker date="1478054705147" expanded="false" signature="2287:2470" ph="..." />
+                <marker date="1478054705147" expanded="false" signature="2532:2619" ph="..." />
+                <marker date="1478054705147" expanded="false" signature="2731:2761" ph="..." />
+                <marker date="1478054705147" expanded="true" signature="2901:2925" ph="..." />
               </folding>
             </state>
           </provider>
@@ -55,9 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Public/css/MDB PRO 4.2.0.css" />
-        <option value="$PROJECT_DIR$/Application/Controllers/AJAXDeleteExpense.php" />
-        <option value="$PROJECT_DIR$/Helper/Bootstrap-Confirmation-master/example/index.html" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXDeleteIncome.php" />
         <option value="$PROJECT_DIR$/aa.html" />
         <option value="$PROJECT_DIR$/Public/js/register.js" />
@@ -84,7 +104,6 @@
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXGetFixedIncomeByID.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXDeleteFixedExpense.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXDeleteFixedIncome.php" />
-        <option value="$PROJECT_DIR$/Public/css/scheduleSetting.css" />
         <option value="$PROJECT_DIR$/Application/Models/UserFixedExpenseModel.php" />
         <option value="$PROJECT_DIR$/Application/Models/UserFixedIncomeModel.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/UpdateFixedIncome.php" />
@@ -92,20 +111,24 @@
         <option value="$PROJECT_DIR$/Public/js/scheduleSetting.js" />
         <option value="$PROJECT_DIR$/Application/Controllers/InsertFixedIncome.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/InsertFixedExpenses.php" />
-        <option value="$PROJECT_DIR$/Public/js/header.js" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/Public/css/overViewDemo.css" />
         <option value="$PROJECT_DIR$/Application/Models/UserIncomeModel.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXGetIncomeByUserIDAndDate.php" />
         <option value="$PROJECT_DIR$/Application/Models/UserExpenseModel.php" />
         <option value="$PROJECT_DIR$/Application/Controllers/AJAXGetExpenseByUserIDAndDate.php" />
-        <option value="$PROJECT_DIR$/Application/Views/Ranking.html" />
         <option value="$PROJECT_DIR$/Application/Views/user.html" />
         <option value="$PROJECT_DIR$/Application/Views/forgotPassword.html" />
         <option value="$PROJECT_DIR$/Public/js/forgotPassword.js" />
         <option value="$PROJECT_DIR$/Public/js/overviewDemo.js" />
-        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
+        <option value="$PROJECT_DIR$/Application/Views/Ranking.html" />
+        <option value="$PROJECT_DIR$/Public/css/scheduleSetting.css" />
         <option value="$PROJECT_DIR$/Application/Views/ScheduleSetting.html" />
+        <option value="$PROJECT_DIR$/Application/Views/overviewDemo.html" />
+        <option value="$PROJECT_DIR$/Public/js/header.js" />
+        <option value="$PROJECT_DIR$/Application/Views/target.php" />
+        <option value="$PROJECT_DIR$/Application/Views/targetDisplay.php" />
+        <option value="$PROJECT_DIR$/Public/css/overViewDemo.css" />
+        <option value="$PROJECT_DIR$/Application/Controllers/AJAXForgotPassword.php" />
       </list>
     </option>
   </component>
@@ -147,8 +170,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -180,8 +201,22 @@
               <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Views" />
+              <option name="myItemId" value="FP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FP" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Framework" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -198,9 +233,15 @@
               <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,15 +253,15 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Desktop\GitHub\a70537952FP\FP\Application\Controllers" />
-      <recent name="C:\Users\Admin\Desktop\GitHub\a70537952FP\FP\Application\Objects" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\GitHub\a70537952FP\FP\Application\Views" />
       <recent name="C:\Users\Admin\Desktop\FP" />
       <recent name="C:\Users\Admin\Desktop\FP\Controller" />
       <recent name="C:\Users\Admin\Desktop\FP\Model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\GitHub\a70537952FP\FP\Application\Controllers" />
+      <recent name="C:\Users\Admin\Desktop\GitHub\a70537952FP\FP\Application\Objects" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.a.php">
@@ -348,11 +389,12 @@
       <workItem from="1478749113516" duration="4744000" />
       <workItem from="1479013161423" duration="2012000" />
       <workItem from="1479105185117" duration="2997000" />
+      <workItem from="1479177914398" duration="3104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345962000" />
+    <option name="totallyTimeSpent" value="349066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -411,65 +453,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="31" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Views/changepassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/resetPassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdateProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="42" column="63" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdateIncome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXGetExpenseByID.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/InsertExpenses.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/ChangePasswordPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controllers/UpdateUserImage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -520,24 +508,6 @@
         <state relative-caret-position="494">
           <caret line="31" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/ranking.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2451">
-          <caret line="241" column="37" selection-start-line="241" selection-start-column="37" selection-end-line="241" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <element signature="e#3969#7137#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1503">
-          <caret line="439" column="1" selection-start-line="439" selection-start-column="1" selection-end-line="439" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -673,24 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <element signature="e#3746#3786#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/scheduleSetting.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1940">
-          <caret line="388" column="1" selection-start-line="388" selection-start-column="1" selection-end-line="388" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXGetIncomeByID.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -776,34 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7448">
-          <caret line="392" column="26" selection-start-line="392" selection-start-column="26" selection-end-line="392" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/css/ranking.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7695">
           <caret line="405" column="1" selection-start-line="405" selection-start-column="1" selection-end-line="405" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Ranking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3192">
-          <caret line="708" column="37" selection-start-line="708" selection-start-column="37" selection-end-line="708" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -811,17 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1558">
           <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="61" column="24" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,9 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <marker date="1479105521255" expanded="true" signature="1537:1550" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,42 +764,207 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="222" column="51" selection-start-line="222" selection-start-column="51" selection-end-line="222" selection-end-column="51" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#45372#45537#0" expanded="false" />
-            <marker date="1479108601532" expanded="true" signature="46025:46098" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/js/overviewDemo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding>
-            <marker date="1479108377673" expanded="true" signature="15600:15621" ph="..." />
-            <marker date="1479108377673" expanded="true" signature="16212:16223" ph="..." />
-            <marker date="1479108377673" expanded="true" signature="16297:16359" ph="..." />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/FacebookLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1121">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="323" column="0" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/ScheduleSetting.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+        <state relative-caret-position="681">
+          <caret line="474" column="71" selection-start-line="474" selection-start-column="71" selection-end-line="474" selection-end-column="71" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/scheduleSetting.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="394" column="0" selection-start-line="394" selection-start-column="0" selection-end-line="394" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="87" column="137" selection-start-line="87" selection-start-column="137" selection-end-line="87" selection-end-column="137" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/ranking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="59" column="148" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="148" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+            <element signature="e#3969#7137#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+            <element signature="e#3896#3936#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/overviewDemo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="784" column="54" selection-start-line="784" selection-start-column="54" selection-end-line="784" selection-end-column="54" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#45580#45745#0" expanded="false" />
+            <marker date="1479181008108" expanded="true" signature="46233:46306" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/target.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="159" column="66" selection-start-line="158" selection-start-column="19" selection-end-line="159" selection-end-column="66" />
+          <folding>
+            <marker date="1479181531840" expanded="true" signature="8525:8622" ph="SELECT Targe... target" />
+            <marker date="1479181531840" expanded="true" signature="9469:9485" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/targetDisplay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="163" column="66" selection-start-line="163" selection-start-column="66" selection-end-line="163" selection-end-column="66" />
+          <folding>
+            <marker date="1479181531683" expanded="true" signature="13160:13266" ph="SELECT Targe... target" />
+            <marker date="1479181531683" expanded="true" signature="13569:13679" ph="..." />
+            <marker date="1479181531683" expanded="true" signature="13681:13878" ph="..." />
+            <marker date="1479181531683" expanded="true" signature="13690:13878" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/ResetPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/AJAXForgotPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+          <folding>
+            <marker date="1479181976540" expanded="true" signature="1013:2413" ph="..." />
+            <marker date="1479181976540" expanded="true" signature="1024:1270" ph="..." />
+            <marker date="1479181976540" expanded="false" signature="1290:1450" ph="..." />
+            <marker date="1479181976540" expanded="true" signature="1452:2405" ph="..." />
+            <marker date="1479181976540" expanded="false" signature="1525:1705" ph="..." />
+            <marker date="1479181976540" expanded="true" signature="1707:2392" ph="..." />
+            <marker date="1479181976540" expanded="true" signature="1745:2372" ph="..." />
+            <marker date="1479181976540" expanded="true" signature="1806:2256" ph="..." />
+            <marker date="1479181976540" expanded="false" signature="1840:1970" ph="..." />
+            <marker date="1479181976540" expanded="true" signature="2016:2233" ph="..." />
+            <marker date="1479181976540" expanded="false" signature="2072:2159" ph="..." />
+            <marker date="1479181976540" expanded="true" signature="2328:2352" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/ChangePasswordPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/overViewDemo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding>
+            <marker date="1478054705147" expanded="true" signature="1208:2986" ph="..." />
+            <marker date="1478054705147" expanded="true" signature="1219:1465" ph="..." />
+            <marker date="1478054705147" expanded="false" signature="1485:1645" ph="..." />
+            <marker date="1478054705147" expanded="true" signature="1647:2978" ph="..." />
+            <marker date="1478054705147" expanded="false" signature="1720:1900" ph="..." />
+            <marker date="1478054705147" expanded="true" signature="1902:2965" ph="..." />
+            <marker date="1478054705147" expanded="true" signature="1940:2945" ph="..." />
+            <marker date="1478054705147" expanded="true" signature="2001:2829" ph="..." />
+            <marker date="1478054705147" expanded="false" signature="2035:2165" ph="..." />
+            <marker date="1478054705147" expanded="true" signature="2216:2806" ph="..." />
+            <marker date="1478054705147" expanded="false" signature="2287:2470" ph="..." />
+            <marker date="1478054705147" expanded="false" signature="2532:2619" ph="..." />
+            <marker date="1478054705147" expanded="false" signature="2731:2761" ph="..." />
+            <marker date="1478054705147" expanded="true" signature="2901:2925" ph="..." />
           </folding>
         </state>
       </provider>

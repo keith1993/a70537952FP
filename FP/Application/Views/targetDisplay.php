@@ -119,10 +119,11 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
             <ul class="collapsible collapsible-accordion">
                 <li><a href="../../index.php" collapsible-header waves-effect"><i
                         class="fa fa-home"></i>Home</i></a></li>
-                <li><a href="UserProfile.php" collapsible-header waves-effect"><i
+                <li><a href="../Controllers/UserProfile.php" collapsible-header waves-effect"><i
                         class="fa fa-user"></i>Profile</i></a></li>
-                <li><a href="Ranking.php" class="collapsible-header waves-effect"><i class="fa fa-table"></i>Ranking</i></a></li>
-                <li><a href="ScheduleSetting.php" class="collapsible-header waves-effect"><i class="fa fa-gear"></i>Schedule Setting</i></a></li>
+                <li><a href="target.php" class="collapsible-header waves-effect"><i class="fa fa-check-square-o"></i>Target</i></a></li>
+                <li><a href="../Controllers/Ranking.php" class="collapsible-header waves-effect"><i class="fa fa-table"></i>Ranking</i></a></li>
+                <li><a href="../Controllers/ScheduleSetting.php" class="collapsible-header waves-effect"><i class="fa fa-gear"></i>Schedule Setting</i></a></li>
                 <!-- <li><a class="collapsible-header waves-effect"><i class="fa fa-bar-chart"></i>Marketing</i></a></li>
                  <li><a class="collapsible-header waves-effect"><i class="fa fa-pencil"></i> Contact</i></a></li>
                  <li><a class="collapsible-header waves-effect"><i class="fa fa-user"></i> About</i></a></li>-->
@@ -160,7 +161,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
                      data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 
                     <a class="dropdown-item"
-                       href="Logout.php">Logout</a>
+                       href="../Controllers/Logout.php">Logout</a>
                 </div>
             </li>
         </ul>
@@ -387,7 +388,7 @@ if ($result->num_rows > 0) {
   <input id="AddTargetLink1" type="reset" value="Add Target" onclick="toggle_visibility('popup1');"/>
 </p>
 <p style="text-align:center; top:83%; left:50%; position:fixed; ">
-    <a href="Target.php">Back</a>
+    <a href="Target.php" style="color: #f00;">Back</a>
 </p>
 </div>
 </body>
