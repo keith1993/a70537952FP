@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 spl_autoload_register(function ($class) {
 
 
@@ -312,11 +312,17 @@ if (isset($_SESSION["id"]) && isset($_SESSION["email"]) && isset($_SESSION["pass
 
 
 <?php
+/*
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "Finance";
+*/
 
+$servername = "localhost";
+$username = "wilsandb_finance";
+$password = "financeFP1";
+$dbname = "wilsandb_finance";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -388,7 +394,7 @@ if ($result->num_rows > 0) {
   <input id="AddTargetLink1" type="reset" value="Add Target" onclick="toggle_visibility('popup1');"/>
 </p>
 <p style="text-align:center; top:83%; left:50%; position:fixed; ">
-    <a href="Target.php" style="color: #f00;">Back</a>
+    <a href="target.php" style="color: #f00;">Back</a>
 </p>
 </div>
 </body>

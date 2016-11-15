@@ -202,7 +202,7 @@
 
                         $user = $userModel->getUserByID($key);
                         echo "
-                        <td>".$user->FirstName.$user->LastName."</td>
+                        <td>".$user->FirstName." ".$user->LastName."</td>
                         ";
 
                         $TodayExpenseGroup = $expenseModel->getTodayExpenseGroupByUserID($value->User_ID);
@@ -322,7 +322,7 @@
 
                         $user = $userModel->getUserByID($key);
                         echo "
-                        <td>".$user->FirstName.$user->LastName."</td>
+                        <td>".$user->FirstName." ".$user->LastName."</td>
                         ";
 
                         $WeeklyExpenseGroup = $expenseModel->getWeeklyExpenseGroupByUserID($value->User_ID);
@@ -442,7 +442,7 @@
 
                         $user = $userModel->getUserByID($key);
                         echo "
-                        <td>".$user->FirstName.$user->LastName."</td>
+                        <td>".$user->FirstName." ".$user->LastName."</td>
                         ";
 
                         $MonthlyExpenseGroup = $expenseModel->getMonthlyExpenseGroupByUserID($value->User_ID);
@@ -568,7 +568,7 @@
 
                             $user = $userModel->getUserByID($value->User_ID);
                             echo "
-                            <td>".$user->FirstName.$user->LastName."</td>
+                            <td>".$user->FirstName." ".$user->LastName."</td>
                             ";
 
                             $TodayIncomeGroup = $incomeModel->getTodayIncomeGroupByUserID($key);
@@ -663,7 +663,7 @@
 
                         $user = $userModel->getUserByID($value->User_ID);
                         echo "
-                        <td>".$user->FirstName.$user->LastName."</td>
+                        <td>".$user->FirstName." ".$user->LastName."</td>
                         ";
 
                         $WeeklyIncomeGroup = $incomeModel->getWeeklyIncomeGroupByUserID($key);
@@ -758,7 +758,7 @@
 
                         $user = $userModel->getUserByID($value->User_ID);
                         echo "
-                        <td>".$user->FirstName.$user->LastName."</td>
+                        <td>".$user->FirstName." ".$user->LastName."</td>
                         ";
 
                         $MonthlyIncomeGroup = $incomeModel->getMonthlyIncomeGroupByUserID($key);
