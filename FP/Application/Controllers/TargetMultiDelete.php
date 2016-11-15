@@ -13,12 +13,20 @@ if ($conn->connect_error) {
 
 if(isset($_POST["submit1"]))
 {
-  $box = $_POST["num"];
-  while (list ($key,$val) = @each ($box))
+  if(isset($_POST["num"])){
+      $box = $_POST["num"];
+    while (list ($key,$val) = @each ($box))
   {
     $sql = "DELETE FROM target WHERE Target_ID =$val";
     $result = $conn->query($sql);
-    echo "$val,";
+    echo "$val ";
     echo "is deleted successfuly";
+    echo "<br>";
+    echo "<br>";
   }
+
+}else{
+   header("Location:../Views/targetDisplay.php");
+ }
+  echo "<a href=\"../Views/targetDisplay.php\">Back</a>";
 }

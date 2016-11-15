@@ -32,6 +32,8 @@ if (isset($_POST['delete'])) {
         echo "Delete Target Success";
       }else{
         echo "Delete Target Success";
+        sleep(5);
+        header("Location:../Views/target.php");
         //  echo "Error!". mysql_error();
       }
 

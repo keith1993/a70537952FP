@@ -22,5 +22,25 @@
   border-radius: 10px;
 }
 /*Pop up ends*/
+html {
+    height: 100%;
+    margin: 0;
 
-    
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+
+    max-width: 100%;
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.targetTable {
+  margin: 0 auto;
+  width: 100px; 
+}

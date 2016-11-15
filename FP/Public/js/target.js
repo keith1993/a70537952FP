@@ -50,3 +50,5 @@ function dateDiff(){
                 $('#submit1').attr('disabled', 'disabled');
             }
         });
+
+        //when addtarget link is click
