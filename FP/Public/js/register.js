@@ -40,7 +40,7 @@
 					$("#errormsg_password").text("You can't leave this empty.");
 				}
 				else if(document.getElementById("password").value.length < 8 || document.getElementById("password").value.length > 16){
-					$("#errormsg_password").text("Password length must be between 8 to 6 characters.");
+					$("#errormsg_password").text("Password length must be between 8 to 16 characters.");
 				}
 				else{
 					$("#errormsg_password").text("");

@@ -89,7 +89,7 @@ h6, .h6 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.5;
 }
 
@@ -954,6 +954,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   color: #FFFFFF;
   padding: 10px 15px;
   font-size: 14px;
+  margin-top:80px;
 }
 .container .alert {
   border-radius: 4px;
@@ -1886,7 +1887,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   font-size: 16px;
 }
 .card label {
-  font-size: 12px;
+  font-size: 18px;
   margin-bottom: 5px;
   text-transform: uppercase;
 }
@@ -1993,6 +1994,8 @@ body > .navbar-collapse[data-color="purple"]:after {
   border: 5px solid #FFFFFF;
   position: relative;
   margin-bottom: 15px;
+  margin-left:160px;
+  margin-top:-150px;
   
 }
 .card-user .avatar.border-gray {
@@ -2002,7 +2005,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   line-height: 24px;
 }
 .card-user .content {
-  min-height: 240px;
+  min-height: 130px;
 }
 
 .card-user .footer,

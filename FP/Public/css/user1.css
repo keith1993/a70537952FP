@@ -1,0 +1,440 @@
+html {
+    height: 100%;
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+
+    max-width: 100%;
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.hideXScroll{
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.content {
+    width: inherit;
+    /*background: url("http://mdbootstrap.com/images/regular/nature/img%20(68).jpg") no-repeat ;*/
+    /*background: url("https://scontent-kul1-1.xx.fbcdn.net/t31.0-8/1799971_752925061451035_4578199307499207554_o.jpg") no-repeat ;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+
+    min-height: 600px;
+    position: relative;
+    height: auto;
+    overflow: visible;
+	margin-top:85px;
+}
+
+.sidenav {
+
+    height: 100%;
+    width: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+}
+
+.sidenav a {
+
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+#profile {
+    transition: 0.5s;
+
+}
+
+.sidenav a:hover, .offcanvas a:focus {
+    color: #f1f1f1;
+}
+
+.transition {
+    margin-left: 0;
+    transition: margin-left .5s;
+
+    transition: 0.5s;
+
+
+
+}
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 0px;
+    }
+
+    .sidenav a {
+        font-size: 17px;
+    }
+
+}
+
+.side-nav.fixed {
+
+    transform: translateX(0%);
+}
+
+.double-nav .breadcrumb-dn {
+    display: block;
+}
+
+.mask{
+    display:block;
+    width:100%;
+    position:fixed;
+    background:rgba(255,255,255,0.5);
+    z-index:20;
+    top:0;
+    left:0;
+    height:100%;
+
+
+}
+
+.popout {
+    display:block;
+    background:#fff;
+
+    top:40%;
+    left:0;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    z-index:20;
+    vertical-align: middle;
+    margin-top: -250px;
+    position:fixed;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.wrapper{
+    margin-left: 50px;
+    margin-top: 63px;
+color: #fff;
+}
+
+.popoutInsert,.popoutEdit{
+
+    transition: visibility 0s, opacity 0.5s linear;
+
+}
+
+.btnInsert{
+    color: #000000;
+    font-size: 25px;
+    display: inline-block;
+    width: 300px;
+    border-color: #000000;
+    margin-top: 10px;
+}
+
+.ExpenseRanking,.IncomeRanking{
+    display: block;
+    position: relative;
+    min-height: 630px;
+    text-align: center;
+
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 0px;
+padding-bottom: 15px;
+}
+
+[type=checkbox]:checked, [type=checkbox]:not(:checked) {
+    position: absolute;
+    left: 40px;
+    visibility: visible;
+}
+
+.btn{
+
+    margin: 0px;
+    margin-top: 3px;
+}
+
+.title{
+    font-size: 40px;
+    text-align: center;
+margin-bottom: 30px;
+
+}
+
+.tableHR{
+
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #ffffff inset;
+}
+
+.incomeForm,.expenseForm{
+
+    text-align: center;
+}
+
+.footable-sortable {
+    text-align: center;
+}
+
+
+
+.footable.table th, .footable-details.table th {
+    text-align: center;
+}
+
+
+
+td.footable-sortable > span.fooicon, th.footable-sortable > span.fooicon {
+    position: relative;
+    right: -6px;
+
+}
+
+.side-nav .sn-avatar-wrapper img {
+
+    max-width: 60px;
+    min-height: 70px;
+    min-width: 70px;
+}
+
+.side-nav .logo-wrapper a {
+
+    width: 0px;
+
+}
+
+
+.side-nav .logo-wrapper, .side-nav .logo-wrapper a {
+    height: 100px;
+}
+
+.popoutTitle{
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+label{
+    font-size: 22px;
+
+}
+.btnCancel,.btnSubmit{
+    margin-top: 60px;
+    width: 200px;
+    display: inline-block;
+    font-size: 25px;
+}
+
+.footable .form-inline .input-group>.form-control {
+    width: auto;
+}
+
+
+.form-inline .form-group {
+    margin-right: 0rem;
+}
+
+.red-skin .navbar {
+    background-color: #a90000;
+}
+.red-gradient, .red-skin .side-nav {
+    background: linear-gradient(135deg, #000 0, #7d0000 100%);
+
+}
+
+table.footable > thead > tr > td.footable-sortable, table.footable > thead > tr > th.footable-sortable, table.footable > tbody > tr > td.footable-sortable, table.footable > tbody > tr > th.footable-sortable, table.footable > tfoot > tr > td.footable-sortable, table.footable > tfoot > tr > th.footable-sortable {
+
+    padding-right: 0px;
+
+}
+
+.tableIncome,.tableExpense{
+    width: 100%;
+
+}
+
+caption, th {
+    text-align: center;
+}
+
+.overviewWhite{
+    color: #fff;
+    font-family: "Microsoft YaHei UI Light";
+
+
+}
+
+.overviewBlack{
+    color: #000;
+    font-family: "Microsoft YaHei UI Light";
+
+
+}
+
+
+.floatRight{
+
+    float: right;
+}
+
+.floatLeft{
+
+    float: left;
+}
+.inline{
+
+
+    display: inline-block;
+    text-align: right;
+
+}
+
+.overviewGroup{
+    margin:0px;
+
+}
+.savings{
+    font-size:45px ;
+
+}
+#CurrentChart,#Chart{
+
+    display: inline-block;
+    position: relative;
+    padding-left: 85px;
+    padding-top: 45px;
+    transition: 0.5s;
+
+}
+ul{
+    left: 0
+
+}
+
+.incomeOverview,.expenseOverview{
+
+    font-size: 21px;
+}
+.swiper-container {
+    width: auto;
+    height: auto;
+}
+
+a label{
+
+    font-size: .8rem;
+}
+
+.editPopout{
+    display:block;
+    background:#fff;
+
+    top:90px;
+
+    float: none;
+
+    height: auto;
+    min-height: 400px;
+    z-index:20;
+    vertical-align: middle;
+
+    position:fixed;
+    border: 1px solid rgba(0,0,0,0.3);
+
+    width: 40%;
+    position: fixed;
+    left: 50%;
+    margin-left: -20%;
+
+}
+
+.editPopout label{
+
+    text-align: center;
+}
+
+.editPopout input {
+    margin: 0;
+    padding: 0;
+}
+
+.btn, .btn-flat, .classic-tabs li a, footer.page-footer .title {
+    text-transform: none;
+}
+
+.UserRank{
+    font-size: 30px;
+    margin-left: 60px;
+    padding-top: 15px;
+
+
+}
+
+address, dl, ol, p, ul {
+    margin-bottom: 0rem;
+}
+
+.swiper-button-prev.swiper-button-red,
+.swiper-container-rtl .swiper-button-next.swiper-button-red{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ff0000'%2F%3E%3C%2Fsvg%3E");
+}
+
+.swiper-button-next.swiper-button-red,
+.swiper-container-rtl .swiper-button-prev.swiper-button-red{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ff0000'%2F%3E%3C%2Fsvg%3E");
+}
+
+#expenseSwiper,#incomeSwiper,#wrapper{
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment:fixed;
+    background-size: 100% 100%;
+    background-position:center;
+}
+
+.swiper-pagination-bullet {
+
+    background: #fff;
+
+}
+
+.swiper-pagination-bullet-active {
+
+    background: #fff;
+}
+
+#wrapper .separateLine{
+    border: 1px solid rgba(255,255,255,0.6);
+    width: 90%;
+}
+
+table.footable, table.footable-details {
+    line-height: 1.5;
+}
